@@ -1,0 +1,1562 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--primary-font);
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+p {
+  line-height: 1.1em;
+}
+
+/*Global Styling*/
+:root {
+  --alt-font: "cerebri-sans";
+  --primary-font: "cerebri-sans";
+  --primary-color: #642364;
+  --base-color: #25b0ab;
+  --dark-gray: #1e3238;
+  --very-light-gray: #eceff1;
+  --yellow: #ecab23;
+  --medium-gray: #7c898d;
+  --solitude-blue: #f4f7f9;
+}
+/*Global Font*/
+@font-face {
+  font-family: "cerebri-sans";
+  src: url("./assets/fonts/CerebriSansPro.ttf");
+}
+/*Global Effect*/
+.hoverEffect {
+  cursor: pointer;
+}
+/*---- Active Mobile Menu -----*/
+
+.activeHambutgerleft {
+  top: 45% !important;
+  transform: rotate(-45deg) !important;
+}
+.activeHambutgerleft,
+.activeHambutgerRight {
+  width: 100% !important;
+}
+.hideHambutgerMid {
+  display: none;
+}
+.activeHambutgerRight {
+  bottom: 45% !important;
+  transform: rotate(45deg) !important;
+}
+.showMenu {
+  padding: 15px 0 !important;
+  min-height: 260px !important;
+  max-height: fit-content !important;
+}
+.hideMenue {
+  overflow: hidden;
+}
+.activeList {
+  transform: rotate(180deg) !important;
+}
+.rotateHaburger {
+  transform: rotate(-180deg);
+}
+
+/* wheel scroll animation */
+@keyframes wheel-move {
+  0%,
+  20% {
+    opacity: 1;
+    top: 8px;
+  }
+  80%,
+  100% {
+    opacity: 0;
+    top: 20px;
+  }
+}
+
+/*Media Query*/
+@media (min-width: 320px) {
+  /*Nav Styling*/
+  #Nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 4;
+  }
+  #Nav > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+  }
+  #Nav > div:last-child > div {
+    padding: 25px 0px 10px 0;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+  }
+  #Nav > div:last-child > div > ul li span {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #Nav > div:last-child > div > div:first-child {
+    width: 45%;
+  }
+  #Nav > div:last-child > div > div:first-child img {
+    width: 100%;
+  }
+  #Nav > div:last-child > div > ul {
+    position: absolute;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    list-style: none;
+    min-height: 0;
+    max-height: 0;
+    transition: all 0.2s ease-in-out;
+    background-color: white;
+    z-index: 3;
+  }
+  #Nav > div:last-child > div > ul > div {
+    width: 85%;
+    align-self: center;
+  }
+  #Nav > div:last-child > div > ul li {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 3px;
+    color: var(--dark-gray);
+  }
+
+  #Nav > div:last-child > div > ul li svg {
+    font-size: 1.2em;
+    transform: rotate(0deg);
+    transition: all 0.2s ease-in-out;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer {
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    min-height: 0;
+    max-height: 0;
+    overflow-y: hidden;
+  }
+  .activeMenu {
+    min-height: 120px !important;
+    max-height: 490px !important;
+    overflow-y: auto !important;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer div {
+    width: 95%;
+    padding: 8px 0;
+    margin-bottom: 5px;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer div h3,
+  #Nav > div:last-child > div > ul .subMenuContainer div ul {
+    font-size: 0.8em;
+    color: var(--medium-gray);
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer div h3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: fit-content;
+    padding: 4px 5px;
+    border-radius: 10px;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer div h3 span {
+    margin: 0 5px;
+    color: var(--base-color);
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer div h3 svg {
+    color: var(--base-color);
+    font-size: 1.2em;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer > div hr {
+    width: 60%;
+  }
+  #Nav > div:last-child > div > ul .underline {
+    display: none;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer div ul {
+    padding: 0px 15px;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer div ul li {
+    font-weight: bold;
+    color: var(--medium-gray);
+  }
+  #Nav > div:last-child > div button {
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(to right, var(--base-color), #a1c7c7);
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 7px 0;
+    width: 140px;
+    align-self: center;
+    margin-top: 20px;
+  }
+  #Nav ul button img {
+    width: 15%;
+    margin: 0 10px;
+    border-radius: 2px;
+    padding: 0 !important;
+  }
+  #Nav > div:last-child > div #hamburgerContainer {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+  }
+  #Nav > div:last-child > div #hamburgerContainer span {
+    height: 2.2px;
+    border-radius: 25px;
+    background-color: var(--dark-gray);
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+  #Nav > div:last-child > div #hamburgerContainer span:first-child,
+  #Nav > div:last-child > div #hamburgerContainer span:last-child {
+    position: absolute;
+    width: 70%;
+  }
+  #Nav > div:last-child > div #hamburgerContainer span:first-child {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #Nav > div:last-child > div #hamburgerContainer span:last-child {
+    bottom: 0;
+    transform: rotate(0deg);
+  }
+  /*------------ Hero Styling ----------*/
+  #hero {
+    width: 100%;
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+  }
+  #hero .mainContainer {
+    position: relative;
+    align-self: center;
+    border-radius: 25px;
+    width: 95%;
+    height: 82dvh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #hero #tsparticles {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+  #hero .contentContainer {
+    padding: 10px;
+    color: white;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  #hero .contentContainer > div {
+    width: 100%;
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  #hero .contentContainer > div h5 {
+    color: white;
+    margin: 0 10px;
+  }
+  #hero .contentContainer > div span {
+    width: 20px;
+    height: 2px;
+    border-radius: 25px;
+    background-color: var(--primary-color);
+  }
+  #hero .contentContainer h3 {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    font-weight: bold;
+    width: 85%;
+  }
+  #hero .contentContainer p {
+    width: 90%;
+    font-size: 0.9em;
+    text-align: left;
+    margin: 20px 0 20px 0;
+    color: rgb(224, 224, 224);
+  }
+
+  #hero .contentContainer button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    padding: 8px 0 6px;
+    width: 120px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+  }
+
+  #hero .socialContainer {
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #hero .socialContainer::after {
+    content: "";
+    position: absolute;
+    top: auto;
+    right: -10px;
+    width: 2px;
+    height: 85%;
+    border-radius: 25px;
+    background-color: var(--primary-color);
+  }
+  #hero .socialContainer ul {
+    list-style: none;
+  }
+  #hero .socialContainer ul li {
+    font-size: 1.2em;
+    margin: 4px 0;
+    color: white;
+    transition: all 0.3s ease-in-out;
+  }
+  #hero .socialContainer ul li:hover {
+    color: var(--primary-color);
+  }
+  .mouse-scroll {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+    user-select: none;
+    z-index: 10;
+  }
+
+  .mouse-scroll span {
+    font-size: 0.8em;
+  }
+  .mouse {
+    width: 17px;
+    height: 25px;
+    border: 2px solid var(--primary-color);
+    border-radius: 18px;
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+  }
+  .wheel {
+    width: 2px;
+    height: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: wheel-move 2s infinite alternate forwards ease-in-out;
+  }
+
+  /*--------- About Styling ----------*/
+  #about {
+    margin: 2em 0;
+    padding: 2em 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #about > div {
+    width: 90%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #about #imgContainer {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+  }
+  #about #imgContainer img {
+    width: 45%;
+  }
+  #about > div > div:last-child {
+    width: 100%;
+    margin-top: 2em;
+  }
+  #about > div > div:last-child h2 {
+    color: var(--primary-color);
+    font-weight: bold;
+    position: relative;
+    font-size: 1.5em;
+    padding: 0 0.5em;
+  }
+  #about > div > div:last-child h2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    border-radius: 25px;
+    height: 100%;
+    background-color: var(--primary-color);
+  }
+
+  #about > div > div:last-child p {
+    border-radius: 15px;
+    width: 90%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.1em;
+    font-size: 0.9em;
+    margin: 15px 0 20px 1.2em;
+  }
+
+  #about > div > div:last-child p button {
+    margin-top: 1em;
+    padding: 0.4em 1em 0.2em;
+    border: 1px solid white;
+    background-color: white;
+    color: var(--primary-color);
+    font-weight: bold;
+    border-radius: 10px;
+  }
+
+  /*---------- client Styling ---------*/
+  #client {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #client h2 {
+    width: 80%;
+    font-size: 1.2em;
+    color: var(--primary-color);
+    text-align: center;
+  }
+  #client > div:last-child p {
+    text-align: center;
+    color: grey;
+    align-self: center;
+    font-size: 0.95em;
+  }
+
+  #client .trust {
+    text-align: center;
+    margin: 1em 0 0;
+    background-color: var(--yellow);
+    padding: 0.3em 1em;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+  #client .swiper-slide img {
+    padding: 4em 3em !important;
+  }
+  #client > div {
+    width: 85%;
+  }
+  /*-------------- SVG Styling -------------*/
+  #svg {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #svg .mainContainer {
+    border-radius: 25px;
+    overflow: hidden;
+    width: 90%;
+    margin: 3em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--very-light-gray);
+  }
+
+  #svg .mainContainer > div {
+    width: 100%;
+  }
+  #svg .headerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 1em 0;
+    background-color: var(--base-color);
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+  }
+  #svg .headerContainer label {
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  #svg .svgContainer {
+    width: 90%;
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #svg .svgContainer > div {
+    width: 90%;
+    margin-bottom: 2em;
+  }
+
+  #svg .svgContainer p {
+    width: 90%;
+    font-size: 0.9em;
+    text-align: center;
+    color: grey;
+  }
+
+  #svg .svgContainer img {
+    width: 95%;
+    margin-bottom: 2em;
+  }
+  /*---------- Why Choosing Us ---------*/
+  #whyChooseUs {
+    margin: 2em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--very-light-gray);
+  }
+
+  #whyChooseUs > div {
+    padding: 2em 0;
+    width: 90%;
+    align-self: center;
+  }
+  #whyChooseUs .contentContainer {
+    align-self: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+  #whyChooseUs .contentContainer h3 {
+    font-size: 1.3em;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  #whyChooseUs .contentContainer p {
+    width: 100%;
+    font-size: 0.9em;
+    color: grey;
+    margin: 1em 0 1.5em;
+    text-align: center;
+  }
+  /* Left arrow icon */
+  #whyChooseUs .swiper-button-prev {
+    left: 35%;
+  }
+  /* Right arrow icon */
+  #whyChooseUs .swiper-button-next {
+    right: 35%;
+  }
+  #whyChooseUs .swiper-slide .container .shadow {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.9s ease-in-out;
+    pointer-events: none;
+  }
+
+  #whyChooseUs .swiper-slide-active .container .shadow {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  #whyChooseUs .swiper-slide .container .shadow p {
+    position: absolute;
+    bottom: 15px;
+    left: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    border-left: 2px solid var(--primary-color);
+    padding: 0 10px;
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  #whyChooseUs .splitter {
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 20px 4px;
+    text-align: center;
+  }
+  #whyChooseUs .splitter p {
+    color: white;
+    font-weight: lighter;
+  }
+  #whyChooseUs .splitter p span {
+    text-decoration: underline;
+    color: var(--yellow);
+  }
+  /*-------- Contact Styling --------*/
+  /* Mobile First Design */
+  .animated-list {
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 80%;
+    background-color: white;
+    padding: 1rem;
+    transition: left 0.5s ease;
+    z-index: 999;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .animated-list.show {
+    left: 10%;
+  }
+
+  .animated-list.hide {
+    left: -100%;
+  }
+
+  .animated-list ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .animated-list li {
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s ease;
+  }
+
+  .animated-list li:hover {
+    background-color: #f5f5f5;
+  }
+
+  .selected-service {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .selected-service img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .selected-service h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .selected-service p {
+    margin-top: 0.5rem;
+    color: #666;
+  }
+  /*---------- Summary Styling -----------*/
+  #summary {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  #summary h2 {
+    margin: 30px 0 10px 0;
+    font-size: 1em;
+    color: var(--base-color);
+  }
+  #summary h2 span {
+    margin: 0 5px;
+  }
+  #summary p {
+    color: var(--base-color);
+    text-align: left;
+    font-size: 0.8em;
+    line-height: 1.2em;
+  }
+  #summary button {
+    margin-top: 20px;
+    padding: 8px 0;
+    width: 130px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, var(--yellow), rgb(235, 235, 176));
+    color: white;
+    font-weight: bold;
+  }
+}
+@media (min-width: 375px) {
+}
+@media (min-width: 425px) {
+  /*------------ Hero Styling ----------*/
+  #hero {
+    width: 100%;
+  }
+  #hero .mainContainer {
+    padding: 12px;
+    height: 83dvh;
+  }
+  #hero .contentContainer > div h5 {
+    font-size: 1em;
+  }
+
+  #hero .contentContainer h3 {
+    font-size: 1.5em;
+    width: 90%;
+  }
+  #hero .contentContainer p {
+    font-size: 0.95em;
+    width: 90%;
+  }
+
+  #hero .contentContainer button {
+    padding: 8px 0 6px;
+    width: 140px;
+  }
+
+  #hero .socialContainer {
+    bottom: 40px;
+    right: 30px;
+  }
+  .mouse-scroll span {
+    font-size: 0.95em;
+  }
+  .mouse {
+    width: 20px;
+    height: 30px;
+  }
+  /*--------- About Styling ----------*/
+  #about > div {
+    width: 85%;
+  }
+
+  #about #imgContainer img {
+    width: 45%;
+  }
+  #about > div > div:last-child {
+    width: 100%;
+    margin-top: 1.5em;
+  }
+  #about > div > div:last-child h2 {
+    font-size: 1.9em;
+  }
+
+  #about > div > div:last-child p {
+    padding: 1em;
+    font-size: 0.95em;
+    margin: 15px 0 20px 1.5em;
+  }
+  #about > div > div:last-child p button {
+    padding: 0.6em 1.2em 0.4em;
+    font-size: 0.9em;
+  }
+  /*---------- client Styling ---------*/
+  #client h2 {
+    font-size: 1.5em;
+  }
+  #client > div:last-child p {
+    font-size: 1.05em;
+  }
+  #client .trust {
+    padding: 0.4em 1.5em;
+    font-size: 1em;
+  }
+  #client .swiper-slide img {
+    padding: 3em 5em !important;
+  }
+  #client > div,
+  #client h2 {
+    width: 85%;
+  }
+  /*-------------- SVG Styling -------------*/
+  #svg .mainContainer {
+    width: 95%;
+  }
+  #svg .headerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    padding: 1em 0;
+    background-color: var(--base-color);
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+  }
+  #svg .headerContainer label {
+    font-size: 1.1em;
+  }
+
+  #svg .svgContainer {
+    width: 100%;
+  }
+  #svg .svgContainer > div {
+    width: 90%;
+  }
+  #svg .svgContainer p {
+    font-size: 0.9em;
+    width: 92%;
+  }
+  #svg .svgContainer img {
+    width: 95%;
+  }
+  /*---------- Summary Styling ----------*/
+  #summary h2 {
+    font-size: 1.2em;
+  }
+  #summary p {
+    font-size: 0.9em;
+  }
+  /*---------- Why Choosing Us ---------*/
+  #whyChooseUs > div {
+    width: 85%;
+  }
+  #whyChooseUs .contentContainer h3 {
+    font-size: 1.4em;
+  }
+  #whyChooseUs .swiper-slide .container .shadow p {
+    font-size: 1.7em;
+  }
+}
+@media (min-width: 768px) {
+  /* Nav Styling */
+  /*DNav SVG styling*/
+  #DNav svg {
+    color: var(--medium-gray);
+    font-size: 1.5em;
+    transition: all 0.3s ease-in-out;
+  }
+  #DNav svg:hover,
+  #DNav > div:last-child > div > div > div:hover svg {
+    color: var(--dark-gray);
+  }
+  #DNav {
+    color: var(--dark-gray);
+    font-weight: 600;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--very-light-gray);
+  }
+  #DNav > div {
+    width: 95%;
+  }
+  #DNav > div,
+  #DNav > div > div:first-child ul,
+  #DNav > div > div:last-child > div > div,
+  #DNav > div:last-child > div > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #DNav > div:first-child > div:first-child,
+  #DNav > div:first-child > div:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #DNav > div:first-child > div:first-child ul li {
+    margin: 0 5px;
+  }
+
+  #DNav > div:first-child ul,
+  #DNav > div {
+    list-style: none;
+    justify-content: space-between;
+  }
+
+  #DNav > div:last-child > div > div {
+    margin: 0 5px;
+  }
+  #DNav > div:last-child > div > div > div {
+    margin: 0 9px;
+  }
+
+  #DNav > div:last-child > div > div svg {
+    margin: 0 8px;
+  }
+
+  #DNav > div:last-child > div > div:hover svg {
+    color: var(--dark-gray);
+  }
+
+  #Nav > div:last-child > div {
+    position: relative;
+    padding: 15px 0;
+    width: 95%;
+  }
+  #Nav > div:last-child > div > div:first-child {
+    width: 20%;
+  }
+  #Nav > div:last-child > div > ul {
+    width: 60%;
+    position: static;
+    padding: 0;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+  }
+  #Nav > div:last-child > div > ul > div {
+    width: fit-content;
+  }
+  #Nav > div:last-child > div > ul li,
+  #DNav {
+    font-size: 0.9em;
+  }
+  #Nav > div:last-child > div > ul {
+    flex-direction: row;
+    align-items: center;
+  }
+  #Nav > div:last-child > div > ul li {
+    width: fit-content;
+    font-weight: bold;
+    margin: 0 7px;
+    padding: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer {
+    position: absolute;
+    box-shadow: 0px 0px 2px black;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    z-index: 2;
+    background-color: white;
+  }
+  .activeMenu {
+    visibility: visible !important;
+    min-height: auto !important;
+    max-height: auto !important;
+    overflow-y: auto !important;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer > div hr {
+    display: none;
+  }
+  #Nav > div:last-child > div > ul .underline {
+    align-self: center;
+    display: block;
+    width: 2px;
+    border-radius: 25px;
+    height: 70px;
+    margin: 0 10px;
+    background-color: rgb(214, 214, 214);
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer > hr:last-child {
+    display: none;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer div {
+    width: 17% !important;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer div h3 {
+    font-size: 0.9em;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer div ul {
+    width: 95%;
+  }
+  #Nav > div:last-child > div > ul .subMenuContainer div ul li {
+    font-size: 1.1em;
+  }
+  #Nav > div:last-child > div > ul li {
+    margin: 5px 0;
+  }
+  #Nav > div:last-child > div > ul li:hover {
+    scale: 1.2;
+  }
+  #Nav > div:last-child > div button {
+    margin-top: 0;
+  }
+
+  #Nav > div:last-child > div > div:last-child {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #Nav > div:last-child > div > div:last-child button {
+    font-weight: lighter;
+    width: 120px;
+    font-size: 0.7em;
+    transition: all 0.2s ease-in-out;
+  }
+  #Nav > div:last-child > div > div:last-child button:hover {
+    transform: scale(0.9);
+  }
+  #Nav > div:last-child > div > div:last-child button img {
+    width: 15%;
+    margin-right: 5px;
+  }
+  /*------------ Hero Styling ----------*/
+  #hero {
+    margin-top: 130px;
+  }
+  #hero .mainContainer {
+    padding: 15px;
+    height: 75dvh;
+  }
+
+  #hero .contentContainer > div h5 {
+    font-size: 1.2em;
+  }
+
+  #hero .contentContainer h3 {
+    font-size: 2em;
+  }
+  #hero .contentContainer p {
+    font-size: 1em;
+    width: 90%;
+  }
+  #hero .contentContainer button {
+    padding: 10px 0 7px;
+    width: 150px;
+    font-size: 0.95em;
+  }
+  #hero .socialContainer {
+    bottom: 40px;
+    right: 50px;
+  }
+  .mouse-scroll span {
+    font-size: 0.95em;
+  }
+  .mouse {
+    width: 20px;
+    height: 30px;
+  }
+  /*--------- About Styling ----------*/
+  #about {
+    margin: 3em 0;
+  }
+  #about > div {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #about #imgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 46%;
+    padding: 2em;
+    background-color: var(--very-light-gray);
+  }
+  #about #imgContainer img {
+    width: 60%;
+  }
+  #about #imgContainer h1 {
+    text-align: center;
+    margin-top: 1em;
+    font-weight: bolder;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.5em;
+    color: var(--base-color);
+  }
+  #about > div > div:last-child {
+    width: 50%;
+  }
+  #about > div > div:last-child h2 {
+    font-size: 2em;
+  }
+  #about > div > div:last-child p {
+    width: 95%;
+    padding: 1.2em;
+    font-size: 0.9em;
+  }
+  #about > div > div:last-child p button {
+    font-weight: bold;
+  }
+  /*---------- client Styling ---------*/
+  #client h2 {
+    width: 75%;
+    font-size: 1.7em;
+  }
+
+  #client > div:last-child p {
+    font-size: 1.1em;
+  }
+  #client .trust {
+    padding: 0.4em 2em;
+    font-size: 1em;
+  }
+  #client .swiper-slide img {
+    padding: 3em 2em !important;
+  }
+  /*-------------- SVG Styling -------------*/
+  #svg .mainContainer {
+    width: 90%;
+    overflow: visible;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: unset;
+  }
+
+  #svg .headerContainer {
+    width: 100%;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+    margin-bottom: 1.2em;
+  }
+
+  #svg .headerContainer label {
+    font-size: 1.3em;
+  }
+  #svg .svgContainer {
+    width: 100%;
+  }
+  #svg .svgContainer img {
+    width: 100%;
+  }
+  #svg .svgContainer p {
+    font-size: 1em;
+  }
+  /*---------- Why Choosing Us ---------*/
+  #whyChooseUs > div {
+    width: 85%;
+  }
+  #whyChooseUs .contentContainer h3 {
+    font-size: 1.7em;
+  }
+  #whyChooseUs .contentContainer p {
+    font-size: 1em;
+  }
+  /* Left arrow icon */
+  #whyChooseUs .swiper-button-prev {
+    left: 42%;
+  }
+  /* Right arrow icon */
+  #whyChooseUs .swiper-button-next {
+    right: 42%;
+  }
+  #whyChooseUs .swiper-slide .container .shadow p {
+    font-size: 1.2em;
+    bottom: 5px;
+    left: 20px;
+  }
+  /*---------- Summary Styling ----------*/
+  #summary h2 {
+    margin: 40px 0 20px 0;
+    font-size: 1.3em;
+  }
+  #summary p {
+    font-size: 0.95em;
+  }
+  #summary button {
+    width: 135px;
+    margin-top: 30px;
+    font-size: 0.95em;
+  }
+  /*----------- Services & contact Styling -------*/
+  .servicesList {
+    width: 80%;
+  }
+}
+@media (min-width: 1024px) {
+  /*Nav Styling*/
+  #DNav svg {
+    font-size: 1.2em;
+  }
+  #Nav > div:last-child > ul li,
+  #DNav {
+    font-size: 0.9em;
+  }
+  #Nav > div:last-child > div > div:first-child {
+    width: 15%;
+  }
+  #Nav > div:last-child > div > div:last-child {
+    width: 15%;
+  }
+  #Nav > div:last-child > div > ul {
+    width: 55%;
+  }
+  #Nav > div:last-child > div > div:last-child button {
+    width: 150px;
+    font-size: 0.9em;
+  }
+  #Nav > div:last-child > div > ul li {
+    font-size: 1em;
+  }
+  /*------------ Hero Styling ----------*/
+  #hero .mainContainer {
+    height: 77dvh;
+  }
+  #hero .contentContainer > div h5 {
+    font-size: 1.5em;
+  }
+  #hero .contentContainer h3 {
+    width: 50%;
+    font-size: 2.2em;
+  }
+  #hero .contentContainer p {
+    font-size: 1.1em;
+    width: 65%;
+  }
+  #hero .contentContainer button {
+    padding: 10px 0 7px;
+    width: 160px;
+    font-size: 0.95em;
+  }
+  #hero .socialContainer {
+    bottom: 40px;
+    right: 50px;
+  }
+  #hero .socialContainer ul li {
+    font-size: 1.3em;
+  }
+  .mouse-scroll span {
+    font-size: 0.95em;
+  }
+  .mouse {
+    width: 20px;
+    height: 30px;
+  }
+  /*--------- About Styling ----------*/
+  #about > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #about #imgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 2em;
+    background-color: var(--very-light-gray);
+  }
+  #about #imgContainer img {
+    width: 50%;
+  }
+  #about #imgContainer h1 {
+    text-align: center;
+    margin-top: 1em;
+    font-weight: bolder;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.5em;
+    color: var(--base-color);
+  }
+  #about > div > div:last-child {
+    padding: 0 2.5em;
+    width: 50%;
+  }
+  #about > div > div:last-child h2 {
+    font-size: 2.2em;
+  }
+  #about > div > div:last-child p {
+    width: 90%;
+    font-size: 1em;
+  }
+  #about > div > div:last-child p button {
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0.5em 1.2em 0.3em;
+  }
+  /*-------------- SVG Styling -------------*/
+  #svg {
+    margin: 6.5em 0;
+  }
+  #svg .mainContainer {
+    width: 65%;
+  }
+
+  #svg .headerContainer label {
+    font-size: 1.5em;
+  }
+  #svg .svgContainer {
+    width: 100%;
+  }
+  #svg .svgContainer img {
+    width: 100%;
+  }
+  #svg .svgContainer p {
+    font-size: 1.2em;
+  }
+  /*---------- client Styling ---------*/
+  #client h2 {
+    width: 70%;
+    font-size: 2em;
+  }
+  #client > div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #client > div:last-child p {
+    font-size: 1.3em;
+    width: 80%;
+  }
+  #client .trust {
+    padding: 0.4em 2em;
+    font-size: 1.1em;
+  }
+  #client .swiper-slide img {
+    padding: 3em 1em !important;
+  }
+  /*------------ Why Choosing Us Styling --------*/
+  #whyChooseUs > div {
+    width: 85%;
+  }
+  #whyChooseUs .contentContainer h3 {
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+  #whyChooseUs .contentContainer p {
+    font-size: 1.2em;
+  }
+  /* Left arrow icon */
+  #whyChooseUs .swiper-button-prev {
+    left: 45%;
+  }
+  /* Right arrow icon */
+  #whyChooseUs .swiper-button-next {
+    right: 45%;
+  }
+  #whyChooseUs .swiper-slide .container .shadow p {
+    font-size: 1.2em;
+  }
+  #whyChooseUs .splitter p {
+    font-size: 1.2em;
+  }
+  #whyChooseUs h3,
+  .contact-section h2 {
+    font-size: 1.7em;
+  }
+  /*----------- Services & contact Styling -------*/
+  .servicesList {
+    width: 80%;
+  }
+  /*---------- Summary Styling ----------*/
+  #summary h2 {
+    font-size: 1.5em;
+  }
+  #summary p {
+    font-size: 1.1em;
+  }
+  #summary button,
+  #client > div:last-child button {
+    padding: 10px 0;
+    width: 145px;
+    margin-top: 40px;
+    font-size: 1em;
+  }
+}
+@media (min-width: 1440px) {
+  #Nav > div:last-child > ul li,
+  #DNav {
+    font-size: 1.1em;
+  }
+  #Nav > div:last-child > div > div:last-child {
+    width: 15%;
+  }
+  #Nav > div:last-child > div > ul {
+    width: 55%;
+  }
+  #Nav > div:last-child > div > ul li {
+    font-size: 1.2em;
+  }
+  /*------------ Hero Styling ----------*/
+  #hero {
+    margin-top: 150px;
+  }
+  #hero .mainContainer {
+    height: 77dvh;
+  }
+  #hero .contentContainer > div h5 {
+    font-size: 2em;
+  }
+  #hero .contentContainer h3 {
+    width: 40%;
+    font-size: 3em;
+  }
+  #hero .contentContainer p {
+    font-size: 1.4em;
+    width: 60%;
+  }
+  #hero .contentContainer button {
+    padding: 15px 0 10px;
+    width: 180px;
+    font-size: 1.2em;
+  }
+  #hero .socialContainer {
+    bottom: 50px;
+    right: 60px;
+  }
+  #hero .socialContainer ul li {
+    font-size: 1.5em;
+  }
+  .mouse-scroll span {
+    font-size: 0.95em;
+  }
+  .mouse {
+    width: 25px;
+    height: 40px;
+  }
+  /*--------- About Styling ----------*/
+  #about {
+    margin: 8em 0;
+  }
+  #about #imgContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    padding: 2em;
+    background-color: var(--very-light-gray);
+  }
+  #about #imgContainer img {
+    width: 40%;
+  }
+  #about #imgContainer h1 {
+    text-align: center;
+    margin-top: 1em;
+    font-weight: bolder;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 2em;
+    color: var(--base-color);
+  }
+  #about > div > div:last-child {
+    padding: 0 2.5em;
+  }
+  #about > div > div:last-child h2 {
+    font-size: 2.2em;
+  }
+  #about > div > div:last-child p {
+    width: 80%;
+    font-size: 1.25em;
+  }
+  #about > div > div:last-child p button {
+    font-size: 1em;
+  }
+  /*---------- client Styling ---------*/
+  #client h2 {
+    width: 50%;
+    font-size: 2.3em;
+  }
+  #client > div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #client > div:last-child p {
+    font-size: 1.5em;
+    width: 80%;
+  }
+  #client .trust {
+    padding: 0.4em 2em;
+    font-size: 1.2em;
+  }
+  #client .swiper-slide img {
+    padding: 3em 1em !important;
+  }
+  /*------------ Why Choosing Us Styling --------*/
+  #whyChooseUs > div {
+    width: 85%;
+  }
+  #whyChooseUs .contentContainer h3 {
+    font-size: 1.9em;
+    font-weight: bold;
+  }
+  #whyChooseUs .contentContainer p {
+    font-size: 1.3em;
+  }
+
+  #whyChooseUs .swiper-slide .container .shadow p {
+    font-size: 1.2em;
+  }
+  #whyChooseUs .splitter p {
+    font-size: 1.2em;
+  }
+
+  /*---------- Summary Styling ----------*/
+  #summary h2 {
+    font-size: 1.7em;
+  }
+  #summary p {
+    font-size: 1.4em;
+  }
+}

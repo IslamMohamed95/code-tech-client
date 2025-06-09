@@ -1,0 +1,201 @@
+/* Section */
+.contact-section {
+  padding: 40px 20px;
+}
+
+/* Main container */
+.contact-section .mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  /* padding removed per request */
+}
+
+/* Services List */
+.servicesSidebar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.servicesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  list-style: none;
+}
+.servicesList li {
+  width: 44%; /* adjusted to 44% on mobile/tablet */
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.servicesList li img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.servicesList li .text h3 {
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+.servicesList li .text p {
+  display: none; /* hidden on mobile/tablet */
+}
+.servicesList li:hover,
+.servicesList li.active {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form */
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+.contact-form {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 8px;
+}
+.container h2 {
+  text-align: center;
+  color: var(--base-color);
+  margin-bottom: 10px;
+}
+.container p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.floating-input {
+  position: relative;
+  margin-bottom: 20px;
+}
+.floating-input input,
+.floating-input textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.floating-input label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 0 4px;
+  color: #aaa;
+  transition: top 0.3s, font-size 0.3s;
+  pointer-events: none;
+}
+.floating-input input:focus,
+.floating-input input:not(:placeholder-shown),
+.floating-input textarea:focus,
+.floating-input textarea:not(:placeholder-shown) {
+  border-color: var(--base-color);
+}
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown) + label,
+.floating-input textarea:focus + label,
+.floating-input textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 0.8rem;
+  color: var(--base-color);
+}
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: var(--base-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+/* Mobile/Tablet (<769px): remove form shadow */
+@media (max-width: 768px) {
+  .contact-form {
+    box-shadow: none;
+  }
+}
+
+/* Desktop (≥769px) */
+@media (min-width: 769px) {
+  /* mainContainer row */
+  .contact-section .mainContainer {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  /* services list full-width column */
+  .servicesSidebar {
+    flex: 1 1 300px;
+    max-width: 300px;
+  }
+  .servicesList {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+  .servicesList li {
+    width: 100%;
+    flex-direction: row; /* image + text in a row */
+    align-items: center; /* align items at top */
+    text-align: left;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+  }
+  .servicesList li img {
+    width: 60px;
+    height: 60px;
+    margin-right: 16px;
+    margin-bottom: 0;
+  }
+  .servicesList li .text {
+    flex: 1;
+  }
+  /* Show descriptions on desktop */
+  .servicesList li .text p {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .servicesList li.active {
+    transform: scale(1.05);
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* remove form border/shadow */
+  .contact-form {
+    box-shadow: none;
+    border: none;
+  }
+}
