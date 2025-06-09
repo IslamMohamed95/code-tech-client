@@ -4,6 +4,7 @@ import Nav from "./layouts/Navbar/Nav";
 import { WebProvider } from "./context/WebContext";
 import Home from "./components/Home/Home";
 import HeroSection from "./components/HeroSection/HeroSection";
+import Footer from "./layouts/Footer/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
+          <Footer />
         </WebProvider>
       </Router>
     </div>

@@ -90,7 +90,7 @@ p {
     width: 100%;
     display: flex;
     flex-direction: column;
-    z-index: 4;
+    z-index: 10;
   }
   #Nav > div:last-child {
     display: flex;
@@ -383,7 +383,7 @@ p {
     font-size: 0.85rem;
     font-weight: 500;
     user-select: none;
-    z-index: 10;
+    z-index: 4;
   }
 
   .mouse-scroll span {
@@ -588,7 +588,7 @@ p {
   }
 
   #whyChooseUs > div {
-    padding: 2em 0;
+    padding: 8em 0 2em 0;
     width: 90%;
     align-self: center;
   }
@@ -719,6 +719,157 @@ p {
     margin-top: 0.5rem;
     color: #666;
   }
+  /*------------ Footer Design -----------*/
+  #footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: black;
+  }
+
+  #footer .mainContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #footer .mainContainer .subscribeContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--very-light-gray);
+    padding: 8em 1.5em 1em;
+  }
+  #footer .mainContainer .newsletter {
+    width: 55%;
+  }
+
+  #footer .mainContainer .newsletter h2 {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+
+  #footer .mainContainer .subscribeAction {
+    width: 40%;
+  }
+  #footer .mainContainer .subscribeAction h2 {
+    font-size: 0.75em;
+    color: var(--dark-color);
+  }
+  #footer .mainContainer .subscribeAction input {
+    width: 100%;
+    border: 1px solid var(--medium-gray);
+    border-radius: 5px;
+    padding: 0.2em 2em;
+    margin-top: 0.4em;
+    text-align: center;
+    outline: none;
+    font-size: 0.8em;
+  }
+
+  #footer .mainContainer .subscribeAction p {
+    font-size: 0.7em;
+    color: var(--medium-gray);
+  }
+
+  #footer .mainContainer .subscribeAction button {
+    margin-top: 0.6em;
+    font-size: 0.75em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5em 1em 0.3em;
+  }
+  /*------- Styling footer Container in Footer section -------*/
+  #footer .footerContainer {
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      to top,
+      var(--base-color),
+      var(--very-light-gray)
+    );
+    color: white;
+  }
+  #footer .footerContainer > div > div {
+    margin-top: 1.4em;
+  }
+  #footer .footerContainer > div > div ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+  #footer .footerContainer > div > div ul li {
+    font-weight: lighter;
+    margin: 0 0.45em;
+  }
+  #footer .footerContainer > div > div ul li svg {
+    font-size: 1.5em;
+  }
+  #footer .footerContainer > div > div:first-child {
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  #footer .footerContainer > div > div:first-child img {
+    width: 20%;
+    margin-bottom: 0.5em;
+  }
+
+  #footer .footerContainer > div > div:first-child p {
+    font-weight: bold;
+  }
+  #footer .footerContainer > div > div:last-child {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--very-light-gray);
+    font-size: 0.75em;
+  }
+  #footer .footerContainer > div > div:last-child > div:first-child {
+    margin-bottom: 2em;
+  }
+  #footer .footerContainer > div > div:last-child > div:first-child ul {
+    list-style: none;
+  }
+
+  #footer .footerContainer > div > div:last-child > div:first-child ul li {
+    transition: all 0.3s ease-in-out;
+  }
+
+  #footer
+    .footerContainer
+    > div
+    > div:last-child
+    > div:first-child
+    ul
+    li:hover {
+    color: white;
+  }
+  #footer .footerContainer > div > div:last-child > div:last-child {
+    font-weight: bold;
+    color: var(--yellow);
+  }
+
+  #footer .footerContainer > div > div:last-child > div:last-child span {
+    color: white;
+  }
+  /*-------- Diplay none the p in footer ---------*/
+  #footer .mainContainer .subscribeContainer p,
+  #footer .mainContainer .subscriveAction p {
+    display: none;
+  }
   /*---------- Summary Styling -----------*/
   #summary {
     width: 90%;
@@ -754,6 +905,16 @@ p {
   }
 }
 @media (min-width: 375px) {
+  /*------------ Footer Design -----------*/
+
+  #footer .mainContainer .subscribeContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--very-light-gray);
+    padding: 8em 2.5em 1em;
+  }
 }
 @media (min-width: 425px) {
   /*------------ Hero Styling ----------*/
@@ -868,13 +1029,6 @@ p {
   #svg .svgContainer img {
     width: 95%;
   }
-  /*---------- Summary Styling ----------*/
-  #summary h2 {
-    font-size: 1.2em;
-  }
-  #summary p {
-    font-size: 0.9em;
-  }
   /*---------- Why Choosing Us ---------*/
   #whyChooseUs > div {
     width: 85%;
@@ -885,27 +1039,135 @@ p {
   #whyChooseUs .swiper-slide .container .shadow p {
     font-size: 1.7em;
   }
+  /*------------ Footer Design -----------*/
+  #footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: black;
+  }
+
+  #footer .mainContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #footer .mainContainer .subscribeContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--very-light-gray);
+    padding: 8em 1.5em 1em;
+  }
+  #footer .mainContainer .newsletter {
+    width: 50%;
+  }
+
+  #footer .mainContainer .newsletter h2 {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+
+  #footer .mainContainer .subscribeAction {
+    width: 40%;
+  }
+  #footer .mainContainer .subscribeAction h2 {
+    font-size: 0.75em;
+    color: var(--dark-color);
+  }
+  #footer .mainContainer .subscribeAction input {
+    width: 100%;
+    border: 1px solid var(--medium-gray);
+    border-radius: 5px;
+    padding: 0.2em 2em;
+    margin-top: 0.3em;
+    text-align: center;
+    outline: none;
+    font-size: 0.8em;
+  }
+
+  #footer .mainContainer .subscribeAction button {
+    margin-top: 0.5em;
+    font-size: 0.75em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5em 1em;
+  }
+
+  #footer .footerContainer {
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      to top,
+      var(--base-color),
+      var(--very-light-gray)
+    );
+    color: white;
+  }
+
+  #footer .footerContainer > div:first-child {
+    width: 100%;
+    text-align: center;
+  }
+
+  #footer .footerContainer > div:first-child img {
+    width: 20%;
+  }
+
+  #footer .footerContainer > div:first-child p {
+    font-weight: bold;
+  }
+  /*-------- Diplay block the p in footer ---------*/
+  #footer .mainContainer .subscribeContainer p,
+  #footer .mainContainer .subscriveAction p {
+    display: block;
+  }
+  #footer .mainContainer .subscribeAction p,
+  #footer .mainContainer .subscribeContainer p {
+    color: var(--medium-gray);
+    font-size: 0.7em;
+  }
+  #footer .mainContainer .subscribeAction p {
+    margin-top: 0.7em;
+  }
+
+  /*---------- Summary Styling ----------*/
+  #summary h2 {
+    font-size: 1.2em;
+  }
+  #summary p {
+    font-size: 0.9em;
+  }
 }
 @media (min-width: 768px) {
   /* Nav Styling */
   /*DNav SVG styling*/
   #DNav svg {
-    color: var(--medium-gray);
-    font-size: 1.5em;
+    color: rgb(217, 217, 217);
+    font-size: 1.2em;
     transition: all 0.3s ease-in-out;
   }
   #DNav svg:hover,
   #DNav > div:last-child > div > div > div:hover svg {
-    color: var(--dark-gray);
+    color: white;
   }
   #DNav {
-    color: var(--dark-gray);
-    font-weight: 600;
-    padding: 10px 0;
+    color: white;
+    font-weight: lighter;
+    padding: 0.3em 0.5em;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--very-light-gray);
+    background-color: var(--base-color);
   }
   #DNav > div {
     width: 95%;
@@ -947,7 +1209,7 @@ p {
   }
 
   #DNav > div:last-child > div > div:hover svg {
-    color: var(--dark-gray);
+    color: white;
   }
 
   #Nav > div:last-child > div {
@@ -1379,6 +1641,7 @@ p {
   /*------------ Why Choosing Us Styling --------*/
   #whyChooseUs > div {
     width: 85%;
+    padding: 10em 0 2em 0;
   }
   #whyChooseUs .contentContainer h3 {
     font-size: 1.8em;

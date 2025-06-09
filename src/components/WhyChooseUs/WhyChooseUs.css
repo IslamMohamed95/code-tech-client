@@ -3,6 +3,10 @@
   /* space for nav buttons on top */
 }
 
+#whyChooseUs {
+  position: relative;
+}
+
 #whyChooseUs .swiper {
   height: 100%;
   display: flex;
@@ -95,4 +99,26 @@
 
 #whyChooseUs .swiper-pagination {
   display: none !important;
+}
+
+.custom-shape-divider-top-1749506121 {
+  padding: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1749506121 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 107px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1749506121 .shape-fill {
+  fill: #ffffff;
 }

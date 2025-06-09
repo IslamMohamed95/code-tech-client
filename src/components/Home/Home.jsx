@@ -15,7 +15,7 @@ function Home() {
       <SVG />
       <WhyChooseUs />
       <ContactUs />
-      <Card />
+      {/* <Card /> */}
     </section>
   );
 }
