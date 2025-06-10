@@ -52,7 +52,7 @@ function Footer() {
           </div>
           <div className="subscribeAction">
             <h2>Stay up to date</h2>
-            <input type="text" aria-label="test" />
+            <input type="text" name="emailUs" aria-label="Email Us" />
             <p>By subscribing you agree to our policy</p>
 
             <button>Subscribe</button>
@@ -83,19 +83,19 @@ function Footer() {
                 ))}
               </ul>
             </div>
+          </div>
+          <div>
             <div>
-              <div>
-                <ul>
-                  {policy.map((p, i) => (
-                    <li className="hoverEffect" key={i}>
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                &copy; copyright 2025 <span>Code Tech</span>
-              </div>
+              <ul>
+                {policy.map((p, i) => (
+                  <li className="hoverEffect" key={i}>
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              &copy; copyright 2025 <span>Code Tech</span>
             </div>
           </div>
         </div>
