@@ -214,9 +214,8 @@
     margin-top: 4px;
     font-size: 1rem;
     color: #555;
-    line-height: 1.4;
+    line-height: 1em;
   }
-
   .servicesList li.active {
     transform: scale(1.05);
     border-color: var(--primary-color);

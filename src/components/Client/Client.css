@@ -1,6 +1,5 @@
 #client {
   width: 100%;
-  padding: 2em 0;
 }
 
 #client .swiper {
@@ -14,18 +13,20 @@
 }
 
 #client .swiper-slide {
+  width: 100%;
+  padding: 1em 0;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
   transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
   will-change: transform, opacity, filter;
 }
 
 #client .swiper-slide img {
-  width: 100%;
   object-fit: cover;
+  box-shadow: none !important;
 }
 
 #client .swiper-pagination {

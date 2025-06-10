@@ -497,24 +497,49 @@ p {
 
   /*---------- client Styling ---------*/
   #client {
+    padding: 2em 0;
+  }
+  #client,
+  #client > div:first-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+  #client > div:first-child {
+    width: fit-content;
+    position: relative;
+  }
+
+  #client > div:first-child span {
+    position: absolute;
+    width: 80px;
+    height: 1px;
+    background-color: var(--primary-color);
+    border-radius: 25px;
+  }
+  #client > div:first-child .one {
+    left: 110%;
+  }
+  #client > div:first-child .two {
+    right: 110%;
+  }
   #client h2 {
-    width: 80%;
+    width: 100%;
     font-size: 1.2em;
     color: var(--primary-color);
     text-align: center;
   }
+
   #client > div:last-child p {
     text-align: center;
     color: grey;
     align-self: center;
     font-size: 0.95em;
   }
-
+  #client .swiper {
+    height: 60px;
+  }
   #client .trust {
     text-align: center;
     margin: 1em 0 0;
@@ -524,14 +549,12 @@ p {
     border-radius: 5px;
     font-size: 0.9em;
   }
-  #client .swiper-slide img {
-    padding: 4em 3em !important;
-  }
   #client > div {
     width: 85%;
   }
   /*-------------- SVG Styling -------------*/
   #svg {
+    margin: 2em 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -999,7 +1022,7 @@ p {
   }
   /*---------- client Styling ---------*/
   #client h2 {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   #client > div:last-child p {
     font-size: 1.05em;
@@ -1008,13 +1031,23 @@ p {
     padding: 0.4em 1.5em;
     font-size: 1em;
   }
-  #client .swiper-slide img {
-    padding: 3em 5em !important;
+  #client > div:first-child span {
+    position: absolute;
+    width: 80px;
+    height: 1px;
+    background-color: var(--primary-color);
+    border-radius: 25px;
   }
-  #client > div,
-  #client h2 {
+  #client > div:first-child .one {
+    left: 110%;
+  }
+  #client > div:first-child .two {
+    right: 110%;
+  }
+  #client > div {
     width: 85%;
   }
+
   /*-------------- SVG Styling -------------*/
   #svg .mainContainer {
     width: 95%;
@@ -1355,7 +1388,9 @@ p {
     padding: 15px;
     height: 75dvh;
   }
-
+  #client .swiper {
+    height: 100px;
+  }
   #hero .contentContainer > div h5 {
     font-size: 1.2em;
   }
@@ -1414,9 +1449,14 @@ p {
     font-size: 0.95em;
   }
   /*---------- client Styling ---------*/
+  #client {
+    padding: 0 2em;
+    align-items: center;
+  }
+
   #client h2 {
-    width: 75%;
-    font-size: 1.7em;
+    width: 100%;
+    font-size: 1.4em;
   }
   #client > div:last-child p {
     font-size: 1.1em;
@@ -1425,9 +1465,7 @@ p {
     padding: 0.4em 2em;
     font-size: 1em;
   }
-  #client .swiper-slide img {
-    padding: 3em 2em !important;
-  }
+
   /*-------------- SVG Styling -------------*/
   #svg .mainContainer {
     width: 90%;
@@ -1705,25 +1743,18 @@ p {
   }
   /*---------- client Styling ---------*/
   #client h2 {
-    width: 70%;
-    font-size: 2em;
+    font-size: 1.5em;
   }
-  #client > div:last-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   #client > div:last-child p {
     font-size: 1.3em;
-    width: 80%;
+    width: 100%;
   }
   #client .trust {
     padding: 0.4em 2em;
     font-size: 1.1em;
   }
-  #client .swiper-slide img {
-    padding: 3em 1em !important;
-  }
+
   /*------------ Why Choosing Us Styling --------*/
   #whyChooseUs > div {
     width: 85%;
@@ -1966,29 +1997,18 @@ p {
     font-size: 1.3em;
   }
   #about .maincontainer .rightContainer .aboutBtn button {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
   /*---------- client Styling ---------*/
   #client h2 {
-    width: 50%;
-    font-size: 2.3em;
+    font-size: 2em;
   }
-  #client > div:last-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   #client > div:last-child p {
     font-size: 1.5em;
-    width: 80%;
+    width: 100%;
   }
-  #client .trust {
-    padding: 0.4em 2em;
-    font-size: 1.2em;
-  }
-  #client .swiper-slide img {
-    padding: 3em 1em !important;
-  }
+
   /*------------ Why Choosing Us Styling --------*/
   #whyChooseUs > div {
     width: 85%;
