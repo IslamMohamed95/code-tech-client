@@ -1,7 +1,5 @@
-//Importing Stuesheet
-import { useContext } from "react";
+//Importing Stylesheet
 import "./Footer.css";
-import { WebContext } from "../../context/WebContext";
 
 //Importing Logo
 import logo from "../../assets/AboutLogo/aboutLogo.png";
@@ -20,7 +18,7 @@ function Footer() {
     policy = ["privacy policy", "Terms and conditions", "Copyright"],
     details = [
       { title: "Get In Touch", icon: <MdEmail /> },
-      { title: "Call Us", icon: <IoIosCall /> },
+      { title: "920007401", icon: <IoIosCall /> },
       { title: "Get Location", icon: <IoLocation /> },
     ];
   return (
@@ -105,7 +103,7 @@ function Footer() {
                       href={
                         d.title === "Get In Touch"
                           ? "mailto:info@example.com"
-                          : d.title === "Call Us"
+                          : d.title === "920007401"
                           ? "tel:+920007401"
                           : "https://www.google.com/maps/search/?api=1&query=Dubai+Mall"
                       }

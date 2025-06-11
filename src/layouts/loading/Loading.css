@@ -1,0 +1,87 @@
+@media (min-width: 320px) {
+  #loading svg {
+    width: 120px;
+    height: 120px;
+  }
+  #loading > p:first-child {
+    color: var(--base-color);
+  }
+  #loading > p {
+    font-size: 1.1em;
+  }
+}
+
+@media (min-width: 768px) {
+  #loading svg {
+    width: 160px;
+    height: 160px;
+  }
+  #loading p {
+    font-size: 1.3em;
+  }
+}
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  width: 100%;
+  z-index: 500;
+  background-color: white;
+}
+
+#loading image {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#loading svg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50% !important;
+  overflow: hidden;
+}
+
+#loading mask {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: black;
+}
+
+#loading rect {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  fill: black;
+}
+
+#loading circle {
+  cx: 50;
+  cy: 50;
+  r: 30;
+  fill: white;
+}
+#loading span {
+  margin-top: 1em;
+  font-size: 1.5em;
+  color: var(--base-color);
+  font-weight: bold;
+}
+#loading > p:last-child {
+  margin-top: 1.2em;
+  font-weight: bold;
+  color: grey;
+}
+
+.activeLoading {
+  display: flex !important;
+}

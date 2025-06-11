@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 const WebContext = createContext();
@@ -8,7 +8,20 @@ const WebProvider = ({ children }) => {
     isTablet = useMediaQuery({ minWidth: 768 }),
     isDeskTop = useMediaQuery({ minWidth: 1024 }),
     [active, setActive] = useState(false),
-    [lang, setLang] = useState("en");
+    [lang, setLang] = useState("en"),
+    [loading, setLoading] = useState(true),
+    [animate, setAnimate] = useState(true);
+
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      setLoading(false);
+      setAnimate(false);
+    }, 4000);
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, []);
+
   return (
     <WebContext.Provider
       value={{
@@ -19,6 +32,10 @@ const WebProvider = ({ children }) => {
         setActive,
         lang,
         setLang,
+        loading,
+        setLoading,
+        animate,
+        setAnimate,
       }}
     >
       {children}
