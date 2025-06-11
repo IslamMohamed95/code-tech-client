@@ -179,21 +179,23 @@ function Nav() {
 
               return (
                 <div key={index}>
-                  <li
-                    className="hoverEffect"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                    onClick={handleClick}
-                  >
-                    <span>
-                      {item.title}
-                      {hasSubmenu && (
-                        <IoIosArrowUp
-                          className={`icon ${isActive ? "activeList" : ""}`}
-                        />
-                      )}
-                    </span>
-                  </li>
+                  <Link to={hasSubmenu ? "" : item.path}>
+                    <li
+                      className="hoverEffect"
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                      onClick={handleClick}
+                    >
+                      <span>
+                        {item.title}
+                        {hasSubmenu && (
+                          <IoIosArrowUp
+                            className={`icon ${isActive ? "activeList" : ""}`}
+                          />
+                        )}
+                      </span>
+                    </li>
+                  </Link>
 
                   {hasSubmenu && (
                     <div

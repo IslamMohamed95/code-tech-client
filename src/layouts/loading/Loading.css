@@ -1,7 +1,7 @@
 @media (min-width: 320px) {
   #loading svg {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
   #loading > p:first-child {
     color: var(--base-color);
@@ -13,8 +13,8 @@
 
 @media (min-width: 768px) {
   #loading svg {
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
   }
   #loading p {
     font-size: 1.3em;
@@ -36,7 +36,7 @@
 }
 
 #loading image {
-  border-radius: 50%;
+  border-radius: 100%;
   overflow: hidden;
 }
 

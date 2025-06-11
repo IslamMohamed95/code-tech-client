@@ -154,7 +154,9 @@ p {
     width: 85%;
     align-self: center;
   }
-
+  #Nav > div:last-child > div > ul a {
+    text-decoration: none;
+  }
   #Nav > div:last-child > div > ul li {
     align-self: center;
     display: flex;
@@ -172,6 +174,7 @@ p {
     font-size: 1.2em;
     transform: rotate(0deg);
     transition: all 0.4s ease-in-out;
+    color: var(--base-color);
   }
 
   #Nav > div:last-child > div > ul .subMenuContainer {
@@ -281,7 +284,7 @@ p {
   #Nav > div:last-child > div #hamburgerContainer span {
     height: 2.2px;
     border-radius: 25px;
-    background-color: var(--dark-gray);
+    background-color: var(--base-color);
     width: 100%;
     transition: all 0.2s ease-in-out;
   }
