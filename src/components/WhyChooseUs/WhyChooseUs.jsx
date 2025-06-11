@@ -66,7 +66,7 @@ function WhyChooseUs() {
             className="mySwiper"
           >
             {services.map((s, i) => (
-              <SwiperSlide key={i}>
+              <SwiperSlide key={i} className="hoverEffect">
                 <div className="container" key={i}>
                   <img src={s.img} alt="banner" />
                   <div className="shadow">

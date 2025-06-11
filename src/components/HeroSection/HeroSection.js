@@ -115,7 +115,7 @@ const ParticlesComponent = () => {
             quisquam. Nisi, animi! Voluptatum earum, at reiciendis labore
             delectus saepe provident cupiditate iure.
           </p>
-          <button>Try A Demo</button>
+          <button className="hoverEffect">Try A Demo</button>
         </div>
         <div className="socialContainer">
           <ul>
@@ -128,10 +128,10 @@ const ParticlesComponent = () => {
         </div>
 
         <div className="mouse-scroll">
-          <div className="mouse hoverEffect">
+          <div className="mouse ">
             <div className="wheel"></div>
           </div>
-          <span>Scroll Down</span>
+          <span className="hoverEffect">Scroll Down</span>
         </div>
       </div>
     </div>

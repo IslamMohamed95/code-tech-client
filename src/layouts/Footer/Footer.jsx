@@ -10,11 +10,19 @@ import logo from "../../assets/AboutLogo/aboutLogo.png";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { IoIosCall } from "react-icons/io";
+import { IoLocation } from "react-icons/io5";
 
 function Footer() {
   const navList = ["Home", "About", "Products", "Contact"],
     navIcons = [<FaFacebook />, <FaInstagram />, <FaLinkedin />],
-    policy = ["privacy policy", "Terms and conditions", "Copyright"];
+    policy = ["privacy policy", "Terms and conditions", "Copyright"],
+    details = [
+      { title: "Get In Touch", icon: <MdEmail /> },
+      { title: "Call Us", icon: <IoIosCall /> },
+      { title: "Get Location", icon: <IoLocation /> },
+    ];
   return (
     <section id="footer">
       <div className="mainContainer">
@@ -73,12 +81,39 @@ function Footer() {
                   </li>
                 ))}
               </ul>
+              <ul className="tabletView">
+                {navIcons.map((i, ind) => (
+                  <li className="hoverEffect" key={ind}>
+                    {i}
+                  </li>
+                ))}
+              </ul>
             </div>
             <div>
               <ul>
                 {navIcons.map((i, ind) => (
                   <li className="hoverEffect" key={ind}>
                     {i}
+                  </li>
+                ))}
+              </ul>
+              <ul>
+                {details.map((d, index) => (
+                  <li key={index} className="hoverEffect">
+                    {d.icon}
+                    <a
+                      href={
+                        d.title === "Get In Touch"
+                          ? "mailto:info@example.com"
+                          : d.title === "Call Us"
+                          ? "tel:+920007401"
+                          : "https://www.google.com/maps/search/?api=1&query=Dubai+Mall"
+                      }
+                      target={d.title === "Get Location" ? "_blank" : ""}
+                      rel="noopener noreferrer"
+                    >
+                      {d.title}
+                    </a>
                   </li>
                 ))}
               </ul>

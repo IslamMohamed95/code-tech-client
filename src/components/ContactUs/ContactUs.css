@@ -235,3 +235,114 @@
     max-width: 700px;
   }
 }
+
+/* Custom Dropdown Field */
+.floating-input.select-box {
+  position: relative;
+  margin-bottom: 2em;
+  user-select: none;
+}
+
+.select-trigger {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.select-trigger:hover,
+.select-trigger:focus {
+  border-color: var(--base-color);
+}
+
+.select-trigger .placeholder {
+  color: #aaa;
+}
+
+.select-dropdown {
+  padding: 1em;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  top: 105%;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+  transition: all 0.3s ease;
+}
+
+.select-dropdown li {
+  font-weight: bold;
+  text-align: center;
+  padding: 0.7em 1em;
+  width: 98%;
+
+  color: var(--base-color);
+  cursor: pointer;
+  border-bottom: 1px solid var(--base-color);
+  transition: all 0.4s ease-in-out;
+}
+
+.select-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.select-dropdown li:hover {
+  background-color: var(--base-color);
+  color: white;
+}
+
+/* Floating label for dropdown */
+.floating-input.select-box label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 0 4px;
+  color: #aaa;
+  transition: all 0.3s, font-size 0.3s;
+  pointer-events: none;
+}
+
+.select-box.active label {
+  top: -12px;
+  left: 0px;
+  font-size: 0.8rem;
+  color: var(--base-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.select-trigger svg {
+  transition: transform 0.3s ease;
+}
+.select-trigger svg.rotate {
+  transform: rotate(180deg);
+}

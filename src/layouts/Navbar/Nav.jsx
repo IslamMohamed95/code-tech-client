@@ -74,7 +74,7 @@ function Nav() {
     <section id="Nav">
       <ContactDetails />
       <nav>
-        <div>
+        <div className="hoverEffect">
           <img src={deskTopLogo} alt="LogoImg" />
           <p>Code Tech</p>
         </div>

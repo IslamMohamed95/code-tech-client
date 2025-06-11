@@ -6,7 +6,21 @@ import two from "../../assets/services/2.jpg";
 import three from "../../assets/services/3.jpg";
 import four from "../../assets/services/4.jpg";
 
+//Import Icons
+import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+
 function ContactUs() {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
+
+  const serviceOptions = [
+    "Custom ERP",
+    "Custom ERP",
+    "Custom ERP",
+    "Custom ERP",
+
+    "Custom ERP",
+  ];
   const services = [
     {
       title: "ERP System",
@@ -29,8 +43,13 @@ function ContactUs() {
       desc: "Receive top-notch technical support to keep your systems running smoothly and efficiently.",
     },
   ];
-
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const toggleDropdown = () => setDropdownOpen(!isDropdownOpen);
+  const handleSelect = (option) => {
+    setSelectedService(option);
+    setDropdownOpen(false);
+  };
 
   return (
     <section className="contact-section">
@@ -75,12 +94,50 @@ function ContactUs() {
               <input type="tel" id="phone" placeholder=" " />
               <label htmlFor="phone">Phone</label>
             </div>
+
+            {/* Service Type Dropdown */}
+            <div
+              className={`floating-input select-box ${
+                isDropdownOpen || selectedService ? "active" : ""
+              }`}
+            >
+              <div
+                className="select-trigger"
+                onClick={toggleDropdown}
+                tabIndex={0}
+                onBlur={() => setDropdownOpen(false)}
+              >
+                <span>{selectedService}</span>
+
+                <AiOutlineUp
+                  size={20}
+                  className={isDropdownOpen ? "rotate" : ""}
+                />
+              </div>
+
+              {isDropdownOpen && (
+                <ul className="select-dropdown">
+                  {serviceOptions.map((option) => (
+                    <li
+                      key={option}
+                      onMouseDown={() => handleSelect(option)} // use onMouseDown to avoid onBlur conflict
+                    >
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <label htmlFor="service">Service Type</label>
+            </div>
+
             <div className="floating-input">
               <textarea id="message" placeholder=" " rows="4" required />
               <label htmlFor="message">Message</label>
             </div>
+
             <button type="submit" className="submit-btn">
-              Send Message
+              Send Request
             </button>
           </form>
         </div>

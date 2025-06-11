@@ -605,15 +605,13 @@ p {
     align-items: center;
   }
   #svg .mainContainer {
-    border-radius: 25px;
     overflow: hidden;
-    width: 90%;
+    width: 100%;
     margin: 3em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--very-light-gray);
   }
 
   #svg .mainContainer > div {
@@ -627,8 +625,6 @@ p {
     width: 100%;
     padding: 1em 0;
     background-color: var(--base-color);
-    border-bottom-right-radius: 30%;
-    border-bottom-left-radius: 30%;
   }
   #svg .headerContainer label {
     color: white;
@@ -654,11 +650,16 @@ p {
     width: 90%;
     font-size: 0.9em;
     text-align: center;
-    color: grey;
+  }
+  #svg .svgContainer p:last-child {
+    color: var(--base-color);
+  }
+  #svg .svgContainer p:first-child {
+    color: gray;
   }
 
   #svg .svgContainer img {
-    width: 95%;
+    width: 100%;
     margin-bottom: 2em;
   }
   /*---------- Why Choosing Us ---------*/
@@ -705,16 +706,8 @@ p {
     right: 35%;
   }
   #whyChooseUs .swiper-slide .container .shadow {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.9s ease-in-out;
-    pointer-events: none;
-  }
-
-  #whyChooseUs .swiper-slide-active .container .shadow {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: auto;
   }
 
   #whyChooseUs .swiper-slide .container .shadow p {
@@ -892,6 +885,23 @@ p {
     justify-content: center;
     align-items: center;
     list-style: none;
+  }
+  #footer .footerContainer .tabletView {
+    display: none;
+  }
+  #footer .footerContainer > div > div:last-child ul:last-child {
+    margin-top: 1.5em;
+  }
+  #footer .footerContainer > div > div ul li a {
+    font-size: 0.8em;
+    text-decoration: none;
+    color: white;
+    margin-left: 0.3em;
+  }
+  #footer .footerContainer > div > div ul:last-child li {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
   #footer .footerContainer > div > div ul li {
     font-weight: lighter;
@@ -1094,7 +1104,7 @@ p {
 
   /*-------------- SVG Styling -------------*/
   #svg .mainContainer {
-    width: 95%;
+    width: 100%;
   }
   #svg .headerContainer {
     display: flex;
@@ -1104,8 +1114,6 @@ p {
     width: 100%;
     padding: 1em 0;
     background-color: var(--base-color);
-    border-bottom-right-radius: 30%;
-    border-bottom-left-radius: 30%;
   }
   #svg .headerContainer label {
     font-size: 1.1em;
@@ -1616,6 +1624,10 @@ p {
   #footer .footerContainer {
     padding: 3em 0 1em;
   }
+
+  #footer .footerContainer > div > div:last-child ul:first-child {
+    display: none;
+  }
   #footer .footerContainer > div:first-child > div:first-child ul li {
     font-weight: lighter;
     margin: 0 0.8em;
@@ -1627,12 +1639,41 @@ p {
   #footer .footerContainer > div:first-child {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
     flex-direction: row;
   }
+  #footer .footerContainer .tabletView {
+    display: flex;
+    margin-top: 1em;
+  }
+  #footer .footerContainer > div > div:last-child ul:last-child li {
+    margin-top: 0.3em;
+    font-size: 1em;
+  }
   #footer .footerContainer > div:first-child > div {
     width: 33.33% !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #footer .footerContainer > div > div:last-child ul:last-child {
+    margin-top: 0;
+  }
+
+  #footer .footerContainer > div:first-child > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #footer .footerContainer > div:first-child > div:last-child ul:last-child {
+    flex-direction: column;
+    margin-top: 1em;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
   #footer .footerContainer > div:first-child > div:first-child,
   #footer .footerContainer > div:first-child > div:nth-child(2),
@@ -1902,14 +1943,29 @@ p {
     margin: 0 0.5em;
   }
   #footer .footerContainer > div:first-child > div:nth-child(2) ul li {
-    margin: 0 1em;
+    margin: 0 0.5em;
     font-size: 1.1em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #footer .footerContainer > div:first-child > div:nth-child(2) ul li:hover {
+    color: var(--primary-color);
   }
   #footer .footerContainer > div > div ul li svg {
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
   #footer .footerContainer > div:first-child > div {
     width: 33.33% !important;
+  }
+  #footer .footerContainer .tabletView {
+    display: flex;
+    margin-top: 1em;
+  }
+  #footer .footerContainer > div > div:last-child ul:last-child li {
+    margin-top: 0.5em;
+  }
+  #footer .footerContainer > div > div:last-child ul:last-child li a {
+    font-size: 0.85em;
   }
   #footer .footerContainer > div:last-child {
     width: 80%;
@@ -2139,14 +2195,12 @@ p {
   #footer .mainContainer .newsletter {
     width: 50%;
   }
-
   #footer .mainContainer .newsletter h2 {
     color: var(--primary-color);
     font-size: 2.3em;
     width: 100%;
     margin-bottom: 0.5em;
   }
-
   #footer .mainContainer .subscribeAction {
     width: 40%;
   }
@@ -2157,7 +2211,6 @@ p {
   #footer .mainContainer .subscribeAction input {
     font-size: 1.1em;
   }
-
   #footer .mainContainer .subscribeAction button {
     font-size: 1em;
   }
@@ -2174,14 +2227,24 @@ p {
     margin: 0 0.5em;
   }
   #footer .footerContainer > div:first-child > div:nth-child(2) ul li {
-    margin: 0 1em;
+    margin: 0 0.8em;
     font-size: 1.4em;
   }
   #footer .footerContainer > div > div ul li svg {
-    font-size: 1.8em;
+    font-size: 1.5em;
   }
   #footer .footerContainer > div:first-child > div {
     width: 33.33% !important;
+  }
+  #footer .footerContainer .tabletView {
+    margin-top: 1.5em;
+  }
+  #footer .footerContainer > div > div:last-child ul:last-child li {
+    margin-top: 0.5em;
+    font-size: 1.1em;
+  }
+  #footer .footerContainer > div > div:last-child ul:last-child li a {
+    font-size: 1.2em;
   }
   #footer .footerContainer > div:last-child {
     width: 80%;

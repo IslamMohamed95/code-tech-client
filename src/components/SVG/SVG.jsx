@@ -19,7 +19,7 @@ function SVG() {
               Require In Their ERP System
             </p>
           </div>
-          <img src={svg} alt="svgImg" />
+          <img className="hoverEffect" src={svg} alt="svgImg" />
           <p>
             More than 100 features in a single ERP. Review the best features
           </p>
