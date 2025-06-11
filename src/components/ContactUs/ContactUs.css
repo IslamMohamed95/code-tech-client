@@ -342,6 +342,7 @@
 
 .select-trigger svg {
   transition: transform 0.3s ease;
+  color: var(--base-color);
 }
 .select-trigger svg.rotate {
   transform: rotate(180deg);

@@ -57,10 +57,7 @@ function WhyChooseUs() {
                 slidesPerView: 1,
               },
               768: {
-                slidesPerView: 3,
-              },
-              1024: {
-                slidesPerView: 5,
+                slidesPerView: 4,
               },
             }}
             className="mySwiper"

@@ -16,7 +16,7 @@ const WebProvider = ({ children }) => {
     const timeOut = setTimeout(() => {
       setLoading(false);
       setAnimate(false);
-    }, 4000);
+    }, 3000);
     return () => {
       clearTimeout(timeOut);
     };

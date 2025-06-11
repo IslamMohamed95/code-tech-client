@@ -5,15 +5,6 @@
   margin: 80px auto 0 0;
 }
 
-.blob {
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  opacity: 0.9;
-  z-index: 0;
-  animation: float 4s ease-in-out infinite;
-}
-
 .blob1 {
   top: -80px;
   left: -60px;
@@ -53,6 +44,14 @@
 }
 
 @media (min-width: 320px) {
+  .blob {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    opacity: 0.9;
+    z-index: 0;
+    animation: float 4s ease-in-out infinite;
+  }
   #aboutPage {
     margin-top: 50px;
     width: 100%;
@@ -355,6 +354,10 @@
   }
 }
 @media (min-width: 1024px) {
+  .blob {
+    width: 300px;
+    height: 300px;
+  }
   #aboutPage {
     margin-top: 120px;
   }
@@ -370,7 +373,8 @@
     align-items: center;
   }
   #aboutPage .contentContainer {
-    margin-left: 2em;
+    margin-top: 0;
+    margin-left: 4em;
     width: 100%;
     align-items: flex-start;
   }
@@ -441,6 +445,10 @@
   }
 }
 @media (min-width: 1440px) {
+  .blob {
+    width: 260px;
+    height: 260px;
+  }
   #aboutPage .contentContainer p,
   #aboutPage .storyHolder p,
   #aboutPage .missionHolder p {
