@@ -1,56 +1,151 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import ContactDetails from "./ContactDetails";
 import "./Nav.css";
 import { WebContext } from "../../context/WebContext";
-
+import { MdKeyboardArrowDown } from "react-icons/md";
 //Importing Logo.webp
 import logo from "../../assets/Logo/Logo.webp";
+import deskTopLogo from "../../assets/AboutLogo/aboutLogo.png";
 
 //Import Flag
-import Flag from "react-world-flags";
+
 import { IoIosArrowUp } from "react-icons/io";
 import { GrSystem } from "react-icons/gr";
-
+import { Link } from "react-router-dom";
+const list = [
+  { title: "Home", path: "/" },
+  {
+    title: "Products",
+    path: "/products",
+    list: [
+      { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
+      { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
+      { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
+      { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
+      { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
+    ],
+  },
+  {
+    title: "PriceList",
+    path: "/pricelist",
+    list: [
+      { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
+      { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
+      { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
+      { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
+      { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
+    ],
+  },
+  { title: "About", path: "/about" },
+  { title: "Contact", path: "/contact" },
+];
 function Nav() {
   const { isMobile } = useContext(WebContext);
   const [activeMenuIndex, setActiveMenuIndex] = useState(null); // Track active submenu
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false); // Track hamburger menu open state
-
-  const list = [
-    { title: "Home" },
-    {
-      title: "Products",
-      list: [
-        { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-        { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-        { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-        { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-        { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-      ],
-    },
-    {
-      title: "PriceList",
-      list: [
-        { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
-        { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
-        { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
-        { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
-        { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
-      ],
-    },
-    { title: "About" },
-    { title: "Contact" },
-  ];
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+  const [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null);
+  const [visibleSubMenu, setVisibleSubMenu] = useState(false); // Track hamburger menu open state
 
   // Toggle Hamburger menu open/close
   const handleHamburgerMenu = () => {
     setIsHamburgerOpen((prev) => !prev);
     setActiveMenuIndex(null);
   };
+  const handleNavClick = (index) => {
+    if (activeDeskTopNavIndex === index) {
+      // Close the currently open menu
+      setVisibleSubMenu(false);
+      setTimeout(() => setActiveDeskTopNavIndex(null), 400);
+    } else if (activeDeskTopNavIndex === null) {
+      // First time opening any submenu → open immediately
+      setActiveDeskTopNavIndex(index);
+      setVisibleSubMenu(true);
+    } else {
+      // Switching between menus → close then open with delay
+      setVisibleSubMenu(false);
+      setTimeout(() => {
+        setActiveDeskTopNavIndex(index);
+        setVisibleSubMenu(true);
+      }, 400);
+    }
+  };
 
   return (
     <section id="Nav">
       <ContactDetails />
+      <nav>
+        <div>
+          <img src={deskTopLogo} alt="LogoImg" />
+          <p>Code Tech</p>
+        </div>
+
+        <ul>
+          {list.map((m, i) => {
+            if (m.title === "Products") {
+              return (
+                <li
+                  className="hoverEffect"
+                  key={i}
+                  onClick={() => handleNavClick(1)}
+                >
+                  {m.title}
+                  <MdKeyboardArrowDown />
+                </li>
+              );
+            } else if (m.title === "PriceList") {
+              return (
+                <li
+                  className="hoverEffect"
+                  key={i}
+                  onClick={() => handleNavClick(2)}
+                >
+                  {m.title}
+                  <MdKeyboardArrowDown />
+                </li>
+              );
+            } else {
+              return (
+                <Link key={i} to={m.path} className="hoverEffect">
+                  <li>{m.title}</li>
+                </Link>
+              );
+            }
+          })}
+        </ul>
+
+        <div>
+          <div>
+            <span className="hoverEffect">AR</span>
+            <hr />
+            <span className="hoverEffect activeLang">EN</span>
+          </div>
+        </div>
+
+        <div
+          className={
+            visibleSubMenu && activeDeskTopNavIndex !== null
+              ? "subMenuHolder activeDesktopMenu"
+              : "subMenuHolder"
+          }
+        >
+          <ul>
+            {activeDeskTopNavIndex !== null &&
+              list[activeDeskTopNavIndex].list.map((d, i) => (
+                <React.Fragment key={i}>
+                  <div>
+                    <h3>{d.title}</h3>
+                    <ul>
+                      {d.arr.map((a, j) => (
+                        <li key={j}>{a}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <hr />
+                </React.Fragment>
+              ))}
+          </ul>
+        </div>
+      </nav>
       <div>
         <div>
           <div>
@@ -60,11 +155,7 @@ function Nav() {
           {/* Desktop or Mobile menu */}
           <ul
             className={`mainMenu ${
-              isMobile
-                ? isHamburgerOpen
-                  ? "showMenu"
-                  : "hideMenue"
-                : "showMenu"
+              isMobile ? (isHamburgerOpen ? "showMenu" : "hideMenue") : ""
             }`}
           >
             {list.map((item, index) => {
@@ -113,7 +204,7 @@ function Nav() {
                       onMouseLeave={handleMouseLeave}
                     >
                       {item.list.map((subItem, subIndex) => (
-                        <>
+                        <React.Fragment key={subIndex}>
                           <div key={subIndex}>
                             <h3 className="hoverEffect">
                               <GrSystem />
@@ -129,7 +220,7 @@ function Nav() {
                             </ul>
                           </div>
                           <hr className="underline" />
-                        </>
+                        </React.Fragment>
                       ))}
                     </div>
                   )}
@@ -138,9 +229,13 @@ function Nav() {
             })}
 
             {isMobile && (
-              <button className="languageBtn">
-                <Flag code="EG" alt="Egypt Flag" /> AR Language
-              </button>
+              <div className="langContainer">
+                <div>
+                  <span>AR</span>
+                  <hr />
+                  <span className="activeLang">EN</span>
+                </div>
+              </div>
             )}
           </ul>
 
@@ -160,16 +255,6 @@ function Nav() {
               <span
                 className={isHamburgerOpen ? "activeHambutgerRight" : ""}
               ></span>
-            </div>
-          )}
-
-          {/* Language button for desktop */}
-          {!isMobile && (
-            <div>
-              <button className="hoverEffect languageBtn">
-                <Flag code="EG" alt="Egypt Flag" />
-                <span>AR Language</span>
-              </button>
             </div>
           )}
         </div>

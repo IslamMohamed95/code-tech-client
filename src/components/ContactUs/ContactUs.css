@@ -55,7 +55,7 @@
 }
 .servicesList li .text h3 {
   font-size: 0.8rem;
-  color: var(--primary-color);
+  color: var(--base-color);
 }
 .servicesList li .text p {
   display: none; /* hidden on mobile/tablet */
@@ -218,7 +218,7 @@
   }
   .servicesList li.active {
     transform: scale(1.05);
-    border-color: var(--primary-color);
+    border-color: var(--base-color);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 

@@ -1,14 +1,10 @@
 import "./About.css";
 //Importing Icons
-import { FaInfoCircle } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 
 //Importing Logo
 import logo from "../../assets/AboutLogo/aboutImg.jpg";
-
-import { useContext } from "react";
-import { WebContext } from "../../context/WebContext";
 
 function About() {
   const aboutList = ["Fast Integration", "Custom Developement", "Support 24H"];

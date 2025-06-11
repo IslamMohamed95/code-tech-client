@@ -50,11 +50,6 @@ p {
   bottom: 45% !important;
   transform: rotate(45deg) !important;
 }
-.showMenu {
-  padding: 15px 0 !important;
-  min-height: 260px !important;
-  max-height: fit-content !important;
-}
 .hideMenue {
   overflow: hidden;
 }
@@ -64,7 +59,12 @@ p {
 .rotateHaburger {
   transform: rotate(-180deg);
 }
-
+/*-------------------------*/
+/*--------- Active Language Styling --------*/
+.activeLang {
+  font-weight: bold !important;
+  color: var(--base-color) !important;
+}
 /* wheel scroll animation */
 @keyframes wheel-move {
   0%,
@@ -78,20 +78,27 @@ p {
     top: 20px;
   }
 }
-
 /*Media Query*/
 @media (min-width: 320px) {
-  /*Nav Styling*/
+  .showMenu {
+    overflow-y: scroll !important;
+    padding: 1em 0 !important;
+    max-height: 100dvh !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    overflow: visible !important;
+  }
+
   #Nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
     z-index: 10;
   }
+
   #Nav > div:last-child {
     display: flex;
     flex-direction: column;
@@ -100,6 +107,7 @@ p {
     width: 100%;
     background-color: white;
   }
+
   #Nav > div:last-child > div {
     padding: 25px 0px 10px 0;
     width: 90%;
@@ -108,37 +116,45 @@ p {
     align-self: center;
     align-items: center;
   }
+
   #Nav > div:last-child > div > ul li span {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
   }
+
   #Nav > div:last-child > div > div:first-child {
     width: 45%;
   }
+
   #Nav > div:last-child > div > div:first-child img {
     width: 100%;
   }
+
   #Nav > div:last-child > div > ul {
     position: absolute;
     padding: 0;
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     top: 100%;
     left: 0;
     width: 100%;
     list-style: none;
-    min-height: 0;
     max-height: 0;
-    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-in-out;
     background-color: white;
     z-index: 3;
   }
+
   #Nav > div:last-child > div > ul > div {
     width: 85%;
     align-self: center;
   }
+
   #Nav > div:last-child > div > ul li {
     align-self: center;
     display: flex;
@@ -155,8 +171,9 @@ p {
   #Nav > div:last-child > div > ul li svg {
     font-size: 1.2em;
     transform: rotate(0deg);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
+
   #Nav > div:last-child > div > ul .subMenuContainer {
     width: 100%;
     align-self: center;
@@ -164,26 +181,28 @@ p {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    transition: all 0.2s ease-in-out;
-    min-height: 0;
+    transition: all 0.4s ease-in-out;
     max-height: 0;
     overflow-y: hidden;
   }
+
   .activeMenu {
-    min-height: 120px !important;
-    max-height: 490px !important;
+    max-height: 370px !important;
     overflow-y: auto !important;
   }
+
   #Nav > div:last-child > div > ul .subMenuContainer div {
     width: 95%;
     padding: 8px 0;
     margin-bottom: 5px;
   }
+
   #Nav > div:last-child > div > ul .subMenuContainer div h3,
   #Nav > div:last-child > div > ul .subMenuContainer div ul {
     font-size: 0.8em;
     color: var(--medium-gray);
   }
+
   #Nav > div:last-child > div > ul .subMenuContainer div h3 {
     display: flex;
     justify-content: flex-start;
@@ -192,47 +211,63 @@ p {
     padding: 4px 5px;
     border-radius: 10px;
   }
+
   #Nav > div:last-child > div > ul .subMenuContainer div h3 span {
     margin: 0 5px;
     color: var(--base-color);
   }
+
   #Nav > div:last-child > div > ul .subMenuContainer div h3 svg {
     color: var(--base-color);
     font-size: 1.2em;
   }
+
   #Nav > div:last-child > div > ul .subMenuContainer > div hr {
     width: 60%;
   }
+
   #Nav > div:last-child > div > ul .underline {
     display: none;
   }
+
   #Nav > div:last-child > div > ul .subMenuContainer div ul {
     padding: 0px 15px;
   }
+
   #Nav > div:last-child > div > ul .subMenuContainer div ul li {
     font-weight: bold;
     color: var(--medium-gray);
   }
-  #Nav > div:last-child > div button {
-    border: none;
-    border-radius: 15px;
-    background: linear-gradient(to right, var(--base-color), #a1c7c7);
-    color: white;
-    font-weight: bold;
+  #Nav .langContainer {
+    margin: 1em 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0 7px 0;
-    width: 140px;
-    align-self: center;
-    margin-top: 20px;
   }
+  #Nav .langContainer > div {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #Nav .langContainer > div hr {
+    height: 18px;
+    width: 0.2em;
+    background-color: var(--base-color);
+    border-radius: 25px;
+  }
+
+  #Nav .langContainer > div span {
+    transition: all 0.4s ease-in-out;
+  }
+
   #Nav ul button img {
     width: 15%;
     margin: 0 10px;
     border-radius: 2px;
     padding: 0 !important;
   }
+
   #Nav > div:last-child > div #hamburgerContainer {
     width: 30px;
     height: 20px;
@@ -240,8 +275,9 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
+
   #Nav > div:last-child > div #hamburgerContainer span {
     height: 2.2px;
     border-radius: 25px;
@@ -249,20 +285,28 @@ p {
     width: 100%;
     transition: all 0.2s ease-in-out;
   }
+
   #Nav > div:last-child > div #hamburgerContainer span:first-child,
   #Nav > div:last-child > div #hamburgerContainer span:last-child {
     position: absolute;
     width: 70%;
   }
+
   #Nav > div:last-child > div #hamburgerContainer span:first-child {
     top: 0;
     transform: rotate(0deg);
   }
+
   #Nav > div:last-child > div #hamburgerContainer span:last-child {
     bottom: 0;
     transform: rotate(0deg);
   }
+  /*------------- DeskTop Nav ----------*/
+  #Nav nav {
+    display: none;
+  }
   /*------------ Hero Styling ----------*/
+
   #hero {
     width: 100%;
     margin-top: 90px;
@@ -1261,132 +1305,137 @@ p {
   #DNav > div:last-child > div > div:hover svg {
     color: white;
   }
-
-  #Nav > div:last-child > div {
+  #Nav > div:last-child {
+    display: none;
+  }
+  /*------------- DeskTop Nav ----------*/
+  #Nav nav {
     position: relative;
-    padding: 15px 0;
-    width: 95%;
-  }
-  #Nav > div:last-child > div > div:first-child {
-    width: 20%;
-  }
-  #Nav > div:last-child > div > ul {
-    width: 60%;
-    position: static;
-    padding: 0;
-    min-height: 0 !important;
-    max-height: 0 !important;
-    flex-direction: row;
+    width: 100%;
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 0.5em 1em;
+  }
+  #Nav nav > div:first-child,
+  #Nav nav > div:nth-child(2),
+  #Nav nav > div:nth-child(3) {
+    width: 33.33%;
+  }
+  #Nav nav > div:first-child img {
+    width: 30%;
+  }
+  #Nav nav > div:first-child {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #Nav nav > div:first-child p {
+    font-weight: bold;
+    color: var(--base-color);
+  }
+  #Nav nav > div:nth-child(3) {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #Nav nav > div:nth-child(3) > div {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    padding: 0.5em;
+  }
+  #Nav nav > div:nth-child(3) > div hr {
+    width: 2px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+  }
+  #Nav nav > div:nth-child(3) > div span {
+    color: var(--medium-gray);
+  }
+  #Nav nav ul {
+    width: 70%;
     list-style: none;
   }
-  #Nav > div:last-child > div > ul > div {
-    width: fit-content;
+  #Nav nav ul a,
+  #Nav nav ul li {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--dark-gray);
   }
-  #Nav > div:last-child > div > ul li,
-  #DNav {
-    font-size: 0.9em;
-  }
-  #Nav > div:last-child > div > ul {
-    flex-direction: row;
+  #Nav nav ul li {
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
-  #Nav > div:last-child > div > ul li {
-    width: fit-content;
-    font-weight: bold;
-    margin: 0 7px;
-    padding: 0;
-    transition: all 0.2s ease-in-out;
+  #Nav nav ul li svg {
+    margin-left: 0.5em;
   }
-  #Nav > div:last-child > div > ul .subMenuContainer {
-    position: absolute;
-    box-shadow: 0px 0px 2px black;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    top: 100%;
-    left: 0;
+  #Nav nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #Nav .subMenuHolder ul {
     width: 100%;
-    visibility: hidden;
-    z-index: 2;
-    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 1em;
   }
-  .activeMenu {
-    visibility: visible !important;
-    min-height: auto !important;
-    max-height: auto !important;
-    overflow-y: auto !important;
-  }
-  #Nav > div:last-child > div > ul .subMenuContainer > div hr {
-    display: none;
-  }
-  #Nav > div:last-child > div > ul .underline {
-    align-self: center;
-    display: block;
-    width: 2px;
-    border-radius: 25px;
+  #Nav .subMenuHolder ul hr {
     height: 70px;
-    margin: 0 10px;
-    background-color: rgb(214, 214, 214);
+    border: none;
+    width: 0.5px;
+    background-color: rgb(187, 187, 187);
   }
-  #Nav > div:last-child > div > ul .subMenuContainer > hr:last-child {
-    display: none;
+  #Nav .subMenuHolder ul div h3 {
+    font-size: 0.9em;
+    color: var(--base-color);
   }
-  #Nav > div:last-child > div > ul .subMenuContainer div {
-    width: 17% !important;
-    padding: 30px 0;
+  #Nav .subMenuHolder ul ul {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
   }
-  #Nav > div:last-child > div > ul .subMenuContainer div h3 {
-    font-size: 0.9em;
+  #Nav .subMenuHolder ul ul li {
+    margin: 0.2em 0;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--medium-gray);
   }
-  #Nav > div:last-child > div > ul .subMenuContainer div ul {
-    width: 95%;
+  #Nav .subMenuHolder {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    min-height: 0;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    background-color: white;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-in-out;
   }
-  #Nav > div:last-child > div > ul .subMenuContainer div ul li {
-    font-size: 1.1em;
-  }
-  #Nav > div:last-child > div > ul li {
-    margin: 5px 0;
-  }
-  #Nav > div:last-child > div > ul li:hover {
-    scale: 1.2;
-  }
-  #Nav > div:last-child > div button {
-    margin-top: 0;
-  }
-
-  #Nav > div:last-child > div > div:last-child {
-    width: 15%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #Nav > div:last-child > div > div:last-child button {
-    font-weight: lighter;
-    width: 120px;
-    font-size: 0.7em;
-    transition: all 0.2s ease-in-out;
-  }
-  #Nav > div:last-child > div > div:last-child button:hover {
-    transform: scale(0.9);
-  }
-  #Nav > div:last-child > div > div:last-child button img {
-    width: 15%;
-    margin-right: 5px;
+  .activeDesktopMenu {
+    max-height: 400px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
   }
   /*------------ Hero Styling ----------*/
   #hero {
-    margin-top: 130px;
+    margin-top: 110px;
   }
   #hero .mainContainer {
+    position: relative;
     padding: 15px;
-    height: 75dvh;
+    height: 81dvh;
   }
   #client .swiper {
     height: 100px;
@@ -1638,29 +1687,38 @@ p {
   #DNav svg {
     font-size: 1.2em;
   }
-  #Nav > div:last-child > ul li,
   #DNav {
     font-size: 0.9em;
   }
-  #Nav > div:last-child > div > div:first-child {
-    width: 15%;
+  /*------------- DeskTop Nav ----------*/
+  #Nav nav > div:first-child img {
+    width: 25%;
   }
-  #Nav > div:last-child > div > div:last-child {
-    width: 15%;
+  #Nav nav > div:nth-child(3) {
+    width: 13%;
   }
-  #Nav > div:last-child > div > ul {
-    width: 55%;
+  #Nav nav > div:nth-child(3) > div hr {
+    width: 2px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
   }
-  #Nav > div:last-child > div > div:last-child button {
-    width: 150px;
-    font-size: 0.9em;
+
+  #Nav nav ul {
+    width: 80%;
   }
-  #Nav > div:last-child > div > ul li {
+  #Nav nav ul li {
+    font-size: 1.1em;
+  }
+  #Nav .subMenuHolder ul div h3 {
     font-size: 1em;
   }
+  #Nav .subMenuHolder ul ul li {
+    font-weight: normal;
+    font-size: 0.95em;
+  }
   /*------------ Hero Styling ----------*/
-  #hero .mainContainer {
-    height: 77dvh;
+  #hero {
+    margin-top: 118px;
   }
   #hero .contentContainer > div h5 {
     font-size: 1.5em;
@@ -1916,25 +1974,55 @@ p {
   }
 }
 @media (min-width: 1440px) {
-  #Nav > div:last-child > ul li,
   #DNav {
     font-size: 1.1em;
   }
-  #Nav > div:last-child > div > div:last-child {
+  /*------------- DeskTop Nav ----------*/
+  #Nav nav {
+    width: 100%;
+    padding: 0.5em 1em;
+    border-radius: 0;
+  }
+  #Nav nav > div:first-child {
+    justify-content: center;
     width: 15%;
   }
-  #Nav > div:last-child > div > ul {
-    width: 55%;
+  #Nav nav > div:first-child p {
+    margin-left: 1em;
   }
-  #Nav > div:last-child > div > ul li {
+  #Nav nav > div:first-child img {
+    width: 30%;
+  }
+  #Nav nav > div:nth-child(3) {
+    width: 10%;
+  }
+  #Nav nav > div:nth-child(3) > div hr {
+    width: 2px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+  }
+  #Nav nav > div:nth-child(3) > div span {
+    font-size: 1.1em;
+  }
+  #Nav nav ul {
+    width: 50%;
+  }
+  #Nav nav ul li {
+    font-size: 1.3em;
+  }
+  #Nav .subMenuHolder ul div h3 {
     font-size: 1.2em;
   }
-  /*------------ Hero Styling ----------*/
+  #Nav .subMenuHolder ul ul li {
+    font-weight: normal;
+    font-size: 1.2em;
+  }
+  /*---- Hero styling -------*/
   #hero {
-    margin-top: 150px;
+    margin-top: 140px;
   }
   #hero .mainContainer {
-    height: 77dvh;
+    height: 78dvh;
   }
   #hero .contentContainer > div h5 {
     font-size: 2em;
@@ -2001,7 +2089,7 @@ p {
   }
   /*---------- client Styling ---------*/
   #client h2 {
-    font-size: 2em;
+    font-size: 2.3em;
   }
 
   #client > div:last-child p {

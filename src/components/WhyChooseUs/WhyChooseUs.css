@@ -58,17 +58,13 @@
   transform: translateX(0) !important;
 }
 
-#whyChooseUs .swiper-pagination-bullet {
-  background-color: var(--base-color);
-}
-
 /* Custom navigation buttons on top inside circles */
 #whyChooseUs .swiper-button-prev,
 #whyChooseUs .swiper-button-next {
   top: 1.5em; /* Position at top */
   width: 40px; /* Circle size */
   height: 40px;
-  background-color: var(--primary-color); /* Semi-transparent black */
+  background-color: var(--base-color); /* Semi-transparent black */
   border-radius: 50%; /* Circle shape */
   display: flex;
   justify-content: center;
