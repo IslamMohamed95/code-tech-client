@@ -321,7 +321,7 @@ p {
     align-self: center;
     border-radius: 25px;
     width: 95%;
-    height: 82dvh;
+    height: 83dvh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -1443,7 +1443,7 @@ p {
   #hero .mainContainer {
     position: relative;
     padding: 15px;
-    height: 81dvh;
+    height: 80dvh;
   }
   #client .swiper {
     height: 100px;

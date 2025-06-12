@@ -14,7 +14,7 @@ import { GrSystem } from "react-icons/gr";
 import { Link } from "react-router-dom";
 const list = [
   { title: "Home", path: "/" },
-  { title: "About", path: "/about" },
+  { title: "About", path: "/" },
   {
     title: "Products",
     path: "/products",

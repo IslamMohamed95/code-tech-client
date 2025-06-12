@@ -253,20 +253,12 @@
     margin-bottom: 4em;
   }
   #priceList .introHolder {
-    border-radius: 0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-
-    height: 100%;
+    padding: 3em;
   }
   #priceList .introHolder > div {
     width: 100%;
   }
-  #priceList .introHolder img {
-    width: 100%;
-  }
+
   #priceList .rightHolder {
     width: 68%;
     height: 100%;
