@@ -289,4 +289,8 @@
   #priceList .plansHolder > div {
     height: 100%;
   }
+  #priceList .featuresContainer ul > div li,
+  #priceList .featuresContainer ul > div svg {
+    font-size: 1em;
+  }
 }
