@@ -94,6 +94,7 @@ function Nav() {
             } else if (m.title === "Contact") {
               return (
                 <li
+                  className="hoverEffect"
                   onClick={() => {
                     setActiveDeskTopNavIndex(null);
                     formRef.current.scrollIntoView({ behavior: "smooth" });
