@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./ContactUs.css";
 
 import one from "../../assets/services/1.jpg";
@@ -7,9 +7,11 @@ import three from "../../assets/services/3.jpg";
 import four from "../../assets/services/4.jpg";
 
 //Import Icons
-import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import { AiOutlineUp } from "react-icons/ai";
+import { WebContext } from "../../context/WebContext";
 
 function ContactUs() {
+  const { formRef } = useContext(WebContext);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
 
@@ -52,7 +54,7 @@ function ContactUs() {
   };
 
   return (
-    <section className="contact-section">
+    <section className="contact-section" ref={formRef}>
       <div className="mainContainer">
         {/* Services List */}
         <div className="servicesSidebar">

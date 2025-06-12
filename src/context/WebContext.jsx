@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 const WebContext = createContext();
@@ -12,7 +12,8 @@ const WebProvider = ({ children }) => {
     [loading, setLoading] = useState(true),
     [animate, setAnimate] = useState(true),
     [visibleSubMenu, setVisibleSubMenu] = useState(false), // Track hamburger menu open state
-    [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+    [isHamburgerOpen, setIsHamburgerOpen] = useState(false),
+    formRef = useRef();
 
   const handleLoadingPage = () => {
     setTimeout(() => {
@@ -58,6 +59,8 @@ const WebProvider = ({ children }) => {
         setVisibleSubMenu,
         isHamburgerOpen,
         setIsHamburgerOpen,
+        //Form
+        formRef,
       }}
     >
       {children}

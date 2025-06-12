@@ -43,6 +43,7 @@ function Nav() {
       setVisibleSubMenu,
       isHamburgerOpen,
       setIsHamburgerOpen,
+      formRef,
     } = useContext(WebContext),
     [activeMenuIndex, setActiveMenuIndex] = useState(null), // Track active submenu
     [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null);
@@ -88,6 +89,17 @@ function Nav() {
                 >
                   {m.title}
                   <MdKeyboardArrowDown />
+                </li>
+              );
+            } else if (m.title === "Contact") {
+              return (
+                <li
+                  onClick={() => {
+                    setActiveDeskTopNavIndex(null);
+                    formRef.current.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  {m.title}
                 </li>
               );
             } else {
@@ -194,6 +206,19 @@ function Nav() {
                         />
                       </span>
                     </li>
+                  ) : item.title === "Contact" ? (
+                    <li
+                      className="hoverEffect"
+                      onMouseEnter={handleMouseEnter}
+                      onMouseLeave={handleMouseLeave}
+                      onClick={(index) => {
+                        setVisibleSubMenu(false);
+                        setIsHamburgerOpen(false);
+                        formRef.current.scrollIntoView({ behavior: "smooth" });
+                      }}
+                    >
+                      <span>{item.title}</span>
+                    </li>
                   ) : (
                     <Link to={item.path} onClick={handleLoadingStatus}>
                       <li
@@ -202,14 +227,7 @@ function Nav() {
                         onMouseLeave={handleMouseLeave}
                         onClick={handleClick}
                       >
-                        <span>
-                          {item.title}
-                          {hasSubmenu && (
-                            <IoIosArrowUp
-                              className={`icon ${isActive ? "activeList" : ""}`}
-                            />
-                          )}
-                        </span>
+                        <span>{item.title}</span>
                       </li>
                     </Link>
                   )}
