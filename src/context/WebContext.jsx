@@ -10,7 +10,9 @@ const WebProvider = ({ children }) => {
     [active, setActive] = useState(false),
     [lang, setLang] = useState("en"),
     [loading, setLoading] = useState(true),
-    [animate, setAnimate] = useState(true);
+    [animate, setAnimate] = useState(true),
+    [visibleSubMenu, setVisibleSubMenu] = useState(false), // Track hamburger menu open state
+    [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   const handleLoadingPage = () => {
     setTimeout(() => {
@@ -25,6 +27,8 @@ const WebProvider = ({ children }) => {
   const handleLoadingStatus = () => {
     setLoading(true);
     setAnimate(true);
+    setVisibleSubMenu(false);
+    setIsHamburgerOpen(false);
   };
 
   useEffect(() => {
@@ -49,6 +53,11 @@ const WebProvider = ({ children }) => {
         setAnimate,
         handleLoadingPage,
         handleLoadingStatus,
+        //Nav
+        visibleSubMenu,
+        setVisibleSubMenu,
+        isHamburgerOpen,
+        setIsHamburgerOpen,
       }}
     >
       {children}

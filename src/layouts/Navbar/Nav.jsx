@@ -34,12 +34,18 @@ const list = [
   { title: "Contact", path: "/contact" },
 ];
 function Nav() {
-  const { isMobile, setAnimate, setLoading, handleLoadingStatus } =
-      useContext(WebContext),
+  const {
+      isMobile,
+      setAnimate,
+      setLoading,
+      handleLoadingStatus,
+      visibleSubMenu,
+      setVisibleSubMenu,
+      isHamburgerOpen,
+      setIsHamburgerOpen,
+    } = useContext(WebContext),
     [activeMenuIndex, setActiveMenuIndex] = useState(null), // Track active submenu
-    [isHamburgerOpen, setIsHamburgerOpen] = useState(false),
-    [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null),
-    [visibleSubMenu, setVisibleSubMenu] = useState(false); // Track hamburger menu open state
+    [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null);
 
   // Toggle Hamburger menu open/close
   const handleHamburgerMenu = () => {
@@ -174,7 +180,10 @@ function Nav() {
 
               return (
                 <div key={index}>
-                  <Link to={hasSubmenu ? "" : item.path}>
+                  <Link
+                    to={hasSubmenu ? "" : item.path}
+                    onClick={handleLoadingStatus}
+                  >
                     <li
                       className="hoverEffect"
                       onMouseEnter={handleMouseEnter}
