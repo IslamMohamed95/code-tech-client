@@ -3,7 +3,6 @@ import "./Products.css";
 
 // Importing Product Images
 import first from "../../assets/Products/sales_pipeline_smb.svg";
-import { Link } from "react-router-dom";
 
 const metrics = [
   {
