@@ -366,7 +366,7 @@
   }
   #products .contentHolder {
     width: 80%;
-    margin-bottom: 7em;
+    margin-bottom: 17em;
   }
   #products .contentHolder h2 {
     font-size: 2em;
@@ -387,6 +387,7 @@
     margin: 20em 0 7em 0;
   }
 }
+
 @media (min-width: 1440px) {
   .pipeline-container .mainContainer {
     width: 60%;
