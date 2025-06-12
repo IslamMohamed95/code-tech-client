@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Products.css";
 
-//Importing Product Images
+// Importing Product Images
 import first from "../../assets/Products/sales_pipeline_smb.svg";
 import { Link } from "react-router-dom";
 
@@ -44,17 +44,25 @@ const metrics = [
 function Products() {
   const [active, setActive] = useState(0);
   const tabsRef = useRef([]);
+  const intervalRef = useRef(null);
   const [hrOffset, setHrOffset] = useState({ left: 0, width: 0 });
 
-  // Auto swiper logic
-  useEffect(() => {
-    const interval = setInterval(() => {
+  const startAutoSwiper = () => {
+    intervalRef.current = setInterval(() => {
       setActive((prev) => (prev + 1) % metrics.length);
     }, 3500);
-    return () => clearInterval(interval);
+  };
+
+  const resetSwiper = () => {
+    clearInterval(intervalRef.current);
+    startAutoSwiper();
+  };
+
+  useEffect(() => {
+    startAutoSwiper();
+    return () => clearInterval(intervalRef.current);
   }, []);
 
-  // Update hr highlight when active tab changes
   useEffect(() => {
     const container = tabsRef.current[0]?.parentElement;
     if (container) {
@@ -65,6 +73,11 @@ function Products() {
       });
     }
   }, [active]);
+
+  const handleTabClick = (index) => {
+    setActive(index);
+    resetSwiper();
+  };
 
   return (
     <section id="products" className="pipeline-section">
@@ -104,10 +117,10 @@ function Products() {
                   <div
                     key={index}
                     ref={(el) => (tabsRef.current[index] = el)}
-                    className={` hoverEffect pipeline-tab ${
+                    className={`hoverEffect pipeline-tab ${
                       active === index ? "active" : ""
                     }`}
-                    onClick={() => setActive(index)}
+                    onClick={() => handleTabClick(index)}
                   >
                     {item.title}
                   </div>
@@ -115,7 +128,7 @@ function Products() {
               </div>
             </div>
           </div>
-          <div class="custom-shape-divider-bottom-1749693086">
+          <div className="custom-shape-divider-bottom-1749693086">
             <svg
               data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
@@ -124,15 +137,16 @@ function Products() {
             >
               <path
                 d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-                class="shape-fill"
+                className="shape-fill"
               ></path>
             </svg>
           </div>
         </div>
       </div>
+
       <div className="implementHolder">
         <div className="contentHolder">
-          <h2>Implement The ERP System And Improve Your Buisness</h2>
+          <h2>Implement The ERP System And Improve Your Business</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
             tempora consequatur animi minus exercitationem, est accusamus nam,
