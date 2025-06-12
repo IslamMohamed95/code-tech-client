@@ -34,7 +34,8 @@ const list = [
   { title: "Contact", path: "/contact" },
 ];
 function Nav() {
-  const { isMobile, setAnimate, setLoading } = useContext(WebContext),
+  const { isMobile, setAnimate, setLoading, handleLoadingStatus } =
+      useContext(WebContext),
     [activeMenuIndex, setActiveMenuIndex] = useState(null), // Track active submenu
     [isHamburgerOpen, setIsHamburgerOpen] = useState(false),
     [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null),
@@ -85,7 +86,12 @@ function Nav() {
               );
             } else {
               return (
-                <Link key={i} to={m.path} className="hoverEffect">
+                <Link
+                  key={i}
+                  to={m.path}
+                  className="hoverEffect"
+                  onClick={handleLoadingStatus}
+                >
                   <li>{m.title}</li>
                 </Link>
               );

@@ -53,7 +53,6 @@
     animation: float 4s ease-in-out infinite;
   }
   #aboutPage {
-    margin-top: 50px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -175,10 +174,6 @@
   }
 }
 @media (min-width: 375px) {
-  #aboutPage {
-    margin-top: 70px;
-  }
-
   #aboutPage .contentContainer h2 {
     font-size: 1.8em;
     position: relative;
@@ -268,9 +263,6 @@
   }
 }
 @media (min-width: 768px) {
-  #aboutPage {
-    margin-top: 120px;
-  }
   #aboutPage .mainContainer {
     display: flex;
     flex-direction: column;
@@ -357,9 +349,6 @@
   .blob {
     width: 300px;
     height: 300px;
-  }
-  #aboutPage {
-    margin-top: 120px;
   }
   #aboutPage .mainContainer {
     display: flex;

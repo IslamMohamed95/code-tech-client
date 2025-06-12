@@ -22,6 +22,11 @@ const WebProvider = ({ children }) => {
     };
   };
 
+  const handleLoadingStatus = () => {
+    setLoading(true);
+    setAnimate(true);
+  };
+
   useEffect(() => {
     if (animate && loading) {
       handleLoadingPage();
@@ -43,6 +48,7 @@ const WebProvider = ({ children }) => {
         animate,
         setAnimate,
         handleLoadingPage,
+        handleLoadingStatus,
       }}
     >
       {children}

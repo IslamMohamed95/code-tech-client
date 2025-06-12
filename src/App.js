@@ -7,20 +7,24 @@ import Footer from "./layouts/Footer/Footer";
 import Loading from "./layouts/loading/Loading";
 import AboutPage from "./components/AboutPage/AboutPage";
 import Products from "./components/Products/Products";
+import PriceList from "./components/PriceList/PriceList";
 
 function App() {
-  const x = 30;
   return (
     <div className="App">
       <Router>
         <WebProvider>
           <Loading />
           <Nav />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/products" element={<Products />} />
-          </Routes>
+          <div className="pagesHolder">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/pricelist" element={<PriceList />} />
+            </Routes>
+          </div>
+
           <Footer />
         </WebProvider>
       </Router>

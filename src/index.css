@@ -312,7 +312,6 @@ p {
 
   #hero {
     width: 100%;
-    margin-top: 90px;
     display: flex;
     justify-content: center;
   }
@@ -1439,9 +1438,7 @@ p {
     transform: translateY(0) !important;
   }
   /*------------ Hero Styling ----------*/
-  #hero {
-    margin-top: 110px;
-  }
+
   #hero .mainContainer {
     position: relative;
     padding: 15px;
@@ -1760,9 +1757,7 @@ p {
     font-size: 0.95em;
   }
   /*------------ Hero Styling ----------*/
-  #hero {
-    margin-top: 118px;
-  }
+
   #hero .contentContainer > div h5 {
     font-size: 1.5em;
   }
@@ -2076,9 +2071,7 @@ p {
     font-size: 1.2em;
   }
   /*---- Hero styling -------*/
-  #hero {
-    margin-top: 140px;
-  }
+
   #hero .mainContainer {
     height: 78dvh;
   }

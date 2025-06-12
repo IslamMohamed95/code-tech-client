@@ -36,7 +36,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    padding: 8em 0 7em 0;
+    padding: 5em 0 7em 0;
   }
 
   .pipeline-container .mainContainer {
@@ -302,10 +302,6 @@
   }
 }
 @media (min-width: 768px) {
-  .pipeline-container {
-    padding: 10em 0 7em 0;
-  }
-
   .pipeline-main {
     flex-direction: row;
     align-items: center;
@@ -389,9 +385,6 @@
   }
 }
 @media (min-width: 1440px) {
-  .pipeline-container {
-    padding: 13em 0 10em 0;
-  }
   .pipeline-container .mainContainer {
     width: 60%;
   }
