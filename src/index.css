@@ -256,6 +256,7 @@ p {
   #Nav .langContainer > div hr {
     height: 18px;
     width: 0.2em;
+    border: none;
     background-color: var(--base-color);
     border-radius: 25px;
   }
