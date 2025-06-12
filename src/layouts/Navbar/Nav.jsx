@@ -14,7 +14,7 @@ import { GrSystem } from "react-icons/gr";
 import { Link } from "react-router-dom";
 const list = [
   { title: "Home", path: "/" },
-  { title: "About", path: "/" },
+  { title: "About", path: "/about" },
   {
     title: "Products",
     path: "/products",
@@ -31,7 +31,7 @@ const list = [
     path: "/pricelist",
   },
 
-  { title: "Contact", path: "/contact" },
+  { title: "Contact", path: "/" },
 ];
 function Nav() {
   const {
