@@ -40,7 +40,7 @@ function About() {
                   height="15"
                   patternUnits="userSpaceOnUse"
                 >
-                  <circle cx="1" cy="1" r="1.5" fill="#642364" />
+                  <circle cx="1" cy="1" r="1.5" fill="#25b0ab" />
                 </pattern>
               </defs>
               <rect width="70%" height="80%" fill="url(#dots)" />

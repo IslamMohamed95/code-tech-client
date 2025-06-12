@@ -14,6 +14,7 @@ import { GrSystem } from "react-icons/gr";
 import { Link } from "react-router-dom";
 const list = [
   { title: "Home", path: "/" },
+  { title: "About", path: "/about" },
   {
     title: "Products",
     path: "/products",
@@ -28,23 +29,16 @@ const list = [
   {
     title: "PriceList",
     path: "/pricelist",
-    list: [
-      { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
-      { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
-      { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
-      { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
-      { title: "ERP Systems", arr: ["test 1", "test 2", "test 3"] },
-    ],
   },
-  { title: "About", path: "/about" },
+
   { title: "Contact", path: "/contact" },
 ];
 function Nav() {
-  const { isMobile } = useContext(WebContext);
-  const [activeMenuIndex, setActiveMenuIndex] = useState(null); // Track active submenu
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null);
-  const [visibleSubMenu, setVisibleSubMenu] = useState(false); // Track hamburger menu open state
+  const { isMobile, setAnimate, setLoading } = useContext(WebContext),
+    [activeMenuIndex, setActiveMenuIndex] = useState(null), // Track active submenu
+    [isHamburgerOpen, setIsHamburgerOpen] = useState(false),
+    [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null),
+    [visibleSubMenu, setVisibleSubMenu] = useState(false); // Track hamburger menu open state
 
   // Toggle Hamburger menu open/close
   const handleHamburgerMenu = () => {
@@ -53,15 +47,12 @@ function Nav() {
   };
   const handleNavClick = (index) => {
     if (activeDeskTopNavIndex === index) {
-      // Close the currently open menu
       setVisibleSubMenu(false);
       setTimeout(() => setActiveDeskTopNavIndex(null), 400);
     } else if (activeDeskTopNavIndex === null) {
-      // First time opening any submenu → open immediately
       setActiveDeskTopNavIndex(index);
       setVisibleSubMenu(true);
     } else {
-      // Switching between menus → close then open with delay
       setVisibleSubMenu(false);
       setTimeout(() => {
         setActiveDeskTopNavIndex(index);
@@ -82,17 +73,6 @@ function Nav() {
         <ul>
           {list.map((m, i) => {
             if (m.title === "Products") {
-              return (
-                <li
-                  className="hoverEffect"
-                  key={i}
-                  onClick={() => handleNavClick(1)}
-                >
-                  {m.title}
-                  <MdKeyboardArrowDown />
-                </li>
-              );
-            } else if (m.title === "PriceList") {
               return (
                 <li
                   className="hoverEffect"
@@ -136,7 +116,16 @@ function Nav() {
                     <h3>{d.title}</h3>
                     <ul>
                       {d.arr.map((a, j) => (
-                        <li key={j}>{a}</li>
+                        <Link
+                          to={list[activeDeskTopNavIndex].path}
+                          onClick={() => {
+                            setActiveDeskTopNavIndex(null);
+                            setAnimate(true);
+                            setLoading(true);
+                          }}
+                        >
+                          <li key={j}>{a}</li>
+                        </Link>
                       ))}
                     </ul>
                   </div>

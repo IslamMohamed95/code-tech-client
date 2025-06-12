@@ -12,15 +12,21 @@ const WebProvider = ({ children }) => {
     [loading, setLoading] = useState(true),
     [animate, setAnimate] = useState(true);
 
-  useEffect(() => {
-    const timeOut = setTimeout(() => {
+  const handleLoadingPage = () => {
+    setTimeout(() => {
       setLoading(false);
       setAnimate(false);
     }, 3000);
     return () => {
-      clearTimeout(timeOut);
+      clearTimeout();
     };
-  }, []);
+  };
+
+  useEffect(() => {
+    if (animate && loading) {
+      handleLoadingPage();
+    }
+  }, [animate, loading]);
 
   return (
     <WebContext.Provider
@@ -36,6 +42,7 @@ const WebProvider = ({ children }) => {
         setLoading,
         animate,
         setAnimate,
+        handleLoadingPage,
       }}
     >
       {children}
