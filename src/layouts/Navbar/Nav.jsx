@@ -180,26 +180,21 @@ function Nav() {
 
               return (
                 <div key={index}>
-                  <Link
-                    to={hasSubmenu ? "" : item.path}
-                    onClick={handleLoadingStatus}
+                  <li
+                    className="hoverEffect"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={handleClick}
                   >
-                    <li
-                      className="hoverEffect"
-                      onMouseEnter={handleMouseEnter}
-                      onMouseLeave={handleMouseLeave}
-                      onClick={handleClick}
-                    >
-                      <span>
-                        {item.title}
-                        {hasSubmenu && (
-                          <IoIosArrowUp
-                            className={`icon ${isActive ? "activeList" : ""}`}
-                          />
-                        )}
-                      </span>
-                    </li>
-                  </Link>
+                    <span>
+                      {item.title}
+                      {hasSubmenu && (
+                        <IoIosArrowUp
+                          className={`icon ${isActive ? "activeList" : ""}`}
+                        />
+                      )}
+                    </span>
+                  </li>
 
                   {hasSubmenu && (
                     <div
@@ -219,9 +214,13 @@ function Nav() {
                             <hr />
                             <ul>
                               {subItem.arr.map((a, aIndex) => (
-                                <li className="hoverEffect" key={aIndex}>
-                                  {a}
-                                </li>
+                                <Link
+                                  key={aIndex}
+                                  to="/products"
+                                  onClick={handleLoadingStatus}
+                                >
+                                  <li className="hoverEffect">{a}</li>
+                                </Link>
                               ))}
                             </ul>
                           </div>
