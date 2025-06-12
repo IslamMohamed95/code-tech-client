@@ -1,0 +1,55 @@
+.whatsapp-fixed-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background-color: #25d366;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.whatsapp-fixed-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Tooltip */
+.whatsapp-fixed-icon .tooltip {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  transform: translateX(10%);
+  transition: opacity 0.4s ease-in-out;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.whatsapp-fixed-icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Responsive: make it slightly smaller on very small screens */
+@media screen and (max-width: 480px) {
+  .whatsapp-fixed-icon {
+    padding: 8px;
+  }
+
+  .whatsapp-fixed-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .whatsapp-fixed-icon .tooltip {
+    font-size: 12px;
+  }
+}

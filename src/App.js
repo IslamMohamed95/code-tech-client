@@ -8,6 +8,7 @@ import Loading from "./layouts/loading/Loading";
 import AboutPage from "./components/AboutPage/AboutPage";
 import Products from "./components/Products/Products";
 import PriceList from "./components/PriceList/PriceList";
+import WhatsApp from "./layouts/WhatsApp/WhatsApp";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
               <Route path="/pricelist" element={<PriceList />} />
             </Routes>
           </div>
-
+          <WhatsApp phoneNumber="+920007401" />
           <Footer />
         </WebProvider>
       </Router>
