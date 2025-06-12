@@ -118,11 +118,14 @@ function Nav() {
           })}
         </ul>
 
-        <div>
+        <div className="languageDesktopContainer">
           <div>
             <span className="hoverEffect">AR</span>
             <hr />
             <span className="hoverEffect activeLang">EN</span>
+          </div>
+          <div>
+            <button className="hoverEffect">Try a demo</button>
           </div>
         </div>
 
@@ -276,6 +279,9 @@ function Nav() {
                   <span>AR</span>
                   <hr />
                   <span className="activeLang">EN</span>
+                </div>
+                <div>
+                  <button className="hoverEffect">Try a demo</button>
                 </div>
               </div>
             )}

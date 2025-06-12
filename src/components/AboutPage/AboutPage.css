@@ -172,6 +172,9 @@
     font-size: 1.1em;
     color: grey;
   }
+  #aboutPage .blobAndContentHolder:last-child {
+    margin: 8em 0;
+  }
 }
 @media (min-width: 375px) {
   #aboutPage .contentContainer h2 {
@@ -180,7 +183,7 @@
     color: var(--primary-color);
   }
   #aboutPage .contentContainer h2 .big {
-    color: var(--yellow);
+    color: var(--base-color);
     margin-left: 7px;
     font-size: 1.4em;
   }
@@ -343,6 +346,9 @@
   #aboutPage .learnMoreHolder ul li {
     width: 100%;
     margin: 0 1em;
+  }
+  #aboutPage .blobAndContentHolder:last-child {
+    margin: 5em 0;
   }
 }
 @media (min-width: 1024px) {

@@ -160,11 +160,54 @@
   }
   #priceList .featuresContainer ul li {
     font-size: 0.8em;
-
     margin: 0.8em 0 0 0.5em;
+  }
+
+  .table-container {
+    width: 90%;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  .pricing-table th {
+    color: var(--base-color);
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    border-top: 1px solid rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding: 1em 0.5em;
+    font-size: 0.7em;
+    white-space: nowrap;
+    text-align: center;
+    width: 100%;
+  }
+
+  .pricing-table th:first-child,
+  .pricing-table td:first-child {
+    text-align: left;
+  }
+  .pricing-table td:first-child {
+    color: grey;
+  }
+
+  .pricing-table thead th {
+    background-color: #f2f2f2;
+    font-weight: bold;
   }
 }
 @media (min-width: 375px) {
+  .pricing-table th,
+  .pricing-table td {
+    font-size: 0.75em;
+  }
 }
 @media (min-width: 420px) {
   #priceList .plansHolder > div {
@@ -184,6 +227,26 @@
   }
   #priceList .featuresContainer ul li {
     font-size: 0.95em;
+  }
+  .table-container {
+    padding: 10px;
+  }
+
+  .pricing-table {
+    font-size: 12px;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 6px;
+  }
+
+  .section-heading td {
+    font-size: 13px;
+  }
+  .pricing-table th,
+  .pricing-table td {
+    font-size: 1.15em;
   }
 }
 @media (min-width: 768px) {
@@ -213,21 +276,55 @@
   #priceList .introHolder > div p {
     font-size: 1em;
   }
+
   #priceList .splitter {
     font-size: 2em;
   }
+  #priceList .freeTrial,
+  #priceList .pro {
+    transform: scale(0.95);
+  }
+  #priceList .plus {
+    transform: scale(1.1);
+  }
   #priceList .rightHolder {
-    width: 95%;
+    width: 100%;
   }
   #priceList .plansHolder {
     width: 100%;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
   }
   #priceList .plansHolder > div {
-    width: 48%;
+    width: 30%;
+  }
+  #priceList .plansHolder > div h3 {
+    font-size: 1.2em;
+  }
+  #priceList .plansHolder > div h5 {
+    font-size: 0.95em;
+  }
+  #priceList .rowDisplay p {
+    font-size: 0.65em;
+  }
+  #priceList .plansHolder > div h5 {
+    font-size: 0.8em;
+  }
+  #priceList .featuresContainer ul li {
+    font-size: 0.65em;
+  }
+  #priceList .btn button {
+    font-size: 0.55em;
+  }
+  .pricing-table {
+    font-size: 13px;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    padding: 1em;
+    font-size: 1.3em;
   }
 }
 @media (min-width: 1024px) {
@@ -243,6 +340,32 @@
   #priceList .plansHolder > div {
     width: 32%;
     flex-wrap: nowrap;
+  }
+  #priceList .plansHolder > div h3 {
+    font-size: 1.7em;
+  }
+  #priceList .plansHolder > div h5 {
+    font-size: 1.1em;
+  }
+  #priceList .rowDisplay p {
+    font-size: 0.8em;
+  }
+  #priceList .plansHolder > div h5 {
+    font-size: 0.9em;
+  }
+  #priceList .featuresContainer ul li {
+    font-size: 0.85em;
+  }
+  #priceList .btn button {
+    font-size: 0.75em;
+    font-weight: bold;
+  }
+  .table-container {
+    width: 70%;
+  }
+  .pricing-table th,
+  .pricing-table td {
+    font-size: 1.5em;
   }
 }
 @media (min-width: 1440px) {
@@ -261,12 +384,16 @@
   #priceList .introHolder {
     padding: 3em;
   }
+
   #priceList .introHolder > div {
     width: 100%;
   }
-
+  #priceList .plansHolder > div {
+    width: 30%;
+    padding: 3em 2em;
+  }
   #priceList .rightHolder {
-    width: 85%;
+    width: 75%;
     height: 100%;
     align-items: center;
     justify-content: flex-end;
@@ -274,7 +401,7 @@
   }
   #priceList .splitter {
     font-size: 2.5em;
-    margin: 0 0 1em 0;
+    margin: 0 0 2em 0;
     text-align: center;
   }
   #priceList .plansHolder {
@@ -293,4 +420,11 @@
   #priceList .featuresContainer ul > div svg {
     font-size: 1em;
   }
+}
+
+.section-heading td {
+  background-color: #eaf6ff;
+  text-align: left;
+  font-weight: bold;
+  padding-top: 20px;
 }

@@ -244,8 +244,22 @@ p {
   #Nav .langContainer {
     margin: 1em 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+  }
+  #Nav .langContainer > div:last-child {
+    width: 100%;
+    margin-top: 1em;
+  }
+  #Nav .langContainer > div:last-child button {
+    padding: 0.6em 2em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--base-color);
+    color: white;
+    font-weight: bold;
+    font-size: 0.85em;
   }
   #Nav .langContainer > div {
     width: 25%;
@@ -463,6 +477,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
   #about .maincontainer {
     width: 90%;
@@ -470,9 +485,11 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 8em 0 2em 0;
+    margin: 2.5em 0 2em 0;
   }
-
+  #about .maincontainer .blob-wrapper {
+    margin-bottom: 2.1em;
+  }
   #about .maincontainer .leftContainer,
   #about .maincontainer .rightContainer {
     display: flex;
@@ -514,12 +531,12 @@ p {
     display: flex;
     align-items: center;
     margin: 0.1em 0;
-    color: black;
+    color: var(--base-color);
     font-weight: bold;
   }
 
   #about .maincontainer .rightContainer .listHolder ul li svg {
-    color: green;
+    color: var(--base-color);
   }
 
   #about .maincontainer .rightContainer .listHolder > div {
@@ -727,7 +744,7 @@ p {
 
   #whyChooseUs .splitter {
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--base-color);
     padding: 20px 4px;
     text-align: center;
   }
@@ -1348,19 +1365,34 @@ p {
     color: var(--base-color);
   }
   #Nav nav > div:nth-child(3) {
-    width: 15%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #Nav nav > div:nth-child(3) > div {
+    width: 30%;
     display: flex;
     justify-content: space-evenly;
-    width: 70%;
-    padding: 0.5em;
+    align-items: center;
+  }
+
+  #Nav nav > div:nth-child(3) button {
+    padding: 0.6em 1em;
+    font-size: 0.8em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--base-color);
+    color: white;
+    font-weight: bold;
+  }
+
+  #Nav nav .languageDesktopContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+  }
+  #Nav nav .languageDesktopContainer > div:first-child {
+    display: flex;
   }
   #Nav nav > div:nth-child(3) > div hr {
     width: 2px;
+    margin: 0 0.3em;
     border-radius: 5px;
     background-color: var(--primary-color);
   }
@@ -1484,6 +1516,10 @@ p {
     flex-direction: row;
     margin: 6em 0 2em;
   }
+
+  #about .maincontainer .blob-wrapper {
+    width: 45%;
+  }
   #about .maincontainer .leftContainer,
   #about .maincontainer .rightContainer {
     width: 50%;
@@ -1491,7 +1527,7 @@ p {
   }
   #about .maincontainer .rightContainer h3 {
     text-align: left;
-    color: var(--primary-color);
+    color: var(--base-color);
     margin: 0.2em 0 0.5em;
     line-height: 1.25em;
     font-size: 1.2em;
@@ -1735,9 +1771,7 @@ p {
   #Nav nav > div:first-child img {
     width: 25%;
   }
-  #Nav nav > div:nth-child(3) {
-    width: 13%;
-  }
+
   #Nav nav > div:nth-child(3) > div hr {
     width: 2px;
     border-radius: 5px;
@@ -2053,7 +2087,10 @@ p {
     width: 30%;
   }
   #Nav nav > div:nth-child(3) {
-    width: 10%;
+    width: 20%;
+  }
+  #Nav nav > div:nth-child(3) button {
+    font-size: 1em;
   }
   #Nav nav > div:nth-child(3) > div hr {
     width: 2px;
@@ -2124,7 +2161,7 @@ p {
   #about .maincontainer .rightContainer h3 {
     width: 80%;
     text-align: left;
-    color: var(--primary-color);
+    color: var(--base-color);
     margin: 0.2em 0 0.5em;
     line-height: 1.25em;
     font-size: 2.1em;

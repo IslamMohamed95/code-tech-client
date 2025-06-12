@@ -11,6 +11,41 @@ import { FaCheck } from "react-icons/fa";
 function PriceList() {
   const plans = [
     {
+      name: "Free Trial",
+      users: "Unlimited",
+      products: "1,000",
+      branches: 1,
+      features: {
+        salesCustomers: true,
+        productsInventory: true,
+        purchasesSuppliers: true,
+      },
+    },
+    {
+      name: "Plus Plan",
+      users: "Unlimited",
+      products: "3,000",
+      branches: 1,
+      features: {
+        salesCustomers: true,
+        productsInventory: true,
+        purchasesSuppliers: true,
+      },
+    },
+    {
+      name: "Pro Plan",
+      users: "Unlimited",
+      products: "Unlimited",
+      branches: 1,
+      features: {
+        salesCustomers: true,
+        productsInventory: true,
+        purchasesSuppliers: true,
+      },
+    },
+  ];
+  const plansList = [
+    {
       classname: "freeTrial",
       title: "Lite",
       cost: "Free",
@@ -69,7 +104,7 @@ function PriceList() {
         <div className="rightHolder">
           <h3 className="splitter">Start A Free Trial !</h3>
           <div className="plansHolder">
-            {plans.map((p, index) => (
+            {plansList.map((p, index) => (
               <div key={index} className={p.classname}>
                 <div>
                   <div className="rowDisplay">
@@ -103,6 +138,68 @@ function PriceList() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="table-container">
+          <table className="pricing-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                {plans.map((plan, index) => (
+                  <th key={index}>{plan.name}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Number of Users</td>
+                {plans.map((plan, index) => (
+                  <td key={index}>{plan.users}</td>
+                ))}
+              </tr>
+              <tr>
+                <td>Number of Products</td>
+                {plans.map((plan, index) => (
+                  <td key={index}>{plan.products}</td>
+                ))}
+              </tr>
+              <tr>
+                <td>Number of Branches</td>
+                {plans.map((plan, index) => (
+                  <td key={index}>{plan.branches}</td>
+                ))}
+              </tr>
+
+              <tr className="section-heading">
+                <td colSpan={4}>Core Systems</td>
+              </tr>
+
+              <tr>
+                <td>Sales & Customers</td>
+                {plans.map((plan, index) => (
+                  <td key={index}>
+                    {plan.features.salesCustomers ? "✔️" : "❌"}
+                  </td>
+                ))}
+              </tr>
+              <tr>
+                <td>Products & Inventory</td>
+                {plans.map((plan, index) => (
+                  <td key={index}>
+                    {plan.features.productsInventory ? "✔️" : "❌"}
+                  </td>
+                ))}
+              </tr>
+              <tr>
+                <td>Purchases & Suppliers</td>
+                {plans.map((plan, index) => (
+                  <td key={index}>
+                    {plan.features.purchasesSuppliers ? "✔️" : "❌"}
+                  </td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
