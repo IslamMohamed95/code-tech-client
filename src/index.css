@@ -1758,7 +1758,12 @@ p {
     font-size: 0.95em;
   }
   /*------------ Hero Styling ----------*/
-
+  #hero .mainContainer {
+    height: 77dvh;
+  }
+  #hero {
+    padding: 1em 0;
+  }
   #hero .contentContainer > div h5 {
     font-size: 1.5em;
   }
@@ -2073,9 +2078,6 @@ p {
   }
   /*---- Hero styling -------*/
 
-  #hero .mainContainer {
-    height: 78dvh;
-  }
   #hero .contentContainer > div h5 {
     font-size: 2em;
   }
