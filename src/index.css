@@ -98,7 +98,7 @@ p {
   }
 
   .activeMenu {
-    max-height: 370px !important;
+    max-height: 336px !important;
     overflow-y: auto !important;
   }
 
