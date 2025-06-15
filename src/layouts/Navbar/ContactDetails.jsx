@@ -8,9 +8,11 @@ import { WebContext } from "../../context/WebContext";
 
 //Importin The Context
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 
 function ContactDetails() {
   const { isMobile, isDeskTop } = useContext(WebContext),
+    { t } = useTranslation(["nav"]),
     socilaIcons = [<FaLinkedin />, <FaInstagram />, <FaFacebook />];
   return (
     <>
@@ -32,7 +34,7 @@ function ContactDetails() {
               </div>
               {isDeskTop && (
                 <div className="hoverEffect">
-                  <MdLocationPin /> King Fahd Road, Al Olaya, Riyadh 12611
+                  <MdLocationPin /> {t("location")}
                 </div>
               )}
             </div>

@@ -34,11 +34,19 @@
   }
 
   #Nav > div:last-child > div > div:first-child {
-    width: 45%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  #Nav > div:last-child > div > div:first-child p {
+    margin: 0 0 0 1em;
+    font-weight: bold;
+    color: var(--base-color);
   }
 
   #Nav > div:last-child > div > div:first-child img {
-    width: 100%;
+    width: 30%;
   }
 
   #Nav > div:last-child > div > ul {
@@ -164,7 +172,6 @@
   }
 
   #Nav .langContainer > div {
-    width: 25%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -186,6 +193,7 @@
   }
 
   #Nav .langContainer > div hr {
+    margin: 0 5px;
     height: 18px;
     width: 0.2em;
     border: none;
@@ -254,7 +262,9 @@
     align-items: center;
     background-color: var(--base-color);
   }
-
+  html[dir="rtl"] #DNav {
+    direction: rtl;
+  }
   #DNav > div {
     width: 95%;
     display: flex;
@@ -315,40 +325,35 @@
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background-color: white;
-    padding: 0.5em 1em;
   }
-
-  #Nav nav > div:first-child,
-  #Nav nav > div:nth-child(2),
-  #Nav nav > div:nth-child(3) {
-    width: 33.33%;
-  }
-
-  #Nav nav > div:first-child {
+  #Nav nav > div {
+    width: 95%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0 0.5em;
+  }
+  #Nav nav > div > div:first-child {
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
   }
 
-  #Nav nav > div:first-child img {
+  #Nav nav > div > div:first-child img {
     width: 30%;
   }
 
-  #Nav nav > div:first-child p {
+  #Nav nav > div > div:first-child p {
+    margin: 0 0 0 1em;
     font-weight: bold;
     color: var(--base-color);
   }
 
-  #Nav nav > div:nth-child(3) {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-
-  #Nav nav > div:nth-child(3) button {
+  #Nav nav > div > div:nth-child(3) button {
     padding: 0.6em 1em;
     font-size: 0.8em;
     border: none;
@@ -356,27 +361,28 @@
     background-color: var(--base-color);
     color: white;
     font-weight: bold;
+    width: 100%;
   }
-
   #Nav nav .languageDesktopContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    width: 30%;
   }
 
   #Nav nav .languageDesktopContainer > div:first-child {
     display: flex;
+    margin: 0 1em;
   }
 
-  #Nav nav > div:nth-child(3) > div hr {
-    width: 2px;
+  #Nav nav > div > div:nth-child(3) > div hr {
+    width: 3px;
     margin: 0 0.3em;
+    border: none;
     border-radius: 5px;
-    background-color: var(--primary-color);
+    background-color: var(--base-color);
   }
 
-  #Nav nav > div:nth-child(3) > div span {
+  #Nav nav > div > div:nth-child(3) > div span {
     color: var(--medium-gray);
   }
 
@@ -473,7 +479,7 @@
     font-size: 1.2em;
   }
 
-  #Nav nav > div:first-child img {
+  #Nav nav > div > div:first-child img {
     width: 25%;
   }
 
@@ -506,28 +512,24 @@
     border-radius: 0;
   }
 
-  #Nav nav > div:first-child {
-    justify-content: center;
+  #Nav nav > div > div:first-child {
     width: 15%;
   }
 
-  #Nav nav > div:first-child p {
+  #Nav nav > div > div:first-child p {
     margin-left: 1em;
+    font-size: 1.2em;
   }
 
-  #Nav nav > div:first-child img {
+  #Nav nav > div > div:first-child img {
     width: 30%;
   }
 
-  #Nav nav > div:nth-child(3) {
-    width: 20%;
-  }
-
-  #Nav nav > div:nth-child(3) button {
+  #Nav nav > div > div:nth-child(3) button {
     font-size: 1em;
   }
 
-  #Nav nav > div:nth-child(3) > div span {
+  #Nav nav > div > div:nth-child(3) > div span {
     font-size: 1.1em;
   }
 

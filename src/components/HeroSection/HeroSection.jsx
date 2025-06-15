@@ -1,5 +1,5 @@
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { loadSlim } from "@tsparticles/slim";
 
 //Importing Css
@@ -9,10 +9,15 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import Counter from "../../layouts/Counters/Counter";
+import { WebContext } from "../../context/WebContext";
+import { useTranslation } from "react-i18next";
 
-const ParticlesComponent = () => {
-  const list = [<FaFacebook />, <FaInstagram />, <FaLinkedin />];
-  const [init, setInit] = useState(false);
+//Importin Context
+
+const HeroSection = () => {
+  const list = [<FaFacebook />, <FaInstagram />, <FaLinkedin />],
+    [init, setInit] = useState(false),
+    { t } = useTranslation(["hero"]);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -107,17 +112,12 @@ const ParticlesComponent = () => {
             <div>
               <span></span>
 
-              <h5>Optimise IT Solutions</h5>
+              <h5>{t("sTitle")}</h5>
             </div>
 
-            <h3>Transform Chaos into Control</h3>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure
-              voluptas, quam omnis culpa tenetur corporis voluptatibus labore
-              quisquam. Nisi, animi! Voluptatum earum, at reiciendis labore
-              delectus saepe provident cupiditate iure.
-            </p>
-            <button className="hoverEffect">Try A Demo</button>
+            <h3>{t("bTitle")}</h3>
+            <p>{t("desc")}</p>
+            <button className="hoverEffect">{t("btn")}</button>
           </div>
           <Counter />
         </div>
@@ -142,4 +142,4 @@ const ParticlesComponent = () => {
   );
 };
 
-export default ParticlesComponent;
+export default HeroSection;

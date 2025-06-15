@@ -4,8 +4,10 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 // Importing namespaces
 import NavEN from "./locales/en/Nav.json";
+import HeroEN from "./locales/en/Hero.json";
 
 import NavAR from "./locales/ar/Nav.json";
+import HeroAR from "./locales/ar/Hero.json";
 
 i18n
   .use(LanguageDetector)
@@ -15,16 +17,19 @@ i18n
     resources: {
       en: {
         nav: NavEN,
+        hero: HeroEN,
       },
       ar: {
         nav: NavAR,
+        hero: HeroAR,
       },
     },
+    lng: localStorage.getItem("lang") || "ar",
     fallbackLng: "ar",
     interpolation: {
       escapeValue: false,
     },
-    ns: ["nav", "header", "footer", "home"],
+    ns: ["nav", "hero"],
     defaultNS: "nav",
   });
 

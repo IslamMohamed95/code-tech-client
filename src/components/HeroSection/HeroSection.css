@@ -204,7 +204,7 @@
   #hero .mainContainer {
     position: relative;
     padding: 15px;
-    height: 80dvh;
+    height: 78dvh;
   }
 
   #hero .contentContainer > div h5 {
@@ -235,9 +235,8 @@
   #hero {
     padding: 1em 0;
   }
-
   #hero .mainContainer {
-    height: 77dvh;
+    height: 76dvh;
   }
 
   #hero .contentContainer > div h5 {

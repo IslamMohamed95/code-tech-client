@@ -1,4 +1,4 @@
-import ParticlesComponent from "../HeroSection/HeroSection";
+import HeroSection from "../HeroSection/HeroSection";
 import About from "../About/About";
 import Client from "../Client/Client";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
@@ -8,7 +8,7 @@ import SVG from "../SVG/SVG";
 function Home() {
   return (
     <section id="Home">
-      <ParticlesComponent />
+      <HeroSection />
       <About />
       <Client />
       <SVG />

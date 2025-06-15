@@ -4,7 +4,7 @@ import "./Nav.css";
 import { WebContext } from "../../context/WebContext";
 import { MdKeyboardArrowDown } from "react-icons/md";
 //Importing Logo.webp
-import logo from "../../assets/Logo/Logo.webp";
+
 import deskTopLogo from "../../assets/AboutLogo/aboutLogo.png";
 
 //Import Flag
@@ -12,6 +12,7 @@ import deskTopLogo from "../../assets/AboutLogo/aboutLogo.png";
 import { IoIosArrowUp } from "react-icons/io";
 import { GrSystem } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Nav() {
   const {
@@ -27,8 +28,8 @@ function Nav() {
       //language
       handleLang,
       lang,
-      t,
     } = useContext(WebContext),
+    { t } = useTranslation(["nav"]),
     list = [
       { title: t("home"), path: "/" },
       { title: t("about"), path: "/about" },
@@ -78,114 +79,114 @@ function Nav() {
     <section id="Nav">
       <ContactDetails />
       <nav>
-        <div className="hoverEffect">
-          <img src={deskTopLogo} alt="LogoImg" />
-          <p>{t("title")}</p>
-        </div>
-
-        <ul>
-          {list.map((m, i) => {
-            if (m.title === t("products")) {
-              return (
-                <li
-                  className="hoverEffect"
-                  key={i}
-                  onClick={() => handleNavClick(2)}
-                >
-                  {m.title}
-                  <MdKeyboardArrowDown />
-                </li>
-              );
-            } else if (m.title === t("contact")) {
-              return (
-                <li
-                  className="hoverEffect"
-                  onClick={() => {
-                    setActiveDeskTopNavIndex(null);
-                    formRef.current.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  {m.title}
-                </li>
-              );
-            } else {
-              return (
-                <Link
-                  key={i}
-                  to={m.path}
-                  className="hoverEffect"
-                  onClick={handleLoadingStatus}
-                >
-                  <li>{m.title}</li>
-                </Link>
-              );
-            }
-          })}
-        </ul>
-
-        <div className="languageDesktopContainer">
-          <div>
-            <span
-              className={
-                lang === "ar" ? "hoverEffect activeLang" : "hoverEffect"
-              }
-              onClick={handleLang}
-            >
-              {t("arTitle")}
-            </span>
-            <hr />
-            <span
-              className={
-                lang === "en" ? "hoverEffect activeLang" : "hoverEffect"
-              }
-              onClick={handleLang}
-            >
-              {t("enTitle")}
-            </span>
+        <div>
+          <div className="hoverEffect">
+            <img src={deskTopLogo} alt="LogoImg" />
+            <p>{t("title")}</p>
           </div>
-          <div>
-            <button className="hoverEffect">{t("btn")}</button>
-          </div>
-        </div>
-
-        <div
-          className={
-            visibleSubMenu && activeDeskTopNavIndex !== null
-              ? "subMenuHolder activeDesktopMenu"
-              : "subMenuHolder"
-          }
-        >
           <ul>
-            {activeDeskTopNavIndex !== null &&
-              list[activeDeskTopNavIndex].list.map((d, i) => (
-                <React.Fragment key={i}>
-                  <div>
-                    <h3>{d.title}</h3>
-                    <ul>
-                      {d.arr.map((a, j) => (
-                        <Link
-                          to={list[activeDeskTopNavIndex].path}
-                          onClick={() => {
-                            setActiveDeskTopNavIndex(null);
-                            setAnimate(true);
-                            setLoading(true);
-                          }}
-                        >
-                          <li key={j}>{a}</li>
-                        </Link>
-                      ))}
-                    </ul>
-                  </div>
-                  <hr />
-                </React.Fragment>
-              ))}
+            {list.map((m, i) => {
+              if (m.title === t("products")) {
+                return (
+                  <li
+                    className="hoverEffect"
+                    key={i}
+                    onClick={() => handleNavClick(2)}
+                  >
+                    {m.title}
+                    <MdKeyboardArrowDown />
+                  </li>
+                );
+              } else if (m.title === t("contact")) {
+                return (
+                  <li
+                    className="hoverEffect"
+                    onClick={() => {
+                      setActiveDeskTopNavIndex(null);
+                      formRef.current.scrollIntoView({ behavior: "smooth" });
+                    }}
+                  >
+                    {m.title}
+                  </li>
+                );
+              } else {
+                return (
+                  <Link
+                    key={i}
+                    to={m.path}
+                    className="hoverEffect"
+                    onClick={handleLoadingStatus}
+                  >
+                    <li>{m.title}</li>
+                  </Link>
+                );
+              }
+            })}
           </ul>
+          <div className="languageDesktopContainer">
+            <div>
+              <span
+                className={
+                  lang === "ar" ? "hoverEffect activeLang" : "hoverEffect"
+                }
+                onClick={handleLang}
+              >
+                {t("arTitle")}
+              </span>
+              <hr />
+              <span
+                className={
+                  lang === "en" ? "hoverEffect activeLang" : "hoverEffect"
+                }
+                onClick={handleLang}
+              >
+                {t("enTitle")}
+              </span>
+            </div>
+            <div>
+              <button className="hoverEffect">{t("btn")}</button>
+            </div>
+          </div>
+          <div
+            className={
+              visibleSubMenu && activeDeskTopNavIndex !== null
+                ? "subMenuHolder activeDesktopMenu"
+                : "subMenuHolder"
+            }
+          >
+            <ul>
+              {activeDeskTopNavIndex !== null &&
+                list[activeDeskTopNavIndex].list.map((d, i) => (
+                  <React.Fragment key={i}>
+                    <div>
+                      <h3>{d.title}</h3>
+                      <ul>
+                        {d.arr.map((a, j) => (
+                          <Link
+                            to={list[activeDeskTopNavIndex].path}
+                            onClick={() => {
+                              setActiveDeskTopNavIndex(null);
+                              setAnimate(true);
+                              setLoading(true);
+                            }}
+                          >
+                            <li key={j}>{a}</li>
+                          </Link>
+                        ))}
+                      </ul>
+                    </div>
+                    <hr />
+                  </React.Fragment>
+                ))}
+            </ul>
+          </div>
         </div>
       </nav>
       <div>
         <div>
-          <div>
-            <img src={logo} alt="logoImg" className="hoverEffect" />
+          <div className="hoverEffect">
+            <img src={deskTopLogo} alt="LogoImg" />
+            <p>{t("title")}</p>
           </div>
 
           {/* Desktop or Mobile menu */}
@@ -295,12 +296,26 @@ function Nav() {
             {isMobile && (
               <div className="langContainer">
                 <div>
-                  <span>AR</span>
+                  <span
+                    className={
+                      lang === "ar" ? "hoverEffect activeLang" : "hoverEffect"
+                    }
+                    onClick={handleLang}
+                  >
+                    {t("arTitle")}
+                  </span>
                   <hr />
-                  <span className="activeLang">EN</span>
+                  <span
+                    className={
+                      lang === "en" ? "hoverEffect activeLang" : "hoverEffect"
+                    }
+                    onClick={handleLang}
+                  >
+                    {t("enTitle")}
+                  </span>
                 </div>
                 <div>
-                  <button className="hoverEffect">Try a demo</button>
+                  <button className="hoverEffect">{t("btn")}</button>
                 </div>
               </div>
             )}

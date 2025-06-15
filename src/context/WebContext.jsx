@@ -8,7 +8,7 @@ const WebProvider = ({ children }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 }),
     isTablet = useMediaQuery({ minWidth: 768 }),
     isDeskTop = useMediaQuery({ minWidth: 1024 }),
-    { t, i18n } = useTranslation(),
+    { i18n } = useTranslation(),
     [active, setActive] = useState(false),
     [lang, setLang] = useState(localStorage.getItem("lang") || "ar"),
     [loading, setLoading] = useState(true),
@@ -66,7 +66,7 @@ const WebProvider = ({ children }) => {
     return () => {
       clearTimeout(timeOut);
     };
-  }, [lang]);
+  }, [lang, loading, animate]);
 
   return (
     <WebContext.Provider
@@ -93,7 +93,6 @@ const WebProvider = ({ children }) => {
         //localization
         lang,
         setLang,
-        t,
         i18n,
         handleLang,
       }}
