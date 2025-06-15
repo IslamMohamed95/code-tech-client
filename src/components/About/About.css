@@ -1,5 +1,33 @@
+#about .blob-wrapper {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 3.5em;
+}
+
+#about .blob1 {
+  top: -80px;
+  left: -60px;
+}
+
+#about .blob2 {
+  bottom: -100px;
+  right: -50px;
+  opacity: 0.8;
+}
+
+#about .blob {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  opacity: 0.9;
+  z-index: 0;
+  animation: float 4s ease-in-out infinite;
+}
+
 @media (min-width: 320px) {
   #about {
+    padding: 3em 0 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -14,10 +42,6 @@
     justify-content: center;
     align-items: center;
     margin: 2.5em 0 2em 0;
-  }
-
-  #about .maincontainer .blob-wrapper {
-    margin-bottom: 2.1em;
   }
 
   #about .maincontainer .leftContainer,
@@ -136,12 +160,15 @@
 @media (min-width: 768px) {
   #about {
     margin-bottom: 2em;
+    margin: 0;
+    padding: 0;
   }
 
   #about .maincontainer {
     width: 90%;
     flex-direction: row;
     margin: 6em 0 2em;
+    justify-content: space-between;
   }
 
   #about .maincontainer .blob-wrapper {

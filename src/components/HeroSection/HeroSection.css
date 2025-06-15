@@ -236,6 +236,12 @@
   #hero .socialContainer {
     bottom: 40px;
   }
+  html[dir="rtl"] #hero .socialContainer {
+    left: 50px;
+  }
+  html[dir="ltr"] #hero .socialContainer {
+    right: 50px;
+  }
 }
 @media (min-width: 1024px) {
   #hero {
@@ -297,7 +303,6 @@
 
   #hero .socialContainer {
     bottom: 50px;
-    right: 60px;
   }
 
   #hero .socialContainer ul li {

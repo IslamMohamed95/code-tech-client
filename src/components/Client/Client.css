@@ -6,6 +6,7 @@
   padding: 1em 0;
 }
 #client .swiper {
+  direction: ltr;
   margin: 1em 0;
   width: 100%;
   height: 100%;

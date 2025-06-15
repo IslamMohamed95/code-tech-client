@@ -7,9 +7,12 @@ import logo from "../../assets/AboutLogo/aboutImg.jpg";
 
 //Import Stylesheet
 import "./About.css";
+import { useTranslation } from "react-i18next";
 
 function About() {
-  const aboutList = ["Fast Integration", "Custom Developement", "Support 24H"];
+  const { t } = useTranslation("sabout"),
+    aboutList = [t("list.one"), t("list.two"), t("list.three")];
+
   return (
     <section id="about">
       <div className="maincontainer">
@@ -155,14 +158,9 @@ function About() {
           <img src={logo} alt="introImg" className="main-image" />
         </div>
         <div className="rightContainer">
-          <h4>About Code Tech</h4>
-          <h3>We can help you make your work better</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-            laboriosam laudantium quas eligendi voluptatibus, corrupti
-            consequuntur sunt dolore magnam nam! Reprehenderit eveniet porro
-            ipsa expedita maiores in totam iure architecto!
-          </p>
+          <h4>{t("sTitle")}</h4>
+          <h3>{t("bTitle")}</h3>
+          <p>{t("desc")}</p>
           <div className="listHolder">
             <ul>
               {aboutList.map((a, i) => (
@@ -179,7 +177,7 @@ function About() {
             </div>
           </div>
           <div className="aboutBtn">
-            <button>Explore More</button>
+            <button>{t("btn")}</button>
           </div>
         </div>
       </div>
