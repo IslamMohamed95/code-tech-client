@@ -12,27 +12,7 @@ import deskTopLogo from "../../assets/AboutLogo/aboutLogo.png";
 import { IoIosArrowUp } from "react-icons/io";
 import { GrSystem } from "react-icons/gr";
 import { Link } from "react-router-dom";
-const list = [
-  { title: "Home", path: "/" },
-  { title: "About", path: "/about" },
-  {
-    title: "Products",
-    path: "/products",
-    list: [
-      { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-      { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-      { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-      { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-      { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-    ],
-  },
-  {
-    title: "PriceList",
-    path: "/pricelist",
-  },
 
-  { title: "Contact", path: "/" },
-];
 function Nav() {
   const {
       isMobile,
@@ -44,7 +24,32 @@ function Nav() {
       isHamburgerOpen,
       setIsHamburgerOpen,
       formRef,
+      //language
+      handleLang,
+      lang,
+      t,
     } = useContext(WebContext),
+    list = [
+      { title: t("home"), path: "/" },
+      { title: t("about"), path: "/about" },
+      {
+        title: t("products"),
+        path: "/products",
+        list: [
+          { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
+          { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
+          { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
+          { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
+          { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
+        ],
+      },
+      {
+        title: t("pricelist"),
+        path: "/pricelist",
+      },
+
+      { title: t("contact"), path: "/" },
+    ],
     [activeMenuIndex, setActiveMenuIndex] = useState(null), // Track active submenu
     [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null);
 
@@ -75,12 +80,12 @@ function Nav() {
       <nav>
         <div className="hoverEffect">
           <img src={deskTopLogo} alt="LogoImg" />
-          <p>Code Tech</p>
+          <p>{t("title")}</p>
         </div>
 
         <ul>
           {list.map((m, i) => {
-            if (m.title === "Products") {
+            if (m.title === t("products")) {
               return (
                 <li
                   className="hoverEffect"
@@ -91,7 +96,7 @@ function Nav() {
                   <MdKeyboardArrowDown />
                 </li>
               );
-            } else if (m.title === "Contact") {
+            } else if (m.title === t("contact")) {
               return (
                 <li
                   className="hoverEffect"
@@ -120,12 +125,26 @@ function Nav() {
 
         <div className="languageDesktopContainer">
           <div>
-            <span className="hoverEffect">AR</span>
+            <span
+              className={
+                lang === "ar" ? "hoverEffect activeLang" : "hoverEffect"
+              }
+              onClick={handleLang}
+            >
+              {t("arTitle")}
+            </span>
             <hr />
-            <span className="hoverEffect activeLang">EN</span>
+            <span
+              className={
+                lang === "en" ? "hoverEffect activeLang" : "hoverEffect"
+              }
+              onClick={handleLang}
+            >
+              {t("enTitle")}
+            </span>
           </div>
           <div>
-            <button className="hoverEffect">Try a demo</button>
+            <button className="hoverEffect">{t("btn")}</button>
           </div>
         </div>
 

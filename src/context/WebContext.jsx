@@ -1,4 +1,5 @@
 import { createContext, useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 
 const WebContext = createContext();
@@ -7,8 +8,9 @@ const WebProvider = ({ children }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 }),
     isTablet = useMediaQuery({ minWidth: 768 }),
     isDeskTop = useMediaQuery({ minWidth: 1024 }),
+    { t, i18n } = useTranslation(),
     [active, setActive] = useState(false),
-    [lang, setLang] = useState("en"),
+    [lang, setLang] = useState(localStorage.getItem("lang") || "ar"),
     [loading, setLoading] = useState(true),
     [animate, setAnimate] = useState(true),
     [visibleSubMenu, setVisibleSubMenu] = useState(false), // Track hamburger menu open state
@@ -32,11 +34,39 @@ const WebProvider = ({ children }) => {
     setIsHamburgerOpen(false);
   };
 
-  useEffect(() => {
-    if (animate && loading) {
-      handleLoadingPage();
+  const handleLang = () => {
+    if (lang === "ar") {
+      i18n.changeLanguage("en");
+      document.documentElement.setAttribute("dir", "ltr");
+      setLang("en");
+      localStorage.setItem("lang", "en");
+      localStorage.setItem("prevLang", "ar");
+    } else {
+      i18n.changeLanguage("ar");
+      document.documentElement.setAttribute("dir", "rtl");
+      setLang("ar");
+      localStorage.setItem("lang", "ar");
+      localStorage.setItem("prevLang", "en");
     }
-  }, [animate, loading]);
+    setLoading(true);
+    setAnimate(true);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("lang", lang);
+    i18n.changeLanguage(lang);
+    document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
+  }, [i18n, lang]);
+
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      setLoading(false);
+      setAnimate(false);
+    }, 3000);
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, [lang]);
 
   return (
     <WebContext.Provider
@@ -46,8 +76,7 @@ const WebProvider = ({ children }) => {
         isDeskTop,
         active,
         setActive,
-        lang,
-        setLang,
+        //Loading
         loading,
         setLoading,
         animate,
@@ -61,6 +90,12 @@ const WebProvider = ({ children }) => {
         setIsHamburgerOpen,
         //Form
         formRef,
+        //localization
+        lang,
+        setLang,
+        t,
+        i18n,
+        handleLang,
       }}
     >
       {children}

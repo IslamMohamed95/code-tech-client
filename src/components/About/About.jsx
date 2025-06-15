@@ -155,7 +155,7 @@ function About() {
           <img src={logo} alt="introImg" className="main-image" />
         </div>
         <div className="rightContainer">
-          <h4>About Cede Tech</h4>
+          <h4>About Code Tech</h4>
           <h3>We can help you make your work better</h3>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat

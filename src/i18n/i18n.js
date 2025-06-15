@@ -3,40 +3,29 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 // Importing namespaces
-import layoutEN from "./locales/en/layout.json";
-import headerEN from "./locales/en/header.json";
-import footerEN from "./locales/en/footer.json";
-import homeEN from "./locales/en/home.json";
+import NavEN from "./locales/en/Nav.json";
 
-import layoutAR from "./locales/ar/layout.json";
-import headerAR from "./locales/ar/header.json";
-import footerAR from "./locales/ar/footer.json";
-import homeAR from "./locales/ar/home.json";
+import NavAR from "./locales/ar/Nav.json";
 
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    debug: true,
     resources: {
       en: {
-        layout: layoutEN,
-        header: headerEN,
-        footer: footerEN,
-        home: homeEN,
+        nav: NavEN,
       },
       ar: {
-        layout: layoutAR,
-        header: headerAR,
-        footer: footerAR,
-        home: homeAR,
+        nav: NavAR,
       },
     },
-    fallbackLng: "en",
+    fallbackLng: "ar",
     interpolation: {
       escapeValue: false,
     },
-    ns: ["layout", "header", "footer", "home"],
-    defaultNS: "layout",
+    ns: ["nav", "header", "footer", "home"],
+    defaultNS: "nav",
   });
 
 export default i18n;

@@ -10,6 +10,8 @@ import Products from "./components/Products/Products";
 import PriceList from "./components/PriceList/PriceList";
 import WhatsApp from "./layouts/WhatsApp/WhatsApp";
 
+import "./i18n/i18n";
+
 function App() {
   return (
     <div className="App">
