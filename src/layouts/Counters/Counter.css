@@ -162,7 +162,7 @@
     padding: 2em;
   }
   #counter .container h2 {
-    font-size: 2.1em;
+    font-size: 2em;
     font-weight: 500;
     margin: 6px 0 2px 0;
   }
@@ -174,7 +174,7 @@
   }
   #counter .container span {
     height: 60px !important;
-    font-size: 1.25em !important;
+    font-size: 1.2em !important;
     width: 20px !important;
   }
 }

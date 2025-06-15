@@ -26,6 +26,8 @@ function Counter() {
           <div>
             <FaPlus />
             <FlipNumbers
+              height={80}
+              width={11}
               background="transparent"
               play={play}
               perspective={2000}
