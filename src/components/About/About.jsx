@@ -115,8 +115,8 @@ function About() {
                 x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#25b0ab" />
-                <stop offset="100%" stopColor="#45e0e0" />
+                <stop offset="0%" stopColor="#642364" />
+                <stop offset="100%" stopColor="#642364" />
               </linearGradient>
             </defs>
           </svg>

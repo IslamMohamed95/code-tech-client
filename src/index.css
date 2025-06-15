@@ -105,7 +105,6 @@ p {
   /* About Section */
 
   /* Client Section */
-  
 
   /* SVG Section */
   #svg {
@@ -256,7 +255,8 @@ p {
 
   #whyChooseUs .splitter p span {
     text-decoration: underline;
-    color: var(--yellow);
+    color: var(--primary-color);
+    font-weight: bold;
   }
 
   /* Contact Section */
@@ -490,7 +490,7 @@ p {
 
   #footer .footerContainer > div:last-child > div:last-child {
     font-weight: bold;
-    color: var(--yellow);
+    color: var(--primary-color);
   }
 
   #footer .footerContainer > div:last-child > div:last-child span {
@@ -546,8 +546,6 @@ p {
 }
 
 @media (min-width: 425px) {
- 
-
   #svg .headerContainer label {
     font-size: 1.1em;
   }
@@ -642,8 +640,6 @@ p {
 }
 
 @media (min-width: 768px) {
-  
-
   #svg .mainContainer {
     width: 90%;
     overflow: visible;
@@ -834,7 +830,6 @@ p {
 }
 
 @media (min-width: 1024px) {
-  
   #svg {
     margin: 6.5em 0;
   }
@@ -990,7 +985,6 @@ p {
 }
 
 @media (min-width: 1440px) {
-  
   #whyChooseUs .contentContainer h3 {
     font-size: 1.9em;
   }

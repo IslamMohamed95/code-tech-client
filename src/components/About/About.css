@@ -66,12 +66,12 @@
     display: flex;
     align-items: center;
     margin: 0.1em 0;
-    color: var(--base-color);
+    color: var(--primary-color);
     font-weight: bold;
   }
 
   #about .maincontainer .rightContainer .listHolder ul li svg {
-    color: var(--base-color);
+    color: green;
   }
 
   #about .maincontainer .rightContainer .listHolder > div {
@@ -87,7 +87,7 @@
 
   #about .maincontainer .rightContainer .aboutBtn button {
     border: none;
-    background-color: var(--base-color);
+    background-color: var(--primary-color);
     color: white;
     padding: 0.6em 1em;
     border-radius: 5px;
@@ -156,7 +156,7 @@
 
   #about .maincontainer .rightContainer h3 {
     text-align: left;
-    color: var(--base-color);
+    color: var(--primary-color);
     margin: 0.2em 0 0.5em;
     line-height: 1.25em;
     font-size: 1.2em;
