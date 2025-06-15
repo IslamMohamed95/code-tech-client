@@ -306,7 +306,9 @@
   #Nav > div:last-child {
     display: none;
   }
-
+  #DNav > div > div:first-child ul {
+    list-style: none;
+  }
   #Nav nav {
     position: relative;
     width: 100%;
