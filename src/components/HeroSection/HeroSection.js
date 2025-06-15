@@ -8,6 +8,7 @@ import "./HeroSection.css";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import Counter from "../../layouts/Counters/Counter";
 
 const ParticlesComponent = () => {
   const list = [<FaFacebook />, <FaInstagram />, <FaLinkedin />];
@@ -103,19 +104,22 @@ const ParticlesComponent = () => {
         <Particles id="tsparticles" init={particlesLoaded} options={options} />
         <div className="contentContainer">
           <div>
-            <span></span>
+            <div>
+              <span></span>
 
-            <h5>Optimise IT Solutions</h5>
+              <h5>Optimise IT Solutions</h5>
+            </div>
+
+            <h3>Transform Chaos into Control</h3>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure
+              voluptas, quam omnis culpa tenetur corporis voluptatibus labore
+              quisquam. Nisi, animi! Voluptatum earum, at reiciendis labore
+              delectus saepe provident cupiditate iure.
+            </p>
+            <button className="hoverEffect">Try A Demo</button>
           </div>
-
-          <h3>Transform Chaos into Control</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure
-            voluptas, quam omnis culpa tenetur corporis voluptatibus labore
-            quisquam. Nisi, animi! Voluptatum earum, at reiciendis labore
-            delectus saepe provident cupiditate iure.
-          </p>
-          <button className="hoverEffect">Try A Demo</button>
+          <Counter />
         </div>
         <div className="socialContainer">
           <ul>

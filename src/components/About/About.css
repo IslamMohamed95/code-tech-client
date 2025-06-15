@@ -1,0 +1,212 @@
+@media (min-width: 320px) {
+  #about {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #about .maincontainer {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5em 0 2em 0;
+  }
+
+  #about .maincontainer .blob-wrapper {
+    margin-bottom: 2.1em;
+  }
+
+  #about .maincontainer .leftContainer,
+  #about .maincontainer .rightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #about .maincontainer .rightContainer h3 {
+    text-align: center;
+    color: var(--base-color);
+    margin: 0.5em 0 1em;
+    line-height: 1.25em;
+    font-size: 1.1em;
+  }
+
+  #about .maincontainer .rightContainer h4 {
+    color: var(--medium-gray);
+    margin-top: 1em;
+    font-size: 0.95em;
+  }
+
+  #about .maincontainer .rightContainer p {
+    color: var(--medium-gray);
+  }
+
+  #about .maincontainer .rightContainer p,
+  #about .maincontainer .rightContainer .listHolder ul li {
+    font-size: 0.85em;
+  }
+
+  #about .maincontainer .rightContainer .listHolder {
+    width: 100%;
+    align-self: flex-start;
+  }
+
+  #about .maincontainer .rightContainer .listHolder ul {
+    margin: 1em 0 1em 1em;
+    list-style: none;
+    align-self: flex-start;
+  }
+
+  #about .maincontainer .rightContainer .listHolder ul li {
+    display: flex;
+    align-items: center;
+    margin: 0.1em 0;
+    color: var(--base-color);
+    font-weight: bold;
+  }
+
+  #about .maincontainer .rightContainer .listHolder ul li svg {
+    color: var(--base-color);
+  }
+
+  #about .maincontainer .rightContainer .listHolder > div {
+    display: none;
+  }
+
+  #about .maincontainer .rightContainer .listHolder > div > div:last-child {
+    background-color: white;
+    width: 50%;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+  }
+
+  #about .maincontainer .rightContainer .aboutBtn button {
+    border: none;
+    background-color: var(--base-color);
+    color: white;
+    padding: 0.6em 1em;
+    border-radius: 5px;
+    margin-top: 0.5em;
+  }
+}
+@media (min-width: 375px) {
+  #about .maincontainer .rightContainer h3 {
+    line-height: 1.25em;
+    font-size: 1.15em;
+  }
+
+  #about .maincontainer .rightContainer h4 {
+    color: var(--medium-gray);
+    margin-top: 1em;
+    font-size: 1em;
+  }
+
+  #about .maincontainer .rightContainer p,
+  #about .maincontainer .rightContainer .listHolder ul li {
+    font-size: 0.9em;
+  }
+}
+@media (min-width: 420px) {
+  #about .maincontainer {
+    width: 85%;
+  }
+
+  #about .maincontainer .rightContainer h3 {
+    font-size: 1.2em;
+  }
+
+  #about .maincontainer .rightContainer h4 {
+    font-size: 1.1em;
+  }
+
+  #about .maincontainer .rightContainer p,
+  #about .maincontainer .rightContainer .listHolder ul li {
+    font-size: 0.95em;
+  }
+
+  #about .maincontainer .rightContainer .aboutBtn button {
+    font-size: 0.95em;
+  }
+}
+@media (min-width: 768px) {
+  #about {
+    margin-bottom: 2em;
+  }
+
+  #about .maincontainer {
+    width: 90%;
+    flex-direction: row;
+    margin: 6em 0 2em;
+  }
+
+  #about .maincontainer .blob-wrapper {
+    width: 45%;
+  }
+
+  #about .maincontainer .leftContainer,
+  #about .maincontainer .rightContainer {
+    width: 50%;
+    align-items: flex-start;
+  }
+
+  #about .maincontainer .rightContainer h3 {
+    text-align: left;
+    color: var(--base-color);
+    margin: 0.2em 0 0.5em;
+    line-height: 1.25em;
+    font-size: 1.2em;
+  }
+
+  #about .maincontainer .rightContainer h4 {
+    color: var(--medium-gray);
+    margin-top: 1em;
+    font-size: 1.1em;
+  }
+
+  #about .maincontainer .rightContainer p,
+  #about .maincontainer .rightContainer .listHolder ul li {
+    font-size: 0.95em;
+  }
+}
+@media (min-width: 1024px) {
+  #about {
+    margin-bottom: 3em;
+  }
+
+  #about .maincontainer .rightContainer h3 {
+    font-size: 1.4em;
+  }
+
+  #about .maincontainer .rightContainer h4 {
+    font-size: 1.2em;
+  }
+
+  #about .maincontainer .rightContainer p,
+  #about .maincontainer .rightContainer .listHolder ul li {
+    font-size: 1em;
+  }
+}
+@media (min-width: 1440px) {
+  #about .maincontainer .rightContainer h3 {
+    width: 80%;
+    font-size: 2.1em;
+  }
+
+  #about .maincontainer .rightContainer h4 {
+    font-size: 1.8em;
+  }
+
+  #about .maincontainer .rightContainer p,
+  #about .maincontainer .rightContainer .listHolder ul li {
+    font-size: 1.3em;
+  }
+
+  #about .maincontainer .rightContainer .aboutBtn button {
+    font-size: 1.3em;
+  }
+}

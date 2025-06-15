@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 9999;
+  z-index: 5;
   background-color: #25d366;
   border-radius: 50%;
   padding: 10px;
@@ -38,6 +38,12 @@
   opacity: 1;
 }
 
+@media (min-width: 320px) {
+  .whatsapp-fixed-icon {
+    display: none;
+  }
+}
+
 /* Responsive: make it slightly smaller on very small screens */
 @media screen and (max-width: 480px) {
   .whatsapp-fixed-icon {
@@ -51,5 +57,11 @@
 
   .whatsapp-fixed-icon .tooltip {
     font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .whatsapp-fixed-icon {
+    display: flex;
   }
 }

@@ -1,0 +1,544 @@
+/* Navigation Styles */
+
+/* Mobile First - 320px and up */
+@media (min-width: 320px) {
+  /* Navigation Styles */
+  #Nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 50;
+  }
+
+  #Nav > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+  }
+
+  #Nav > div:last-child > div {
+    padding: 25px 0px 10px 0;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+  }
+
+  #Nav > div:last-child > div > div:first-child {
+    width: 45%;
+  }
+
+  #Nav > div:last-child > div > div:first-child img {
+    width: 100%;
+  }
+
+  #Nav > div:last-child > div > ul {
+    position: absolute;
+    padding: 0;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    list-style: none;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-in-out;
+    background-color: white;
+    z-index: 3;
+  }
+
+  #Nav > div:last-child > div > ul > div {
+    width: 85%;
+    align-self: center;
+  }
+
+  #Nav > div:last-child > div > ul a {
+    text-decoration: none;
+  }
+
+  #Nav > div:last-child > div > ul li {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 3px;
+    color: var(--dark-gray);
+  }
+
+  #Nav > div:last-child > div > ul li span {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #Nav > div:last-child > div > ul li svg {
+    font-size: 1.2em;
+    transform: rotate(0deg);
+    transition: all 0.4s ease-in-out;
+    color: var(--base-color);
+  }
+
+  #Nav > div:last-child > div > ul .subMenuContainer {
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+    max-height: 0;
+    overflow-y: hidden;
+  }
+
+  #Nav > div:last-child > div > ul .subMenuContainer div {
+    width: 95%;
+    padding: 8px 0;
+    margin-bottom: 5px;
+  }
+
+  #Nav > div:last-child > div > ul .subMenuContainer div h3,
+  #Nav > div:last-child > div > ul .subMenuContainer div ul {
+    font-size: 0.8em;
+    color: var(--medium-gray);
+  }
+
+  #Nav > div:last-child > div > ul .subMenuContainer div h3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: fit-content;
+    padding: 4px 5px;
+    border-radius: 10px;
+  }
+
+  #Nav > div:last-child > div > ul .subMenuContainer div h3 span {
+    margin: 0 5px;
+    color: var(--base-color);
+  }
+
+  #Nav > div:last-child > div > ul .subMenuContainer div h3 svg {
+    color: var(--base-color);
+    font-size: 1.2em;
+  }
+
+  #Nav > div:last-child > div > ul .subMenuContainer > div hr {
+    width: 60%;
+  }
+
+  #Nav > div:last-child > div > ul .underline {
+    display: none;
+  }
+
+  #Nav > div:last-child > div > ul .subMenuContainer div ul {
+    padding: 0px 15px;
+  }
+
+  #Nav > div:last-child > div > ul .subMenuContainer div ul li {
+    font-weight: bold;
+    color: var(--medium-gray);
+  }
+
+  #Nav .langContainer {
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #Nav .langContainer > div {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #Nav .langContainer > div:last-child {
+    width: 100%;
+    margin-top: 1em;
+  }
+
+  #Nav .langContainer > div:last-child button {
+    padding: 0.6em 2em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--base-color);
+    color: white;
+    font-weight: bold;
+    font-size: 0.85em;
+  }
+
+  #Nav .langContainer > div hr {
+    height: 18px;
+    width: 0.2em;
+    border: none;
+    background-color: var(--base-color);
+    border-radius: 25px;
+  }
+
+  #Nav .langContainer > div span {
+    transition: all 0.4s ease-in-out;
+  }
+
+  #Nav ul button img {
+    width: 15%;
+    margin: 0 10px;
+    border-radius: 2px;
+    padding: 0 !important;
+  }
+
+  #Nav > div:last-child > div #hamburgerContainer {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+  }
+
+  #Nav > div:last-child > div #hamburgerContainer span {
+    height: 2.2px;
+    border-radius: 25px;
+    background-color: var(--base-color);
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+  }
+
+  #Nav > div:last-child > div #hamburgerContainer span:first-child,
+  #Nav > div:last-child > div #hamburgerContainer span:last-child {
+    position: absolute;
+    width: 70%;
+  }
+
+  #Nav > div:last-child > div #hamburgerContainer span:first-child {
+    top: 0;
+    transform: rotate(0deg);
+  }
+
+  #Nav > div:last-child > div #hamburgerContainer span:last-child {
+    bottom: 0;
+    transform: rotate(0deg);
+  }
+
+  #Nav nav {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Desktop Navigation */
+  #DNav {
+    color: white;
+    font-weight: lighter;
+    padding: 0.3em 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--base-color);
+  }
+
+  #DNav > div {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  #DNav > div,
+  #DNav > div > div:first-child ul,
+  #DNav > div > div:last-child > div > div,
+  #DNav > div:last-child > div > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #DNav > div:first-child > div:first-child,
+  #DNav > div:first-child > div:last-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #DNav > div:first-child > div:first-child ul li {
+    margin: 0 5px;
+  }
+
+  #DNav > div:last-child > div > div {
+    margin: 0 5px;
+  }
+
+  #DNav > div:last-child > div > div > div {
+    margin: 0 9px;
+  }
+
+  #DNav > div:last-child > div > div svg {
+    margin: 0 8px;
+  }
+
+  #DNav svg {
+    color: rgb(217, 217, 217);
+    font-size: 1.2em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #DNav svg:hover,
+  #DNav > div:last-child > div > div > div:hover svg {
+    color: white;
+  }
+
+  #Nav > div:last-child {
+    display: none;
+  }
+
+  #Nav nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    padding: 0.5em 1em;
+  }
+
+  #Nav nav > div:first-child,
+  #Nav nav > div:nth-child(2),
+  #Nav nav > div:nth-child(3) {
+    width: 33.33%;
+  }
+
+  #Nav nav > div:first-child {
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #Nav nav > div:first-child img {
+    width: 30%;
+  }
+
+  #Nav nav > div:first-child p {
+    font-weight: bold;
+    color: var(--base-color);
+  }
+
+  #Nav nav > div:nth-child(3) {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #Nav nav > div:nth-child(3) button {
+    padding: 0.6em 1em;
+    font-size: 0.8em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--base-color);
+    color: white;
+    font-weight: bold;
+  }
+
+  #Nav nav .languageDesktopContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+  }
+
+  #Nav nav .languageDesktopContainer > div:first-child {
+    display: flex;
+  }
+
+  #Nav nav > div:nth-child(3) > div hr {
+    width: 2px;
+    margin: 0 0.3em;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+  }
+
+  #Nav nav > div:nth-child(3) > div span {
+    color: var(--medium-gray);
+  }
+
+  #Nav nav ul {
+    width: 70%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #Nav nav ul a,
+  #Nav nav ul li {
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--dark-gray);
+  }
+
+  #Nav nav ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #Nav nav ul li svg {
+    margin-left: 0.5em;
+  }
+
+  #Nav .subMenuHolder {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    min-height: 0;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    background-color: white;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-in-out;
+  }
+
+  #Nav .subMenuHolder ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    padding: 1em;
+  }
+
+  #Nav .subMenuHolder ul hr {
+    height: 70px;
+    border: none;
+    width: 0.5px;
+    background-color: rgb(187, 187, 187);
+  }
+
+  #Nav .subMenuHolder ul div h3 {
+    font-size: 0.9em;
+    color: var(--base-color);
+  }
+
+  #Nav .subMenuHolder ul ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #Nav .subMenuHolder ul ul li {
+    margin: 0.2em 0;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--medium-gray);
+  }
+
+  .activeDesktopMenu {
+    max-height: 400px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #DNav {
+    font-size: 0.9em;
+  }
+
+  #DNav svg {
+    font-size: 1.2em;
+  }
+
+  #Nav nav > div:first-child img {
+    width: 25%;
+  }
+
+  #Nav nav ul {
+    width: 80%;
+  }
+
+  #Nav nav ul li {
+    font-size: 1.1em;
+  }
+
+  #Nav .subMenuHolder ul div h3 {
+    font-size: 1em;
+  }
+
+  #Nav .subMenuHolder ul ul li {
+    font-weight: normal;
+    font-size: 0.95em;
+  }
+}
+
+@media (min-width: 1440px) {
+  #DNav {
+    font-size: 1.1em;
+  }
+
+  #Nav nav {
+    width: 100%;
+    padding: 0.5em 1em;
+    border-radius: 0;
+  }
+
+  #Nav nav > div:first-child {
+    justify-content: center;
+    width: 15%;
+  }
+
+  #Nav nav > div:first-child p {
+    margin-left: 1em;
+  }
+
+  #Nav nav > div:first-child img {
+    width: 30%;
+  }
+
+  #Nav nav > div:nth-child(3) {
+    width: 20%;
+  }
+
+  #Nav nav > div:nth-child(3) button {
+    font-size: 1em;
+  }
+
+  #Nav nav > div:nth-child(3) > div span {
+    font-size: 1.1em;
+  }
+
+  #Nav nav ul {
+    width: 50%;
+  }
+
+  #Nav nav ul li {
+    font-size: 1.3em;
+  }
+
+  #Nav .subMenuHolder ul div h3 {
+    font-size: 1.2em;
+  }
+
+  #Nav .subMenuHolder ul ul li {
+    font-size: 1.2em;
+  }
+}

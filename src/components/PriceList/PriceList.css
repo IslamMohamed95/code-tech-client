@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
   }
+
   #priceList .mainContainer {
     width: 100%;
     display: flex;
@@ -12,42 +13,49 @@
     justify-content: center;
     align-items: center;
   }
+
   #priceList .introHolder {
     width: 100%;
     padding: 2em;
     background-color: var(--base-color);
     color: white;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   #priceList .introHolder > div {
     margin-bottom: 1em;
   }
+
   #priceList .introHolder > div h2,
   #priceList .introHolder > div p {
     text-align: center;
   }
+
   #priceList .introHolder > div h2 {
     color: var(--primary-color);
     margin-bottom: 1em;
     font-size: 1.3em;
     font-weight: bold;
   }
+
   #priceList .introHolder > div p {
     font-size: 0.9em;
   }
+
   #priceList .introHolder img {
     width: 70%;
   }
+
   #priceList .splitter {
     text-align: center;
     margin: 2em 0 1em;
     color: grey;
     font-size: 1.5em;
   }
+
   #priceList .rightHolder {
     width: 90%;
     display: flex;
@@ -56,6 +64,7 @@
     align-items: center;
     margin-bottom: 3em;
   }
+
   #priceList .plansHolder {
     width: 100%;
     display: flex;
@@ -63,41 +72,116 @@
     justify-content: center;
     align-items: center;
   }
+
   #priceList .plansHolder > div {
     margin: 1em 0;
     padding: 2em;
     border-radius: 20px;
   }
+
   #priceList .plansHolder .freeTrial {
     background-color: var(--very-light-gray);
   }
+
   #priceList .plansHolder .pro {
     background-color: var(--primary-color);
-  }
-  #priceList .plansHolder .plus,
-  #priceList .plansHolder .pro {
     color: white;
   }
+
   #priceList .plansHolder .plus {
     background-color: var(--base-color);
+    color: white;
   }
+
   #priceList .rowDisplay {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 2em;
   }
+
   #priceList .freeTrial .rowDisplay h5,
   #priceList .freeTrial .rowDisplay h3 {
     color: var(--base-color);
   }
+
   #priceList .rowDisplay h5 {
     margin-bottom: 0.2em;
   }
+
+  #priceList .rowDisplay p {
+    font-size: 0.75em;
+    font-weight: bold;
+  }
+
+  #priceList .freeTrial .rowDisplay p {
+    color: grey;
+  }
+
+  #priceList .rowDisplay > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  #priceList .plansHolder > div h3 {
+    font-size: 1.5em;
+  }
+
+  #priceList .plansHolder > div hr {
+    width: 20px;
+    height: 2px;
+    border: none;
+  }
+
+  #priceList .plansHolder .freeTrial hr {
+    background-color: var(--primary-color);
+  }
+
+  #priceList .plansHolder .pro hr,
+  #priceList .plansHolder .plus hr {
+    background-color: white;
+  }
+
+  #priceList .featuresContainer {
+    width: 100%;
+  }
+
+  #priceList .freeTrial .featuresContainer h5 {
+    color: var(--primary-color);
+  }
+
+  #priceList .featuresContainer ul {
+    width: 100%;
+    margin-top: 1em;
+    list-style: none;
+  }
+
+  #priceList .featuresContainer ul > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  #priceList .freeTrial .featuresContainer ul svg {
+    color: var(--base-color);
+  }
+
+  #priceList .freeTrial .featuresContainer ul li {
+    color: grey;
+  }
+
+  #priceList .featuresContainer ul li {
+    font-size: 0.8em;
+    margin: 0.8em 0 0 0.5em;
+  }
+
   #priceList .btn {
     margin-top: 2em;
     text-align: center;
   }
+
   #priceList .btn button {
     border-radius: 5px;
     border: none;
@@ -106,61 +190,6 @@
     color: var(--dark-gray);
     font-weight: bold;
     font-size: 0.85em;
-  }
-  #priceList .freeTrial .rowDisplay p {
-    color: grey;
-  }
-  #priceList .rowDisplay p {
-    font-size: 0.75em;
-    font-weight: bold;
-  }
-  #priceList .rowDisplay > div:last-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  #priceList .plansHolder > div h3 {
-    font-size: 1.5em;
-  }
-  #priceList .plansHolder .freeTrial hr {
-    background-color: var(--primary-color);
-  }
-  #priceList .plansHolder .pro hr,
-  #priceList .plansHolder .plus hr {
-    background-color: white;
-  }
-  #priceList .plansHolder > div hr {
-    width: 20px;
-    height: 2px;
-    border: none;
-  }
-  #priceList .featuresContainer {
-    width: 100%;
-  }
-  #priceList .freeTrial .featuresContainer h5 {
-    color: var(--primary-color);
-  }
-  #priceList .featuresContainer ul {
-    width: 100%;
-    margin-top: 1em;
-    list-style: none;
-  }
-  #priceList .featuresContainer ul > div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  #priceList .freeTrial .featuresContainer ul svg {
-    color: var(--base-color);
-  }
-
-  #priceList .freeTrial .featuresContainer ul li {
-    color: grey;
-  }
-  #priceList .featuresContainer ul li {
-    font-size: 0.8em;
-    margin: 0.8em 0 0 0.5em;
   }
 
   .table-container {
@@ -174,9 +203,7 @@
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-  }
-  .pricing-table th {
-    color: var(--base-color);
+    font-size: 0.7em;
   }
 
   .pricing-table th,
@@ -184,7 +211,6 @@
     border-top: 1px solid rgb(224, 224, 224);
     border-bottom: 1px solid rgb(224, 224, 224);
     padding: 1em 0.5em;
-    font-size: 0.7em;
     white-space: nowrap;
     text-align: center;
     width: 100%;
@@ -194,8 +220,13 @@
   .pricing-table td:first-child {
     text-align: left;
   }
+
   .pricing-table td:first-child {
     color: grey;
+  }
+
+  .pricing-table th {
+    color: var(--base-color);
   }
 
   .pricing-table thead th {
@@ -203,31 +234,35 @@
     font-weight: bold;
   }
 }
+
 @media (min-width: 375px) {
   .pricing-table th,
   .pricing-table td {
     font-size: 0.75em;
   }
 }
+
 @media (min-width: 420px) {
   #priceList .plansHolder > div {
     width: 90%;
   }
+
   #priceList .plansHolder > div h3 {
     font-size: 1.7em;
   }
-  #priceList .plansHolder > div h5 {
-    font-size: 1em;
-  }
-  #priceList .rowDisplay p {
-    font-size: 0.85em;
-  }
+
   #priceList .plansHolder > div h5 {
     font-size: 1.1em;
   }
+
+  #priceList .rowDisplay p {
+    font-size: 0.85em;
+  }
+
   #priceList .featuresContainer ul li {
     font-size: 0.95em;
   }
+
   .table-container {
     padding: 10px;
   }
@@ -239,40 +274,44 @@
   .pricing-table th,
   .pricing-table td {
     padding: 6px;
+    font-size: 1.15em;
   }
 
   .section-heading td {
     font-size: 13px;
   }
-  .pricing-table th,
-  .pricing-table td {
-    font-size: 1.15em;
-  }
 }
+
 @media (min-width: 768px) {
   #priceList .mainContainer {
     padding: 1em;
   }
+
   #priceList .introHolder {
     padding: 2em;
     flex-direction: row;
     justify-content: space-between;
   }
+
   #priceList .introHolder img {
     width: 40%;
   }
+
   #priceList .introHolder > div {
     width: 50%;
     align-items: flex-start;
   }
+
   #priceList .introHolder > div h2,
   #priceList .introHolder > div p {
     text-align: left;
   }
+
   #priceList .introHolder > div h2 {
     margin-bottom: 0.5em;
     font-size: 2em;
   }
+
   #priceList .introHolder > div p {
     font-size: 1em;
   }
@@ -280,43 +319,51 @@
   #priceList .splitter {
     font-size: 2em;
   }
+
   #priceList .freeTrial,
   #priceList .pro {
     transform: scale(0.95);
   }
+
   #priceList .plus {
     transform: scale(1.1);
   }
+
   #priceList .rightHolder {
     width: 100%;
   }
+
   #priceList .plansHolder {
     width: 100%;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
   }
+
   #priceList .plansHolder > div {
     width: 30%;
   }
+
   #priceList .plansHolder > div h3 {
     font-size: 1.2em;
   }
-  #priceList .plansHolder > div h5 {
-    font-size: 0.95em;
-  }
-  #priceList .rowDisplay p {
-    font-size: 0.65em;
-  }
+
   #priceList .plansHolder > div h5 {
     font-size: 0.8em;
   }
+
+  #priceList .rowDisplay p {
+    font-size: 0.65em;
+  }
+
   #priceList .featuresContainer ul li {
     font-size: 0.65em;
   }
+
   #priceList .btn button {
     font-size: 0.55em;
   }
+
   .pricing-table {
     font-size: 13px;
   }
@@ -327,47 +374,56 @@
     font-size: 1.3em;
   }
 }
+
 @media (min-width: 1024px) {
   #priceList .introHolder > div h2 {
     font-size: 2.5em;
   }
+
   #priceList .introHolder > div p {
     font-size: 1.2em;
   }
+
   #priceList .splitter {
     font-size: 2.5em;
   }
+
   #priceList .plansHolder > div {
     width: 32%;
     flex-wrap: nowrap;
   }
+
   #priceList .plansHolder > div h3 {
     font-size: 1.7em;
   }
-  #priceList .plansHolder > div h5 {
-    font-size: 1.1em;
-  }
-  #priceList .rowDisplay p {
-    font-size: 0.8em;
-  }
+
   #priceList .plansHolder > div h5 {
     font-size: 0.9em;
   }
+
+  #priceList .rowDisplay p {
+    font-size: 0.8em;
+  }
+
   #priceList .featuresContainer ul li {
     font-size: 0.85em;
   }
+
   #priceList .btn button {
     font-size: 0.75em;
     font-weight: bold;
   }
+
   .table-container {
     width: 70%;
   }
+
   .pricing-table th,
   .pricing-table td {
     font-size: 1.5em;
   }
 }
+
 @media (min-width: 1440px) {
   #priceList .mainContainer {
     flex-direction: column;
@@ -375,12 +431,7 @@
     justify-content: center;
     margin-bottom: 4em;
   }
-  #priceList .introHolder > div h2 {
-    font-size: 3em;
-  }
-  #priceList .introHolder > div p {
-    font-size: 2em;
-  }
+
   #priceList .introHolder {
     padding: 3em;
   }
@@ -388,10 +439,15 @@
   #priceList .introHolder > div {
     width: 100%;
   }
-  #priceList .plansHolder > div {
-    width: 30%;
-    padding: 3em 2em;
+
+  #priceList .introHolder > div h2 {
+    font-size: 3em;
   }
+
+  #priceList .introHolder > div p {
+    font-size: 2em;
+  }
+
   #priceList .rightHolder {
     width: 75%;
     height: 100%;
@@ -399,23 +455,31 @@
     justify-content: flex-end;
     margin: 5em 0;
   }
+
   #priceList .splitter {
     font-size: 2.5em;
     margin: 0 0 2em 0;
     text-align: center;
   }
+
   #priceList .plansHolder {
     height: 65%;
   }
+
+  #priceList .plansHolder > div {
+    width: 30%;
+    padding: 3em 2em;
+    height: 100%;
+  }
+
   #priceList .plansHolder > div h5 {
     font-size: 1.7em;
   }
+
   #priceList .plansHolder > div h3 {
     font-size: 2.1em;
   }
-  #priceList .plansHolder > div {
-    height: 100%;
-  }
+
   #priceList .featuresContainer ul > div li,
   #priceList .featuresContainer ul > div svg {
     font-size: 1em;

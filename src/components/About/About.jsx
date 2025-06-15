@@ -1,10 +1,12 @@
-import "./About.css";
 //Importing Icons
 import { FaCheck } from "react-icons/fa";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 
 //Importing Logo
 import logo from "../../assets/AboutLogo/aboutImg.jpg";
+
+//Import Stylesheet
+import "./About.css";
 
 function About() {
   const aboutList = ["Fast Integration", "Custom Developement", "Support 24H"];

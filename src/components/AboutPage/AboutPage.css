@@ -16,6 +16,27 @@
   opacity: 0.8;
 }
 
+.blob {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  opacity: 0.9;
+  z-index: 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .main-image {
   position: relative;
   width: 100%;
@@ -31,429 +52,306 @@
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+/* ---------- Base Styles ---------- */
+#aboutPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-@media (min-width: 320px) {
-  .blob {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    opacity: 0.9;
-    z-index: 0;
-    animation: float 4s ease-in-out infinite;
-  }
-  #aboutPage {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  #aboutPage .mainContainer {
-    width: 90%;
-  }
-
-  #aboutPage .contentContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3em;
-  }
-  #aboutPage .contentContainer h2 {
-    position: relative;
-    color: var(--primary-color);
-  }
-  #aboutPage .contentContainer h2 .big {
-    color: var(--yellow);
-    margin-left: 7px;
-    font-size: 1.4em;
-  }
-  #aboutPage .contentContainer h2 .small {
-    position: absolute;
-    top: -30%;
-    right: -20px;
-    font-size: 0.5em;
-    z-index: 10;
-    color: var(--primary-color);
-  }
-  #aboutPage .storyHolder h2,
-  #aboutPage .missionHolder h2,
-  #aboutPage .learnMoreHolder h2 {
-    font-size: 1.5em;
-    text-align: center;
-    color: var(--base-color);
-  }
-  #aboutPage .contentContainer p {
-    text-align: center;
-    margin-top: 1em;
-  }
-  #aboutPage .contentContainer p,
-  #aboutPage .storyHolder p,
-  #aboutPage .missionHolder p {
-    font-size: 0.95em;
-    color: grey;
-  }
-  #aboutPage .storyHolder,
-  #aboutPage .missionHolder,
-  #aboutPage .learnMoreHolder {
-    margin-top: 4em;
-  }
-  #aboutPage .storyHolder p {
-    padding: 0.8em;
-    margin-top: 2em;
-    border-radius: 5px;
-    border-left: 3px solid var(--base-color);
-    padding-left: 1em;
-  }
-  #aboutPage .missionHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #aboutPage .missionHolder > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: -1em;
-  }
-
-  #aboutPage .missionHolder img {
-    width: 80%;
-    transform: translateY(50px);
-    border-radius: 25px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-  }
-  #aboutPage .missionHolder > div p {
-    padding: 5em 1em 3em 1em;
-    background-color: var(--very-light-gray);
-    color: var(--medium-gray);
-    border-radius: 10px;
-  }
-  #aboutPage .learnMoreHolder {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #aboutPage .learnMoreHolder h2 {
-    margin-bottom: 2em;
-  }
-  #aboutPage .learnMoreHolder ul {
-    list-style: none;
-  }
-  #aboutPage .learnMoreHolder ul li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 5em;
-  }
-  #aboutPage .learnMoreHolder ul li img {
-    width: 50%;
-  }
-  #aboutPage .learnMoreHolder ul li p {
-    margin-top: 1em;
-    font-weight: bold;
-    font-size: 1.1em;
-    color: grey;
-  }
-  #aboutPage .blobAndContentHolder:last-child {
-    margin: 8em 0;
-  }
+#aboutPage .mainContainer {
+  width: 90%;
 }
+
+#aboutPage .contentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3em;
+  text-align: center;
+}
+
+#aboutPage .contentContainer h2 {
+  position: relative;
+  color: var(--primary-color);
+}
+
+#aboutPage .contentContainer h2 .big {
+  margin-left: 7px;
+  font-size: 1.4em;
+  color: var(--base-color);
+}
+
+#aboutPage .contentContainer h2 .small {
+  position: absolute;
+  top: -30%;
+  right: -20px;
+  font-size: 0.5em;
+  z-index: 10;
+  color: var(--primary-color);
+}
+
+#aboutPage .contentContainer p,
+#aboutPage .storyHolder p,
+#aboutPage .missionHolder p {
+  color: grey;
+  font-size: 0.95em;
+  margin-top: 1em;
+}
+
+#aboutPage .storyHolder,
+#aboutPage .missionHolder,
+#aboutPage .learnMoreHolder {
+  margin-top: 4em;
+}
+
+#aboutPage .storyHolder h2,
+#aboutPage .missionHolder h2,
+#aboutPage .learnMoreHolder h2 {
+  font-size: 1.5em;
+  text-align: center;
+  color: var(--base-color);
+}
+
+#aboutPage .storyHolder p {
+  padding: 0.8em 1em;
+  margin-top: 2em;
+  border-radius: 5px;
+  border-left: 3px solid var(--base-color);
+}
+
+#aboutPage .missionHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#aboutPage .missionHolder > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -1em;
+}
+
+#aboutPage .missionHolder img {
+  width: 80%;
+  transform: translateY(50px);
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+#aboutPage .missionHolder > div p {
+  padding: 5em 1em 3em;
+  background-color: var(--very-light-gray);
+  color: var(--medium-gray);
+  border-radius: 10px;
+}
+
+#aboutPage .learnMoreHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4em;
+}
+
+#aboutPage .learnMoreHolder h2 {
+  margin-bottom: 2em;
+}
+
+#aboutPage .learnMoreHolder ul {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+#aboutPage .learnMoreHolder ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5em;
+}
+
+#aboutPage .learnMoreHolder ul li img {
+  width: 50%;
+}
+
+#aboutPage .learnMoreHolder ul li p {
+  margin-top: 1em;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: grey;
+}
+
+#aboutPage .blobAndContentHolder:last-child {
+  margin: 8em 0;
+}
+
+/* ---------- Responsive ---------- */
 @media (min-width: 375px) {
   #aboutPage .contentContainer h2 {
     font-size: 1.8em;
-    position: relative;
-    color: var(--primary-color);
   }
-  #aboutPage .contentContainer h2 .big {
-    color: var(--base-color);
-    margin-left: 7px;
-    font-size: 1.4em;
-  }
-  #aboutPage .contentContainer h2 .small {
-    position: absolute;
-    top: -30%;
-    right: -20px;
-    font-size: 0.5em;
-    z-index: 10;
-    color: var(--primary-color);
-  }
+
   #aboutPage .storyHolder h2,
   #aboutPage .missionHolder h2,
   #aboutPage .learnMoreHolder h2 {
     font-size: 1.6em;
-    text-align: center;
-    color: var(--base-color);
   }
-  #aboutPage .contentContainer p {
-    text-align: center;
-    margin-top: 1em;
-  }
+
   #aboutPage .contentContainer p,
   #aboutPage .storyHolder p {
     font-size: 1em;
-    color: grey;
   }
+
   #aboutPage .storyHolder {
     margin-top: 2.5em;
   }
-  #aboutPage .storyHolder p {
-    padding: 0.8em;
-    margin-top: 2em;
-    border-radius: 5px;
-    border-left: 3px solid var(--base-color);
-    padding-left: 1em;
-  }
+
   #aboutPage .missionHolder {
     margin-top: 3.5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #aboutPage .missionHolder > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: -1em;
-  }
-
-  #aboutPage .missionHolder img {
-    width: 80%;
-    transform: translateY(50px);
-    border-radius: 25px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-  }
-  #aboutPage .missionHolder > div p {
-    padding: 5em 1em 3em 1em;
-    background-color: var(--very-light-gray);
-    color: var(--medium-gray);
-    border-radius: 10px;
-  }
-  #aboutPage .learnMoreHolder {
-    margin-top: 4em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
   #aboutPage .learnMoreHolder ul li p {
     font-size: 1.2em;
   }
 }
+
 @media (min-width: 420px) {
   #aboutPage .mainContainer {
     width: 85%;
   }
 }
+
 @media (min-width: 768px) {
   #aboutPage .mainContainer {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
   }
+
   #aboutPage .blobAndContentHolder {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   #aboutPage .contentContainer {
     margin-left: 2em;
-    width: 100%;
     align-items: flex-start;
-  }
-
-  #aboutPage .contentContainer p {
     text-align: left;
   }
-  #aboutPage .storyHolder {
-    width: 80%;
-  }
+
   #aboutPage .storyHolder,
   #aboutPage .missionHolder,
   #aboutPage .learnMoreHolder {
     margin-top: 5em;
   }
+
   #aboutPage .storyHolder h2,
   #aboutPage .missionHolder h2,
   #aboutPage .learnMoreHolder h2 {
     font-size: 1.7em;
   }
+
   #aboutPage .contentContainer h2 {
     font-size: 2.5em;
   }
-  #aboutPage .missionHolder {
-    width: 100%;
-  }
+
   #aboutPage .missionHolder > div {
     margin-top: 2em;
     width: 100%;
     flex-direction: row-reverse;
-    align-items: center;
     background-color: var(--very-light-gray);
   }
-  #aboutPage .missionHolder > div > div {
+
+  #aboutPage .missionHolder > div > div,
+  #aboutPage .missionHolder > div img {
     width: 50%;
   }
+
   #aboutPage .missionHolder > div img {
     height: 100%;
     transform: translateY(0);
-    width: 50%;
     border-radius: 0;
   }
+
   #aboutPage .missionHolder > div p {
     padding: 2em;
-    background-color: none;
+    background-color: transparent;
   }
-  #aboutPage .contentContainer p,
-  #aboutPage .storyHolder p,
-  #aboutPage .missionHolder p {
-    font-size: 1em;
-    color: grey;
-  }
+
   #aboutPage .learnMoreHolder {
     width: 90%;
     margin-bottom: 6em;
   }
+
   #aboutPage .learnMoreHolder ul {
-    width: 100%;
     display: flex;
     flex-direction: row;
   }
-  #aboutPage .learnMoreHolder ul li img {
-    width: 100%;
-  }
+
   #aboutPage .learnMoreHolder ul li {
     width: 100%;
     margin: 0 1em;
   }
+
+  #aboutPage .learnMoreHolder ul li img {
+    width: 100%;
+  }
+
   #aboutPage .blobAndContentHolder:last-child {
     margin: 5em 0;
   }
 }
+
 @media (min-width: 1024px) {
   .blob {
     width: 300px;
     height: 300px;
   }
-  #aboutPage .mainContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  #aboutPage .blobAndContentHolder {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+
   #aboutPage .contentContainer {
-    margin-top: 0;
     margin-left: 4em;
-    width: 100%;
-    align-items: flex-start;
   }
 
-  #aboutPage .contentContainer p {
-    text-align: left;
-  }
-  #aboutPage .storyHolder {
-    width: 80%;
-  }
-  #aboutPage .storyHolder,
-  #aboutPage .missionHolder,
-  #aboutPage .learnMoreHolder {
-    margin-top: 5em;
-  }
   #aboutPage .storyHolder h2,
   #aboutPage .missionHolder h2,
   #aboutPage .learnMoreHolder h2 {
     font-size: 2em;
   }
+
   #aboutPage .contentContainer h2 {
     font-size: 3em;
   }
-  #aboutPage .missionHolder {
-    width: 100%;
-  }
-  #aboutPage .missionHolder > div {
-    margin-top: 2em;
-    width: 100%;
-    flex-direction: row-reverse;
-    align-items: center;
-    background-color: var(--very-light-gray);
-  }
-  #aboutPage .missionHolder > div > div {
-    width: 50%;
-  }
-  #aboutPage .missionHolder > div img {
-    height: 100%;
-    transform: translateY(0);
-    width: 50%;
-    border-radius: 0;
-  }
-  #aboutPage .missionHolder > div p {
-    padding: 2em;
-    background-color: none;
-  }
+
   #aboutPage .contentContainer p,
   #aboutPage .storyHolder p,
   #aboutPage .missionHolder p {
     font-size: 1.1em;
-    color: grey;
-  }
-  #aboutPage .learnMoreHolder {
-    width: 90%;
-    margin-bottom: 6em;
-  }
-  #aboutPage .learnMoreHolder ul {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-  }
-  #aboutPage .learnMoreHolder ul li img {
-    width: 100%;
-  }
-  #aboutPage .learnMoreHolder ul li {
-    width: 100%;
-    margin: 0 1em;
   }
 }
+
 @media (min-width: 1440px) {
   .blob {
     width: 260px;
     height: 260px;
   }
+
+  #aboutPage .storyHolder h2,
+  #aboutPage .missionHolder h2,
+  #aboutPage .learnMoreHolder h2 {
+    font-size: 2.5em;
+  }
+
   #aboutPage .contentContainer p,
   #aboutPage .storyHolder p,
   #aboutPage .missionHolder p {
     font-size: 1.5em;
     font-weight: lighter;
-    color: grey;
-  }
-  #aboutPage .storyHolder h2,
-  #aboutPage .missionHolder h2,
-  #aboutPage .learnMoreHolder h2 {
-    font-size: 2.5em;
   }
 }

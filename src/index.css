@@ -1,3 +1,4 @@
+/* Reset and Global Styles */
 * {
   padding: 0;
   margin: 0;
@@ -12,7 +13,7 @@ p {
   line-height: 1.1em;
 }
 
-/*Global Styling*/
+/* CSS Variables */
 :root {
   --alt-font: "cerebri-sans";
   --primary-font: "cerebri-sans";
@@ -24,48 +25,54 @@ p {
   --medium-gray: #7c898d;
   --solitude-blue: #f4f7f9;
 }
-/*Global Font*/
+
+/* Font Face */
 @font-face {
   font-family: "cerebri-sans";
   src: url("./assets/fonts/CerebriSansPro.ttf");
 }
-/*Global Effect*/
+
+/* Utility Classes */
 .hoverEffect {
   cursor: pointer;
 }
-/*---- Active Mobile Menu -----*/
 
+/* Active Mobile Menu States */
 .activeHambutgerleft {
   top: 45% !important;
   transform: rotate(-45deg) !important;
-}
-.activeHambutgerleft,
-.activeHambutgerRight {
   width: 100% !important;
 }
-.hideHambutgerMid {
-  display: none;
-}
+
 .activeHambutgerRight {
   bottom: 45% !important;
   transform: rotate(45deg) !important;
+  width: 100% !important;
 }
+
+.hideHambutgerMid {
+  display: none;
+}
+
 .hideMenue {
   overflow: hidden;
 }
+
 .activeList {
   transform: rotate(180deg) !important;
 }
+
 .rotateHaburger {
   transform: rotate(-180deg);
 }
-/*-------------------------*/
-/*--------- Active Language Styling --------*/
+
+/* Active Language Styling */
 .activeLang {
   font-weight: bold !important;
   color: var(--base-color) !important;
 }
-/* wheel scroll animation */
+
+/* Wheel Scroll Animation */
 @keyframes wheel-move {
   0%,
   20% {
@@ -78,7 +85,8 @@ p {
     top: 20px;
   }
 }
-/*Media Query*/
+
+/* Mobile First - 320px and up */
 @media (min-width: 320px) {
   .showMenu {
     overflow-y: scroll !important;
@@ -89,534 +97,17 @@ p {
     overflow: visible !important;
   }
 
-  #Nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    z-index: 50;
-  }
-
-  #Nav > div:last-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background-color: white;
-  }
-
-  #Nav > div:last-child > div {
-    padding: 25px 0px 10px 0;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-    align-items: center;
-  }
-
-  #Nav > div:last-child > div > ul li span {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  #Nav > div:last-child > div > div:first-child {
-    width: 45%;
-  }
-
-  #Nav > div:last-child > div > div:first-child img {
-    width: 100%;
-  }
-
-  #Nav > div:last-child > div > ul {
-    position: absolute;
-    padding: 0;
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    list-style: none;
-    max-height: 0;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.4s ease-in-out;
-    background-color: white;
-    z-index: 3;
-  }
-
-  #Nav > div:last-child > div > ul > div {
-    width: 85%;
-    align-self: center;
-  }
-  #Nav > div:last-child > div > ul a {
-    text-decoration: none;
-  }
-  #Nav > div:last-child > div > ul li {
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    font-weight: bold;
-    margin: 5px 0;
-    padding: 3px;
-    color: var(--dark-gray);
-  }
-
-  #Nav > div:last-child > div > ul li svg {
-    font-size: 1.2em;
-    transform: rotate(0deg);
-    transition: all 0.4s ease-in-out;
-    color: var(--base-color);
-  }
-
-  #Nav > div:last-child > div > ul .subMenuContainer {
-    width: 100%;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    transition: all 0.4s ease-in-out;
-    max-height: 0;
-    overflow-y: hidden;
-  }
-
   .activeMenu {
     max-height: 370px !important;
     overflow-y: auto !important;
   }
 
-  #Nav > div:last-child > div > ul .subMenuContainer div {
-    width: 95%;
-    padding: 8px 0;
-    margin-bottom: 5px;
-  }
+  /* About Section */
 
-  #Nav > div:last-child > div > ul .subMenuContainer div h3,
-  #Nav > div:last-child > div > ul .subMenuContainer div ul {
-    font-size: 0.8em;
-    color: var(--medium-gray);
-  }
+  /* Client Section */
+  
 
-  #Nav > div:last-child > div > ul .subMenuContainer div h3 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: fit-content;
-    padding: 4px 5px;
-    border-radius: 10px;
-  }
-
-  #Nav > div:last-child > div > ul .subMenuContainer div h3 span {
-    margin: 0 5px;
-    color: var(--base-color);
-  }
-
-  #Nav > div:last-child > div > ul .subMenuContainer div h3 svg {
-    color: var(--base-color);
-    font-size: 1.2em;
-  }
-
-  #Nav > div:last-child > div > ul .subMenuContainer > div hr {
-    width: 60%;
-  }
-
-  #Nav > div:last-child > div > ul .underline {
-    display: none;
-  }
-
-  #Nav > div:last-child > div > ul .subMenuContainer div ul {
-    padding: 0px 15px;
-  }
-
-  #Nav > div:last-child > div > ul .subMenuContainer div ul li {
-    font-weight: bold;
-    color: var(--medium-gray);
-  }
-  #Nav .langContainer {
-    margin: 1em 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-  #Nav .langContainer > div:last-child {
-    width: 100%;
-    margin-top: 1em;
-  }
-  #Nav .langContainer > div:last-child button {
-    padding: 0.6em 2em;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--base-color);
-    color: white;
-    font-weight: bold;
-    font-size: 0.85em;
-  }
-  #Nav .langContainer > div {
-    width: 25%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  #Nav .langContainer > div hr {
-    height: 18px;
-    width: 0.2em;
-    border: none;
-    background-color: var(--base-color);
-    border-radius: 25px;
-  }
-
-  #Nav .langContainer > div span {
-    transition: all 0.4s ease-in-out;
-  }
-
-  #Nav ul button img {
-    width: 15%;
-    margin: 0 10px;
-    border-radius: 2px;
-    padding: 0 !important;
-  }
-
-  #Nav > div:last-child > div #hamburgerContainer {
-    width: 30px;
-    height: 20px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s ease-in-out;
-  }
-
-  #Nav > div:last-child > div #hamburgerContainer span {
-    height: 2.2px;
-    border-radius: 25px;
-    background-color: var(--base-color);
-    width: 100%;
-    transition: all 0.2s ease-in-out;
-  }
-
-  #Nav > div:last-child > div #hamburgerContainer span:first-child,
-  #Nav > div:last-child > div #hamburgerContainer span:last-child {
-    position: absolute;
-    width: 70%;
-  }
-
-  #Nav > div:last-child > div #hamburgerContainer span:first-child {
-    top: 0;
-    transform: rotate(0deg);
-  }
-
-  #Nav > div:last-child > div #hamburgerContainer span:last-child {
-    bottom: 0;
-    transform: rotate(0deg);
-  }
-  /*------------- DeskTop Nav ----------*/
-  #Nav nav {
-    display: none;
-  }
-  /*------------ Hero Styling ----------*/
-
-  #hero {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  #hero .mainContainer {
-    position: relative;
-    align-self: center;
-    border-radius: 25px;
-    width: 95%;
-    height: 83dvh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #hero #tsparticles {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-  }
-  #hero .contentContainer {
-    padding: 10px;
-    color: white;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  #hero .contentContainer > div {
-    width: 100%;
-    align-items: flex-start;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  #hero .contentContainer > div h5 {
-    color: white;
-    margin: 0 10px;
-  }
-  #hero .contentContainer > div span {
-    width: 20px;
-    height: 2px;
-    border-radius: 25px;
-    background-color: var(--primary-color);
-  }
-  #hero .contentContainer h3 {
-    color: var(--primary-color);
-    font-size: 1.3em;
-    font-weight: bold;
-    width: 85%;
-  }
-  #hero .contentContainer p {
-    width: 90%;
-    font-size: 0.9em;
-    text-align: left;
-    margin: 20px 0 20px 0;
-    color: rgb(224, 224, 224);
-  }
-
-  #hero .contentContainer button {
-    color: white;
-    background-color: transparent;
-    border: none;
-    padding: 8px 0 6px;
-    width: 120px;
-    border-radius: 10px;
-    background-color: var(--primary-color);
-  }
-
-  #hero .socialContainer {
-    position: absolute;
-    bottom: 40px;
-    right: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #hero .socialContainer::after {
-    content: "";
-    position: absolute;
-    top: auto;
-    right: -10px;
-    width: 2px;
-    height: 85%;
-    border-radius: 25px;
-    background-color: var(--primary-color);
-  }
-  #hero .socialContainer ul {
-    list-style: none;
-  }
-  #hero .socialContainer ul li {
-    font-size: 1.2em;
-    margin: 4px 0;
-    color: white;
-    transition: all 0.3s ease-in-out;
-  }
-  #hero .socialContainer ul li:hover {
-    color: var(--primary-color);
-  }
-  .mouse-scroll {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    color: var(--primary-color);
-    font-size: 0.85rem;
-    font-weight: 500;
-    user-select: none;
-    z-index: 4;
-  }
-
-  .mouse-scroll span {
-    font-size: 0.8em;
-  }
-  .mouse {
-    width: 17px;
-    height: 25px;
-    border: 2px solid var(--primary-color);
-    border-radius: 18px;
-    position: relative;
-    box-sizing: border-box;
-    margin-bottom: 8px;
-  }
-  .wheel {
-    width: 2px;
-    height: 4px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: wheel-move 2s infinite alternate forwards ease-in-out;
-  }
-
-  /*--------- About Styling ----------*/
-  #about {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  #about .maincontainer {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 2.5em 0 2em 0;
-  }
-  #about .maincontainer .blob-wrapper {
-    margin-bottom: 2.1em;
-  }
-  #about .maincontainer .leftContainer,
-  #about .maincontainer .rightContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #about .maincontainer .rightContainer h3 {
-    text-align: center;
-    color: var(--base-color);
-    margin: 0.5em 0 1em;
-    line-height: 1.25em;
-    font-size: 1.1em;
-  }
-  #about .maincontainer .rightContainer h4 {
-    color: var(--medium-gray);
-    margin-top: 1em;
-    font-size: 0.95em;
-  }
-  #about .maincontainer .rightContainer p {
-    color: var(--medium-gray);
-  }
-  #about .maincontainer .rightContainer p,
-  #about .maincontainer .rightContainer .listHolder ul li {
-    font-size: 0.85em;
-  }
-  #about .maincontainer .rightContainer .listHolder {
-    width: 100%;
-
-    align-self: flex-start;
-  }
-  #about .maincontainer .rightContainer .listHolder ul {
-    margin: 1em 0 1em 1em;
-    list-style: none;
-    align-self: flex-start;
-  }
-  #about .maincontainer .rightContainer .listHolder ul li {
-    display: flex;
-    align-items: center;
-    margin: 0.1em 0;
-    color: var(--base-color);
-    font-weight: bold;
-  }
-
-  #about .maincontainer .rightContainer .listHolder ul li svg {
-    color: var(--base-color);
-  }
-
-  #about .maincontainer .rightContainer .listHolder > div {
-    display: none;
-  }
-
-  #about .maincontainer .rightContainer .listHolder > div > div:last-child {
-    background-color: white;
-    width: 50%;
-    padding: 0.5em 1em;
-    border-radius: 5px;
-  }
-
-  #about .maincontainer .rightContainer .aboutBtn button {
-    border: none;
-    background-color: var(--base-color);
-    color: white;
-    padding: 0.6em 1em;
-    border-radius: 5px;
-    margin-top: 0.5em;
-  }
-
-  /*---------- client Styling ---------*/
-  #client {
-    padding: 2em 0;
-  }
-  #client,
-  #client > div:first-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #client > div:first-child {
-    width: fit-content;
-    position: relative;
-  }
-
-  #client > div:first-child span {
-    position: absolute;
-    width: 80px;
-    height: 1px;
-    background-color: var(--primary-color);
-    border-radius: 25px;
-  }
-  #client > div:first-child .one {
-    left: 110%;
-  }
-  #client > div:first-child .two {
-    right: 110%;
-  }
-  #client h2 {
-    width: 100%;
-    font-size: 1.2em;
-    color: var(--primary-color);
-    text-align: center;
-  }
-
-  #client > div:last-child p {
-    text-align: center;
-    color: grey;
-    align-self: center;
-    font-size: 0.95em;
-  }
-  #client .swiper {
-    height: 60px;
-  }
-  #client .trust {
-    text-align: center;
-    margin: 1em 0 0;
-    background-color: var(--yellow);
-    padding: 0.3em 1em;
-    color: white;
-    border-radius: 5px;
-    font-size: 0.9em;
-  }
-  #client > div {
-    width: 85%;
-  }
-  /*-------------- SVG Styling -------------*/
+  /* SVG Section */
   #svg {
     margin: 2em 0;
     width: 100%;
@@ -624,6 +115,7 @@ p {
     flex-direction: column;
     align-items: center;
   }
+
   #svg .mainContainer {
     overflow: hidden;
     width: 100%;
@@ -637,6 +129,7 @@ p {
   #svg .mainContainer > div {
     width: 100%;
   }
+
   #svg .headerContainer {
     display: flex;
     flex-direction: column;
@@ -646,6 +139,7 @@ p {
     padding: 1em 0;
     background-color: var(--base-color);
   }
+
   #svg .headerContainer label {
     color: white;
     font-size: 1em;
@@ -671,9 +165,11 @@ p {
     font-size: 0.9em;
     text-align: center;
   }
+
   #svg .svgContainer p:last-child {
     color: var(--base-color);
   }
+
   #svg .svgContainer p:first-child {
     color: gray;
   }
@@ -682,7 +178,8 @@ p {
     width: 100%;
     margin-bottom: 2em;
   }
-  /*---------- Why Choosing Us ---------*/
+
+  /* Why Choose Us Section */
   #whyChooseUs {
     margin: 2em 0;
     width: 100%;
@@ -696,6 +193,7 @@ p {
     width: 90%;
     align-self: center;
   }
+
   #whyChooseUs .contentContainer {
     align-self: center;
     width: 100%;
@@ -703,13 +201,14 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-self: center;
   }
+
   #whyChooseUs .contentContainer h3 {
     font-size: 1.3em;
     color: var(--primary-color);
     font-weight: bold;
   }
+
   #whyChooseUs .contentContainer p {
     width: 100%;
     font-size: 0.9em;
@@ -717,14 +216,15 @@ p {
     margin: 1em 0 1.5em;
     text-align: center;
   }
-  /* Left arrow icon */
+
   #whyChooseUs .swiper-button-prev {
     left: 35%;
   }
-  /* Right arrow icon */
+
   #whyChooseUs .swiper-button-next {
     right: 35%;
   }
+
   #whyChooseUs .swiper-slide .container .shadow {
     opacity: 1;
     transform: translateY(0);
@@ -748,16 +248,18 @@ p {
     padding: 20px 4px;
     text-align: center;
   }
+
   #whyChooseUs .splitter p {
     color: white;
     font-weight: lighter;
   }
+
   #whyChooseUs .splitter p span {
     text-decoration: underline;
     color: var(--yellow);
   }
-  /*-------- Contact Styling --------*/
-  /* Mobile First Design */
+
+  /* Contact Section */
   .animated-list {
     position: absolute;
     left: -100%;
@@ -815,7 +317,8 @@ p {
     margin-top: 0.5rem;
     color: #666;
   }
-  /*------------ Footer Design -----------*/
+
+  /* Footer Section */
   #footer {
     display: flex;
     justify-content: center;
@@ -837,6 +340,7 @@ p {
     background-color: var(--very-light-gray);
     padding: 8em 1.5em 1em;
   }
+
   #footer .mainContainer .newsletter {
     width: 55%;
   }
@@ -851,10 +355,12 @@ p {
   #footer .mainContainer .subscribeAction {
     width: 40%;
   }
+
   #footer .mainContainer .subscribeAction h2 {
     font-size: 0.75em;
     color: var(--dark-color);
   }
+
   #footer .mainContainer .subscribeAction input {
     width: 100%;
     border: 1px solid rgb(225, 225, 225);
@@ -866,12 +372,15 @@ p {
     font-size: 0.8em;
     transition: all 0.3s ease-in-out;
   }
+
   #footer .mainContainer .subscribeAction input:hover {
     border-color: var(--primary-color);
   }
+
   #footer .mainContainer .subscribeAction p {
     font-size: 0.7em;
     color: var(--medium-gray);
+    display: none;
   }
 
   #footer .mainContainer .subscribeAction button {
@@ -883,7 +392,7 @@ p {
     color: white;
     padding: 0.5em 1em 0.3em;
   }
-  /*------- Styling footer Container in Footer section -------*/
+
   #footer .footerContainer {
     padding: 2em 0;
     display: flex;
@@ -897,39 +406,48 @@ p {
     );
     color: white;
   }
+
   #footer .footerContainer > div:first-child > div {
     margin-top: 1.4em;
   }
+
   #footer .footerContainer > div > div ul {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
   }
+
   #footer .footerContainer .tabletView {
     display: none;
   }
+
   #footer .footerContainer > div > div:last-child ul:last-child {
     margin-top: 1.5em;
   }
+
   #footer .footerContainer > div > div ul li a {
     font-size: 0.8em;
     text-decoration: none;
     color: white;
     margin-left: 0.3em;
   }
+
   #footer .footerContainer > div > div ul:last-child li {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
   }
+
   #footer .footerContainer > div > div ul li {
     font-weight: lighter;
     margin: 0 0.45em;
   }
+
   #footer .footerContainer > div > div ul li svg {
     font-size: 1.5em;
   }
+
   #footer .footerContainer > div > div:first-child {
     text-align: center;
     flex-direction: column;
@@ -943,6 +461,7 @@ p {
   #footer .footerContainer > div:first-child p {
     font-weight: bold;
   }
+
   #footer .footerContainer > div:last-child {
     margin-top: 3em;
     display: flex;
@@ -952,9 +471,11 @@ p {
     color: var(--very-light-gray);
     font-size: 0.75em;
   }
+
   #footer .footerContainer > div:last-child > div:first-child {
     margin-bottom: 2em;
   }
+
   #footer .footerContainer > div:last-child > div:first-child ul {
     list-style: none;
   }
@@ -966,6 +487,7 @@ p {
   #footer .footerContainer > div:last-child > div:first-child ul li:hover {
     color: white;
   }
+
   #footer .footerContainer > div:last-child > div:last-child {
     font-weight: bold;
     color: var(--yellow);
@@ -974,12 +496,12 @@ p {
   #footer .footerContainer > div:last-child > div:last-child span {
     color: white;
   }
-  /*-------- Diplay none the p in footer ---------*/
-  #footer .mainContainer .subscribeContainer p,
-  #footer .mainContainer .subscriveAction p {
+
+  #footer .mainContainer .subscribeContainer p {
     display: none;
   }
-  /*---------- Summary Styling -----------*/
+
+  /* Summary Section */
   #summary {
     width: 90%;
     display: flex;
@@ -993,15 +515,18 @@ p {
     font-size: 1em;
     color: var(--base-color);
   }
+
   #summary h2 span {
     margin: 0 5px;
   }
+
   #summary p {
     color: var(--base-color);
     text-align: left;
     font-size: 0.8em;
     line-height: 1.2em;
   }
+
   #summary button {
     margin-top: 20px;
     padding: 8px 0;
@@ -1013,128 +538,16 @@ p {
     font-weight: bold;
   }
 }
-@media (min-width: 375px) {
-  /*--------- About Styling ----------*/
-  #about .maincontainer .rightContainer h3 {
-    line-height: 1.25em;
-    font-size: 1.15em;
-  }
-  #about .maincontainer .rightContainer h4 {
-    color: var(--medium-gray);
-    margin-top: 1em;
-    font-size: 1em;
-  }
 
-  #about .maincontainer .rightContainer p,
-  #about .maincontainer .rightContainer .listHolder ul li {
-    font-size: 0.9em;
-  }
-  /*------------ Footer Design -----------*/
+@media (min-width: 375px) {
   #footer .mainContainer .subscribeContainer {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--very-light-gray);
     padding: 8em 2.5em 1em;
   }
 }
+
 @media (min-width: 425px) {
-  /*------------ Hero Styling ----------*/
-  #hero {
-    width: 100%;
-  }
-  #hero .mainContainer {
-    padding: 12px;
-    height: 83dvh;
-  }
-  #hero .contentContainer > div h5 {
-    font-size: 1em;
-  }
+ 
 
-  #hero .contentContainer h3 {
-    font-size: 1.5em;
-    width: 90%;
-  }
-  #hero .contentContainer p {
-    font-size: 0.95em;
-    width: 90%;
-  }
-
-  #hero .contentContainer button {
-    padding: 8px 0 6px;
-    width: 140px;
-  }
-
-  #hero .socialContainer {
-    bottom: 40px;
-    right: 30px;
-  }
-  .mouse-scroll span {
-    font-size: 0.95em;
-  }
-  .mouse {
-    width: 20px;
-    height: 30px;
-  }
-  /*--------- About Styling ----------*/
-  #about .maincontainer {
-    width: 85%;
-  }
-  #about .maincontainer .rightContainer h3 {
-    font-size: 1.2em;
-  }
-  #about .maincontainer .rightContainer h4 {
-    font-size: 1.1em;
-  }
-  #about .maincontainer .rightContainer p,
-  #about .maincontainer .rightContainer .listHolder ul li {
-    font-size: 0.95em;
-  }
-  #about .maincontainer .rightContainer .aboutBtn button {
-    font-size: 0.95em;
-  }
-  /*---------- client Styling ---------*/
-  #client h2 {
-    font-size: 1.2em;
-  }
-  #client > div:last-child p {
-    font-size: 1.05em;
-  }
-  #client .trust {
-    padding: 0.4em 1.5em;
-    font-size: 1em;
-  }
-  #client > div:first-child span {
-    position: absolute;
-    width: 80px;
-    height: 1px;
-    background-color: var(--primary-color);
-    border-radius: 25px;
-  }
-  #client > div:first-child .one {
-    left: 110%;
-  }
-  #client > div:first-child .two {
-    right: 110%;
-  }
-  #client > div {
-    width: 85%;
-  }
-
-  /*-------------- SVG Styling -------------*/
-  #svg .mainContainer {
-    width: 100%;
-  }
-  #svg .headerContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    width: 100%;
-    padding: 1em 0;
-    background-color: var(--base-color);
-  }
   #svg .headerContainer label {
     font-size: 1.1em;
   }
@@ -1142,98 +555,57 @@ p {
   #svg .svgContainer {
     width: 100%;
   }
+
   #svg .svgContainer > div {
     width: 90%;
   }
+
   #svg .svgContainer p {
     font-size: 0.9em;
     width: 92%;
   }
+
   #svg .svgContainer img {
     width: 95%;
   }
-  /*---------- Why Choosing Us ---------*/
+
   #whyChooseUs > div {
     width: 85%;
   }
+
   #whyChooseUs .contentContainer h3 {
     font-size: 1.4em;
   }
+
   #whyChooseUs .swiper-slide .container .shadow p {
     font-size: 1.7em;
   }
-  /*------------ Footer Design -----------*/
-  #footer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  #footer .mainContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
 
   #footer .mainContainer .subscribeContainer {
-    position: relative;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: var(--very-light-gray);
     padding: 8em 1.5em 1em;
+    justify-content: space-evenly;
   }
+
   #footer .mainContainer .newsletter {
     width: 50%;
   }
 
   #footer .mainContainer .newsletter h2 {
-    color: var(--primary-color);
     font-size: 1.2em;
-    width: 100%;
-    margin-bottom: 0.5em;
   }
 
   #footer .mainContainer .subscribeAction {
     width: 40%;
   }
-  #footer .mainContainer .subscribeAction h2 {
-    font-size: 0.75em;
-    color: var(--dark-color);
-  }
+
   #footer .mainContainer .subscribeAction input {
-    width: 100%;
     border: 1px solid var(--medium-gray);
-    border-radius: 5px;
-    padding: 0.2em 2em;
     margin-top: 0.3em;
-    text-align: center;
-    outline: none;
-    font-size: 0.8em;
   }
 
   #footer .mainContainer .subscribeAction button {
     margin-top: 0.5em;
-    font-size: 0.75em;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-    color: white;
     padding: 0.5em 1em;
-  }
-
-  #footer .footerContainer {
-    padding: 2em 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(
-      to top,
-      var(--base-color),
-      var(--very-light-gray)
-    );
-    color: white;
   }
 
   #footer .footerContainer > div:first-child {
@@ -1248,318 +620,30 @@ p {
   #footer .footerContainer > div:first-child p {
     font-weight: bold;
   }
-  /*-------- Diplay block the p in footer ---------*/
+
   #footer .mainContainer .subscribeContainer p,
-  #footer .mainContainer .subscriveAction p {
+  #footer .mainContainer .subscribeAction p {
     display: block;
-  }
-  #footer .mainContainer .subscribeAction p,
-  #footer .mainContainer .subscribeContainer p {
     color: var(--medium-gray);
     font-size: 0.7em;
   }
+
   #footer .mainContainer .subscribeAction p {
     margin-top: 0.7em;
   }
 
-  /*---------- Summary Styling ----------*/
   #summary h2 {
     font-size: 1.2em;
   }
+
   #summary p {
     font-size: 0.9em;
   }
 }
+
 @media (min-width: 768px) {
-  /* Nav Styling */
-  /*DNav SVG styling*/
-  #DNav svg {
-    color: rgb(217, 217, 217);
-    font-size: 1.2em;
-    transition: all 0.3s ease-in-out;
-  }
-  #DNav svg:hover,
-  #DNav > div:last-child > div > div > div:hover svg {
-    color: white;
-  }
-  #DNav {
-    color: white;
-    font-weight: lighter;
-    padding: 0.3em 0.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--base-color);
-  }
-  #DNav > div {
-    width: 95%;
-  }
-  #DNav > div,
-  #DNav > div > div:first-child ul,
-  #DNav > div > div:last-child > div > div,
-  #DNav > div:last-child > div > div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+  
 
-  #DNav > div:first-child > div:first-child,
-  #DNav > div:first-child > div:last-child {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  #DNav > div:first-child > div:first-child ul li {
-    margin: 0 5px;
-  }
-
-  #DNav > div:first-child ul,
-  #DNav > div {
-    list-style: none;
-    justify-content: space-between;
-  }
-
-  #DNav > div:last-child > div > div {
-    margin: 0 5px;
-  }
-  #DNav > div:last-child > div > div > div {
-    margin: 0 9px;
-  }
-
-  #DNav > div:last-child > div > div svg {
-    margin: 0 8px;
-  }
-
-  #DNav > div:last-child > div > div:hover svg {
-    color: white;
-  }
-  #Nav > div:last-child {
-    display: none;
-  }
-  /*------------- DeskTop Nav ----------*/
-  #Nav nav {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: white;
-    padding: 0.5em 1em;
-  }
-  #Nav nav > div:first-child,
-  #Nav nav > div:nth-child(2),
-  #Nav nav > div:nth-child(3) {
-    width: 33.33%;
-  }
-  #Nav nav > div:first-child img {
-    width: 30%;
-  }
-  #Nav nav > div:first-child {
-    width: 25%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  #Nav nav > div:first-child p {
-    font-weight: bold;
-    color: var(--base-color);
-  }
-  #Nav nav > div:nth-child(3) {
-    width: 30%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-
-  #Nav nav > div:nth-child(3) button {
-    padding: 0.6em 1em;
-    font-size: 0.8em;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--base-color);
-    color: white;
-    font-weight: bold;
-  }
-
-  #Nav nav .languageDesktopContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 30%;
-  }
-  #Nav nav .languageDesktopContainer > div:first-child {
-    display: flex;
-  }
-  #Nav nav > div:nth-child(3) > div hr {
-    width: 2px;
-    margin: 0 0.3em;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-  }
-  #Nav nav > div:nth-child(3) > div span {
-    color: var(--medium-gray);
-  }
-  #Nav nav ul {
-    width: 70%;
-    list-style: none;
-  }
-  #Nav nav ul a,
-  #Nav nav ul li {
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--dark-gray);
-  }
-  #Nav nav ul li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #Nav nav ul li svg {
-    margin-left: 0.5em;
-  }
-  #Nav nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  #Nav .subMenuHolder ul {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-    padding: 1em;
-  }
-  #Nav .subMenuHolder ul hr {
-    height: 70px;
-    border: none;
-    width: 0.5px;
-    background-color: rgb(187, 187, 187);
-  }
-  #Nav .subMenuHolder ul div h3 {
-    font-size: 0.9em;
-    color: var(--base-color);
-  }
-  #Nav .subMenuHolder ul ul {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  #Nav .subMenuHolder ul ul li {
-    margin: 0.2em 0;
-    font-size: 0.85em;
-    font-weight: 600;
-    color: var(--medium-gray);
-  }
-  #Nav .subMenuHolder {
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    left: 0;
-    min-height: 0;
-    max-height: 0;
-    opacity: 0;
-    visibility: hidden;
-    overflow: hidden;
-    background-color: white;
-    transform: translateY(-10px);
-    transition: all 0.4s ease-in-out;
-  }
-  .activeDesktopMenu {
-    max-height: 400px !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
-  }
-  /*------------ Hero Styling ----------*/
-
-  #hero .mainContainer {
-    position: relative;
-    padding: 15px;
-    height: 80dvh;
-  }
-  #client .swiper {
-    height: 100px;
-  }
-  #hero .contentContainer > div h5 {
-    font-size: 1.2em;
-  }
-
-  #hero .contentContainer h3 {
-    font-size: 2em;
-  }
-  #hero .contentContainer p {
-    font-size: 1em;
-    width: 90%;
-  }
-  #hero .contentContainer button {
-    padding: 10px 0 7px;
-    width: 150px;
-    font-size: 0.95em;
-  }
-  #hero .socialContainer {
-    bottom: 40px;
-    right: 50px;
-  }
-  .mouse-scroll span {
-    font-size: 0.95em;
-  }
-  .mouse {
-    width: 20px;
-    height: 30px;
-  }
-  /*------------------- About Styling ------------------*/
-  #about {
-    margin-bottom: 2em;
-  }
-  #about .maincontainer {
-    width: 90%;
-    flex-direction: row;
-    margin: 6em 0 2em;
-  }
-
-  #about .maincontainer .blob-wrapper {
-    width: 45%;
-  }
-  #about .maincontainer .leftContainer,
-  #about .maincontainer .rightContainer {
-    width: 50%;
-    align-items: flex-start;
-  }
-  #about .maincontainer .rightContainer h3 {
-    text-align: left;
-    color: var(--base-color);
-    margin: 0.2em 0 0.5em;
-    line-height: 1.25em;
-    font-size: 1.2em;
-  }
-  #about .maincontainer .rightContainer h4 {
-    color: var(--medium-gray);
-    margin-top: 1em;
-    font-size: 1.1em;
-  }
-  #about .maincontainer .rightContainer p,
-  #about .maincontainer .rightContainer .listHolder ul li {
-    font-size: 0.95em;
-  }
-  /*---------- client Styling ---------*/
-  #client {
-    padding: 0 2em;
-    align-items: center;
-  }
-
-  #client h2 {
-    width: 100%;
-    font-size: 1.4em;
-  }
-  #client > div:last-child p {
-    font-size: 1.1em;
-  }
-  #client .trust {
-    padding: 0.4em 2em;
-    font-size: 1em;
-  }
-
-  /*-------------- SVG Styling -------------*/
   #svg .mainContainer {
     width: 90%;
     overflow: visible;
@@ -1578,77 +662,57 @@ p {
   #svg .headerContainer label {
     font-size: 1.3em;
   }
+
   #svg .svgContainer {
     width: 100%;
   }
+
   #svg .svgContainer img {
     width: 100%;
   }
+
   #svg .svgContainer p {
     font-size: 1em;
   }
-  /*---------- Why Choosing Us ---------*/
+
   #whyChooseUs > div {
     width: 85%;
   }
+
   #whyChooseUs .contentContainer h3 {
     font-size: 1.7em;
   }
+
   #whyChooseUs .contentContainer p {
     font-size: 1em;
   }
-  /* Left arrow icon */
+
   #whyChooseUs .swiper-button-prev {
     left: 42%;
   }
-  /* Right arrow icon */
+
   #whyChooseUs .swiper-button-next {
     right: 42%;
   }
+
   #whyChooseUs .swiper-slide .container .shadow p {
     font-size: 1.2em;
     bottom: 5px;
     left: 20px;
   }
-  /*------------ Footer Design -----------*/
-  #footer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  #footer .mainContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
 
   #footer .mainContainer .subscribeContainer {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--very-light-gray);
     padding: 8em 5em 1em;
-  }
-  #footer .mainContainer .newsletter {
-    width: 50%;
   }
 
   #footer .mainContainer .newsletter h2 {
-    color: var(--primary-color);
     font-size: 1.5em;
-    width: 100%;
-    margin-bottom: 0.5em;
   }
 
-  #footer .mainContainer .subscribeAction {
-    width: 40%;
-  }
   #footer .mainContainer .subscribeAction h2 {
     font-size: 0.9em;
-    color: var(--dark-color);
   }
+
   #footer .mainContainer .subscribeAction input {
     font-size: 0.8em;
   }
@@ -1656,7 +720,7 @@ p {
   #footer .mainContainer .subscribeAction button {
     font-size: 0.8em;
   }
-  /*------- Styling footer Container in Footer section -------*/
+
   #footer .footerContainer {
     padding: 3em 0 1em;
   }
@@ -1664,14 +728,17 @@ p {
   #footer .footerContainer > div > div:last-child ul:first-child {
     display: none;
   }
+
   #footer .footerContainer > div:first-child > div:first-child ul li {
     font-weight: lighter;
     margin: 0 0.8em;
     transition: all 0.3s ease-in-out;
   }
+
   #footer .footerContainer > div > div ul li svg {
     font-size: 1.3em;
   }
+
   #footer .footerContainer > div:first-child {
     display: flex;
     justify-content: space-evenly;
@@ -1679,14 +746,17 @@ p {
     text-align: center;
     flex-direction: row;
   }
+
   #footer .footerContainer .tabletView {
     display: flex;
     margin-top: 1em;
   }
+
   #footer .footerContainer > div > div:last-child ul:last-child li {
     margin-top: 0.3em;
     font-size: 1em;
   }
+
   #footer .footerContainer > div:first-child > div {
     width: 33.33% !important;
     height: 100%;
@@ -1694,7 +764,9 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0;
   }
+
   #footer .footerContainer > div > div:last-child ul:last-child {
     margin-top: 0;
   }
@@ -1705,17 +777,14 @@ p {
     justify-content: center;
     align-items: center;
   }
+
   #footer .footerContainer > div:first-child > div:last-child ul:last-child {
     flex-direction: column;
     margin-top: 1em;
     justify-content: flex-start;
     align-items: flex-start;
   }
-  #footer .footerContainer > div:first-child > div:first-child,
-  #footer .footerContainer > div:first-child > div:nth-child(2),
-  #footer .footerContainer > div:first-child > div:last-child {
-    margin: 0;
-  }
+
   #footer .footerContainer > div:last-child {
     width: 80%;
     margin-top: 4em;
@@ -1724,143 +793,52 @@ p {
     justify-content: space-between;
     color: var(--very-light-gray);
     font-size: 0.7em;
-    justify-content: space-between;
-    align-items: center;
   }
+
   #footer .footerContainer > div:last-child > div:first-child {
     margin-bottom: 0em;
   }
+
   #footer .footerContainer > div:last-child > div:first-child ul {
     list-style: none;
   }
+
   #footer .footerContainer > div:last-child > div:last-child {
     margin-top: 0em;
   }
+
   #footer .mainContainer .subscribeAction p,
   #footer .mainContainer .subscribeContainer p {
     color: var(--medium-gray);
     font-size: 0.8em;
   }
-  /*---------- Summary Styling ----------*/
+
   #summary h2 {
     margin: 40px 0 20px 0;
     font-size: 1.3em;
   }
+
   #summary p {
     font-size: 0.95em;
   }
+
   #summary button {
     width: 135px;
     margin-top: 30px;
     font-size: 0.95em;
   }
-  /*----------- Services & contact Styling -------*/
+
   .servicesList {
     width: 80%;
   }
 }
+
 @media (min-width: 1024px) {
-  /*Nav Styling*/
-  #DNav svg {
-    font-size: 1.2em;
-  }
-  #DNav {
-    font-size: 0.9em;
-  }
-  /*------------- DeskTop Nav ----------*/
-  #Nav nav > div:first-child img {
-    width: 25%;
-  }
-
-  #Nav nav > div:nth-child(3) > div hr {
-    width: 2px;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-  }
-
-  #Nav nav ul {
-    width: 80%;
-  }
-  #Nav nav ul li {
-    font-size: 1.1em;
-  }
-  #Nav .subMenuHolder ul div h3 {
-    font-size: 1em;
-  }
-  #Nav .subMenuHolder ul ul li {
-    font-weight: normal;
-    font-size: 0.95em;
-  }
-  /*------------ Hero Styling ----------*/
-  #hero .mainContainer {
-    height: 77dvh;
-  }
-  #hero {
-    padding: 1em 0;
-  }
-  #hero .contentContainer > div h5 {
-    font-size: 1.5em;
-  }
-  #hero .contentContainer h3 {
-    width: 50%;
-    font-size: 2.2em;
-  }
-  #hero .contentContainer p {
-    font-size: 1.1em;
-    width: 65%;
-  }
-  #hero .contentContainer button {
-    padding: 10px 0 7px;
-    width: 160px;
-    font-size: 0.95em;
-  }
-  #hero .socialContainer {
-    bottom: 40px;
-    right: 50px;
-  }
-  #hero .socialContainer ul li {
-    font-size: 1.3em;
-  }
-  .mouse-scroll span {
-    font-size: 0.95em;
-  }
-  .mouse {
-    width: 20px;
-    height: 30px;
-  }
-  /*------------------- About Styling ------------------*/
-  #about {
-    margin-bottom: 3em;
-  }
-  #about .maincontainer {
-    width: 90%;
-    flex-direction: row;
-  }
-  #about .maincontainer .leftContainer,
-  #about .maincontainer .rightContainer {
-    width: 50%;
-    align-items: flex-start;
-  }
-  #about .maincontainer .rightContainer h3 {
-    text-align: left;
-    color: var(--base-color);
-    margin: 0.2em 0 0.5em;
-    line-height: 1.25em;
-    font-size: 1.4em;
-  }
-  #about .maincontainer .rightContainer h4 {
-    color: var(--medium-gray);
-    margin-top: 1em;
-    font-size: 1.2em;
-  }
-  #about .maincontainer .rightContainer p,
-  #about .maincontainer .rightContainer .listHolder ul li {
-    font-size: 1em;
-  }
-  /*-------------- SVG Styling -------------*/
+  
   #svg {
     margin: 6.5em 0;
   }
+
   #svg .mainContainer {
     width: 65%;
   }
@@ -1868,98 +846,53 @@ p {
   #svg .headerContainer label {
     font-size: 1.5em;
   }
-  #svg .svgContainer {
-    width: 100%;
-  }
-  #svg .svgContainer img {
-    width: 100%;
-  }
+
   #svg .svgContainer p {
     font-size: 1.2em;
   }
-  /*---------- client Styling ---------*/
-  #client h2 {
-    font-size: 1.5em;
-  }
 
-  #client > div:last-child p {
-    font-size: 1.3em;
-    width: 100%;
-  }
-  #client .trust {
-    padding: 0.4em 2em;
-    font-size: 1.1em;
-  }
-
-  /*------------ Why Choosing Us Styling --------*/
   #whyChooseUs > div {
-    width: 85%;
     padding: 10em 0 2em 0;
   }
+
   #whyChooseUs .contentContainer h3 {
     font-size: 1.8em;
     font-weight: bold;
   }
+
   #whyChooseUs .contentContainer p {
     font-size: 1.1em;
   }
-  /* Left arrow icon */
+
   #whyChooseUs .swiper-button-prev {
     left: 45%;
   }
-  /* Right arrow icon */
+
   #whyChooseUs .swiper-button-next {
     right: 45%;
   }
+
   #whyChooseUs .swiper-slide .container .shadow p {
     font-size: 1.1em;
   }
+
   #whyChooseUs .splitter p {
     font-size: 1.1em;
   }
+
   #whyChooseUs h3,
   .contact-section h2 {
     font-size: 1.7em;
   }
-  /*------------ Footer Design -----------*/
-  #footer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  #footer .mainContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  #footer .mainContainer .subscribeContainer {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--very-light-gray);
-    padding: 8em 5em 1em;
-  }
-  #footer .mainContainer .newsletter {
-    width: 50%;
-  }
 
   #footer .mainContainer .newsletter h2 {
-    color: var(--primary-color);
     font-size: 1.8em;
-    width: 100%;
-    margin-bottom: 0.5em;
   }
 
-  #footer .mainContainer .subscribeAction {
-    width: 40%;
-  }
   #footer .mainContainer .subscribeAction h2 {
     font-size: 1.1em;
-    color: var(--dark-color);
   }
+
   #footer .mainContainer .subscribeAction input {
     font-size: 0.95em;
   }
@@ -1967,18 +900,15 @@ p {
   #footer .mainContainer .subscribeAction button {
     font-size: 0.9em;
   }
-  /*------- Styling footer Container in Footer section -------*/
-  #footer .footerContainer {
-    padding: 3em 0 1em;
-  }
+
   #footer .footerContainer > div:first-child > div:first-child ul li {
-    font-weight: lighter;
     margin: 0 0.5em;
-    transition: all 0.3s ease-in-out;
   }
+
   #footer .footerContainer > div:first-child > div:last-child ul li {
     margin: 0 0.5em;
   }
+
   #footer .footerContainer > div:first-child > div:nth-child(2) ul li {
     margin: 0 0.5em;
     font-size: 1.1em;
@@ -1988,44 +918,30 @@ p {
   #footer .footerContainer > div:first-child > div:nth-child(2) ul li:hover {
     color: var(--primary-color);
   }
+
   #footer .footerContainer > div > div ul li svg {
     font-size: 1.4em;
   }
-  #footer .footerContainer > div:first-child > div {
-    width: 33.33% !important;
-  }
-  #footer .footerContainer .tabletView {
-    display: flex;
-    margin-top: 1em;
-  }
+
   #footer .footerContainer > div > div:last-child ul:last-child li {
     margin-top: 0.5em;
   }
+
   #footer .footerContainer > div > div:last-child ul:last-child li a {
     font-size: 0.85em;
   }
+
   #footer .footerContainer > div:last-child {
-    width: 80%;
     margin-top: 6em;
-    margin-bottom: 0.7em;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    color: var(--very-light-gray);
     font-size: 0.75em;
-    justify-content: space-between;
-    align-items: center;
   }
+
   #footer .footerContainer > div:last-child ul li {
     position: relative;
     margin: 0 1em;
     padding-bottom: 0.3em;
   }
-  #footer .mainContainer .subscribeAction p,
-  #footer .mainContainer .subscribeContainer p {
-    color: var(--medium-gray);
-    font-size: 0.9em;
-  }
-  /*------- Footer Policy Effect ----------*/
+
   #footer .footerContainer > div:last-child ul li:before,
   #footer .footerContainer > div:last-child ul li:after {
     content: "";
@@ -2037,27 +953,33 @@ p {
     transition: all 0.5s ease-in-out;
     background-color: var(--very-light-gray);
   }
+
   #footer .footerContainer > div:last-child ul li:before {
     left: 50%;
   }
+
   #footer .footerContainer > div:last-child ul li:after {
     right: 50%;
   }
+
   #footer .footerContainer > div:last-child ul li:hover::before,
   #footer .footerContainer > div:last-child ul li:hover::after {
     width: 50% !important;
   }
-  /*----------- Services & contact Styling -------*/
-  .servicesList {
-    width: 80%;
+
+  #footer .mainContainer .subscribeAction p,
+  #footer .mainContainer .subscribeContainer p {
+    font-size: 0.9em;
   }
-  /*---------- Summary Styling ----------*/
+
   #summary h2 {
     font-size: 1.5em;
   }
+
   #summary p {
     font-size: 1.1em;
   }
+
   #summary button,
   #client > div:last-child button {
     padding: 10px 0;
@@ -2066,136 +988,13 @@ p {
     font-size: 1em;
   }
 }
+
 @media (min-width: 1440px) {
-  #DNav {
-    font-size: 1.1em;
-  }
-  /*------------- DeskTop Nav ----------*/
-  #Nav nav {
-    width: 100%;
-    padding: 0.5em 1em;
-    border-radius: 0;
-  }
-  #Nav nav > div:first-child {
-    justify-content: center;
-    width: 15%;
-  }
-  #Nav nav > div:first-child p {
-    margin-left: 1em;
-  }
-  #Nav nav > div:first-child img {
-    width: 30%;
-  }
-  #Nav nav > div:nth-child(3) {
-    width: 20%;
-  }
-  #Nav nav > div:nth-child(3) button {
-    font-size: 1em;
-  }
-  #Nav nav > div:nth-child(3) > div hr {
-    width: 2px;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-  }
-  #Nav nav > div:nth-child(3) > div span {
-    font-size: 1.1em;
-  }
-  #Nav nav ul {
-    width: 50%;
-  }
-  #Nav nav ul li {
-    font-size: 1.3em;
-  }
-  #Nav .subMenuHolder ul div h3 {
-    font-size: 1.2em;
-  }
-  #Nav .subMenuHolder ul ul li {
-    font-weight: normal;
-    font-size: 1.2em;
-  }
-  /*---- Hero styling -------*/
-
-  #hero .contentContainer > div h5 {
-    font-size: 2em;
-  }
-  #hero .contentContainer h3 {
-    width: 40%;
-    font-size: 3em;
-  }
-  #hero .contentContainer p {
-    font-size: 1.4em;
-    width: 60%;
-  }
-  #hero .contentContainer button {
-    padding: 15px 0 10px;
-    width: 180px;
-    font-size: 1.2em;
-  }
-  #hero .socialContainer {
-    bottom: 50px;
-    right: 60px;
-  }
-  #hero .socialContainer ul li {
-    font-size: 1.5em;
-  }
-  .mouse-scroll span {
-    font-size: 0.95em;
-  }
-  .mouse {
-    width: 25px;
-    height: 40px;
-  }
-  /*------------------- About Styling ------------------*/
-  #about {
-    margin-bottom: 3em;
-  }
-  #about .maincontainer {
-    width: 90%;
-    flex-direction: row;
-  }
-  #about .maincontainer .leftContainer,
-  #about .maincontainer .rightContainer {
-    width: 50%;
-    align-items: flex-start;
-  }
-  #about .maincontainer .rightContainer h3 {
-    width: 80%;
-    text-align: left;
-    color: var(--base-color);
-    margin: 0.2em 0 0.5em;
-    line-height: 1.25em;
-    font-size: 2.1em;
-  }
-  #about .maincontainer .rightContainer h4 {
-    color: var(--medium-gray);
-    margin-top: 1em;
-    font-size: 1.8em;
-  }
-  #about .maincontainer .rightContainer p,
-  #about .maincontainer .rightContainer .listHolder ul li {
-    font-size: 1.3em;
-  }
-  #about .maincontainer .rightContainer .aboutBtn button {
-    font-size: 1.3em;
-  }
-  /*---------- client Styling ---------*/
-  #client h2 {
-    font-size: 2.3em;
-  }
-
-  #client > div:last-child p {
-    font-size: 1.5em;
-    width: 100%;
-  }
-
-  /*------------ Why Choosing Us Styling --------*/
-  #whyChooseUs > div {
-    width: 85%;
-  }
+  
   #whyChooseUs .contentContainer h3 {
     font-size: 1.9em;
-    font-weight: bold;
   }
+
   #whyChooseUs .contentContainer p {
     font-size: 1.3em;
   }
@@ -2203,109 +1002,66 @@ p {
   #whyChooseUs .swiper-slide .container .shadow p {
     font-size: 1.2em;
   }
+
   #whyChooseUs .splitter p {
     font-size: 1.2em;
   }
-  /*------------ Footer Design -----------*/
-  #footer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  #footer .mainContainer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
 
   #footer .mainContainer .subscribeContainer {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--very-light-gray);
     padding: 8em 15em 1em;
   }
-  #footer .mainContainer .newsletter {
-    width: 50%;
-  }
+
   #footer .mainContainer .newsletter h2 {
-    color: var(--primary-color);
     font-size: 2.3em;
-    width: 100%;
-    margin-bottom: 0.5em;
   }
-  #footer .mainContainer .subscribeAction {
-    width: 40%;
-  }
+
   #footer .mainContainer .subscribeAction h2 {
     font-size: 1.4em;
-    color: var(--dark-color);
   }
+
   #footer .mainContainer .subscribeAction input {
     font-size: 1.1em;
   }
+
   #footer .mainContainer .subscribeAction button {
     font-size: 1em;
   }
-  /*------- Styling footer Container in Footer section -------*/
-  #footer .footerContainer {
-    padding: 3em 0 1em;
-  }
-  #footer .footerContainer > div:first-child > div:first-child ul li {
-    font-weight: lighter;
-    margin: 0 0.5em;
-    transition: all 0.3s ease-in-out;
-  }
-  #footer .footerContainer > div:first-child > div:last-child ul li {
-    margin: 0 0.5em;
-  }
+
   #footer .footerContainer > div:first-child > div:nth-child(2) ul li {
     margin: 0 0.8em;
     font-size: 1.4em;
   }
+
   #footer .footerContainer > div > div ul li svg {
     font-size: 1.5em;
   }
-  #footer .footerContainer > div:first-child > div {
-    width: 33.33% !important;
-  }
+
   #footer .footerContainer .tabletView {
     margin-top: 1.5em;
   }
+
   #footer .footerContainer > div > div:last-child ul:last-child li {
-    margin-top: 0.5em;
     font-size: 1.1em;
   }
+
   #footer .footerContainer > div > div:last-child ul:last-child li a {
     font-size: 1.2em;
   }
+
   #footer .footerContainer > div:last-child {
-    width: 80%;
     margin-top: 6em;
-    margin-bottom: 0.7em;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    color: var(--very-light-gray);
     font-size: 1em;
-    justify-content: space-between;
-    align-items: center;
   }
-  #footer .footerContainer > div:last-child ul li {
-    position: relative;
-    margin: 0 1em;
-    padding-bottom: 0.3em;
-  }
+
   #footer .mainContainer .subscribeAction p,
   #footer .mainContainer .subscribeContainer p {
-    color: var(--medium-gray);
     font-size: 1.1em;
   }
-  /*---------- Summary Styling ----------*/
+
   #summary h2 {
     font-size: 1.7em;
   }
+
   #summary p {
     font-size: 1.4em;
   }
