@@ -52,11 +52,13 @@
     align-items: center;
   }
   #counter .container h2 {
+    white-space: nowrap;
     font-size: 0.7em;
     margin: 5px 0 2px 0;
     color: white !important;
   }
   #counter .container > div {
+    direction: ltr;
     display: flex;
     justify-content: center;
     align-items: center;

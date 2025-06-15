@@ -135,7 +135,7 @@ const HeroSection = () => {
           <div className="mouse ">
             <div className="wheel"></div>
           </div>
-          <span className="hoverEffect">Scroll Down</span>
+          <span className="hoverEffect">{t("scrollDown")}</span>
         </div>
       </div>
     </div>

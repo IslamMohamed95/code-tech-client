@@ -3,12 +3,14 @@ import "./Counter.css";
 import FlipNumbers from "react-flip-numbers";
 //Importing Icons
 import { FaPlus } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 function Counter() {
   const [play, setPlay] = useState(false),
+    { t } = useTranslation(["hero"]),
     icons = [
-      { title: "Projects", value: "500" },
-      { title: "Clients", value: "320" },
+      { title: t("projects"), value: "500" },
+      { title: t("clients"), value: "320" },
     ];
 
   useEffect(() => {
