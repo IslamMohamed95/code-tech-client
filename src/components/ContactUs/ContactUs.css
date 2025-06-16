@@ -201,7 +201,7 @@ html[dir="rtl"] .floating-input textarea:not(:placeholder-shown) + label {
   .contact-section .mainContainer {
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
   }
 
   /* services list full-width column */
