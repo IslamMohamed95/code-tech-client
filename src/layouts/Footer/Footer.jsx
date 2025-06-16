@@ -11,15 +11,26 @@ import { FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
 import { IoLocation } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
-  const navList = ["Home", "About", "Products", "Contact"],
+  const { t } = useTranslation(["footer"]),
+    navList = [
+      t("action.nav.home"),
+      t("action.nav.about"),
+      t("action.nav.products"),
+      t("action.nav.contact"),
+    ],
     navIcons = [<FaFacebook />, <FaInstagram />, <FaLinkedin />],
-    policy = ["privacy policy", "Terms and conditions", "Copyright"],
+    policy = [
+      t("action.policy.copy"),
+      t("action.policy.terms"),
+      t("action.policy.privacy"),
+    ],
     details = [
-      { title: "Get In Touch", icon: <MdEmail /> },
+      { title: t("action.details.touch"), icon: <MdEmail /> },
       { title: "920007401", icon: <IoIosCall /> },
-      { title: "Get Location", icon: <IoLocation /> },
+      { title: t("action.details.location"), icon: <IoLocation /> },
     ];
   return (
     <section id="footer">
@@ -49,19 +60,16 @@ function Footer() {
             </svg>
           </div>
           <div className="newsletter">
-            <h2>Subscribe our newsletter</h2>
+            <h2>{t("subscribe.right.title")}</h2>
 
-            <p>
-              Suscribe to our newsletter and be the first to receive inisghts,
-              updates, and expert tips on optimising your ERP system
-            </p>
+            <p>{t("subscribe.right.desc")}</p>
           </div>
           <div className="subscribeAction">
-            <h2>Stay up to date</h2>
+            <h2>{t("subscribe.left.title")}</h2>
             <input type="text" name="emailUs" aria-label="Email Us" />
-            <p>By subscribing you agree to our policy</p>
+            <p>{t("subscribe.left.desc")}</p>
 
-            <button>Subscribe</button>
+            <button>{t("subscribe.left.btn")}</button>
           </div>
         </div>
 
@@ -69,7 +77,7 @@ function Footer() {
           <div>
             <div>
               <img src={logo} alt="" />
-              <p>Code Tech</p>
+              <p>{t("action.logoTitle")}</p>
             </div>
             <div>
               <ul>
@@ -128,7 +136,7 @@ function Footer() {
               </ul>
             </div>
             <div>
-              &copy; copyright 2025 <span>Code Tech</span>
+              &copy; {t("action.copy.one")} <span>{t("action.copy.two")}</span>
             </div>
           </div>
         </div>

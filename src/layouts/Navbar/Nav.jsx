@@ -3,75 +3,62 @@ import ContactDetails from "./ContactDetails";
 import "./Nav.css";
 import { WebContext } from "../../context/WebContext";
 import { MdKeyboardArrowDown } from "react-icons/md";
-//Importing Logo.webp
-
-import deskTopLogo from "../../assets/AboutLogo/aboutLogo.png";
-
-//Import Flag
-
 import { IoIosArrowUp } from "react-icons/io";
 import { GrSystem } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import deskTopLogo from "../../assets/AboutLogo/aboutLogo.png";
 
 function Nav() {
   const {
-      isMobile,
-      setAnimate,
-      setLoading,
-      handleLoadingStatus,
-      visibleSubMenu,
-      setVisibleSubMenu,
-      isHamburgerOpen,
-      setIsHamburgerOpen,
-      formRef,
-      //language
-      handleLang,
-      lang,
-    } = useContext(WebContext),
-    { t } = useTranslation(["nav"]),
-    list = [
-      { title: t("home"), path: "/" },
-      { title: t("about"), path: "/about" },
-      {
-        title: t("products"),
-        path: "/products",
-        list: [
-          { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-          { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-          { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-          { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-          { title: "Domain & Hosting", arr: ["test 1", "test 2", "test 3"] },
-        ],
-      },
-      {
-        title: t("pricelist"),
-        path: "/pricelist",
-      },
+    isMobile,
+    setAnimate,
+    setLoading,
+    handleLoadingStatus,
+    visibleSubMenu,
+    setVisibleSubMenu,
+    isHamburgerOpen,
+    setIsHamburgerOpen,
+    formRef,
+    handleLang,
+    lang,
+  } = useContext(WebContext);
 
-      { title: t("contact"), path: "/" },
-    ],
-    [activeMenuIndex, setActiveMenuIndex] = useState(null), // Track active submenu
-    [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null);
+  const { t } = useTranslation(["nav"]);
 
-  // Toggle Hamburger menu open/close
+  const navList = [
+    { title: t("home"), path: "/" },
+    { title: t("about"), path: "/about" },
+    {
+      title: t("products"),
+      path: "/products",
+      list: Array(5).fill({
+        title: "Domain & Hosting",
+        arr: ["test 1", "test 2", "test 3"],
+      }),
+    },
+    { title: t("pricelist"), path: "/pricelist" },
+    { title: t("contact"), path: "/" },
+  ];
+
+  const [activeMenuIndex, setActiveMenuIndex] = useState(null);
+  const [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null);
+
   const handleHamburgerMenu = () => {
     setIsHamburgerOpen((prev) => !prev);
     setActiveMenuIndex(null);
   };
+
   const handleNavClick = (index) => {
     if (activeDeskTopNavIndex === index) {
       setVisibleSubMenu(false);
-      setTimeout(() => setActiveDeskTopNavIndex(null), 400);
-    } else if (activeDeskTopNavIndex === null) {
-      setActiveDeskTopNavIndex(index);
-      setVisibleSubMenu(true);
+      setTimeout(() => setActiveDeskTopNavIndex(null), 200);
     } else {
       setVisibleSubMenu(false);
       setTimeout(() => {
         setActiveDeskTopNavIndex(index);
         setVisibleSubMenu(true);
-      }, 400);
+      }, 200);
     }
   };
 
@@ -85,44 +72,44 @@ function Nav() {
             <p>{t("title")}</p>
           </div>
           <ul>
-            {list.map((m, i) => {
-              if (m.title === t("products")) {
+            {navList.map((item, i) => {
+              if (item.title === t("products")) {
                 return (
                   <li
+                    key={`main-product-${i}`}
                     className="hoverEffect"
-                    key={i}
-                    onClick={() => handleNavClick(2)}
+                    onClick={() => handleNavClick(i)}
                   >
-                    {m.title}
-                    <MdKeyboardArrowDown />
+                    {item.title} <MdKeyboardArrowDown />
                   </li>
                 );
-              } else if (m.title === t("contact")) {
+              } else if (item.title === t("contact")) {
                 return (
                   <li
+                    key={`main-contact-${i}`}
                     className="hoverEffect"
                     onClick={() => {
                       setActiveDeskTopNavIndex(null);
                       formRef.current.scrollIntoView({ behavior: "smooth" });
                     }}
                   >
-                    {m.title}
+                    {item.title}
                   </li>
                 );
-              } else {
-                return (
-                  <Link
-                    key={i}
-                    to={m.path}
-                    className="hoverEffect"
-                    onClick={handleLoadingStatus}
-                  >
-                    <li>{m.title}</li>
-                  </Link>
-                );
               }
+              return (
+                <Link
+                  key={`main-link-${i}`}
+                  to={item.path}
+                  className="hoverEffect"
+                  onClick={handleLoadingStatus}
+                >
+                  <li>{item.title}</li>
+                </Link>
+              );
             })}
           </ul>
+
           <div className="languageDesktopContainer">
             <div>
               <span
@@ -147,6 +134,7 @@ function Nav() {
               <button className="hoverEffect">{t("btn")}</button>
             </div>
           </div>
+
           <div
             className={
               visibleSubMenu && activeDeskTopNavIndex !== null
@@ -156,21 +144,22 @@ function Nav() {
           >
             <ul>
               {activeDeskTopNavIndex !== null &&
-                list[activeDeskTopNavIndex].list.map((d, i) => (
-                  <React.Fragment key={i}>
+                navList[activeDeskTopNavIndex].list.map((group, i) => (
+                  <React.Fragment key={`submenu-group-${i}`}>
                     <div>
-                      <h3>{d.title}</h3>
+                      <h3>{group.title}</h3>
                       <ul>
-                        {d.arr.map((a, j) => (
+                        {group.arr.map((item, j) => (
                           <Link
-                            to={list[activeDeskTopNavIndex].path}
+                            key={`submenu-item-${i}-${j}`}
+                            to={navList[activeDeskTopNavIndex].path}
                             onClick={() => {
                               setActiveDeskTopNavIndex(null);
                               setAnimate(true);
                               setLoading(true);
                             }}
                           >
-                            <li key={j}>{a}</li>
+                            <li>{item}</li>
                           </Link>
                         ))}
                       </ul>
@@ -182,6 +171,7 @@ function Nav() {
           </div>
         </div>
       </nav>
+
       <div>
         <div>
           <div className="hoverEffect">
@@ -189,33 +179,26 @@ function Nav() {
             <p>{t("title")}</p>
           </div>
 
-          {/* Desktop or Mobile menu */}
           <ul
             className={`mainMenu ${
               isMobile ? (isHamburgerOpen ? "showMenu" : "hideMenue") : ""
             }`}
           >
-            {list.map((item, index) => {
+            {navList.map((item, i) => {
               const hasSubmenu = !!item.list;
-              const isActive = activeMenuIndex === index;
+              const isActive = activeMenuIndex === i;
 
-              // Show submenu on hover for desktop
-              const handleMouseEnter = () => {
-                if (!isMobile && hasSubmenu) setActiveMenuIndex(index);
-              };
-              const handleMouseLeave = () => {
-                if (!isMobile && hasSubmenu) setActiveMenuIndex(null);
-              };
-
-              // Toggle submenu on click for mobile
-              const handleClick = () => {
-                if (isMobile && hasSubmenu) {
-                  setActiveMenuIndex((prev) => (prev === index ? null : index));
-                }
-              };
+              const handleMouseEnter = () =>
+                !isMobile && hasSubmenu && setActiveMenuIndex(i);
+              const handleMouseLeave = () =>
+                !isMobile && hasSubmenu && setActiveMenuIndex(null);
+              const handleClick = () =>
+                isMobile &&
+                hasSubmenu &&
+                setActiveMenuIndex((prev) => (prev === i ? null : i));
 
               return (
-                <div key={index}>
+                <div key={`nav-item-${i}`}>
                   {hasSubmenu ? (
                     <li
                       className="hoverEffect"
@@ -230,12 +213,10 @@ function Nav() {
                         />
                       </span>
                     </li>
-                  ) : item.title === "Contact" ? (
+                  ) : item.title === t("contact") ? (
                     <li
                       className="hoverEffect"
-                      onMouseEnter={handleMouseEnter}
-                      onMouseLeave={handleMouseLeave}
-                      onClick={(index) => {
+                      onClick={() => {
                         setVisibleSubMenu(false);
                         setIsHamburgerOpen(false);
                         formRef.current.scrollIntoView({ behavior: "smooth" });
@@ -244,13 +225,12 @@ function Nav() {
                       <span>{item.title}</span>
                     </li>
                   ) : (
-                    <Link to={item.path} onClick={handleLoadingStatus}>
-                      <li
-                        className="hoverEffect"
-                        onMouseEnter={handleMouseEnter}
-                        onMouseLeave={handleMouseLeave}
-                        onClick={handleClick}
-                      >
+                    <Link
+                      key={`mobile-link-${i}`}
+                      to={item.path}
+                      onClick={handleLoadingStatus}
+                    >
+                      <li className="hoverEffect" onClick={handleClick}>
                         <span>{item.title}</span>
                       </li>
                     </Link>
@@ -264,18 +244,18 @@ function Nav() {
                       onMouseEnter={handleMouseEnter}
                       onMouseLeave={handleMouseLeave}
                     >
-                      {item.list.map((subItem, subIndex) => (
-                        <React.Fragment key={subIndex}>
-                          <div key={subIndex}>
+                      {item.list.map((subItem, j) => (
+                        <React.Fragment key={`mobile-submenu-${i}-${j}`}>
+                          <div>
                             <h3 className="hoverEffect">
                               <GrSystem />
                               <span>{subItem.title}</span>
                             </h3>
                             <hr />
                             <ul>
-                              {subItem.arr.map((a, aIndex) => (
+                              {subItem.arr.map((a, k) => (
                                 <Link
-                                  key={aIndex}
+                                  key={`mobile-subitem-${i}-${j}-${k}`}
                                   to="/products"
                                   onClick={handleLoadingStatus}
                                 >
@@ -321,7 +301,6 @@ function Nav() {
             )}
           </ul>
 
-          {/* Hamburger Icon for mobile */}
           {isMobile && (
             <div
               id="hamburgerContainer"

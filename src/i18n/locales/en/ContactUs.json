@@ -1,1 +1,32 @@
-{}
+{
+  "title": "Get a Free Consultation",
+  "desc": "Fill out the form below and one of our experts will contact you within 24 hours to discuss your needs and provide the optimal solution.",
+  "form": {
+    "name": "Full Name",
+    "email": "Email Address",
+    "mobile": "Mobile Number",
+    "service": "Service Type",
+    "company": "Company Name",
+    "business": "Business Activity",
+    "desc": "Project Description",
+    "btn": "Send Request"
+  },
+  "services": {
+    "erp": {
+      "title": "Comprehensive Arabic ERP Systems",
+      "desc": "We provide customized ERP systems that suit your business nature and cover all your needs: Advanced accounting system supporting Saudi standards, Intelligent inventory and sales management, Human resources system and payroll management, Detailed analytical reports for informed decision-making and User-friendly Arabic interfaces"
+    },
+    "software": {
+      "title": "Advanced Software Solutions",
+      "desc": "We transform your ideas into powerful digital solutions: Professional and responsive website design and development, E-commerce stores optimized for sales and conversion, Mobile applications for iOS and Android systems, Custom software solutions that meet your unique needs and Seamless system integration with your existing tools"
+    },
+    "hosting": {
+      "title": "Hosting and Domains",
+      "desc": "We provide you with hosting on Saudi servers that ensures: High loading speed within the Kingdom, Advanced security and data protection, 24/7 technical support in Arabic, Easy domain registration and management and Daily automatic backups"
+    },
+    "marketing": {
+      "title": "Professional Digital Marketing",
+      "desc": "We help you reach your ideal customers: Targeted and profitable Google Ads campaigns management, Creative and professional social media marketing, Marketing content writing that attracts and converts visitors into customers, Visual identity design and interactive content and Performance analysis and continuous optimization for best results"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "subscribe": {
+    "left": {
+      "title": "Stay up to date",
+      "desc": "By subscribing you agree to our policy",
+      "btn": "Subscribe"
+    },
+    "right": {
+      "title": "Subscribe Out Newsletter",
+      "desc": "Suscribe to our newsletter and be the first to receive inisghts, updates, and expert tips on optimising your ERP system"
+    }
+  },
+  "action": {
+    "logoTitle": "Code Tech",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "products": "Products",
+      "contact": "Contact"
+    },
+    "details": {
+      "location": "Our Location",
+      "touch": "Get In Touch"
+    },
+    "policy": {
+      "copy": "Copyright",
+      "terms": "Terms and conditions",
+      "privacy": "privacy policy"
+    },
+    "copy": {
+      "one": "copyright 2025",
+      "two": "Code Tech"
+    }
+  }
+}

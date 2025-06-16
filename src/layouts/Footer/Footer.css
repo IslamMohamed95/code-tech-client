@@ -20,3 +20,463 @@
   fill: #ffffff;
 }
 /*------------------------*/
+
+@media (min-width: 320px) {
+  #footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: var(--primary-color);
+  }
+
+  #footer .mainContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #footer .mainContainer .subscribeContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--very-light-gray);
+    padding: 8em 1.5em 1em;
+  }
+
+  #footer .mainContainer .newsletter {
+    width: 55%;
+  }
+
+  #footer .mainContainer .newsletter h2 {
+    color: var(--primary-color);
+    font-size: 1.3em;
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+
+  #footer .mainContainer .subscribeAction {
+    width: 40%;
+  }
+
+  #footer .mainContainer .subscribeAction h2 {
+    font-size: 0.75em;
+    color: var(--dark-color);
+  }
+
+  #footer .mainContainer .subscribeAction input {
+    width: 100%;
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 5px;
+    padding: 0.2em 2em;
+    margin-top: 0.4em;
+    text-align: center;
+    outline: none;
+    font-size: 0.8em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #footer .mainContainer .subscribeAction input:hover {
+    border-color: var(--primary-color);
+  }
+
+  #footer .mainContainer .subscribeAction button {
+    margin-top: 0.6em;
+    font-size: 0.75em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5em 1em 0.3em;
+  }
+
+  #footer .mainContainer .subscribeAction p,
+  #footer .mainContainer .subscribeContainer p {
+    display: none;
+    font-size: 0.7em;
+    color: var(--medium-gray);
+  }
+
+  #footer .footerContainer {
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      to top,
+      var(--base-color),
+      var(--very-light-gray)
+    );
+    color: white;
+  }
+
+  #footer .footerContainer > div:first-child > div {
+    margin-top: 1.4em;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  #footer .footerContainer > div:first-child img {
+    width: 20%;
+    margin-bottom: 0.5em;
+  }
+
+  #footer .footerContainer > div:first-child p {
+    font-weight: bold;
+  }
+
+  #footer .footerContainer > div > div ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+
+  #footer .footerContainer > div > div ul li {
+    font-weight: lighter;
+    margin: 0 0.45em;
+  }
+
+  #footer .footerContainer > div > div ul li a {
+    font-size: 0.8em;
+    text-decoration: none;
+    color: white;
+    margin: 0 0.3em;
+  }
+
+  #footer .footerContainer > div > div ul li svg {
+    font-size: 1.5em;
+  }
+
+  #footer .footerContainer .tabletView {
+    display: none;
+  }
+
+  #footer .footerContainer > div > div:last-child ul:last-child {
+    margin-top: 1.5em;
+  }
+
+  #footer .footerContainer > div > div ul:last-child li {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #footer .footerContainer > div:last-child {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--very-light-gray);
+    font-size: 0.75em;
+  }
+
+  #footer .footerContainer > div:last-child > div:first-child {
+    margin-bottom: 2em;
+  }
+
+  #footer .footerContainer > div:last-child > div:first-child ul {
+    list-style: none;
+  }
+
+  #footer .footerContainer > div:last-child > div:first-child ul li {
+    transition: all 0.3s ease-in-out;
+  }
+
+  #footer .footerContainer > div:last-child > div:first-child ul li:hover {
+    color: white;
+  }
+
+  #footer .footerContainer > div:last-child > div:last-child {
+    font-weight: bold;
+  }
+
+  #footer .footerContainer > div:last-child > div:last-child span {
+    color: white;
+  }
+}
+
+@media (min-width: 375px) {
+  #footer .mainContainer .subscribeContainer {
+    padding: 8em 2.5em 1em;
+  }
+}
+
+@media (min-width: 425px) {
+  #footer .mainContainer .subscribeContainer {
+    padding: 8em 1.5em 1em;
+  }
+
+  #footer .mainContainer .newsletter {
+    width: 50%;
+  }
+
+  #footer .mainContainer .newsletter h2 {
+    font-size: 1.2em;
+  }
+
+  #footer .mainContainer .subscribeAction {
+    width: 40%;
+  }
+
+  #footer .mainContainer .subscribeAction input {
+    border: 1px solid var(--medium-gray);
+    margin-top: 0.3em;
+  }
+
+  #footer .mainContainer .subscribeAction button {
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+  }
+
+  #footer .mainContainer .subscribeAction p,
+  #footer .mainContainer .subscribeContainer p {
+    display: block;
+    font-size: 0.7em;
+    color: var(--medium-gray);
+  }
+
+  #footer .mainContainer .subscribeAction p {
+    margin-top: 0.7em;
+  }
+
+  #footer .footerContainer > div:first-child {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  #footer .mainContainer .subscribeContainer {
+    padding: 8em 5em 1em;
+  }
+
+  #footer .mainContainer .newsletter h2 {
+    font-size: 1.5em;
+  }
+
+  #footer .mainContainer .subscribeAction h2 {
+    font-size: 0.9em;
+  }
+
+  #footer .mainContainer .subscribeAction input {
+    font-size: 0.8em;
+  }
+
+  #footer .mainContainer .subscribeAction button {
+    font-size: 0.8em;
+  }
+
+  #footer .mainContainer .subscribeAction p,
+  #footer .mainContainer .subscribeContainer p {
+    font-size: 0.8em;
+  }
+
+  #footer .footerContainer {
+    direction: ltr;
+    padding: 3em 0 1em;
+  }
+
+  #footer .footerContainer > div > div:last-child ul:first-child {
+    display: none;
+  }
+
+  #footer .footerContainer > div:first-child {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: row;
+    text-align: center;
+  }
+
+  #footer .footerContainer .tabletView {
+    display: flex;
+    margin-top: 1em;
+  }
+
+  #footer .footerContainer > div:first-child > div {
+    width: 33.33% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  #footer .footerContainer > div:first-child > div:last-child ul:last-child {
+    flex-direction: column;
+    margin-top: 1em;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  html[dir="ltr"]
+    #footer
+    .footerContainer
+    > div:first-child
+    > div:last-child
+    ul:last-child {
+    direction: ltr;
+  }
+  html[dir="rtl"]
+    #footer
+    .footerContainer
+    > div:first-child
+    > div:last-child
+    ul:last-child {
+    direction: rtl;
+  }
+
+  #footer .footerContainer > div > div:last-child ul:last-child li {
+    margin-top: 0.3em;
+    font-size: 1em;
+  }
+
+  #footer .footerContainer > div:last-child {
+    width: 80%;
+    margin-top: 4em;
+    margin-bottom: 0.7em;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    font-size: 0.7em;
+  }
+
+  #footer .footerContainer > div:last-child > div:first-child {
+    margin-bottom: 0;
+  }
+
+  #footer .footerContainer > div:last-child > div:last-child {
+    margin-top: 0;
+  }
+
+  #footer .footerContainer > div > div ul li svg {
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 1024px) {
+  #footer .mainContainer .newsletter h2 {
+    font-size: 1.8em;
+  }
+
+  #footer .mainContainer .subscribeAction h2 {
+    font-size: 1.1em;
+  }
+
+  #footer .mainContainer .subscribeAction input {
+    font-size: 0.95em;
+  }
+
+  #footer .mainContainer .subscribeAction button {
+    font-size: 0.9em;
+  }
+
+  #footer .footerContainer > div:first-child > div:nth-child(2) ul li {
+    margin: 0 0.5em;
+    font-size: 1.1em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #footer .footerContainer > div:first-child > div:nth-child(2) ul li:hover {
+    color: var(--primary-color);
+  }
+
+  #footer .footerContainer > div > div ul li svg {
+    font-size: 1.4em;
+  }
+
+  #footer .footerContainer > div:last-child {
+    margin-top: 6em;
+    font-size: 0.75em;
+  }
+
+  #footer .footerContainer > div:last-child ul li {
+    position: relative;
+    margin: 0 1em;
+    padding-bottom: 0.3em;
+  }
+
+  #footer .footerContainer > div:last-child ul li:before,
+  #footer .footerContainer > div:last-child ul li:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    border-radius: 25px;
+    transition: all 0.5s ease-in-out;
+    background-color: var(--very-light-gray);
+  }
+
+  #footer .footerContainer > div:last-child ul li:before {
+    left: 50%;
+  }
+
+  #footer .footerContainer > div:last-child ul li:after {
+    right: 50%;
+  }
+
+  #footer .footerContainer > div:last-child ul li:hover::before,
+  #footer .footerContainer > div:last-child ul li:hover::after {
+    width: 50% !important;
+  }
+
+  #footer .mainContainer .subscribeAction p,
+  #footer .mainContainer .subscribeContainer p {
+    font-size: 0.9em;
+  }
+}
+
+@media (min-width: 1440px) {
+  #footer .mainContainer .subscribeContainer {
+    padding: 8em 15em 1em;
+  }
+
+  #footer .mainContainer .newsletter h2 {
+    font-size: 2.3em;
+  }
+
+  #footer .mainContainer .subscribeAction h2 {
+    font-size: 1.4em;
+  }
+
+  #footer .mainContainer .subscribeAction input {
+    font-size: 1.1em;
+  }
+
+  #footer .mainContainer .subscribeAction button {
+    font-size: 1em;
+  }
+
+  #footer .footerContainer > div:first-child > div:nth-child(2) ul li {
+    margin: 0 0.8em;
+    font-size: 1.4em;
+  }
+
+  #footer .footerContainer > div > div ul li svg {
+    font-size: 1.5em;
+  }
+
+  #footer .footerContainer .tabletView {
+    margin-top: 1.5em;
+  }
+
+  #footer .footerContainer > div > div:last-child ul:last-child li {
+    font-size: 1.1em;
+  }
+
+  #footer .footerContainer > div > div:last-child ul:last-child li a {
+    font-size: 1.2em;
+  }
+
+  #footer .footerContainer > div:last-child {
+    font-size: 1em;
+  }
+
+  #footer .mainContainer .subscribeAction p,
+  #footer .mainContainer .subscribeContainer p {
+    font-size: 1.1em;
+  }
+}

@@ -127,9 +127,38 @@
 .floating-input textarea:focus + label,
 .floating-input textarea:not(:placeholder-shown) + label {
   top: -12px;
-  left: 0px;
   font-size: 0.8rem;
   color: var(--base-color);
+}
+html[dir="ltr"] .floating-input label {
+  left: 12px;
+  right: auto;
+  text-align: left;
+}
+
+html[dir="rtl"] .floating-input label {
+  right: 12px;
+  left: auto;
+  text-align: right;
+}
+
+/* When active (floating above input) */
+html[dir="ltr"] .floating-input input:focus + label,
+html[dir="ltr"] .floating-input input:not(:placeholder-shown) + label,
+html[dir="ltr"] .floating-input textarea:focus + label,
+html[dir="ltr"] .floating-input textarea:not(:placeholder-shown) + label {
+  left: 0;
+  right: auto;
+  text-align: left;
+}
+
+html[dir="rtl"] .floating-input input:focus + label,
+html[dir="rtl"] .floating-input input:not(:placeholder-shown) + label,
+html[dir="rtl"] .floating-input textarea:focus + label,
+html[dir="rtl"] .floating-input textarea:not(:placeholder-shown) + label {
+  right: 0;
+  left: auto;
+  text-align: right;
 }
 .submit-btn {
   width: 100%;

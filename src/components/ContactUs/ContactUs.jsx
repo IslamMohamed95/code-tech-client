@@ -9,11 +9,13 @@ import four from "../../assets/services/4.jpg";
 //Import Icons
 import { AiOutlineUp } from "react-icons/ai";
 import { WebContext } from "../../context/WebContext";
+import { useTranslation } from "react-i18next";
 
 function ContactUs() {
-  const { formRef } = useContext(WebContext);
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState("");
+  const { formRef } = useContext(WebContext),
+    [isDropdownOpen, setDropdownOpen] = useState(false),
+    [selectedService, setSelectedService] = useState(""),
+    { t } = useTranslation("contactUs");
 
   const serviceOptions = [
     "Custom ERP",
@@ -24,24 +26,24 @@ function ContactUs() {
   ];
   const services = [
     {
-      title: "ERP System",
+      title: t("services.erp.title"),
       img: one,
-      desc: "We deliver comprehensive ERP solutions tailored to your business, helping you manage resources and operations more efficiently.",
+      desc: t("services.erp.desc"),
     },
     {
-      title: "Custom Development",
+      title: t("services.software.title"),
       img: two,
-      desc: "We provide custom software development to solve your specific business needs and drive innovation.",
+      desc: t("services.software.desc"),
     },
     {
-      title: "Business Automation",
+      title: t("services.hosting.title"),
       img: three,
-      desc: "Automate repetitive tasks and streamline your business processes with our smart automation solutions.",
+      desc: t("services.hosting.desc"),
     },
     {
-      title: "Technical Support",
+      title: t("services.marketing.title"),
       img: four,
-      desc: "Receive top-notch technical support to keep your systems running smoothly and efficiently.",
+      desc: t("services.marketing.desc"),
     },
   ];
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -76,24 +78,21 @@ function ContactUs() {
 
         {/* Contact Form */}
         <div className="container">
-          <h2>Contact Us</h2>
-          <p>
-            Have questions? We'd love to hear from you. Send us a message and
-            we'll respond as soon as possible.
-          </p>
+          <h2>{t("title")}</h2>
+          <p>{t("desc")}</p>
 
           <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
             <div className="floating-input">
               <input type="text" id="name" placeholder=" " required />
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">{t("form.name")}</label>
             </div>
             <div className="floating-input">
               <input type="email" id="email" placeholder=" " required />
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{t("form.email")}</label>
             </div>
             <div className="floating-input">
               <input type="tel" id="phone" placeholder=" " />
-              <label htmlFor="phone">Phone</label>
+              <label htmlFor="phone">{t("form.mobile")}</label>
             </div>
 
             {/* Service Type Dropdown */}
@@ -129,16 +128,26 @@ function ContactUs() {
                 </ul>
               )}
 
-              <label htmlFor="service">Service Type</label>
+              <label htmlFor="service">{t("form.service")}</label>
+            </div>
+
+            <div className="floating-input">
+              <input type="tel" id="company" placeholder=" " />
+              <label htmlFor="company">{t("form.company")}</label>
+            </div>
+
+            <div className="floating-input">
+              <input type="tel" id="business" placeholder=" " />
+              <label htmlFor="business">{t("form.business")}</label>
             </div>
 
             <div className="floating-input">
               <textarea id="message" placeholder=" " rows="4" required />
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">{t("form.desc")}</label>
             </div>
 
             <button type="submit" className="submit-btn">
-              Send Request
+              {t("form.btn")}
             </button>
           </form>
         </div>
