@@ -226,15 +226,19 @@ p {
   }
 
   #whyChooseUs .swiper-slide .container .shadow p {
-    position: absolute;
-    bottom: 15px;
-    left: 30px;
+    margin-bottom: 1em;
     font-size: 1.2em;
     font-weight: bold;
     color: white;
-    border-left: 2px solid var(--primary-color);
     padding: 0 10px;
     transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+
+  html[dir="ltr"] #whyChooseUs .swiper-slide .container .shadow p {
+    border-left: 2px solid var(--primary-color);
+  }
+  html[dir="rtl"] #whyChooseUs .swiper-slide .container .shadow p {
+    border-right: 2px solid var(--primary-color);
   }
 
   #whyChooseUs .splitter {
@@ -572,7 +576,7 @@ p {
   }
 
   #whyChooseUs .swiper-slide .container .shadow p {
-    font-size: 1.7em;
+    font-size: 1.5em;
   }
 
   #footer .mainContainer .subscribeContainer {
@@ -686,11 +690,11 @@ p {
   #whyChooseUs .swiper-button-next {
     right: 42%;
   }
-
+  #whyChooseUs .swiper-slide .container .shadow {
+    padding: 0 15px 10px 0;
+  }
   #whyChooseUs .swiper-slide .container .shadow p {
-    font-size: 1.2em;
-    bottom: 5px;
-    left: 20px;
+    font-size: 0.9em;
   }
 
   #footer .mainContainer .subscribeContainer {

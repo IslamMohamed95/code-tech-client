@@ -81,7 +81,7 @@
   color: var(--base-color);
   margin-bottom: 10px;
 }
-.container p {
+.contact-section .container p {
   text-align: center;
   color: #555;
   margin-bottom: 20px;

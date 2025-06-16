@@ -3,26 +3,23 @@ import "./SVG.css";
 
 //Import img
 import svg from "../../assets/SVG/SVG.webp";
+import { useTranslation } from "react-i18next";
 
 function SVG() {
+  const { t } = useTranslation("svg");
   return (
     <section id="svg">
       <div className="mainContainer">
         <div className="headerContainer">
-          <label>We Offer Best ERP Solutions</label>
+          <label>{t("title")}</label>
         </div>
 
         <div className="svgContainer">
           <div>
-            <p>
-              Code Tech ERP Deliver The Real Benefits That Today's Bussiness
-              Require In Their ERP System
-            </p>
+            <p>{t("desc")}</p>
           </div>
           <img className="hoverEffect" src={svg} alt="svgImg" />
-          <p>
-            More than 100 features in a single ERP. Review the best features
-          </p>
+          <p>{t("feature")}</p>
         </div>
       </div>
     </section>

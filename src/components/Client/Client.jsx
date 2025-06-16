@@ -10,14 +10,16 @@ import c1 from "../../assets/clients/c1.webp";
 import c2 from "../../assets/clients/c2.webp";
 import c3 from "../../assets/clients/c3.webp";
 import c4 from "../../assets/clients/c4.webp";
+import { useTranslation } from "react-i18next";
 // For demonstration, I'm duplicating c4, but replace these with actual images:
 const images = [c1, c2, c3, c4, c4, c4, c4, c4, c4, c4];
 
 function Client() {
+  const { t } = useTranslation(["client"]);
   return (
     <section id="client" aria-label="Client carousel section">
       <div>
-        <h2>Trusted By</h2>
+        <h2>{t("title")}</h2>
         <span className="one"></span>
         <span className="two"></span>
       </div>
@@ -83,10 +85,7 @@ function Client() {
             ))}
           </Swiper>
         </div>
-        <p>
-          Join over 10,000 companies that trust Code Tech to manage their
-          business.
-        </p>
+        <p>{t("desc")}</p>
       </div>
     </section>
   );

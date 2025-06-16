@@ -20,7 +20,6 @@ function ContactUs() {
     "Custom ERP",
     "Custom ERP",
     "Custom ERP",
-
     "Custom ERP",
   ];
   const services = [

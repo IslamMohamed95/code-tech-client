@@ -13,28 +13,26 @@ import banner from "../../assets/WhyChooseUs/banner.webp";
 
 //Importin Stylesheet
 import "./WhyChooseUs.css";
+import { useTranslation } from "react-i18next";
 
 function WhyChooseUs() {
-  const services = [
-    { title: "test", img: banner },
-    { title: "test", img: banner },
-    { title: "test", img: banner },
-    { title: "test", img: banner },
-    { title: "test", img: banner },
-    { title: "test", img: banner },
-    { title: "test", img: banner },
-  ];
+  const { t } = useTranslation("chooseUs"),
+    services = [
+      { title: t("data.one"), img: banner },
+      { title: t("data.two"), img: banner },
+      { title: t("data.three"), img: banner },
+      { title: t("data.four"), img: banner },
+      { title: t("data.four"), img: banner },
+      { title: t("data.four"), img: banner },
+    ];
+
   return (
     <section id="whyChooseUs">
       <div id="mainContainer">
         <div className="contentContainer">
-          <h3>Why Choosing Us ?</h3>
+          <h3>{t("title")}</h3>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit autem
-            exercitationem fuga sunt cum, fugiat nulla ab quaerat iusto sint
-            maiores eaque obcaecati eius, iste.
-          </p>
+          <p>{t("desc")}</p>
         </div>
         <div className="swiperContainer">
           <Swiper
@@ -77,7 +75,8 @@ function WhyChooseUs() {
       </div>
       <div className="splitter">
         <p>
-          Stop Wasting your time <span className="hoverEffect">Conact Us</span>
+          {t("splitter.one")}{" "}
+          <span className="hoverEffect"> {t("splitter.two")}</span>
         </p>
       </div>
       <div className="custom-shape-divider-top-1749506121">

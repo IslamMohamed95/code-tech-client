@@ -53,11 +53,11 @@
   }
 
   #about .maincontainer .rightContainer h3 {
-    text-align: center;
     color: var(--base-color);
     margin: 0.5em 0 1em;
     line-height: 1.25em;
     font-size: 1.1em;
+    text-align: center;
   }
 
   #about .maincontainer .rightContainer h4 {
@@ -111,7 +111,7 @@
 
   #about .maincontainer .rightContainer .aboutBtn button {
     border: none;
-    background-color: var(--primary-color);
+    background-color: var(--base-color);
     color: white;
     padding: 0.6em 1em;
     border-radius: 5px;
@@ -182,8 +182,8 @@
   }
 
   #about .maincontainer .rightContainer h3 {
-    text-align: left;
-    color: var(--primary-color);
+    text-align: unset;
+    color: var(--base-color);
     margin: 0.2em 0 0.5em;
     line-height: 1.25em;
     font-size: 1.2em;
