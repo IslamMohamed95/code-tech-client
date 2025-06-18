@@ -27,15 +27,46 @@ function PriceList() {
     }),
     [t]
   );
-  const marketTranslations = useMemo(() => {
-    const containers = t("marketPlans.containers", { returnObjects: true });
-    const cards = containers?.[0]?.cards || {};
-    return {
-      special: cards.special,
-      professional: cards.professional,
-      basic: cards.basic,
-    };
-  }, [t]);
+  const marketTranslations = useMemo(
+    () => ({
+      special: t("marketPlans.cards.special", { returnObjects: true }),
+      professional: t("marketPlans.cards.professional", {
+        returnObjects: true,
+      }),
+      basic: t("marketPlans.cards.basic", { returnObjects: true }),
+    }),
+    [t]
+  );
+  const identityTranslations = useMemo(
+    () => ({
+      special: t("identityPlans.cards.special", { returnObjects: true }),
+      professional: t("identityPlans.cards.professional", {
+        returnObjects: true,
+      }),
+      basic: t("identityPlans.cards.basic", { returnObjects: true }),
+    }),
+    [t]
+  );
+  const adsTranslations = useMemo(
+    () => ({
+      special: t("adsPlans.cards.special", { returnObjects: true }),
+      professional: t("adsPlans.cards.professional", {
+        returnObjects: true,
+      }),
+      basic: t("adsPlans.cards.basic", { returnObjects: true }),
+    }),
+    [t]
+  );
+  const bundleTranslations = useMemo(
+    () => ({
+      special: t("bundlePlans.cards.special", { returnObjects: true }),
+      professional: t("bundlePlans.cards.professional", {
+        returnObjects: true,
+      }),
+      basic: t("bundlePlans.cards.basic", { returnObjects: true }),
+    }),
+    [t]
+  );
 
   const yearlyPlans = useMemo(
     () => [
@@ -67,6 +98,30 @@ function PriceList() {
       marketTranslations.basic,
     ],
     [marketTranslations]
+  );
+  const identityPlans = useMemo(
+    () => [
+      identityTranslations.special,
+      identityTranslations.professional,
+      identityTranslations.basic,
+    ],
+    [identityTranslations]
+  );
+  const adsPlans = useMemo(
+    () => [
+      adsTranslations.special,
+      adsTranslations.professional,
+      adsTranslations.basic,
+    ],
+    [adsTranslations]
+  );
+  const bundlePlans = useMemo(
+    () => [
+      bundleTranslations.special,
+      bundleTranslations.professional,
+      bundleTranslations.basic,
+    ],
+    [bundleTranslations]
   );
 
   const isCheck = (val) => ["check", "صح"].includes(val?.trim()?.toLowerCase());
@@ -224,42 +279,142 @@ function PriceList() {
           )}
         </div>
 
-        <div className="anotherPlans">
-          <div className="marketContainer">
-            <h2>{t("marketPlans.mainHeader")}</h2>
-            <div className="cardsHolder">
-              {marketPlans.map(
-                (y, index) =>
-                  y?.plan && (
-                    <div className="card" key={index}>
-                      <div>
-                        <h4>{y.plan}</h4>
-                        {y?.price?.value && (
-                          <div className="pricePart">
-                            <div>{y.price.value} 元</div>
-                            <div>
-                              <span>{t("payment")}</span>
-                              <p>{y.price.time}</p>
-                            </div>
-                          </div>
-                        )}
-                        <div className="reasonPart">{y.reason}</div>
-                        <hr />
-                        {y?.feature?.map((f, i) => (
-                          <div className="featureHolder" key={i}>
-                            <ul>
-                              <li key={i} className="featureItem">
-                                <FaCheck className="icon" />
-                                <span>{f}</span>
-                              </li>
-                            </ul>
-                          </div>
-                        ))}
+        <div className="marketContainer">
+          <h2>{t("marketPlans.mainHeader")}</h2>
+          <div className="cardsHolder">
+            <h3>{t("marketPlans.title")}</h3>
+            {marketPlans?.map((y, index) =>
+              y?.plan ? (
+                <div className="card" key={index}>
+                  <div>
+                    <h4>{y.plan}</h4>
+                    {y?.price?.value && (
+                      <div className="pricePart">
+                        <div>{y.price.value} 元</div>
+                        <div>
+                          <span>{t("payment")}</span>
+                          <p>{y.price.time}</p>
+                        </div>
                       </div>
-                    </div>
-                  )
-              )}
-            </div>
+                    )}
+                    <div className="reasonPart">{y?.reason}</div>
+                    <hr />
+                    {y?.feature?.map((f, i) => (
+                      <div className="featureHolder" key={i}>
+                        <ul>
+                          <li className="featureItem">
+                            <FaCheck className="icon" />
+                            <span>{f}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null
+            )}
+          </div>
+
+          <div className="cardsHolder">
+            <h3>{t("identityPlans.title")}</h3>
+            {identityPlans?.map((y, index) =>
+              y?.plan ? (
+                <div className="card" key={index}>
+                  <div>
+                    <h4>{y.plan}</h4>
+                    {y?.price?.value && (
+                      <div className="pricePart">
+                        <div>{y.price.value} 元</div>
+                        <div>
+                          <span>{y.price.time}</span>
+                          <p>time</p>
+                        </div>
+                      </div>
+                    )}
+                    <div className="reasonPart">{y?.reason}</div>
+                    <hr />
+                    {y?.feature?.map((f, i) => (
+                      <div className="featureHolder" key={i}>
+                        <ul>
+                          <li className="featureItem">
+                            <FaCheck className="icon" />
+                            <span>{f}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null
+            )}
+          </div>
+
+          <div className="cardsHolder">
+            <h3>{t("adsPlans.title")}</h3>
+            {adsPlans?.map((y, index) =>
+              y?.plan ? (
+                <div className="card" key={index}>
+                  <div>
+                    <h4>{y.plan}</h4>
+                    {y?.price?.value && (
+                      <div className="pricePart">
+                        <div>{y.price.value} 元</div>
+                        <div>
+                          <span>{t("payment")}</span>
+                          <p>{y.price.time}</p>
+                        </div>
+                      </div>
+                    )}
+                    <div className="reasonPart">{y?.reason}</div>
+                    <hr />
+                    {y?.feature?.map((f, i) => (
+                      <div className="featureHolder" key={i}>
+                        <ul>
+                          <li className="featureItem">
+                            <FaCheck className="icon" />
+                            <span>{f}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null
+            )}
+          </div>
+
+          <div className="cardsHolder">
+            <h3>{t("bundlePlans.title")}</h3>
+            {bundlePlans?.map((y, index) =>
+              y?.plan ? (
+                <div className="card" key={index}>
+                  <div>
+                    <h4>{y.plan}</h4>
+                    {y?.price?.value && (
+                      <div className="pricePart">
+                        <div>{y.price.value} 元</div>
+                        <div>
+                          <span>{t("payment")}</span>
+                          <p>{y.price.time}</p>
+                        </div>
+                      </div>
+                    )}
+                    <div className="reasonPart">{y?.reason}</div>
+                    <hr />
+                    {y?.feature?.map((f, i) => (
+                      <div className="featureHolder" key={i}>
+                        <ul>
+                          <li className="featureItem">
+                            <FaCheck className="icon" />
+                            <span>{f}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : null
+            )}
           </div>
         </div>
       </div>

@@ -93,7 +93,7 @@ html[dir="rtl"] .switch-bg.right {
   }
 
   #priceList .pricingContainer,
-  #priceList .anotherPlans {
+  #priceList .marketContainer {
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -101,8 +101,9 @@ html[dir="rtl"] .switch-bg.right {
     align-items: center;
   }
   #priceList .pricingContainer h2,
-  #priceList .anotherPlans h2 {
+  #priceList .marketContainer h2 {
     text-align: center;
+    font-weight: bold;
     font-size: 1em;
     margin-bottom: 1em;
     width: 85%;
@@ -110,7 +111,7 @@ html[dir="rtl"] .switch-bg.right {
   }
   #priceList .yearlyContainer,
   #priceList .monthlyContainer,
-  #priceList .anotherPlans .marketContainer {
+  #priceList .marketContainer .marketContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -122,8 +123,7 @@ html[dir="rtl"] .switch-bg.right {
     margin-top: 3em;
   }
   #priceList .yearlyContainer,
-  #priceList .monthlyContainer,
-  #priceList .marketContainer {
+  #priceList .monthlyContainer {
     width: 100%;
   }
 
@@ -160,7 +160,7 @@ html[dir="rtl"] .switch-bg.right {
   /*--------------- Customized Card Styling ---------*/
   #priceList .yearlyContainer .cardsHolder .card:first-child > div,
   #priceList .marketContainer .cardsHolder .card {
-    background-color: rgb(232, 232, 232);
+    background-color: var(--very-light-gray);
   }
 
   #priceList .yearlyContainer .cardsHolder .card:first-child h4,
@@ -348,6 +348,13 @@ html[dir="rtl"] .switch-bg.right {
     color: black;
   }
 
+  #priceList .marketContainer .cardsHolder {
+    margin: 2em 0 1em;
+  }
+  #priceList .marketContainer .cardsHolder h3 {
+    font-size: 1.1em;
+    margin-bottom: 1em;
+  }
   .tableView {
     margin-top: 4em;
     width: 100%;
@@ -430,10 +437,10 @@ html[dir="rtl"] .switch-bg.right {
     font-size: 1.2em;
     margin-bottom: 1.5em;
   }
-  #priceList .yearlyContainer .cardsHolder .card {
-    width: 95%;
-  }
-  #priceList .yearlyContainer .cardsHolder .card > div {
+
+  #priceList .yearlyContainer .cardsHolder .card > div,
+  #priceList .monthlyContainer .cardsHolder .card,
+  #priceList .marketContainer .cardsHolder .card {
     padding: 2.5em 3em;
   }
   #priceList .yearlyContainer .cardsHolder .card ul li {

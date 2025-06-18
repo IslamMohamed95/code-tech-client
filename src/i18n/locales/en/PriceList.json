@@ -265,57 +265,192 @@
   },
   "marketPlans": {
     "mainHeader": "Social Media Management Packages",
-    "containers": [
-      {
-        "title": "Marketing Services Packages",
-        "cards": {
-          "special": {
-            "plan": "Special Package",
-            "price": { "value": 7500, "time": "monthly" },
-            "reason": "Ideal for growing companies aiming for stronger visibility and organized expansion",
-            "feature": [
-              "Managing all major platforms",
-              "Coordinating professional photography",
-              "24/7 community management",
-              "3 collaborations - 2 influencer partnerships",
-              "Weekly analytics and strategy adjustments",
-              "Ad management (budget not included)",
-              "Crisis management support",
-              "12 reels + daily stories and 3 monthly posts"
-            ]
-          },
-          "professional": {
-            "plan": "Professional",
-            "price": { "value": 4500, "time": "monthly" },
-            "reason": "Ideal for growing companies aiming for stronger visibility and organized expansion",
-            "feature": [
-              "4 Platforms (Instagram, Twitter, LinkedIn, TikTok)",
-              "8 Stories or Reels per month",
-              "Community management (responses within 4 business hours)",
-              "Contact with 5 potential influencers",
-              "Biweekly reports and competitor analysis",
-              "Basic graphic design and video editing",
-              "Trending hashtag research",
-              "20 Posts per month"
-            ]
-          },
-          "basic": {
-            "plan": "Basic Plan",
-            "price": { "value": 2500, "time": "monthly" },
-            "reason": "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
-            "feature": [
-              "Manage 2 platforms (Instagram + Twitter or LinkedIn)",
-              "Basic content creation in Arabic and English",
-              "Community management (response within 24 hours)",
-              "Monthly analytical report",
-              "Content calendar planning",
-              "Hashtag research and optimization",
-              "Basic graphic design",
-              "12 posts per month (3 posts weekly)"
-            ]
-          }
-        }
+    "title": "Marketing Services Packages",
+    "cards": {
+      "special": {
+        "plan": "Special Package",
+        "price": { "value": 7500, "time": "monthly" },
+        "reason": "Ideal for growing companies aiming for stronger visibility and organized expansion",
+        "feature": [
+          "Managing all major platforms",
+          "Coordinating professional photography",
+          "24/7 community management",
+          "3 collaborations - 2 influencer partnerships",
+          "Weekly analytics and strategy adjustments",
+          "Ad management (budget not included)",
+          "Crisis management support",
+          "12 reels + daily stories and 3 monthly posts"
+        ]
+      },
+      "professional": {
+        "plan": "Professional",
+        "price": { "value": 4500, "time": "monthly" },
+        "reason": "Ideal for growing companies aiming for stronger visibility and organized expansion",
+        "feature": [
+          "4 Platforms (Instagram, Twitter, LinkedIn, TikTok)",
+          "8 Stories or Reels per month",
+          "Community management (responses within 4 business hours)",
+          "Contact with 5 potential influencers",
+          "Biweekly reports and competitor analysis",
+          "Basic graphic design and video editing",
+          "Trending hashtag research",
+          "20 Posts per month"
+        ]
+      },
+      "basic": {
+        "plan": "Basic Plan",
+        "price": { "value": 2500, "time": "monthly" },
+        "reason": "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
+        "feature": [
+          "Manage 2 platforms (Instagram + Twitter or LinkedIn)",
+          "Basic content creation in Arabic and English",
+          "Community management (response within 24 hours)",
+          "Monthly analytical report",
+          "Content calendar planning",
+          "Hashtag research and optimization",
+          "Basic graphic design",
+          "12 posts per month (3 posts weekly)"
+        ]
       }
-    ]
+    }
+  },
+  "identityPlans": {
+    "title": "Brand Identity Packages",
+    "cards": {
+      "special": {
+        "plan": "Comprehensive Package",
+        "price": { "value": 15000, "time": "one" },
+        "reason": "Ideal for growing companies aiming for stronger visibility and organized expansion",
+        "feature": [
+          "4 Platforms (Instagram, Twitter, LinkedIn, TikTok)",
+          "8 Stories or Reels per month",
+          "Community management (response within 4 business hours)",
+          "Contact with 5 potential influencers",
+          "Biweekly reports and competitor analysis",
+          "Basic graphic design and video editing",
+          "Trending hashtag research",
+          "20 Posts per month"
+        ]
+      },
+      "professional": {
+        "plan": "Premium Conversion Package",
+        "price": { "value": 25000, "time": "one" },
+        "reason": "Ideal for growing companies aiming for stronger visibility and organized expansion",
+        "feature": [
+          "Includes a strategic workshop",
+          "Positioning and messaging framework",
+          "Comprehensive visual identity system",
+          "Marketing material design (brochures, presentations, etc.)",
+          "Social media launch strategy",
+          "Banner or signage design",
+          "Website mockups (3 pages)",
+          "Market research and competitor analysis",
+          "6-month consultation",
+          "Team training"
+        ]
+      },
+      "basic": {
+        "plan": "Basic Package",
+        "price": { "value": 8000, "time": "one" },
+        "reason": "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
+        "feature": [
+          "Logo design (3 concepts + unlimited revisions)",
+          "Business card, official letterheads, email signature",
+          "Basic brand identity guideline (10 pages)",
+          "Social media setup",
+          "Positioning consultation",
+          "Arabic/English logos",
+          "Files in AI, PDF, PNG formats and more",
+          "Brand colors and typography"
+        ]
+      }
+    }
+  },
+  "adsPlans": {
+    "title": "Advertising Packages",
+    "cards": {
+      "special": {
+        "plan": "Growth Package",
+        "price": { "value": 6000, "time": "monthly" },
+        "reason": "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
+        "feature": [
+          "Twitter and Snapchat (targeting Riyadh)",
+          "Audience segmentation and lookalike audience creation",
+          "A/B testing",
+          "Remarketing",
+          "Advanced analytics",
+          "Biweekly calls",
+          "LinkedIn Ads (B2B)",
+          "Minimum budget: 10,000 SAR"
+        ]
+      },
+      "professional": {
+        "plan": "Premium Conversion Package",
+        "price": { "value": 12000, "time": "monthly" },
+        "reason": "Ideal for growing companies aiming for stronger visibility and organized expansion",
+        "feature": [
+          "YouTube and video campaign management",
+          "Programmatic display advertising",
+          "Audience development from CRM data",
+          "Competitive intelligence and market analysis",
+          "Marketing automation integration",
+          "Weekly reviews",
+          "Landing page creation and optimization",
+          "Coordination with traditional media (radio, print, etc.)"
+        ]
+      },
+      "basic": {
+        "plan": "Basic Package",
+        "price": { "value": 3000, "time": "monthly" },
+        "reason": "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
+        "feature": [
+          "Google Ads (Search + Display)",
+          "Budget customization and optimization",
+          "Core audience research",
+          "5 ad variations",
+          "Landing page recommendations",
+          "Monthly reports",
+          "Minimum budget: 5,000 SAR",
+          "Facebook and Instagram",
+          "Conversion tracking"
+        ]
+      }
+    }
+  },
+  "bundlePlans": {
+    "title": "Bundle Packages (Save 15% - 20%)",
+    "cards": {
+      "special": {
+        "plan": "Growth Business Bundle",
+        "price": { "value": 22000, "time": "monthly" },
+        "reason": "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
+        "feature": [
+          "Premium Social Media Package",
+          "Annual Identity Refresh",
+          "Growth Advertising Package"
+        ]
+      },
+      "professional": {
+        "plan": "Enterprise Solution",
+        "price": { "value": 35000, "time": "monthly" },
+        "reason": "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
+        "feature": [
+          "All premium packages",
+          "Priority support and consultation",
+          "Dedicated account manager",
+          "Monthly strategic sessions"
+        ]
+      },
+      "basic": {
+        "plan": "Comprehensive small business package",
+        "price": { "value": 12000, "time": "monthly" },
+        "reason": "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
+        "feature": [
+          "Professional social media package",
+          "Quarterly identity consultation",
+          "Basic advertising package"
+        ]
+      }
+    }
   }
 }
