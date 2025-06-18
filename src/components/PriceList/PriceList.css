@@ -229,6 +229,9 @@ html[dir="rtl"] .switch-bg.right {
   }
   /*---------------------------------------------*/
   /*---------------- sharing Card Styling -------------*/
+  #priceList .monthlyContainer .cardsHolder .card > div {
+    width: 90%;
+  }
   #priceList .yearlyContainer .cardsHolder .card:nth-child(3) > div {
     background-color: var(--primary-color);
   }
@@ -527,6 +530,9 @@ html[dir="rtl"] .switch-bg.right {
   }
 }
 @media (min-width: 768px) {
+  #priceList .monthlyContainer .cardsHolder .card > div {
+    width: 90%;
+  }
   #priceList .introHolder {
     padding: 3em;
     width: 95%;
@@ -717,6 +723,9 @@ html[dir="rtl"] .switch-bg.right {
   }
   .switch-wrapper {
     width: 25%;
+  }
+  #priceList .marketContainer .cardsHolder h3 {
+    font-size: 1.8em;
   }
   #priceList .yearlyContainer .cardsHolder {
     width: 100%;
