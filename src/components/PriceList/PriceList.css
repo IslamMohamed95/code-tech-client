@@ -94,7 +94,8 @@ html[dir="rtl"] .switch-bg.right {
     justify-content: flex-start;
     align-items: center;
   }
-  #priceList .pricingContainer h2 {
+  #priceList .pricingContainer h2,
+  #priceList .anotherPlans h2 {
     text-align: center;
     font-size: 1em;
     margin-bottom: 1em;
@@ -102,16 +103,21 @@ html[dir="rtl"] .switch-bg.right {
     color: rgb(184, 184, 184);
   }
   #priceList .yearlyContainer,
-  #priceList .monthlyContainer {
-    margin-top: 3em;
+  #priceList .monthlyContainer,
+  #priceList .anotherPlans .marketContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+  #priceList .yearlyContainer,
+  #priceList .monthlyContainer {
+    margin-top: 3em;
+  }
   #priceList .yearlyContainer .cardsHolder,
-  #priceList .monthlyContainer .cardsHolder {
+  #priceList .monthlyContainer .cardsHolder,
+  #priceList .marketContainer .cardsHolder {
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -119,7 +125,8 @@ html[dir="rtl"] .switch-bg.right {
     align-items: center;
   }
   #priceList .yearlyContainer .cardsHolder .card,
-  #priceList .monthlyContainer .cardsHolder .card {
+  #priceList .monthlyContainer .cardsHolder .card,
+  #priceList .marketContainer .cardsHolder .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,7 +134,8 @@ html[dir="rtl"] .switch-bg.right {
     margin: 1em 0;
   }
   #priceList .yearlyContainer .cardsHolder .card > div,
-  #priceList .monthlyContainer .cardsHolder .card {
+  #priceList .monthlyContainer .cardsHolder .card,
+  #priceList .marketContainer .cardsHolder .card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,17 +145,21 @@ html[dir="rtl"] .switch-bg.right {
   }
 
   /*--------------- Customized Card Styling ---------*/
-  #priceList .yearlyContainer .cardsHolder .card:first-child > div {
+  #priceList .yearlyContainer .cardsHolder .card:first-child > div,
+  #priceList .marketContainer .cardsHolder .card {
     background-color: rgb(232, 232, 232);
   }
 
-  #priceList .yearlyContainer .cardsHolder .card:first-child h4 {
+  #priceList .yearlyContainer .cardsHolder .card:first-child h4,
+  #priceList .marketContainer .cardsHolder .card h4 {
     color: var(--primary-color);
   }
-  #priceList .yearlyContainer .cardsHolder .card:first-child hr {
+  #priceList .yearlyContainer .cardsHolder .card:first-child hr,
+  #priceList .marketContainer .cardsHolder .card hr {
     background-color: var(--primary-color);
   }
-  #priceList .yearlyContainer .cardsHolder .card:first-child ul li {
+  #priceList .yearlyContainer .cardsHolder .card:first-child ul li,
+  #priceList .marketContainer .cardsHolder .card ul li {
     color: grey;
   }
   /*---------------------------------------------------*/
@@ -181,7 +193,7 @@ html[dir="rtl"] .switch-bg.right {
     width: 100%;
   }
   #priceList .monthlyContainer .cardsHolder .card .featureHolder h4 {
-    font-size: 1em;
+    font-size: 0.8em;
   }
   html[dir="ltr"]
     #priceList
@@ -209,17 +221,35 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .yearlyContainer .cardsHolder .card:nth-child(3) .reasonPart {
     color: rgb(233, 233, 233);
   }
+  #priceList .yearlyContainer .cardsHolder .card:nth-child(2) ul li,
+  #priceList .yearlyContainer .cardsHolder .card:nth-child(3) ul li,
+  #priceList .monthlyContainer .cardsHolder .card:nth-child(1) ul li,
+  #priceList .monthlyContainer .cardsHolder .card:nth-child(2) ul li {
+    color: white;
+  }
+  #priceList .yearlyContainer .cardsHolder .pricePart > div:first-child,
+  #priceList .monthlyContainer .cardsHolder .pricePart > div:first-child {
+    color: white;
+  }
+  #priceList .yearlyContainer .cardsHolder .pricePart span,
+  #priceList .yearlyContainer .cardsHolder .pricePart p,
+  #priceList .monthlyContainer .cardsHolder .pricePart span,
+  #priceList .monthlyContainer .cardsHolder .pricePart p {
+    color: rgb(228, 228, 228);
+  }
   /*---------------------------------------------------*/
 
   #priceList .yearlyContainer .cardsHolder h4,
-  #priceList .monthlyContainer .cardsHolder h4 {
+  #priceList .monthlyContainer .cardsHolder h4,
+  #priceList .marketContainer .cardsHolder h4 {
     text-align: center;
     font-size: 1.4em;
     margin-bottom: 0.8em;
     color: white;
   }
   #priceList .yearlyContainer .cardsHolder .pricePart,
-  #priceList .monthlyContainer .cardsHolder .pricePart {
+  #priceList .monthlyContainer .cardsHolder .pricePart,
+  #priceList .marketContainer .cardsHolder .pricePart {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -227,27 +257,30 @@ html[dir="rtl"] .switch-bg.right {
     margin: 0 0 1em 0;
   }
   #priceList .yearlyContainer .cardsHolder .pricePart > div:first-child,
-  #priceList .monthlyContainer .cardsHolder .pricePart > div:first-child {
+  #priceList .monthlyContainer .cardsHolder .pricePart > div:first-child,
+  #priceList .marketContainer .cardsHolder .pricePart > div:first-child {
     font-size: 2em;
-    color: white;
   }
   #priceList .yearlyContainer .cardsHolder .pricePart span,
   #priceList .yearlyContainer .cardsHolder .pricePart p,
   #priceList .monthlyContainer .cardsHolder .pricePart span,
-  #priceList .monthlyContainer .cardsHolder .pricePart p {
+  #priceList .monthlyContainer .cardsHolder .pricePart p,
+  #priceList .marketContainer .cardsHolder .pricePart span,
+  #priceList .marketContainer .cardsHolder .pricePart p {
     font-size: 0.7em;
     font-weight: bold;
-    color: rgb(228, 228, 228);
   }
   #priceList .yearlyContainer .cardsHolder .reasonPart,
-  #priceList .monthlyContainer .cardsHolder .reasonPart {
+  #priceList .monthlyContainer .cardsHolder .reasonPart,
+  #priceList .marketContainer .cardsHolder .reasonPart {
     width: 100%;
     font-size: 0.7em;
     text-align: center;
     color: rgb(100, 100, 100);
   }
   #priceList .yearlyContainer .cardsHolder hr,
-  #priceList .monthlyContainer .cardsHolder hr {
+  #priceList .monthlyContainer .cardsHolder hr,
+  #priceList .marketContainer .cardsHolder hr {
     height: 2px;
     margin: 0.5em 0;
     width: 100%;
@@ -255,28 +288,31 @@ html[dir="rtl"] .switch-bg.right {
     border: none;
   }
   #priceList .yearlyContainer .cardsHolder ul,
-  #priceList .monthlyContainer .cardsHolder ul {
+  #priceList .monthlyContainer .cardsHolder ul,
+  #priceList .marketContainer .cardsHolder ul {
     width: 100%;
     list-style: none;
   }
   #priceList .yearlyContainer .cardsHolder ul div,
-  #priceList .monthlyContainer .cardsHolder ul div {
+  #priceList .monthlyContainer .cardsHolder ul div,
+  #priceList .marketContainer .cardsHolder ul div {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
   #priceList .yearlyContainer .cardsHolder .card ul li,
-  #priceList .monthlyContainer .cardsHolder .card ul li {
+  #priceList .monthlyContainer .cardsHolder .card ul li,
+  #priceList .marketContainer .cardsHolder .card ul li {
     width: 90%;
     font-size: 0.8em;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 8px;
-    color: white;
   }
   #priceList .yearlyContainer .cardsHolder .card ul svg,
-  #priceList .monthlyContainer .cardsHolder .card ul svg {
+  #priceList .monthlyContainer .cardsHolder .card ul svg,
+  #priceList .marketContainer .cardsHolder .card ul svg {
     color: #25d366;
     font-size: 1em;
     margin-top: 0.2em;
@@ -289,6 +325,14 @@ html[dir="rtl"] .switch-bg.right {
     text-align: center;
     padding: 1.5em 0;
     color: white;
+  }
+
+  #priceList .marketContainer .cardsHolder .pricePart > div:first-child {
+    color: black;
+  }
+  #priceList .marketContainer .cardsHolder .pricePart span,
+  #priceList .marketContainer .cardsHolder .pricePart p {
+    color: black;
   }
 
   .tableView {

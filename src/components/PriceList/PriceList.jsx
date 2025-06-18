@@ -23,9 +23,19 @@ function PriceList() {
     () => ({
       advanced: t("month.cards.advanced", { returnObjects: true }),
       basic: t("month.cards.basic", { returnObjects: true }),
+      tableArr: t("month.tableArr", { returnObjects: true }),
     }),
     [t]
   );
+  const marketTranslations = useMemo(() => {
+    const containers = t("marketPlans.containers", { returnObjects: true });
+    const cards = containers?.[0]?.cards || {};
+    return {
+      special: cards.special,
+      professional: cards.professional,
+      basic: cards.basic,
+    };
+  }, [t]);
 
   const yearlyPlans = useMemo(
     () => [
@@ -44,6 +54,19 @@ function PriceList() {
   const monthlyPlans = useMemo(
     () => [monthlyTranslations.advanced, monthlyTranslations.basic],
     [monthlyTranslations]
+  );
+  const monthlyTable = useMemo(
+    () => monthlyTranslations.tableArr,
+    [monthlyTranslations]
+  );
+
+  const marketPlans = useMemo(
+    () => [
+      marketTranslations.special,
+      marketTranslations.professional,
+      marketTranslations.basic,
+    ],
+    [marketTranslations]
   );
 
   const isCheck = (val) => ["check", "صح"].includes(val?.trim()?.toLowerCase());
@@ -87,7 +110,6 @@ function PriceList() {
               {t("switch.month")}
             </p>
           </div>
-
           {/* Yearly Plans */}
           {activeIndex === 0 && (
             <div className="yearlyContainer">
@@ -144,7 +166,6 @@ function PriceList() {
               </div>
             </div>
           )}
-
           {/* Monthly Plans */}
           {activeIndex === 1 && (
             <div className="monthlyContainer">
@@ -184,8 +205,62 @@ function PriceList() {
                     )
                 )}
               </div>
+              <div className="tableView">
+                {monthlyTable?.header.map((_, i) => (
+                  <div
+                    className={`tableRow ${i % 2 !== 0 ? "odd" : ""}`}
+                    key={i}
+                  >
+                    <div className="cell header">
+                      {monthlyTable?.header?.[i]}
+                    </div>
+                    <div className="cell advanced">
+                      {getValueDisplay(monthlyTable?.price?.[i])} 元
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
+        </div>
+
+        <div className="anotherPlans">
+          <div className="marketContainer">
+            <h2>{t("marketPlans.mainHeader")}</h2>
+            <div className="cardsHolder">
+              {marketPlans.map(
+                (y, index) =>
+                  y?.plan && (
+                    <div className="card" key={index}>
+                      <div>
+                        <h4>{y.plan}</h4>
+                        {y?.price?.value && (
+                          <div className="pricePart">
+                            <div>{y.price.value} 元</div>
+                            <div>
+                              <span>{t("payment")}</span>
+                              <p>{y.price.time}</p>
+                            </div>
+                          </div>
+                        )}
+                        <div className="reasonPart">{y.reason}</div>
+                        <hr />
+                        {y?.feature?.map((f, i) => (
+                          <div className="featureHolder" key={i}>
+                            <ul>
+                              <li key={i} className="featureItem">
+                                <FaCheck className="icon" />
+                                <span>{f}</span>
+                              </li>
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -17,8 +17,7 @@
           "This plan is fully customizable and tailored to your business nature and your specific marketing and technical goals",
           "Tell us about your project, and we’ll provide a custom offer that meets your needs"
         ],
-        "note": null,
-        "tableValues": null
+        "note": null
       },
       "advanced": {
         "plan": "Advanced",
@@ -252,6 +251,71 @@
           }
         ]
       }
+    },
+    "tableArr": {
+      "header": [
+        "Monthly Plan Add-ons",
+        "Add User",
+        "Add Warehouse",
+        "Add Branch",
+        "Add Transfers Between Branches"
+      ],
+      "price": ["Price", "49", "49", "149", "99"]
     }
+  },
+  "marketPlans": {
+    "mainHeader": "Social Media Management Packages",
+    "containers": [
+      {
+        "title": "Marketing Services Packages",
+        "cards": {
+          "special": {
+            "plan": "Special Package",
+            "price": { "value": 7500, "time": "monthly" },
+            "reason": "Ideal for growing companies aiming for stronger visibility and organized expansion",
+            "feature": [
+              "Managing all major platforms",
+              "Coordinating professional photography",
+              "24/7 community management",
+              "3 collaborations - 2 influencer partnerships",
+              "Weekly analytics and strategy adjustments",
+              "Ad management (budget not included)",
+              "Crisis management support",
+              "12 reels + daily stories and 3 monthly posts"
+            ]
+          },
+          "professional": {
+            "plan": "Professional",
+            "price": { "value": 4500, "time": "monthly" },
+            "reason": "Ideal for growing companies aiming for stronger visibility and organized expansion",
+            "feature": [
+              "4 Platforms (Instagram, Twitter, LinkedIn, TikTok)",
+              "8 Stories or Reels per month",
+              "Community management (responses within 4 business hours)",
+              "Contact with 5 potential influencers",
+              "Biweekly reports and competitor analysis",
+              "Basic graphic design and video editing",
+              "Trending hashtag research",
+              "20 Posts per month"
+            ]
+          },
+          "basic": {
+            "plan": "Basic Plan",
+            "price": { "value": 2500, "time": "monthly" },
+            "reason": "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
+            "feature": [
+              "Manage 2 platforms (Instagram + Twitter or LinkedIn)",
+              "Basic content creation in Arabic and English",
+              "Community management (response within 24 hours)",
+              "Monthly analytical report",
+              "Content calendar planning",
+              "Hashtag research and optimization",
+              "Basic graphic design",
+              "12 posts per month (3 posts weekly)"
+            ]
+          }
+        }
+      }
+    ]
   }
 }
