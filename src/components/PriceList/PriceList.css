@@ -87,8 +87,14 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .introHolder img {
     width: 60%;
   }
+
   #priceList .pricingContainer {
     margin: 4em 0;
+  }
+
+  #priceList .pricingContainer,
+  #priceList .anotherPlans {
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -115,10 +121,16 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .monthlyContainer {
     margin-top: 3em;
   }
+  #priceList .yearlyContainer,
+  #priceList .monthlyContainer,
+  #priceList .marketContainer {
+    width: 100%;
+  }
+
   #priceList .yearlyContainer .cardsHolder,
   #priceList .monthlyContainer .cardsHolder,
   #priceList .marketContainer .cardsHolder {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,6 +148,7 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .yearlyContainer .cardsHolder .card > div,
   #priceList .monthlyContainer .cardsHolder .card,
   #priceList .marketContainer .cardsHolder .card {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -281,7 +294,7 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .yearlyContainer .cardsHolder hr,
   #priceList .monthlyContainer .cardsHolder hr,
   #priceList .marketContainer .cardsHolder hr {
-    height: 2px;
+    height: 1px;
     margin: 0.5em 0;
     width: 100%;
     border-radius: 15px;
