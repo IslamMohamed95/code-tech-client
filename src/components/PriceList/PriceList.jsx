@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo, useContext } from "react";
 import "./PriceList.css";
 import img from "../../assets/PriceList/undraw_credit-card-payments_y0vn.svg";
 import { FaCheck } from "react-icons/fa";
@@ -6,8 +6,8 @@ import { FaXmark } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 
 function PriceList() {
-  const [activeIndex, setActiveIndex] = useState(1);
-  const { t } = useTranslation(["priceList"]);
+  const [activeIndex, setActiveIndex] = useState(1),
+    { t } = useTranslation(["priceList"]);
 
   const yearlyTranslations = useMemo(
     () => ({
@@ -283,138 +283,146 @@ function PriceList() {
           <h2>{t("marketPlans.mainHeader")}</h2>
           <div className="cardsHolder">
             <h3>{t("marketPlans.title")}</h3>
-            {marketPlans?.map((y, index) =>
-              y?.plan ? (
-                <div className="card" key={index}>
-                  <div>
-                    <h4>{y.plan}</h4>
-                    {y?.price?.value && (
-                      <div className="pricePart">
-                        <div>{y.price.value} 元</div>
-                        <div>
-                          <span>{t("payment")}</span>
-                          <p>{y.price.time}</p>
+            <div className="subContainer">
+              {marketPlans?.map((y, index) =>
+                y?.plan ? (
+                  <div className="card" key={index}>
+                    <div>
+                      <h4>{y.plan}</h4>
+                      {y?.price?.value && (
+                        <div className="pricePart">
+                          <div>{y.price.value} 元</div>
+                          <div>
+                            <span>{t("payment")}</span>
+                            <p>{y.price.time}</p>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                    <div className="reasonPart">{y?.reason}</div>
-                    <hr />
-                    {y?.feature?.map((f, i) => (
-                      <div className="featureHolder" key={i}>
-                        <ul>
-                          <li className="featureItem">
-                            <FaCheck className="icon" />
-                            <span>{f}</span>
-                          </li>
-                        </ul>
-                      </div>
-                    ))}
+                      )}
+                      <div className="reasonPart">{y?.reason}</div>
+                      <hr />
+                      {y?.feature?.map((f, i) => (
+                        <div className="featureHolder" key={i}>
+                          <ul>
+                            <li className="featureItem">
+                              <FaCheck className="icon" />
+                              <span>{f}</span>
+                            </li>
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ) : null
-            )}
+                ) : null
+              )}
+            </div>
           </div>
 
           <div className="cardsHolder">
             <h3>{t("identityPlans.title")}</h3>
-            {identityPlans?.map((y, index) =>
-              y?.plan ? (
-                <div className="card" key={index}>
-                  <div>
-                    <h4>{y.plan}</h4>
-                    {y?.price?.value && (
-                      <div className="pricePart">
-                        <div>{y.price.value} 元</div>
-                        <div>
-                          <span>{y.price.time}</span>
-                          <p>time</p>
+            <div className="subContainer">
+              {identityPlans?.map((y, index) =>
+                y?.plan ? (
+                  <div className="card" key={index}>
+                    <div>
+                      <h4>{y.plan}</h4>
+                      {y?.price?.value && (
+                        <div className="pricePart">
+                          <div>{y.price.value} 元</div>
+                          <div>
+                            <span>{y.price.time}</span>
+                            <p>time</p>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                    <div className="reasonPart">{y?.reason}</div>
-                    <hr />
-                    {y?.feature?.map((f, i) => (
-                      <div className="featureHolder" key={i}>
-                        <ul>
-                          <li className="featureItem">
-                            <FaCheck className="icon" />
-                            <span>{f}</span>
-                          </li>
-                        </ul>
-                      </div>
-                    ))}
+                      )}
+                      <div className="reasonPart">{y?.reason}</div>
+                      <hr />
+                      {y?.feature?.map((f, i) => (
+                        <div className="featureHolder" key={i}>
+                          <ul>
+                            <li className="featureItem">
+                              <FaCheck className="icon" />
+                              <span>{f}</span>
+                            </li>
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ) : null
-            )}
+                ) : null
+              )}
+            </div>
           </div>
 
           <div className="cardsHolder">
             <h3>{t("adsPlans.title")}</h3>
-            {adsPlans?.map((y, index) =>
-              y?.plan ? (
-                <div className="card" key={index}>
-                  <div>
-                    <h4>{y.plan}</h4>
-                    {y?.price?.value && (
-                      <div className="pricePart">
-                        <div>{y.price.value} 元</div>
-                        <div>
-                          <span>{t("payment")}</span>
-                          <p>{y.price.time}</p>
+            <div className="subContainer">
+              {adsPlans?.map((y, index) =>
+                y?.plan ? (
+                  <div className="card" key={index}>
+                    <div>
+                      <h4>{y.plan}</h4>
+                      {y?.price?.value && (
+                        <div className="pricePart">
+                          <div>{y.price.value} 元</div>
+                          <div>
+                            <span>{t("payment")}</span>
+                            <p>{y.price.time}</p>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                    <div className="reasonPart">{y?.reason}</div>
-                    <hr />
-                    {y?.feature?.map((f, i) => (
-                      <div className="featureHolder" key={i}>
-                        <ul>
-                          <li className="featureItem">
-                            <FaCheck className="icon" />
-                            <span>{f}</span>
-                          </li>
-                        </ul>
-                      </div>
-                    ))}
+                      )}
+                      <div className="reasonPart">{y?.reason}</div>
+                      <hr />
+                      {y?.feature?.map((f, i) => (
+                        <div className="featureHolder" key={i}>
+                          <ul>
+                            <li className="featureItem">
+                              <FaCheck className="icon" />
+                              <span>{f}</span>
+                            </li>
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ) : null
-            )}
+                ) : null
+              )}
+            </div>
           </div>
 
           <div className="cardsHolder">
             <h3>{t("bundlePlans.title")}</h3>
-            {bundlePlans?.map((y, index) =>
-              y?.plan ? (
-                <div className="card" key={index}>
-                  <div>
-                    <h4>{y.plan}</h4>
-                    {y?.price?.value && (
-                      <div className="pricePart">
-                        <div>{y.price.value} 元</div>
-                        <div>
-                          <span>{t("payment")}</span>
-                          <p>{y.price.time}</p>
+            <div className="subContainer">
+              {bundlePlans?.map((y, index) =>
+                y?.plan ? (
+                  <div className="card" key={index}>
+                    <div>
+                      <h4>{y.plan}</h4>
+                      {y?.price?.value && (
+                        <div className="pricePart">
+                          <div>{y.price.value} 元</div>
+                          <div>
+                            <span>{t("payment")}</span>
+                            <p>{y.price.time}</p>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                    <div className="reasonPart">{y?.reason}</div>
-                    <hr />
-                    {y?.feature?.map((f, i) => (
-                      <div className="featureHolder" key={i}>
-                        <ul>
-                          <li className="featureItem">
-                            <FaCheck className="icon" />
-                            <span>{f}</span>
-                          </li>
-                        </ul>
-                      </div>
-                    ))}
+                      )}
+                      <div className="reasonPart">{y?.reason}</div>
+                      <hr />
+                      {y?.feature?.map((f, i) => (
+                        <div className="featureHolder" key={i}>
+                          <ul>
+                            <li className="featureItem">
+                              <FaCheck className="icon" />
+                              <span>{f}</span>
+                            </li>
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ) : null
-            )}
+                ) : null
+              )}
+            </div>
           </div>
         </div>
       </div>

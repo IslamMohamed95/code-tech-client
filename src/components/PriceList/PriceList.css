@@ -151,7 +151,7 @@ html[dir="rtl"] .switch-bg.right {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 15px;
     padding: 2em;
@@ -283,6 +283,7 @@ html[dir="rtl"] .switch-bg.right {
     font-size: 0.7em;
     font-weight: bold;
   }
+
   #priceList .yearlyContainer .cardsHolder .reasonPart,
   #priceList .monthlyContainer .cardsHolder .reasonPart,
   #priceList .marketContainer .cardsHolder .reasonPart {
@@ -312,6 +313,7 @@ html[dir="rtl"] .switch-bg.right {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 10px;
   }
   #priceList .yearlyContainer .cardsHolder .card ul li,
   #priceList .monthlyContainer .cardsHolder .card ul li,
@@ -350,10 +352,15 @@ html[dir="rtl"] .switch-bg.right {
 
   #priceList .marketContainer .cardsHolder {
     margin: 2em 0 1em;
+    width: 100%;
   }
   #priceList .marketContainer .cardsHolder h3 {
     font-size: 1.1em;
     margin-bottom: 1em;
+  }
+
+  #priceList .marketContainer .cardsHolder .subContainer {
+    width: 100%;
   }
   .tableView {
     margin-top: 4em;
@@ -442,6 +449,7 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .monthlyContainer .cardsHolder .card,
   #priceList .marketContainer .cardsHolder .card {
     padding: 2.5em 3em;
+    width: 100%;
   }
   #priceList .yearlyContainer .cardsHolder .card ul li {
     font-size: 0.85em;
@@ -461,6 +469,7 @@ html[dir="rtl"] .switch-bg.right {
     flex-direction: row;
     gap: 2em;
   }
+
   #priceList .introHolder > div {
     align-items: flex-start;
   }
@@ -479,14 +488,17 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .introHolder img {
     width: 40%;
   }
-  #priceList .yearlyContainer .cardsHolder {
+
+  #priceList .yearlyContainer .cardsHolde,
+  #priceList .pricingContainer .cardsHolder {
     flex-direction: row;
     justify-content: space-between;
-    width: 95%;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.5em;
   }
   #priceList .yearlyContainer .cardsHolder .card {
-    width: 33.33%;
-    padding: 0.5em;
+    flex: 1;
   }
   #priceList .yearlyContainer .cardsHolder .card > div {
     padding: 1.5em;
@@ -494,8 +506,34 @@ html[dir="rtl"] .switch-bg.right {
   .switch-wrapper {
     width: 35%;
   }
+  #priceList .marketContainer .subContainer {
+    display: flex;
+    gap: 10px;
+  }
+  #priceList .yearlyContainer .cardsHolder .card > div,
+  #priceList .monthlyContainer .cardsHolder .card,
+  #priceList .marketContainer .cardsHolder .card {
+    padding: 2em 1.5em;
+    height: fit-content;
+  }
+  #priceList .yearlyContainer .cardsHolder .pricePart > div:first-child,
+  #priceList .monthlyContainer .cardsHolder .pricePart > div:first-child,
+  #priceList .marketContainer .cardsHolder .pricePart > div:first-child {
+    font-size: 1.5em;
+  }
+  #priceList .yearlyContainer .cardsHolder h4,
+  #priceList .monthlyContainer .cardsHolder h4,
+  #priceList .marketContainer .cardsHolder h4 {
+    font-size: 1em;
+  }
 }
 @media (min-width: 1024px) {
+  .cell {
+    font-size: 1em;
+  }
+  #priceList .monthlyContainer .cardsHolder {
+    width: 85%;
+  }
   .servicesList li .text p {
     font-size: 0.9em;
   }
@@ -515,9 +553,7 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .introHolder img {
     width: 35%;
   }
-  #priceList .yearlyContainer .cardsHolder {
-    width: 90%;
-  }
+
   #priceList .yearlyContainer .cardsHolder h4 {
     font-size: 1.5em;
   }
@@ -539,7 +575,44 @@ html[dir="rtl"] .switch-bg.right {
     font-size: 1em;
   }
   #priceList .yearlyContainer .cardsHolder .card .noteHolder {
-    font-size: 0.75em;
+    font-size: 0.85em;
+  }
+  #priceList .yearlyContainer .cardsHolde,
+  #priceList .pricingContainer .cardsHolder {
+    gap: 1em;
+  }
+  #priceList .yearlyContainer .cardsHolder h4,
+  #priceList .monthlyContainer .cardsHolder h4 {
+    font-size: 1.7em;
+  }
+  #priceList .marketContainer .cardsHolder h4 {
+    font-size: 1.5em;
+  }
+  #priceList .yearlyContainer .cardsHolder .card ul li,
+  #priceList .monthlyContainer .cardsHolder .card ul li {
+    font-size: 1em;
+    font-weight: lighter;
+  }
+  #priceList .marketContainer .cardsHolder .card ul li {
+    font-size: 0.9em;
+  }
+  #priceList .monthlyContainer .cardsHolder .card .featureHolder h4 {
+    font-size: 1.2em;
+  }
+  #priceList .yearlyContainer .cardsHolder .pricePart > div:first-child,
+  #priceList .monthlyContainer .cardsHolder .pricePart > div:first-child,
+  #priceList .marketContainer .cardsHolder .pricePart > div:first-child {
+    font-size: 2em;
+  }
+  #priceList .pricingContainer h2,
+  #priceList .marketContainer h2 {
+    font-size: 2em;
+  }
+  .switch-wrapper p {
+    font-size: 1em;
+  }
+  #priceList .marketContainer .cardsHolder h3 {
+    font-size: 1.5em;
   }
 }
 @media (min-width: 1440px) {
@@ -560,6 +633,38 @@ html[dir="rtl"] .switch-bg.right {
     width: 25%;
   }
   #priceList .yearlyContainer .cardsHolder {
-    width: 70%;
+    width: 100%;
+  }
+  #priceList .monthlyContainer .cardsHolder {
+    width: 75%;
+  }
+  #priceList .yearlyContainer .cardsHolder h4,
+  #priceList .monthlyContainer .cardsHolder h4 {
+    font-size: 2em;
+  }
+  #priceList .yearlyContainer .cardsHolder .pricePart span,
+  #priceList .yearlyContainer .cardsHolder .pricePart p,
+  #priceList .monthlyContainer .cardsHolder .pricePart span,
+  #priceList .monthlyContainer .cardsHolder .pricePart p,
+  #priceList .marketContainer .cardsHolder .pricePart span,
+  #priceList .marketContainer .cardsHolder .pricePart p {
+    font-size: 1em;
+  }
+  #priceList .yearlyContainer .cardsHolder .pricePart > div:first-child,
+  #priceList .monthlyContainer .cardsHolder .pricePart > div:first-child,
+  #priceList .marketContainer .cardsHolder .pricePart > div:first-child {
+    font-size: 2.5em;
+  }
+  #priceList .yearlyContainer .cardsHolder .card:nth-child(2) ul li,
+  #priceList .yearlyContainer .cardsHolder .card:nth-child(3) ul li,
+  #priceList .monthlyContainer .cardsHolder .card:nth-child(1) ul li,
+  #priceList .monthlyContainer .cardsHolder .card:nth-child(2) ul li,
+  #priceList .marketContainer .cardsHolder .card ul li {
+    font-size: 1.1em;
+  }
+  #priceList .yearlyContainer .cardsHolder .reasonPart,
+  #priceList .monthlyContainer .cardsHolder .reasonPart,
+  #priceList .marketContainer .cardsHolder .reasonPart {
+    font-size: 0.85em;
   }
 }
