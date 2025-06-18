@@ -110,8 +110,6 @@ const HeroSection = () => {
         <div className="contentContainer">
           <div>
             <div>
-              <span></span>
-
               <h5>{t("sTitle")}</h5>
             </div>
 

@@ -1,424 +1,191 @@
-import { useState } from "react";
-//Importing Stylsheet
+import React, { useState, useMemo } from "react";
 import "./PriceList.css";
-
-//Import images
 import img from "../../assets/PriceList/undraw_credit-card-payments_y0vn.svg";
-
-//Import Icons
 import { FaCheck } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
+import { useTranslation } from "react-i18next";
 
 function PriceList() {
-  const [activeIndex, setActiveIndex] = useState(0),
-    yearlyTable = [
-      {
-        value: [
-          "Features",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-          "Test",
-        ],
-      },
-      {
-        value: [
-          "Advanced",
-          "Two warehouses",
-          "20 users",
-          "Two branches",
-          "5 users",
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          "Optional at an additional cost",
-          "Optional at an additional cost",
-          "Optional at an additional cost",
-          "Optional at an additional cost",
-        ],
-      },
-      {
-        value: [
-          "Basic Plan",
-          "Two warehouses",
-          "20 users",
-          "Two branches",
-          "5 users",
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          "Optional at an additional cost",
-          "Optional at an additional cost",
-          "Optional at an additional cost",
-          "Optional at an additional cost",
-        ],
-      },
+  const [activeIndex, setActiveIndex] = useState(0);
+  const { t } = useTranslation(["priceList"]);
+
+  const yearlyTranslations = useMemo(
+    () => ({
+      customized: t("year.cards.customized", { returnObjects: true }),
+      advanced: t("year.cards.advanced", { returnObjects: true }),
+      basic: t("year.cards.basic", { returnObjects: true }),
+      tableArr: t("year.tableArr", { returnObjects: true }),
+    }),
+    [t]
+  );
+
+  const monthlyTranslations = useMemo(
+    () => ({
+      advanced: t("month.cards.advanced", { returnObjects: true }),
+      basic: t("month.cards.basic", { returnObjects: true }),
+    }),
+    [t]
+  );
+
+  const yearlyPlans = useMemo(
+    () => [
+      yearlyTranslations.customized,
+      yearlyTranslations.advanced,
+      yearlyTranslations.basic,
     ],
-    yearlyPlans = [
-      {
-        plan: "Customized",
-        price: { value: null, time: null },
-        reason:
-          "For large or fast-growing companies that need a dedicated technical and marketing team by their side",
-        feature: [
-          "This plan is fully customizable and tailored to your business nature and your specific marketing and technical goals",
-          "Tell us about your project, and we’ll provide a custom offer that meets your needs",
-        ],
-        note: null,
-        tableValues: null,
-      },
-      {
-        plan: "Advanced",
-        price: { value: 8999, time: "annually" },
-        reason:
-          "Ideal for growing companies aiming for stronger visibility and organized expansion",
-        feature: [
-          "Accounting Management System",
-          "Inventory Management System",
-          "Supplier Management System",
-          "Purchasing Management System",
-          "Sales Management System",
-          "Human Resources Management System",
-          "Analytical Reports",
-          "SMS / Email / WhatsApp Integration",
-          "2 Branches",
-          "2 Warehouses",
-          "5 Users",
-        ],
-        note: "Integration with Zakat and Tax Authority",
-      },
-      {
-        plan: "Basic Plan",
-        price: { value: 5999, time: "annually" },
-        reason:
-          "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
-        feature: [
-          "Accounting Management System",
-          "Inventory Management System",
-          "Supplier Management System",
-          "Purchase Management System",
-          "Sales Management System",
-          "One Warehouse",
-          "2 Users",
-        ],
-        note: "Integration with Zakat and Tax Authority",
-        tableValues: [
-          "2 Users",
-          "1 Branch",
-          "1 Warehouse",
-          <FaXmark />,
-          <FaCheck />,
-          <FaXmark />,
-          <FaCheck />,
-          <FaXmark />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaXmark />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaXmark />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaCheck />,
-          <FaXmark />,
-          <FaXmark />,
-          <FaCheck />,
-          <FaXmark />,
-          <FaXmark />,
-          <FaXmark />,
-          <FaXmark />,
-          <FaXmark />,
-          <FaXmark />,
-          "Optional at an additional cost",
-          "Optional at an additional cost",
-          "Optional at an additional cost",
-          "Optional at an additional cost",
-        ],
-      },
-    ],
-    monthlyPlans = [
-      {
-        plan: "Advanced",
-        price: { value: 499, time: "monthly" },
-        reason:
-          "Ideal for growing companies aiming for stronger visibility and organized expansion",
-        feature: [
-          {
-            title: "General Accounting and Financial Management",
-            arr: [
-              "Opening Entry",
-              "Journal Entries",
-              "Posting Entries",
-              "Chart of Accounts",
-              "Currencies",
-              "Cash Disbursement",
-              "Cash Receipt",
-              "Bank Debit Note",
-              "Bank Credit Note",
-            ],
-          },
-          {
-            title: "Sales Management",
-            arr: [
-              "700 Monthly Sales Invoices",
-              "300 Quotations per Month",
-              "Tax Invoices",
-              "Sales Returns",
-              "400 Customers per Month",
-            ],
-          },
-          {
-            title: "Purchasing Management",
-            arr: [
-              "Suppliers",
-              "Purchase Invoices",
-              "Purchase Returns",
-              "Items",
-              "Inventory Transactions",
-              "Inventory Count",
-            ],
-          },
-        ],
-      },
-      {
-        plan: "Basic Plan",
-        price: { value: 299, time: "monthly" },
-        reason:
-          "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
-        feature: [
-          {
-            title: "General Accounting and Financial Management",
-            arr: [
-              "Opening Entry",
-              "Journal Entries",
-              "Posting Entries",
-              "Chart of Accounts",
-              "Currencies",
-              "Cash Disbursement",
-              "Cash Receipt",
-              "Bank Debit Note",
-              "Bank Credit Note",
-            ],
-          },
-          {
-            title: "Sales Management",
-            arr: [
-              "200 Monthly Sales Invoices",
-              "100 Quotations per Month",
-              "Tax Invoices",
-              "Sales Returns",
-              "150 Customers per Month",
-            ],
-          },
-          {
-            title: "Purchasing Management",
-            arr: [
-              "Suppliers",
-              "Purchase Invoices",
-              "Purchase Returns",
-              "Items",
-              "Inventory Transactions",
-              "Inventory Count",
-            ],
-          },
-        ],
-      },
-    ];
+    [yearlyTranslations]
+  );
+
+  const yearlyTable = useMemo(
+    () => yearlyTranslations.tableArr,
+    [yearlyTranslations]
+  );
+
+  const monthlyPlans = useMemo(
+    () => [monthlyTranslations.advanced, monthlyTranslations.basic],
+    [monthlyTranslations]
+  );
+
+  const isCheck = (val) => ["check", "صح"].includes(val?.trim()?.toLowerCase());
+  const isX = (val) => ["x", "خطأ"].includes(val?.trim()?.toLowerCase());
+
+  const getValueDisplay = (val) => {
+    if (isCheck(val)) {
+      return <FaCheck className="icon text-[#25d366]" />;
+    } else if (isX(val)) {
+      return <FaXmark className="icon text-red-600" />;
+    } else {
+      return val;
+    }
+  };
+
   return (
     <section id="priceList">
       <div className="mainContainer">
         <div className="introHolder">
           <div>
-            <h2>
-              <span>Save Your</span> Money Now.
-            </h2>
-            <p>
-              Manage all your work using our best solutio with few easy steps,
-              Join our Pro plan and try all the features.
-            </p>
+            <h2>{t("introHeader")}</h2>
+            <p>{t("content")}</p>
           </div>
-          <img src={img} alt="img" />
+          <img src={img} alt="pricing" />
         </div>
-        <div className="pricingContainer">
-          <h2>CODE TECH PRICING PLAN STAGE OF GROWTH</h2>
-          <div className="switch-wrapper">
-            {/* Background highlight */}
-            <div className={`switch-bg ${activeIndex === 1 ? "right" : ""}`} />
 
-            {/* Text buttons */}
+        <div className="pricingContainer">
+          <h2>{t("switch.title")}</h2>
+          <div className="switch-wrapper">
+            <div className={`switch-bg ${activeIndex === 1 ? "right" : ""}`} />
             <p
               className={activeIndex === 0 ? "active" : ""}
               onClick={() => setActiveIndex(0)}
             >
-              YEARLY
+              {t("switch.year")}
             </p>
             <p
               className={activeIndex === 1 ? "active" : ""}
               onClick={() => setActiveIndex(1)}
             >
-              MONTHLY
+              {t("switch.month")}
             </p>
           </div>
-          {/*---Yearly Plans--*/}
 
-          <div className="yearlyContainer">
-            <div className="cardsHolder">
-              {activeIndex === 0 &&
-                yearlyPlans.map((y, index) => (
-                  <div className="card" key={index}>
-                    <div>
-                      <h4>{y.plan}</h4>
-                      {y.price.value === null ? (
-                        ""
-                      ) : (
-                        <div className="pricePart">
-                          <div>{y.price.value} 元</div>
-                          <div>
-                            <span>Paid</span>
-                            <p>{y.price.time}</p>
-                          </div>
+          {/* Yearly Plans */}
+          {activeIndex === 0 && (
+            <div className="yearlyContainer">
+              <div className="cardsHolder">
+                {yearlyPlans.map(
+                  (y, index) =>
+                    y?.plan && (
+                      <div className="card" key={index}>
+                        <div>
+                          <h4>{y.plan}</h4>
+                          {y?.price?.value && (
+                            <div className="pricePart">
+                              <div>{y.price.value} 元</div>
+                              <div>
+                                <span>{t("payment")}</span>
+                                <p>{y.price.time}</p>
+                              </div>
+                            </div>
+                          )}
+                          <div className="reasonPart">{y.reason}</div>
+                          <hr />
+                          <ul>
+                            {y.feature?.map((f, i) => (
+                              <div key={i}>
+                                <FaCheck className="icon" />
+                                <li>{f}</li>
+                              </div>
+                            ))}
+                          </ul>
                         </div>
-                      )}
-                      <div className="reasonPart">{y.reason}</div>
-                      <hr />
-                      <ul>
-                        {y.feature.map((f, i) => (
-                          <div key={i}>
-                            <FaCheck />
-                            <li>{f}</li>
-                          </div>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {y.note !== null ? (
-                      <div className="noteHolder">{y.note}</div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                ))}
-            </div>
-            {activeIndex === 0 && (
-              <div className="tableView">
-                <div className="header">
-                  {yearlyTable.map((th, key) =>
-                    th.value.map((v) => <h5 key={key}>{}</h5>)
-                  )}
-                </div>
+                        {y.note && <div className="noteHolder">{y.note}</div>}
+                      </div>
+                    )
+                )}
               </div>
-            )}
-          </div>
 
-          {/*---Monthly Plans--*/}
-          <div className="monthlyContainer">
-            <div className="cardsHolder">
-              {activeIndex === 1 &&
-                monthlyPlans.map((y, index) => (
-                  <div className="card" key={index}>
-                    <h4>{y.plan}</h4>
-
-                    <div className="pricePart">
-                      <div>{y.price.value} 元</div>
-                      <div>
-                        <span>Paid</span>
-                        <p>{y.price.time}</p>
-                      </div>
+              <div className="tableView">
+                {yearlyTable?.header.map((_, i) => (
+                  <div
+                    className={`tableRow ${i % 2 !== 0 ? "odd" : ""}`}
+                    key={i}
+                  >
+                    <div className="cell header">
+                      {yearlyTable?.header?.[i]}
                     </div>
-
-                    <div className="reasonPart">{y.reason}</div>
-                    <hr />
-
-                    {y.feature.map((f, i) => (
-                      <div key={i}>
-                        <h4>{f.title}</h4>
-                        <ul>
-                          {f.arr.map((a, ind) => (
-                            <li key={ind}>
-                              <FaCheck /> {a}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-
-                    <div className="noteHolder">{y.note}</div>
+                    <div className="cell advanced">
+                      {getValueDisplay(yearlyTable?.advanced?.[i])}
+                    </div>
+                    <div className="cell basic">
+                      {getValueDisplay(yearlyTable?.basic?.[i])}
+                    </div>
                   </div>
                 ))}
+              </div>
             </div>
-          </div>
+          )}
+
+          {/* Monthly Plans */}
+          {activeIndex === 1 && (
+            <div className="monthlyContainer">
+              <div className="cardsHolder">
+                {monthlyPlans.map(
+                  (y, index) =>
+                    y?.plan && (
+                      <div className="card" key={index}>
+                        <div>
+                          <h4>{y.plan}</h4>
+                          {y?.price?.value && (
+                            <div className="pricePart">
+                              <div>{y.price.value} 元</div>
+                              <div>
+                                <span>{t("payment")}</span>
+                                <p>{y.price.time}</p>
+                              </div>
+                            </div>
+                          )}
+                          <div className="reasonPart">{y.reason}</div>
+                          <hr />
+                          {y?.feature?.map((f, i) => (
+                            <div className="featureHolder" key={i}>
+                              <h4>{f?.title}</h4>
+                              <ul>
+                                {f?.arr?.map((a, ind) => (
+                                  <li key={ind} className="featureItem">
+                                    <FaCheck className="icon" />
+                                    <span>{a}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

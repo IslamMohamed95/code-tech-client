@@ -1,0 +1,257 @@
+{
+  "introHeader": "Save Your Money Now",
+  "content": "Manage all your work using our best solutio with few easy steps, Join our Pro plan and try all the features.",
+  "switch": {
+    "title": "CODE TECH PRICING PLAN STAGE OF GROWTH",
+    "year": "Yearly",
+    "month": "Monthly"
+  },
+  "payment": "Paid",
+  "year": {
+    "cards": {
+      "customized": {
+        "plan": "Customized",
+        "price": { "value": null, "time": null },
+        "reason": "For large or fast-growing companies that need a dedicated technical and marketing team by their side",
+        "feature": [
+          "This plan is fully customizable and tailored to your business nature and your specific marketing and technical goals",
+          "Tell us about your project, and we’ll provide a custom offer that meets your needs"
+        ],
+        "note": null,
+        "tableValues": null
+      },
+      "advanced": {
+        "plan": "Advanced",
+        "price": { "value": 8999, "time": "annually" },
+        "reason": "Ideal for growing companies aiming for stronger visibility and organized expansion",
+        "feature": [
+          "Accounting Management System",
+          "Inventory Management System",
+          "Supplier Management System",
+          "Purchasing Management System",
+          "Sales Management System",
+          "Human Resources Management System",
+          "Analytical Reports",
+          "SMS / Email / WhatsApp Integration",
+          "2 Branches",
+          "2 Warehouses",
+          "5 Users"
+        ],
+        "note": "Integration with Zakat and Tax Authority"
+      },
+      "basic": {
+        "plan": "Basic Plan",
+        "price": { "value": 5999, "time": "annually" },
+        "reason": "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
+        "feature": [
+          "Accounting Management System",
+          "Inventory Management System",
+          "Supplier Management System",
+          "Purchase Management System",
+          "Sales Management System",
+          "One Warehouse",
+          "2 Users"
+        ],
+        "note": "Integration with Zakat and Tax Authority"
+      }
+    },
+    "tableArr": {
+      "header": [
+        "Features",
+        "Two warehouses",
+        "20 users",
+        "Two branches",
+        "5 users",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Test",
+        "Optional at an additional cost",
+        "Optional at an additional cost",
+        "Optional at an additional cost",
+        "Optional at an additional cost"
+      ],
+      "advanced": [
+        "Advanced",
+        "Two warehouses",
+        "20 users",
+        "Two branches",
+        "5 users",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "check",
+        "Optional at an additional cost",
+        "Optional at an additional cost",
+        "Optional at an additional cost",
+        "Optional at an additional cost"
+      ],
+      "basic": [
+        "Basic Plan",
+        "2 Users",
+        "1 Branch",
+        "1 Warehouse",
+        "x",
+        "check",
+        "x",
+        "check",
+        "x",
+        "check",
+        "check",
+        "check",
+        "x",
+        "check",
+        "check",
+        "x",
+        "check",
+        "check",
+        "check",
+        "check",
+        "x",
+        "x",
+        "check",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "x",
+        "Optional at an additional cost",
+        "Optional at an additional cost",
+        "Optional at an additional cost",
+        "Optional at an additional cost"
+      ]
+    }
+  },
+  "month": {
+    "cards": {
+      "advanced": {
+        "plan": "Advanced",
+        "price": { "value": 499, "time": "monthly" },
+        "reason": "Ideal for growing companies aiming for stronger visibility and organized expansion",
+        "feature": [
+          {
+            "title": "General Accounting and Financial Management",
+            "arr": [
+              "Opening Entry",
+              "Journal Entries",
+              "Posting Entries",
+              "Chart of Accounts",
+              "Currencies",
+              "Cash Disbursement",
+              "Cash Receipt",
+              "Bank Debit Note",
+              "Bank Credit Note"
+            ]
+          },
+          {
+            "title": "Sales Management",
+            "arr": [
+              "700 Monthly Sales Invoices",
+              "300 Quotations per Month",
+              "Tax Invoices",
+              "Sales Returns",
+              "400 Customers per Month"
+            ]
+          },
+          {
+            "title": "Purchasing Management",
+            "arr": [
+              "Suppliers",
+              "Purchase Invoices",
+              "Purchase Returns",
+              "Items",
+              "Inventory Transactions",
+              "Inventory Count"
+            ]
+          }
+        ]
+      },
+      "basic": {
+        "plan": "Basic Plan",
+        "price": { "value": 299, "time": "monthly" },
+        "reason": "Perfect for startups and small businesses looking for a smart budget-friendly digital launch",
+        "feature": [
+          {
+            "title": "General Accounting and Financial Management",
+            "arr": [
+              "Opening Entry",
+              "Journal Entries",
+              "Posting Entries",
+              "Chart of Accounts",
+              "Currencies",
+              "Cash Disbursement",
+              "Cash Receipt",
+              "Bank Debit Note",
+              "Bank Credit Note"
+            ]
+          },
+          {
+            "title": "Sales Management",
+            "arr": [
+              "200 Monthly Sales Invoices",
+              "100 Quotations per Month",
+              "Tax Invoices",
+              "Sales Returns",
+              "150 Customers per Month"
+            ]
+          },
+          {
+            "title": "Purchasing Management",
+            "arr": [
+              "Suppliers",
+              "Purchase Invoices",
+              "Purchase Returns",
+              "Items",
+              "Inventory Transactions",
+              "Inventory Count"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

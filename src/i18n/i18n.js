@@ -11,6 +11,7 @@ import SVGEN from "./locales/en/SVG.json";
 import ChooseUsEN from "./locales/en/ChooseUs.json";
 import ContactUsEN from "./locales/en/ContactUs.json";
 import footerEN from "./locales/en/Footer.json";
+import priceListEN from "./locales/en/PriceList.json";
 
 // Importing namespaces AR
 import NavAR from "./locales/ar/Nav.json";
@@ -21,6 +22,7 @@ import SVGAR from "./locales/ar/SVG.json";
 import ChooseUsAR from "./locales/ar/ChooseUs.json";
 import ContactUsAR from "./locales/ar/ContactUs.json";
 import footerAR from "./locales/ar/Footer.json";
+import priceListAR from "./locales/ar/PriceList.json";
 
 i18n
   .use(LanguageDetector)
@@ -36,6 +38,7 @@ i18n
         chooseUs: ChooseUsEN,
         contactUs: ContactUsEN,
         footer: footerEN,
+        priceList: priceListEN,
       },
       ar: {
         nav: NavAR,
@@ -46,6 +49,7 @@ i18n
         chooseUs: ChooseUsAR,
         contactUs: ContactUsAR,
         footer: footerAR,
+        priceList: priceListAR,
       },
     },
     lng: localStorage.getItem("lang") || "ar",
@@ -62,6 +66,7 @@ i18n
       "chooseUs",
       "contactUs",
       "footer",
+      "priceList",
     ],
     defaultNS: "nav",
   });
