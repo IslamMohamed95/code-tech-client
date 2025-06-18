@@ -453,7 +453,7 @@
       }
     }
   },
-  "conreactPlicy": {
+  "contractPolicy": {
     "bundle": {
       "title": "All packages include",
       "arr": [

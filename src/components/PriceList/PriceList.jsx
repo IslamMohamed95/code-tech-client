@@ -69,8 +69,8 @@ function PriceList() {
   );
   const contractPolicyTranslations = useMemo(
     () => ({
-      bundle: t("conreactPlicy.bundle", { returnObjects: true }),
-      contract: t("conreactPlicy.conract", { returnObjects: true }),
+      bundle: t("contractPolicy.bundle", { returnObjects: true }),
+      contract: t("contractPolicy.conract", { returnObjects: true }),
     }),
     [t]
   );
@@ -436,13 +436,13 @@ function PriceList() {
         <div className="contractPolicy">
           <div className="policyContainer">
             {[
-              contractPolicyTranslations.bundle,
-              contractPolicyTranslations.contract,
-            ].map((section, idx) => (
+              contractPolicyTranslations?.bundle,
+              contractPolicyTranslations?.contract,
+            ]?.map((section, idx) => (
               <div className="bundles" key={idx}>
-                <h3>{section.title}</h3>
+                <h3>{section?.title}</h3>
                 <ul>
-                  {section.arr.map((item, i) => (
+                  {section?.arr?.map((item, i) => (
                     <li key={i}>
                       <FaCheck />
                       <span>{item}</span>
