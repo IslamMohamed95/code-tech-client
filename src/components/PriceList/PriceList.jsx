@@ -6,7 +6,7 @@ import { FaXmark } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 
 function PriceList() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   const { t } = useTranslation(["priceList"]);
 
   const yearlyTranslations = useMemo(

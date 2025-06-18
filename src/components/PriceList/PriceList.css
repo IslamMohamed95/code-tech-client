@@ -350,7 +350,7 @@ html[dir="rtl"] .switch-bg.right {
 
   .tableView {
     margin-top: 4em;
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
