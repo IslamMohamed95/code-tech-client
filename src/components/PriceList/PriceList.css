@@ -52,6 +52,7 @@ html[dir="rtl"] .switch-bg.right {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 10em;
   }
   #priceList .mainContainer {
     width: 100%;
@@ -307,6 +308,11 @@ html[dir="rtl"] .switch-bg.right {
     width: 100%;
     list-style: none;
   }
+  #priceList .yearlyContainer .cardsHolder .card ul span,
+  #priceList .monthlyContainer .cardsHolder .card ul span,
+  #priceList .marketContainer .cardsHolder .card ul span {
+    width: 100%;
+  }
   #priceList .yearlyContainer .cardsHolder ul div,
   #priceList .monthlyContainer .cardsHolder ul div,
   #priceList .marketContainer .cardsHolder ul div {
@@ -433,6 +439,64 @@ html[dir="rtl"] .switch-bg.right {
   .icon.fa-xmark {
     color: red;
   }
+  #priceList .contractPolicy {
+    margin-top: 3em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #priceList .contractPolicy .policyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    width: 90%;
+    background-color: var(--primary-color);
+  }
+  #priceList .contractPolicy .bundles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  #priceList .contractPolicy .bundles h3 {
+    margin: 1.2em 0 1em;
+    color: white;
+    font-size: 1em;
+  }
+  #priceList .contractPolicy .bundles:first-child h3 {
+    margin-top: 0;
+  }
+  #priceList .contractPolicy ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+  }
+  #priceList .contractPolicy ul li {
+    width: 100%;
+    color: rgb(233, 233, 233);
+    font-weight: lighter;
+    font-size: 0.8em;
+    display: flex;
+    align-items: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  #priceList .contractPolicy ul li span {
+    width: 100%;
+  }
+  #priceList .contractPolicy ul li svg {
+    margin-top: 3px;
+    color: #25d366;
+  }
 }
 @media (min-width: 375px) {
   .cell {
@@ -526,6 +590,17 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .marketContainer .cardsHolder h4 {
     font-size: 1em;
   }
+  #priceList .contractPolicy .bundles h3 {
+    font-size: 1.1em;
+  }
+  #priceList .contractPolicy ul {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  #priceList .contractPolicy ul li {
+    width: 30%;
+  }
 }
 @media (min-width: 1024px) {
   .cell {
@@ -579,14 +654,14 @@ html[dir="rtl"] .switch-bg.right {
   }
   #priceList .yearlyContainer .cardsHolde,
   #priceList .pricingContainer .cardsHolder {
-    gap: 1em;
+    gap: 1.2em;
   }
   #priceList .yearlyContainer .cardsHolder h4,
   #priceList .monthlyContainer .cardsHolder h4 {
     font-size: 1.7em;
   }
   #priceList .marketContainer .cardsHolder h4 {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   #priceList .yearlyContainer .cardsHolder .card ul li,
   #priceList .monthlyContainer .cardsHolder .card ul li {
@@ -604,6 +679,11 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .marketContainer .cardsHolder .pricePart > div:first-child {
     font-size: 2em;
   }
+  #priceList .yearlyContainer .cardsHolder .card > div,
+  #priceList .monthlyContainer .cardsHolder .card,
+  #priceList .marketContainer .cardsHolder .card {
+    padding: 3em 2em;
+  }
   #priceList .pricingContainer h2,
   #priceList .marketContainer h2 {
     font-size: 2em;
@@ -613,6 +693,12 @@ html[dir="rtl"] .switch-bg.right {
   }
   #priceList .marketContainer .cardsHolder h3 {
     font-size: 1.5em;
+  }
+  .tableView .tableRow:first-child .cell {
+    font-size: 1.2em;
+  }
+  #priceList .contractPolicy ul li {
+    font-size: 0.85em;
   }
 }
 @media (min-width: 1440px) {
@@ -642,6 +728,11 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .monthlyContainer .cardsHolder h4 {
     font-size: 2em;
   }
+  #priceList .yearlyContainer .cardsHolder .card > div,
+  #priceList .monthlyContainer .cardsHolder .card,
+  #priceList .marketContainer .cardsHolder .card {
+    padding: 3em;
+  }
   #priceList .yearlyContainer .cardsHolder .pricePart span,
   #priceList .yearlyContainer .cardsHolder .pricePart p,
   #priceList .monthlyContainer .cardsHolder .pricePart span,
@@ -666,5 +757,17 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .monthlyContainer .cardsHolder .reasonPart,
   #priceList .marketContainer .cardsHolder .reasonPart {
     font-size: 0.85em;
+  }
+  .tableView .tableRow:first-child .cell {
+    font-size: 1.4em;
+  }
+  .cell {
+    font-size: 1.2em;
+  }
+  #priceList .contractPolicy ul li {
+    font-size: 1em;
+  }
+  #priceList .contractPolicy .bundles h3 {
+    font-size: 1.5em;
   }
 }

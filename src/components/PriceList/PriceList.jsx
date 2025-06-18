@@ -67,6 +67,13 @@ function PriceList() {
     }),
     [t]
   );
+  const contractPolicyTranslations = useMemo(
+    () => ({
+      bundle: t("conreactPlicy.bundle", { returnObjects: true }),
+      contract: t("conreactPlicy.conract", { returnObjects: true }),
+    }),
+    [t]
+  );
 
   const yearlyPlans = useMemo(
     () => [
@@ -423,6 +430,27 @@ function PriceList() {
                 ) : null
               )}
             </div>
+          </div>
+        </div>
+
+        <div className="contractPolicy">
+          <div className="policyContainer">
+            {[
+              contractPolicyTranslations.bundle,
+              contractPolicyTranslations.contract,
+            ].map((section, idx) => (
+              <div className="bundles" key={idx}>
+                <h3>{section.title}</h3>
+                <ul>
+                  {section.arr.map((item, i) => (
+                    <li key={i}>
+                      <FaCheck />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>

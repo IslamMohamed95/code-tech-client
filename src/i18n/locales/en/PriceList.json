@@ -452,5 +452,27 @@
         ]
       }
     }
+  },
+  "conreactPlicy": {
+    "bundle": {
+      "title": "All packages include",
+      "arr": [
+        "Initial strategic consultation",
+        "Setup and onboarding support",
+        "Regular performance reviews",
+        "Understanding the Saudi market",
+        "Arabic/English support",
+        "Compliance and best practices"
+      ]
+    },
+    "conract": {
+      "title": "Contract Terms",
+      "arr": [
+        "6-month minimum commitment for monthly packages",
+        "50% upfront payment for identity packages",
+        "30-day notice for changes or cancellations",
+        "Prices do not include VAT"
+      ]
+    }
   }
 }
