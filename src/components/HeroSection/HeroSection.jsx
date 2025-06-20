@@ -125,7 +125,7 @@ const HeroSection = () => {
   return (
     <div id="hero">
       <div className="mainContainer">
-        {/* <Particles id="tsparticles" init={particlesLoaded} options={options} />
+        <Particles id="tsparticles" init={particlesLoaded} options={options} />
         <div className="contentContainer">
           <div>
             <div>
@@ -146,36 +146,13 @@ const HeroSection = () => {
               </li>
             ))}
           </ul>
-        </div> */}
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={30}
-          loop={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Pagination, Navigation]}
-          className="mySwiper"
-        >
-          {lang === "ar"
-            ? bannerArrEN.map((b, ind) => (
-                <SwiperSlide key={ind}>
-                  <img src={b} alt="banner" />
-                </SwiperSlide>
-              ))
-            : bannerArrAR.map((b, ind) => (
-                <SwiperSlide key={ind}>
-                  <img src={b} alt="banner" />
-                </SwiperSlide>
-              ))}
-        </Swiper>
-        {/* <div className="mouse-scroll">
+        </div>
+        <div className="mouse-scroll">
           <div className="mouse ">
             <div className="wheel"></div>
           </div>
           <span className="hoverEffect">{t("scrollDown")}</span>
-        </div> */}
+        </div>
       </div>
     </div>
   );
