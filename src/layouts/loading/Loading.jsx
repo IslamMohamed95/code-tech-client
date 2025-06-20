@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { motion } from "framer-motion";
-import logo from "../../assets/AboutLogo/aboutLogo.png"; // Ensure the file is placed in the same directory
+import logo from "../../assets/Logo/Logo.png"; // Ensure the file is placed in the same directory
 import "./Loading.css";
 
 import { WebContext } from "../../context/WebContext";
+import { useTranslation } from "react-i18next";
 
 const Loading = () => {
-  const { loading, animate } = useContext(WebContext);
+  const { loading, animate } = useContext(WebContext),
+    { t } = useTranslation(["loading"]);
 
   return (
     <div id="loading" className={loading ? "activeLoading" : ""}>
@@ -54,8 +56,8 @@ const Loading = () => {
           mask="url(#circular-mask)"
         />
       </svg>
-      <span>Code Tech</span>
-      <p>Loading ...</p>
+      <span>{t("logo")}</span>
+      <p>{t("title")}</p>
     </div>
   );
 };
