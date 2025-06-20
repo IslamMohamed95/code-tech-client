@@ -7,7 +7,10 @@ import { IoIosArrowUp } from "react-icons/io";
 import { GrSystem } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import deskTopLogo from "../../assets/AboutLogo/aboutLogo.png";
+import deskTopLogo from "../../assets/Logo/Logo.png";
+
+//Importing Flag
+import Flag from "react-world-flags";
 
 function Nav() {
   const {
@@ -118,7 +121,7 @@ function Nav() {
                 }
                 onClick={handleLang}
               >
-                {t("arTitle")}
+                <Flag code="SA" />
               </span>
               <hr />
               <span
@@ -127,7 +130,7 @@ function Nav() {
                 }
                 onClick={handleLang}
               >
-                {t("enTitle")}
+                <Flag code="US" />
               </span>
             </div>
             <div>
@@ -282,7 +285,7 @@ function Nav() {
                     }
                     onClick={handleLang}
                   >
-                    {t("arTitle")}
+                    <Flag code="SA" />
                   </span>
                   <hr />
                   <span
@@ -291,7 +294,7 @@ function Nav() {
                     }
                     onClick={handleLang}
                   >
-                    {t("enTitle")}
+                    <Flag code="US" />
                   </span>
                 </div>
                 <div>

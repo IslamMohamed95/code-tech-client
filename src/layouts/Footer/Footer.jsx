@@ -2,7 +2,7 @@
 import "./Footer.css";
 
 //Importing Logo
-import logo from "../../assets/AboutLogo/aboutLogo.png";
+import logo from "../../assets/Logo/Logo.png";
 
 //Importing Icons
 import { FaFacebook } from "react-icons/fa";

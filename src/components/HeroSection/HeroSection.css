@@ -11,7 +11,7 @@
     align-self: center;
     border-radius: 25px;
     width: 95%;
-    height: 90dvh;
+    height: 85dvh;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -175,7 +175,7 @@
 
   #hero .mainContainer {
     padding: 12px;
-    height: 83dvh;
+    height: 84dvh;
   }
 
   #hero .contentContainer > div h5 {
@@ -210,7 +210,7 @@
   #hero .mainContainer {
     position: relative;
     padding: 15px;
-    height: 78dvh;
+    height: 80dvh;
   }
 
   #hero .contentContainer > div h5 {
