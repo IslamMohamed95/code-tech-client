@@ -1,184 +1,192 @@
-@media (min-width: 320px) {
-  /* Hero Section */
-  #hero {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  #hero .mainContainer {
-    position: relative;
-    align-self: center;
-    border-radius: 25px;
-    width: 95%;
-    height: 85dvh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #hero #tsparticles {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-  }
-
-  #hero .contentContainer {
-    padding: 10px;
-    color: white;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  #hero .contentContainer > div:first-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  #hero .contentContainer > div > div {
-    width: 100%;
-  }
-
-  #hero .contentContainer > div > div h5 {
-    color: white;
-  }
-
-  #hero .contentContainer > div > div span {
-    width: 20px;
-    height: 2px;
-    border-radius: 25px;
-  }
-
-  #hero .contentContainer h3 {
-    color: var(--primary-color);
-    font-size: 1.3em;
-    font-weight: bold;
-    width: 85%;
-  }
-
-  #hero .contentContainer p {
-    width: 90%;
-    font-size: 0.9em;
-    margin: 20px 0 20px 0;
-    color: rgb(224, 224, 224);
-  }
-
-  #hero .contentContainer button {
-    color: white;
-    background-color: var(--primary-color);
-    border: none;
-    padding: 8px 0 6px;
-    width: 120px;
-    border-radius: 10px;
-  }
-
-  #hero .socialContainer {
-    position: absolute;
-    bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  html[dir="rtl"] #hero .socialContainer {
-    left: 30px;
-  }
-  html[dir="ltr"] #hero .socialContainer {
-    right: 30px;
-  }
-  #hero .socialContainer::after {
-    content: "";
-    position: absolute;
-    top: auto;
-    width: 2px;
-    height: 85%;
-    border-radius: 25px;
-    background-color: var(--primary-color);
-  }
-  html[dir="rtl"] #hero .socialContainer::after {
-    left: -10px;
-  }
-  html[dir="ltr"] #hero .socialContainer::after {
-    right: -10px;
-  }
-
-  #hero .socialContainer ul {
-    list-style: none;
-  }
-
-  #hero .socialContainer ul li {
-    font-size: 1.2em;
-    margin: 4px 0;
-    color: white;
-    transition: all 0.3s ease-in-out;
-  }
-
-  #hero .socialContainer ul li:hover {
-    color: var(--primary-color);
-  }
-
-  .mouse-scroll {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    color: var(--primary-color);
-    font-size: 0.85rem;
-    font-weight: 500;
-    user-select: none;
-    z-index: 4;
-  }
-
-  .mouse-scroll span {
-    font-size: 0.8em;
-  }
-
-  .mouse {
-    width: 17px;
-    height: 25px;
-    border: 2px solid var(--primary-color);
-    border-radius: 18px;
-    position: relative;
-    box-sizing: border-box;
-    margin-bottom: 8px;
-  }
-
-  .wheel {
-    width: 2px;
-    height: 4px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: wheel-move 2s infinite alternate forwards ease-in-out;
-  }
+#hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1em 0;
 }
-@media (min-width: 375px) {
+
+#hero .mainContainer {
+  position: relative;
+  align-self: center;
+  width: 95%;
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  padding: 0; /* Will be overridden in breakpoints */
 }
+
+#hero .mySwiper,
+#hero .swiper-slide-container {
+  width: 100%;
+  height: 50dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero .mainContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#hero #tsparticles {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+/* ======================= Content Styling ======================= */
+#hero .contentContainer {
+  padding: 10px;
+  color: white;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#hero .contentContainer > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+#hero .contentContainer h5 {
+  color: white;
+  font-size: 1em;
+}
+
+#hero .contentContainer h3 {
+  color: var(--primary-color);
+  font-size: 1.3em;
+  font-weight: bold;
+  width: 85%;
+}
+
+#hero .contentContainer p {
+  font-size: 0.9em;
+  margin: 20px 0;
+  color: rgb(224, 224, 224);
+  width: 90%;
+}
+
+#hero .contentContainer button {
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  padding: 8px 0 6px;
+  width: 120px;
+  border-radius: 10px;
+  font-size: 0.9em;
+}
+
+/* ======================= Social Icons ======================= */
+#hero .socialContainer {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+html[dir="rtl"] #hero .socialContainer {
+  left: 30px;
+}
+
+html[dir="ltr"] #hero .socialContainer {
+  right: 30px;
+}
+
+#hero .socialContainer::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 85%;
+  border-radius: 25px;
+  background-color: var(--primary-color);
+}
+
+html[dir="rtl"] #hero .socialContainer::after {
+  left: -10px;
+}
+
+html[dir="ltr"] #hero .socialContainer::after {
+  right: -10px;
+}
+
+#hero .socialContainer ul {
+  list-style: none;
+}
+
+#hero .socialContainer ul li {
+  font-size: 1.2em;
+  margin: 4px 0;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+#hero .socialContainer ul li:hover {
+  color: var(--primary-color);
+}
+
+/* ======================= Scroll Prompt ======================= */
+.mouse-scroll {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: 500;
+  user-select: none;
+  z-index: 4;
+}
+
+.mouse-scroll span {
+  font-size: 0.8em;
+}
+
+.mouse {
+  width: 17px;
+  height: 25px;
+  border: 2px solid var(--primary-color);
+  border-radius: 18px;
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+.wheel {
+  width: 2px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: wheel-move 2s infinite alternate ease-in-out;
+}
+
+/* ======================= Breakpoints ======================= */
+
 @media (min-width: 425px) {
-  #hero {
-    width: 100%;
-  }
-
   #hero .mainContainer {
     padding: 12px;
-    height: 84dvh;
   }
 
-  #hero .contentContainer > div h5 {
+  #hero .contentContainer h5 {
     font-size: 1em;
   }
 
@@ -189,11 +197,9 @@
 
   #hero .contentContainer p {
     font-size: 0.95em;
-    width: 90%;
   }
 
   #hero .contentContainer button {
-    padding: 8px 0 6px;
     width: 140px;
   }
 
@@ -206,14 +212,13 @@
     height: 30px;
   }
 }
+
 @media (min-width: 768px) {
   #hero .mainContainer {
-    position: relative;
     padding: 15px;
-    height: 80dvh;
   }
 
-  #hero .contentContainer > div h5 {
+  #hero .contentContainer h5 {
     font-size: 1.2em;
   }
 
@@ -223,7 +228,6 @@
 
   #hero .contentContainer p {
     font-size: 1em;
-    width: 90%;
   }
 
   #hero .contentContainer button {
@@ -232,35 +236,30 @@
     font-size: 0.95em;
   }
 
-  #hero .socialContainer {
-    bottom: 40px;
-  }
   html[dir="rtl"] #hero .socialContainer {
     left: 50px;
   }
+
   html[dir="ltr"] #hero .socialContainer {
     right: 50px;
   }
 }
-@media (min-width: 1024px) {
-  #hero {
-    padding: 1em 0;
-  }
-  #hero .mainContainer {
-    height: 76dvh;
-  }
 
-  #hero .contentContainer > div h5 {
-    font-size: 1.65em;
-  }
+@media (min-width: 1024px) {
   #hero .contentContainer {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
   }
+
   #hero .contentContainer > div:first-child {
     width: 50%;
   }
+
+  #hero .contentContainer h5 {
+    font-size: 1.65em;
+  }
+
   #hero .contentContainer h3 {
     width: 85%;
   }
@@ -278,14 +277,15 @@
     font-size: 1.3em;
   }
 }
+
 @media (min-width: 1440px) {
-  #hero .contentContainer > div h5 {
+  #hero .contentContainer h5 {
     font-size: 2em;
   }
 
   #hero .contentContainer h3 {
-    width: 100%;
     font-size: 2.5em;
+    width: 100%;
   }
 
   #hero .contentContainer p {
