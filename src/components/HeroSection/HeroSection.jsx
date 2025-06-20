@@ -2,8 +2,6 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { loadSlim } from "@tsparticles/slim";
 
-//Importing Css
-import "./HeroSection.css";
 //Importing Icons
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -12,12 +10,33 @@ import Counter from "../../layouts/Counters/Counter";
 import { WebContext } from "../../context/WebContext";
 import { useTranslation } from "react-i18next";
 
-//Importin Context
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+// Import Swiper styles
+import "swiper/css";
+
+//Importing Css
+import "./HeroSection.css";
+
+//Importing banner ----> English Lang
+import oneEN from "../../assets/Hero/oneEN.png";
+import twoEN from "../../assets/Hero/twoEN.png";
+import threeEN from "../../assets/Hero/threeEN.png";
+import fourEN from "../../assets/Hero/fourEN.png";
+
+//Importing banner ----> Arabic Lang
+import oneAR from "../../assets/Hero/oneAR.png";
+import twoAR from "../../assets/Hero/twoAR.png";
+import threeAR from "../../assets/Hero/threeAR.png";
+import fourAR from "../../assets/Hero/fourAR.png";
 
 const HeroSection = () => {
   const list = [<FaFacebook />, <FaInstagram />, <FaLinkedin />],
     [init, setInit] = useState(false),
-    { t } = useTranslation(["hero"]);
+    bannerArrEN = [oneEN, twoEN, threeEN, fourEN],
+    bannerArrAR = [oneAR, twoAR, threeAR, fourAR],
+    { t, lang } = useTranslation(["hero"]);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -106,7 +125,7 @@ const HeroSection = () => {
   return (
     <div id="hero">
       <div className="mainContainer">
-        <Particles id="tsparticles" init={particlesLoaded} options={options} />
+        {/* <Particles id="tsparticles" init={particlesLoaded} options={options} />
         <div className="contentContainer">
           <div>
             <div>
@@ -127,14 +146,36 @@ const HeroSection = () => {
               </li>
             ))}
           </ul>
-        </div>
-
-        <div className="mouse-scroll">
+        </div> */}
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+        >
+          {lang === "ar"
+            ? bannerArrEN.map((b, ind) => (
+                <SwiperSlide key={ind}>
+                  <img src={b} alt="banner" />
+                </SwiperSlide>
+              ))
+            : bannerArrAR.map((b, ind) => (
+                <SwiperSlide key={ind}>
+                  <img src={b} alt="banner" />
+                </SwiperSlide>
+              ))}
+        </Swiper>
+        {/* <div className="mouse-scroll">
           <div className="mouse ">
             <div className="wheel"></div>
           </div>
           <span className="hoverEffect">{t("scrollDown")}</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );

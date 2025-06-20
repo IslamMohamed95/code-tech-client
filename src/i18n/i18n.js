@@ -12,6 +12,7 @@ import ChooseUsEN from "./locales/en/ChooseUs.json";
 import ContactUsEN from "./locales/en/ContactUs.json";
 import footerEN from "./locales/en/Footer.json";
 import priceListEN from "./locales/en/PriceList.json";
+import AboutEN from "./locales/en/About.json";
 
 // Importing namespaces AR
 import NavAR from "./locales/ar/Nav.json";
@@ -23,6 +24,7 @@ import ChooseUsAR from "./locales/ar/ChooseUs.json";
 import ContactUsAR from "./locales/ar/ContactUs.json";
 import footerAR from "./locales/ar/Footer.json";
 import priceListAR from "./locales/ar/PriceList.json";
+import AboutAR from "./locales/ar/About.json";
 
 i18n
   .use(LanguageDetector)
@@ -39,6 +41,7 @@ i18n
         contactUs: ContactUsEN,
         footer: footerEN,
         priceList: priceListEN,
+        about: AboutEN,
       },
       ar: {
         nav: NavAR,
@@ -50,6 +53,7 @@ i18n
         contactUs: ContactUsAR,
         footer: footerAR,
         priceList: priceListAR,
+        about: AboutAR,
       },
     },
     lng: localStorage.getItem("lang") || "ar",
@@ -67,6 +71,7 @@ i18n
       "contactUs",
       "footer",
       "priceList",
+      "about",
     ],
     defaultNS: "nav",
   });
