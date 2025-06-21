@@ -23,6 +23,7 @@ function WhyChooseUs() {
       { title: t("data.three"), img: banner },
       { title: t("data.four"), img: banner },
       { title: t("data.four"), img: banner },
+      { title: t("data.four"), img: banner },
     ];
 
   return (
