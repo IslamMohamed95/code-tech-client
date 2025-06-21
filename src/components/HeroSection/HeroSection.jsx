@@ -1,18 +1,10 @@
-import { useContext, useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
-
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-
+import { useContext, useEffect, useMemo, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-
 import "./HeroSection.css";
 
-import Counter from "../../layouts/Counters/Counter";
 import { WebContext } from "../../context/WebContext";
 
 // English banners
@@ -30,32 +22,28 @@ import fourAR from "../../assets/Hero/fourAR.webp";
 const HeroSection = () => {
   const { lang } = useContext(WebContext);
 
-  const bannerArrEN = [oneEN, twoEN, threeEN, fourEN];
-  const bannerArrAR = [oneAR, twoAR, threeAR, fourAR];
-  const currentBanners = lang === "ar" ? bannerArrAR : bannerArrEN;
+  const currentBanners = useMemo(() => {
+    return lang === "ar"
+      ? [oneAR, twoAR, threeAR, fourAR]
+      : [oneEN, twoEN, threeEN, fourEN];
+  }, [lang]);
 
   return (
     <div id="hero">
       <Swiper
         key={lang}
-        loop={true} // ✅ Enables infinite looping
-        navigation={true} // ✅ Enables next/prev arrows
-        grabCursor={true} // ✅ Shows grab cursor on hover (optional visual feedback)
-        draggable={true} // ✅ Optional: not required unless using `freeMode`
-        freeMode={true} // ✅ Set to true if you want free scrolling
-        pagination={{
-          dynamicBullets: true,
-        }}
-        autoplay={{
-          delay: 3500,
-          disableOnInteraction: false,
-        }}
+        loop
+        navigation
+        grabCursor
+        freeMode
+        pagination={{ dynamicBullets: true }}
+        autoplay={{ delay: 3500, disableOnInteraction: false }}
         modules={[Pagination, Autoplay, Navigation]}
         className="mySwiper"
       >
-        {currentBanners.map((c, ind) => (
-          <SwiperSlide key={ind}>
-            <img src={c} alt="img" />
+        {currentBanners.map((img, index) => (
+          <SwiperSlide key={index}>
+            <img src={img} alt="img" loading="lazy" />
           </SwiperSlide>
         ))}
       </Swiper>

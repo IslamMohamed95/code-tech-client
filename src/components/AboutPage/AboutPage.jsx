@@ -202,6 +202,7 @@ function AboutPage() {
                   x2="100%"
                   y2="100%"
                 >
+                  a
                   <stop offset="0%" stopColor="#ecefff" />
                   <stop offset="100%" stopColor="#ffffff" />
                 </linearGradient>

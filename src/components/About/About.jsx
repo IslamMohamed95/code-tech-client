@@ -1,100 +1,24 @@
-//Importing Icons
 import { FaCheck } from "react-icons/fa";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-
-//Importing Logo
 import logo from "../../assets/AboutLogo/aboutImg.jpg";
-
-//Import Stylesheet
 import "./About.css";
 import { useTranslation } from "react-i18next";
 
 function About() {
-  const { t } = useTranslation("sabout"),
-    aboutList = [t("list.one"), t("list.two"), t("list.three")];
+  const { t } = useTranslation("sabout");
+
+  const sTitle = t("sTitle");
+  const bTitle = t("bTitle");
+  const desc = t("desc");
+  const btn = t("btn");
+  const aboutList = [t("list.one"), t("list.two"), t("list.three")];
 
   return (
     <section id="about">
       <div className="maincontainer">
-        {/*  <div className="leftContainer">
-          <div
-            style={{
-              position: "relative",
-              width: "70%",
-              height: "70%",
-              margin: "0 auto",
-            }}
-          >
-
-            <svg
-              width="100%"
-              height="100%"
-              style={{
-                position: "absolute",
-                top: "-1em",
-                left: "-1em",
-                zIndex: 1,
-              }}
-            >
-              <defs>
-                <pattern
-                  id="dots"
-                  x="0"
-                  y="0"
-                  width="15"
-                  height="15"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <circle cx="1" cy="1" r="1.5" fill="#25b0ab" />
-                </pattern>
-              </defs>
-              <rect width="70%" height="80%" fill="url(#dots)" />
-            </svg>
-
-
-            <svg
-              viewBox="0 0 200 200"
-              style={{
-                position: "absolute",
-                top: "-40px",
-                left: "-40px",
-                width: "300px",
-                height: "300px",
-                zIndex: 2,
-                opacity: 0.3,
-              }}
-            >
-              <path
-                fill="#ECEFF1"
-                d="M37.1,-65.4C48.6,-56.5,58.9,-48.2,67.5,-37.6C76.1,-27,82.9,-13.5,80.3,-1.2C77.7,11.1,65.8,22.2,55.3,34.2C44.8,46.3,35.7,59.3,23.2,63.8C10.7,68.3,-5.1,64.2,-21.2,60.6C-37.3,57,-53.6,53.9,-65.1,43.1C-76.7,32.4,-83.6,13.9,-79.8,-2.3C-76,-18.5,-61.6,-32.5,-48.8,-44.2C-36.1,-55.9,-25.1,-65.2,-12.3,-70.8C0.6,-76.3,13.4,-78.1,37.1,-65.4Z"
-                transform="translate(100 100)"
-              />
-            </svg>
-
-
-            <svg
-              viewBox="0 0 100 100"
-              width="100%"
-              height="100%"
-              style={{ zIndex: 3, position: "relative" }}
-            >
-              <defs>
-                <clipPath id="hexClip">
-                  <polygon points="50,0 93,25 93,75 50,100 7,75 7,25" />
-                </clipPath>
-              </defs>
-              <image
-                href={logo}
-                width="100"
-                height="100"
-                clipPath="url(#hexClip)"
-                preserveAspectRatio="xMidYMid slice"
-              />
-            </svg>
-          </div>
-        </div>*/}
+        {/* Blob Visual */}
         <div className="blob-wrapper">
-          {/* Blob 1 (lower) */}
+          {/* Blob 1 */}
           <svg className="blob blob1" viewBox="0 0 200 200">
             <defs>
               <clipPath id="blobClip1">
@@ -118,13 +42,13 @@ function About() {
                 x2="100%"
                 y2="100%"
               >
-                <stop offset="0%" stopColor="#642364" />
-                <stop offset="100%" stopColor="#642364" />
+                <stop offset="0%" stopColor="#25b0ab" />
+                <stop offset="100%" stopColor="#25b0ab" />
               </linearGradient>
             </defs>
           </svg>
 
-          {/* Blob 2 (top layer) */}
+          {/* Blob 2 */}
           <svg className="blob blob2" viewBox="0 0 200 200">
             <defs>
               <clipPath id="blobClip2">
@@ -154,30 +78,37 @@ function About() {
             </defs>
           </svg>
 
-          {/* Centered image */}
-          <img src={logo} alt="introImg" className="main-image" />
+          <img
+            src={logo}
+            alt="introImg"
+            className="main-image"
+            loading="lazy"
+          />
         </div>
+
+        {/* Right Content */}
         <div className="rightContainer">
-          <h4>{t("sTitle")}</h4>
-          <h3>{t("bTitle")}</h3>
-          <p>{t("desc")}</p>
+          <h4>{sTitle}</h4>
+          <h3>{bTitle}</h3>
+          <p>{desc}</p>
+
           <div className="listHolder">
             <ul>
-              {aboutList.map((a, i) => (
+              {aboutList.map((item, i) => (
                 <li key={i}>
                   <FaCheck />
-                  &nbsp; {a}
+                  &nbsp;{item}
                 </li>
               ))}
             </ul>
+
             <div>
-              <div>
-                <AiOutlineFundProjectionScreen />
-              </div>
+              <AiOutlineFundProjectionScreen />
             </div>
           </div>
+
           <div className="aboutBtn">
-            <button>{t("btn")}</button>
+            <button>{btn}</button>
           </div>
         </div>
       </div>

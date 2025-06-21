@@ -1,11 +1,15 @@
 #client {
   width: 100%;
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-#client .swiper-pagination-bullets-dynamic {
-  padding-top: 1em;
-}
-#client #client .swiperHolder {
+
+#client .swiperHolder {
   padding: 1em 0;
+  width: 100%;
 }
 
 #client .swiper {
@@ -18,6 +22,7 @@
   justify-content: center;
   align-items: center;
 }
+
 #client .swiper-slide {
   width: 100%;
   height: 80px;
@@ -26,88 +31,84 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 8px 5px rgb(0 0 0 / 0.1);
+  box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
   will-change: transform, opacity, filter;
 }
+
 #client .swiper-slide img {
   object-fit: cover;
   box-shadow: none !important;
 }
+
 #client .swiper-pagination {
-  text-align: center;
   position: static;
   margin-top: 30px;
+  text-align: center;
   transform: translateX(0) !important;
 }
+
 #client .swiper-pagination-bullet {
   background-color: var(--primary-color);
 }
 
-@media (min-width: 320px) {
-  #client {
-    padding: 2em 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #client > div:first-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    position: relative;
-  }
-
-  #client > div:first-child span {
-    position: absolute;
-    width: 65px;
-    height: 1px;
-    background-color: var(--primary-color);
-    border-radius: 25px;
-  }
-
-  #client > div:first-child .one {
-    left: 110%;
-  }
-
-  #client > div:first-child .two {
-    right: 110%;
-  }
-
-  #client h2 {
-    width: 100%;
-    font-size: 1.2em;
-    color: var(--primary-color);
-    text-align: center;
-  }
-
-  #client > div {
-    width: 85%;
-  }
-
-  #client > div:last-child p {
-    text-align: center;
-    color: grey;
-    align-self: center;
-    font-size: 0.95em;
-  }
-
-  #client .trust {
-    text-align: center;
-    margin: 1em 0 0;
-    background-color: var(--yellow);
-    padding: 0.3em 1em;
-    color: white;
-    border-radius: 5px;
-    font-size: 0.9em;
-  }
+#client .swiper-pagination-bullets-dynamic {
+  padding-top: 1em;
 }
-@media (min-width: 375px) {
+
+#client > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  position: relative;
 }
+
+#client > div:first-child span {
+  position: absolute;
+  width: 65px;
+  height: 1px;
+  background-color: var(--primary-color);
+  border-radius: 25px;
+}
+
+#client .one {
+  left: 110%;
+}
+
+#client .two {
+  right: 110%;
+}
+
+#client h2 {
+  width: 100%;
+  font-size: 1.2em;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+#client > div {
+  width: 85%;
+}
+
+#client > div:last-child p {
+  text-align: center;
+  color: grey;
+  font-size: 0.95em;
+}
+
+#client .trust {
+  text-align: center;
+  margin: 1em 0 0;
+  background-color: var(--yellow);
+  padding: 0.3em 1em;
+  color: white;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+/* Media Queries */
 @media (min-width: 420px) {
   #client h2 {
     font-size: 1.2em;
@@ -121,16 +122,13 @@
     padding: 0.4em 1.5em;
     font-size: 1em;
   }
-
-  #client > div {
-    width: 85%;
-  }
 }
+
 @media (min-width: 768px) {
   #client {
     padding: 0 2em;
-    align-items: center;
   }
+
   #client h2 {
     font-size: 1.4em;
   }
@@ -141,13 +139,14 @@
 
   #client .trust {
     padding: 0.4em 2em;
-    font-size: 1em;
   }
 }
+
 @media (min-width: 1024px) {
   #client .swiper-slide {
     padding: 1em;
   }
+
   #client h2 {
     font-size: 1.5em;
   }
@@ -161,19 +160,22 @@
     font-size: 1.1em;
   }
 }
+
 @media (min-width: 1440px) {
   #client .swiper-slide {
     height: 110px;
     padding: 1.5em;
   }
+
   #client .swiper-wrapper {
     display: flex;
-
     align-items: center;
   }
+
   #client img {
     padding: 1em;
   }
+
   #client h2 {
     font-size: 2.3em;
   }

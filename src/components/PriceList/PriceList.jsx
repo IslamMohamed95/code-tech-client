@@ -1,13 +1,16 @@
-import { useState, useMemo, useContext } from "react";
+import { useState, useMemo, useContext, useRef, useEffect } from "react";
 import "./PriceList.css";
 import img from "../../assets/PriceList/undraw_credit-card-payments_y0vn.svg";
 import { FaCheck } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
+import { WebContext } from "../../context/WebContext";
 
 function PriceList() {
   const [activeIndex, setActiveIndex] = useState(1),
-    { t } = useTranslation(["priceList"]);
+    { t } = useTranslation(["priceList"]),
+    { registerRef } = useContext(WebContext),
+    priceListRef = useRef(null);
 
   const yearlyTranslations = useMemo(
     () => ({
@@ -144,8 +147,12 @@ function PriceList() {
     }
   };
 
+  useEffect(() => {
+    registerRef("priceList", priceListRef.current);
+  }, [registerRef]);
+
   return (
-    <section id="priceList">
+    <section id="priceList" ref={priceListRef}>
       <div className="mainContainer">
         <div className="introHolder">
           <div>

@@ -1,6 +1,7 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const WebContext = createContext();
 
@@ -15,7 +16,11 @@ const WebProvider = ({ children }) => {
     [animate, setAnimate] = useState(true),
     [visibleSubMenu, setVisibleSubMenu] = useState(false), // Track hamburger menu open state
     [isHamburgerOpen, setIsHamburgerOpen] = useState(false),
-    formRef = useRef();
+    [activeMenuIndex, setActiveMenuIndex] = useState(null),
+    [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null),
+    refElemnt = useRef({}),
+    navigate = useNavigate(),
+    location = useLocation();
 
   const handleLoadingPage = () => {
     setTimeout(() => {
@@ -53,6 +58,9 @@ const WebProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    setActiveMenuIndex(null);
+    setIsHamburgerOpen(false);
+    setVisibleSubMenu(false);
     localStorage.setItem("lang", lang);
     i18n.changeLanguage(lang);
     document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
@@ -67,6 +75,61 @@ const WebProvider = ({ children }) => {
       clearTimeout(timeOut);
     };
   }, [lang, loading, animate]);
+
+  const registerRef = (key, ref) => {
+    if (ref) {
+      refElemnt.current[key] = ref;
+    }
+  };
+  const scrollToView = (key) => {
+    const endswith = location.pathname.endsWith("/");
+    setActiveDeskTopNavIndex(null);
+    setIsHamburgerOpen(false);
+    setVisibleSubMenu(false);
+    if (key === "home" || key === "contact") {
+      if (endswith) {
+        if (key === "contact") {
+          setTimeout(() => {
+            refElemnt.current[key].scrollIntoView({ behavior: "smooth" });
+          }, 150);
+        } else {
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }, 150);
+        }
+      } else {
+        setAnimate(true);
+        setLoading(true);
+        navigate("/");
+        if (key === "contact") {
+          setTimeout(() => {
+            refElemnt.current[key].scrollIntoView({ behavior: "smooth" });
+          }, 150);
+        } else {
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }, 150);
+        }
+      }
+    } else {
+      setLoading(true);
+      setAnimate(true);
+      navigate(`/${key}`);
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 1000);
+    }
+
+    // if (key === "Home" || key === "About" || key === "Contact") {
+    //   navigate("/");
+    //   if (key === "Home") {
+    //     window.scrollToView({ top: 0, behavior: "smooth" });
+    //   }
+    // }
+    // setTimeout(() => {
+    //   refElemnt.current[key].scrollIntoView({ behavior: "smooth" });
+    // }, 100);
+  };
 
   return (
     <WebContext.Provider
@@ -88,8 +151,13 @@ const WebProvider = ({ children }) => {
         setVisibleSubMenu,
         isHamburgerOpen,
         setIsHamburgerOpen,
-        //Form
-        formRef,
+        activeMenuIndex,
+        setActiveMenuIndex,
+        activeDeskTopNavIndex,
+        setActiveDeskTopNavIndex,
+        //Register Element Ref
+        registerRef,
+        scrollToView,
         //localization
         lang,
         setLang,

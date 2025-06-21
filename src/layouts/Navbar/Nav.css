@@ -2,9 +2,51 @@
   direction: ltr;
 }
 
+/* Active Mobile Menu States */
+.activeHambutgerleft {
+  top: 45% !important;
+  transform: rotate(-45deg) !important;
+  width: 100% !important;
+}
+
+.activeHambutgerRight {
+  bottom: 45% !important;
+  transform: rotate(45deg) !important;
+  width: 100% !important;
+}
+
+.hideHambutgerMid {
+  display: none;
+}
+
+.hideMenue {
+  overflow: hidden;
+}
+
+.activeList {
+  transform: rotate(180deg) !important;
+}
+
+.rotateHaburger {
+  transform: rotate(-180deg);
+}
+
 /* Mobile First - 320px and up */
 @media (min-width: 320px) {
-  /* Navigation Styles */
+  .showMenu {
+    overflow-y: scroll !important;
+    padding: 1em 0 !important;
+    max-height: 100dvh !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    overflow: visible !important;
+  }
+
+  .activeMenu {
+    max-height: 336px !important;
+    overflow-y: auto !important;
+  }
+
   #Nav {
     position: fixed;
     top: 0;

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import ContactDetails from "./ContactDetails";
 import "./Nav.css";
 import { WebContext } from "../../context/WebContext";
@@ -22,16 +22,18 @@ function Nav() {
     setVisibleSubMenu,
     isHamburgerOpen,
     setIsHamburgerOpen,
-    formRef,
+    scrollToView,
     handleLang,
     lang,
+    activeMenuIndex,
+    setActiveMenuIndex,
+    activeDeskTopNavIndex,
+    setActiveDeskTopNavIndex,
   } = useContext(WebContext);
-
   const { t } = useTranslation(["nav"]);
-
   const navList = [
-    { title: t("home"), path: "/" },
-    { title: t("about"), path: "/about" },
+    { title: t("home"), path: "/", method: () => scrollToView("home") },
+    { title: t("about"), path: "/about", method: () => scrollToView("about") },
     {
       title: t("products"),
       path: "/products",
@@ -40,12 +42,13 @@ function Nav() {
         arr: ["test 1", "test 2", "test 3"],
       }),
     },
-    { title: t("pricelist"), path: "/pricelist" },
-    { title: t("contact"), path: "/" },
+    {
+      title: t("pricelist"),
+      path: "/pricelist",
+      method: () => scrollToView("priceList"),
+    },
+    { title: t("contact"), path: "/", method: () => scrollToView("contact") },
   ];
-
-  const [activeMenuIndex, setActiveMenuIndex] = useState(null);
-  const [activeDeskTopNavIndex, setActiveDeskTopNavIndex] = useState(null);
 
   const handleHamburgerMenu = () => {
     setIsHamburgerOpen((prev) => !prev);
@@ -86,26 +89,13 @@ function Nav() {
                     {item.title} <MdKeyboardArrowDown />
                   </li>
                 );
-              } else if (item.title === t("contact")) {
-                return (
-                  <li
-                    key={`main-contact-${i}`}
-                    className="hoverEffect"
-                    onClick={() => {
-                      setActiveDeskTopNavIndex(null);
-                      formRef.current.scrollIntoView({ behavior: "smooth" });
-                    }}
-                  >
-                    {item.title}
-                  </li>
-                );
               }
               return (
                 <Link
                   key={`main-link-${i}`}
                   to={item.path}
                   className="hoverEffect"
-                  onClick={handleLoadingStatus}
+                  onClick={item.method}
                 >
                   <li>{item.title}</li>
                 </Link>
@@ -216,15 +206,9 @@ function Nav() {
                         />
                       </span>
                     </li>
-                  ) : item.title === t("contact") ? (
-                    <li
-                      className="hoverEffect"
-                      onClick={() => {
-                        setVisibleSubMenu(false);
-                        setIsHamburgerOpen(false);
-                        formRef.current.scrollIntoView({ behavior: "smooth" });
-                      }}
-                    >
+                  ) : item.title === t("contact") ||
+                    item.title === t("home") ? (
+                    <li className="hoverEffect" onClick={item.method}>
                       <span>{item.title}</span>
                     </li>
                   ) : (
@@ -233,7 +217,7 @@ function Nav() {
                       to={item.path}
                       onClick={handleLoadingStatus}
                     >
-                      <li className="hoverEffect" onClick={handleClick}>
+                      <li className="hoverEffect" onClick={item.method}>
                         <span>{item.title}</span>
                       </li>
                     </Link>
