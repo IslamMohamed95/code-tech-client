@@ -127,17 +127,7 @@ function AboutPage() {
             </div>
           </div>
         </div>
-        {/* <div className="learnMoreHolder">
-          <h2>More About Code Tech</h2>
-          <ul>
-            {icons.map((i, index) => (
-              <li key={index}>
-                <img src={i.img} alt="img" />
-                <p>{i.title}</p>
-              </li>
-            ))}
-          </ul>
-        </div> */}
+
         <div className="blobAndContentHolder">
           <div className="blob-wrapper">
             {/* Blob 1 (lower) */}
