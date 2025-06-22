@@ -1,5 +1,5 @@
 #hero {
-  padding-top: 1em;
+  padding-top: 2.5em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,6 +22,9 @@
 }
 
 @media (min-width: 320px) {
+  #hero {
+    margin-bottom: 2em;
+  }
   #hero .swiper-button-prev,
   #hero .swiper-button-next {
     display: none !important;
@@ -47,6 +50,9 @@
   }
 }
 @media (min-width: 768px) {
+  #hero {
+    margin-bottom: 0;
+  }
   html[dir="ltr"] #hero .swiper-button-next {
     right: 30px;
   }
@@ -69,17 +75,19 @@
   }
 
   #hero .mySwiper .swiper-slide,
-  #hero {
+  #hero,
+  #hero .mySwiper .swiper-slide img {
     min-height: 45dvh;
     max-height: 45dvh;
   }
-  #hero .mySwiper .swiper-slide img {
-    height: 100%;
-  }
 }
 @media (min-width: 1024px) {
-  #hero .mySwiper .swiper-slide,
   #hero {
+    margin-bottom: 4em;
+  }
+  #hero .mySwiper .swiper-slide,
+  #hero,
+  #hero .mySwiper .swiper-slide img {
     min-height: 78dvh;
     max-height: 78dvh;
   }
@@ -97,5 +105,14 @@
   }
   #hero .swiper-pagination {
     bottom: 35px !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  #hero .mySwiper .swiper-slide,
+  #hero,
+  #hero .mySwiper .swiper-slide img {
+    min-height: 76dvh;
+    max-height: 76dvh;
   }
 }
