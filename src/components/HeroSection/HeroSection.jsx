@@ -50,24 +50,28 @@ const HeroSection = () => {
 
   return (
     <div id="hero">
-      <Swiper
-        speed={900}
-        key={lang}
-        loop
-        navigation
-        grabCursor
-        freeMode
-        pagination={{ dynamicBullets: true }}
-        autoplay={{ delay: 3500, disableOnInteraction: false }}
-        modules={[Pagination, Autoplay, Navigation]}
-        className="mySwiper"
-      >
-        {currentBanners.map((img, index) => (
-          <SwiperSlide key={index}>
-            <img src={img} alt="img" loading="eager" />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {!ready ? (
+        ""
+      ) : (
+        <Swiper
+          speed={900}
+          key={lang}
+          loop
+          navigation
+          grabCursor
+          freeMode
+          pagination={{ dynamicBullets: true }}
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
+          modules={[Pagination, Autoplay, Navigation]}
+          className="mySwiper"
+        >
+          {currentBanners.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img src={img} alt="img" loading="eager" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
     </div>
   );
 };
