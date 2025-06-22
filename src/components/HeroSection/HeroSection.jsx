@@ -44,7 +44,7 @@ const HeroSection = () => {
       >
         {currentBanners.map((img, index) => (
           <SwiperSlide key={index}>
-            <img src={img} alt="img" loading="lazy" />
+            <img src={img} alt="img" loading="eager" />
           </SwiperSlide>
         ))}
       </Swiper>

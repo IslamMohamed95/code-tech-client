@@ -7,7 +7,6 @@ import missionImg from "../../assets/AboutPage/missionImg.webp";
 import offer from "../../assets/AboutPage/offer.jpg";
 
 function AboutPage() {
-  // ];
   return (
     <section id="aboutPage">
       <div className="mainContainer">

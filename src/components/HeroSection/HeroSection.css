@@ -14,7 +14,7 @@
 
 #hero .mySwiper .swiper-slide img {
   width: 100%;
-  height: 100%;
+  height: 20dvh;
 }
 .swiper-pagination-bullet-active {
   opacity: var(--swiper-pagination-bullet-opacity, 1);
@@ -27,7 +27,8 @@
     display: none !important;
   }
   #hero .mySwiper .swiper-slide {
-    height: 20dvh;
+    min-height: 20dvh;
+    max-height: 20dvh;
   }
 }
 @media (min-width: 375px) {
@@ -63,12 +64,17 @@
   }
 
   #hero .mySwiper .swiper-slide {
-    height: 45dvh;
+    min-height: 45dvh;
+    max-height: 45dvh;
+  }
+  #hero .mySwiper .swiper-slide img {
+    height: 100%;
   }
 }
 @media (min-width: 1024px) {
   #hero .mySwiper .swiper-slide {
-    height: 78dvh;
+    min-height: 78dvh;
+    max-height: 78dvh;
   }
   html[dir="ltr"] #hero .swiper-button-next {
     right: 45px;
