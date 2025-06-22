@@ -26,19 +26,24 @@
   #hero .swiper-button-next {
     display: none !important;
   }
-  #hero .mySwiper .swiper-slide {
+  #hero .mySwiper .swiper-slide,
+  #hero {
     min-height: 20dvh;
     max-height: 20dvh;
   }
 }
 @media (min-width: 375px) {
-  #hero .mySwiper .swiper-slide {
-    height: 25dvh;
+  #hero .mySwiper .swiper-slide,
+  #hero {
+    min-height: 25dvh;
+    max-height: 25dvh;
   }
 }
 @media (min-width: 425px) {
-  #hero .mySwiper .swiper-slide {
-    height: 30dvh;
+  #hero .mySwiper .swiper-slide,
+  #hero {
+    min-height: 30dvh;
+    max-height: 30dvh;
   }
 }
 @media (min-width: 768px) {
@@ -63,7 +68,8 @@
     color: var(--primary-color) !important;
   }
 
-  #hero .mySwiper .swiper-slide {
+  #hero .mySwiper .swiper-slide,
+  #hero {
     min-height: 45dvh;
     max-height: 45dvh;
   }
@@ -72,7 +78,8 @@
   }
 }
 @media (min-width: 1024px) {
-  #hero .mySwiper .swiper-slide {
+  #hero .mySwiper .swiper-slide,
+  #hero {
     min-height: 78dvh;
     max-height: 78dvh;
   }
