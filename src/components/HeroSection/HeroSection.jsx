@@ -31,6 +31,7 @@ const HeroSection = () => {
   return (
     <div id="hero">
       <Swiper
+        speed={900}
         key={lang}
         loop
         navigation

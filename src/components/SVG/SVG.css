@@ -69,6 +69,17 @@
     width: 100%;
     margin-bottom: 2em;
   }
+  #svg .btnContainer {
+    text-align: center;
+  }
+  #svg .btnContainer button {
+    border: none;
+    background-color: var(--base-color);
+    padding: 0.5em 2em;
+    color: white;
+
+    border-radius: 10px;
+  }
 }
 
 @media (min-width: 425px) {
@@ -124,6 +135,10 @@
   #svg .svgContainer p {
     font-size: 1em;
   }
+  #svg .btnContainer button {
+    padding: 0.8em 1.5em;
+    font-size: 0.95em;
+  }
 }
 @media (min-width: 1024px) {
   #svg {
@@ -140,5 +155,10 @@
 
   #svg .svgContainer p {
     font-size: 1.2em;
+  }
+}
+@media (min-width: 1440px) {
+  #svg .btnContainer button {
+    font-size: 1.1em;
   }
 }

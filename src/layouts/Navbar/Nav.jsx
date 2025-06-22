@@ -73,7 +73,7 @@ function Nav() {
       <ContactDetails />
       <nav>
         <div>
-          <div className="hoverEffect">
+          <div className="hoverEffect" onClick={() => scrollToView("home")}>
             <img src={deskTopLogo} alt="LogoImg" />
             <p>{t("title")}</p>
           </div>

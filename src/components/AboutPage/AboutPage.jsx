@@ -4,17 +4,9 @@ import "./AboutPage.css";
 //Import Img
 import introImg from "../../assets/AboutPage/Intro.jpg";
 import missionImg from "../../assets/AboutPage/missionImg.webp";
-
-//Import Images as Icons
-// import news from "../../assets/AboutPage/CodeTechNews.svg";
-// import features from "../../assets/AboutPage/feature.svg";
-// import client from "../../assets/AboutPage/client.svg";
+import offer from "../../assets/AboutPage/offer.jpg";
 
 function AboutPage() {
-  // const icons = [
-  //   { img: news, title: "Code Tech News" },
-  //   { img: features, title: "New Features" },
-  //   { img: client, title: "150,000 Customers" },
   // ];
   return (
     <section id="aboutPage">
@@ -210,7 +202,7 @@ function AboutPage() {
             </svg>
 
             {/* Centered image */}
-            <img src={introImg} alt="introImg" className="main-image" />
+            <img src={offer} alt="introImg" className="main-image" />
           </div>
           <div className="contentContainer">
             <h2>What We offer</h2>

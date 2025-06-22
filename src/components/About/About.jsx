@@ -3,9 +3,12 @@ import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import logo from "../../assets/AboutLogo/aboutImg.jpg";
 import "./About.css";
 import { useTranslation } from "react-i18next";
+import { useContext } from "react";
+import { WebContext } from "../../context/WebContext";
 
 function About() {
   const { t } = useTranslation("sabout");
+  const { scrollToView } = useContext(WebContext);
 
   const sTitle = t("sTitle");
   const bTitle = t("bTitle");
@@ -108,7 +111,12 @@ function About() {
           </div>
 
           <div className="aboutBtn">
-            <button>{btn}</button>
+            <button
+              className="hoverEffect"
+              onClick={() => scrollToView("about")}
+            >
+              {btn}
+            </button>
           </div>
         </div>
       </div>
