@@ -5,10 +5,16 @@
     "one": "Save your time and",
     "two": "contact us"
   },
-  "data": {
-    "one": "Advanced Software Solutions",
-    "two": "Hosting and Domains",
-    "three": "Professional Digital Marketing",
-    "four": "Design and Visual Identity"
-  }
+  "data": [
+    "General Accounts Management",
+    "Inventory Management",
+    "Asset Management",
+    "Financial Transactions Management",
+    "Customer Relationship Management (CRM)",
+    "Human Resources Management",
+    "Production Management",
+    "Sales Management",
+    "Project Management",
+    "Procurement Management"
+  ]
 }

@@ -20,7 +20,7 @@ import threeAR from "../../assets/Hero/threeAR.webp";
 import fourAR from "../../assets/Hero/fourAR.webp";
 
 const HeroSection = () => {
-  const { lang, setLoading, setAnimate } = useContext(WebContext);
+  const { lang } = useContext(WebContext);
   const [ready, setReady] = useState(false);
 
   const currentBanners = useMemo(() => {
