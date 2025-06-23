@@ -5,7 +5,7 @@
   align-items: center;
 }
 #hero .mySwiper {
-  width: 95%;
+  width: 90%;
   border-radius: 20px;
 }
 #hero .mySwiper .swiper-slide {
@@ -37,14 +37,16 @@
 }
 @media (min-width: 375px) {
   #hero .mySwiper .swiper-slide,
-  #hero {
+  #hero,
+  #hero .mySwiper .swiper-slide img {
     min-height: 25dvh;
     max-height: 25dvh;
   }
 }
 @media (min-width: 425px) {
   #hero .mySwiper .swiper-slide,
-  #hero {
+  #hero,
+  #hero .mySwiper .swiper-slide img {
     min-height: 30dvh;
     max-height: 30dvh;
   }
