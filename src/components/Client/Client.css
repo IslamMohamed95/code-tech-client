@@ -144,7 +144,7 @@
 
 @media (min-width: 1024px) {
   #client .swiper-slide {
-    padding: 1em;
+    padding: 2em 1em;
   }
 
   #client h2 {
@@ -164,7 +164,7 @@
 @media (min-width: 1440px) {
   #client .swiper-slide {
     height: 110px;
-    padding: 1.5em;
+    padding: 4em 2em;
   }
 
   #client .swiper-wrapper {

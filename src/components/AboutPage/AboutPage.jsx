@@ -3,7 +3,7 @@ import "./AboutPage.css";
 
 //Import Img
 import introImg from "../../assets/AboutPage/Intro.jpg";
-import missionImg from "../../assets/AboutPage/missionImg.webp";
+import missionImg from "../../assets/AboutPage/ourMission.jpg";
 import offer from "../../assets/AboutPage/offer.jpg";
 
 function AboutPage() {
