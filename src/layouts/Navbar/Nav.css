@@ -219,7 +219,8 @@
     align-items: center;
   }
 
-  #Nav .langContainer > div {
+  #Nav .langContainer > div:first-child {
+    width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -228,6 +229,7 @@
   #Nav .langContainer > div:last-child {
     width: 100%;
     margin-top: 1em;
+    text-align: center;
   }
 
   #Nav .langContainer > div:last-child button {
@@ -240,7 +242,7 @@
     font-size: 0.85em;
   }
 
-  #Nav .langContainer > div hr {
+  #Nav .langContainer > div:first-child hr {
     margin: 0 10px;
     height: 25px;
     width: 0.2em;
