@@ -189,7 +189,12 @@
   }
 
   #Nav > div:last-child > div > ul .subMenuContainer > div hr {
-    width: 60%;
+    margin-top: 0.2em;
+    width: 25%;
+    height: 0.5px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--base-color);
   }
 
   #Nav > div:last-child > div > ul .underline {
@@ -201,7 +206,8 @@
   }
 
   #Nav > div:last-child > div > ul .subMenuContainer div ul li {
-    font-weight: bold;
+    font-weight: lighter;
+    font-size: 1em;
     color: var(--medium-gray);
   }
 
