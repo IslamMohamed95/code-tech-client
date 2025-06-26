@@ -12,8 +12,8 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto 40px;
+  max-width: 1400px;
+  margin: 0 auto;
   /* padding removed per request */
 }
 
@@ -70,6 +70,7 @@
 .container {
   width: 100%;
   max-width: 600px;
+  margin-top: 4em;
 }
 .contact-form {
   background: #fff;
@@ -206,8 +207,8 @@ html[dir="rtl"] .floating-input textarea:not(:placeholder-shown) + label {
 
   /* services list full-width column */
   .servicesSidebar {
-    flex: 1 1 400px;
-    max-width: 500px;
+    flex: 1 1 850;
+    max-width: 850px;
     width: 100%;
   }
   .servicesList {
@@ -225,9 +226,9 @@ html[dir="rtl"] .floating-input textarea:not(:placeholder-shown) + label {
     border: 1px solid #ccc;
   }
   .servicesList li img {
-    width: 100px;
-    height: 100px;
-    margin-right: 16px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
     margin-bottom: 0;
   }
   .servicesList li .text {
@@ -235,16 +236,10 @@ html[dir="rtl"] .floating-input textarea:not(:placeholder-shown) + label {
   }
   .servicesList li .text h3 {
     align-self: left;
-    font-size: 1.2em;
+    width: 100%;
+    font-size: 1em;
   }
-  /* Show descriptions on desktop */
-  .servicesList li .text p {
-    display: block;
-    margin-top: 4px;
-    font-size: 1rem;
-    color: #555;
-    line-height: 1em;
-  }
+
   .servicesList li.active {
     transform: scale(1.05);
     border-color: var(--base-color);
@@ -257,8 +252,27 @@ html[dir="rtl"] .floating-input textarea:not(:placeholder-shown) + label {
     border: none;
   }
 }
-
+@media (min-width: 1024px) {
+  .servicesSidebar {
+    flex: 1 1 600;
+    max-width: 600px;
+    width: 100%;
+  }
+  .container {
+    margin-top: 0;
+  }
+  /* Show descriptions on desktop */
+  .contact-section .servicesList li .text p {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.7em;
+    color: #555;
+  }
+}
 @media (min-width: 1440px) {
+  .contact-section .servicesList li .text p {
+    font-size: 0.9em;
+  }
   .container {
     width: 100%;
     max-width: 700px;

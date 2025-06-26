@@ -51,6 +51,9 @@ import c31 from "../../assets/clients/subMain/31.png";
 import c32 from "../../assets/clients/subMain/32.png";
 import c33 from "../../assets/clients/subMain/33.png";
 import c34 from "../../assets/clients/subMain/34.png";
+import c35 from "../../assets/clients/subMain/35.png";
+import c36 from "../../assets/clients/subMain/36.png";
+import c37 from "../../assets/clients/subMain/37.png";
 
 function Client() {
   const { t } = useTranslation(["client"]);
@@ -93,6 +96,9 @@ function Client() {
       c32,
       c33,
       c34,
+      c35,
+      c36,
+      c37,
     ],
     []
   );

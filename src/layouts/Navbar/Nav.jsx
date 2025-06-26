@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import ContactDetails from "./ContactDetails";
 import "./Nav.css";
 import { WebContext } from "../../context/WebContext";
@@ -8,8 +8,6 @@ import { GrSystem } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import deskTopLogo from "../../assets/Logo/Logo.png";
-
-//Importing Flag
 import Flag from "react-world-flags";
 
 function Nav() {
@@ -30,24 +28,54 @@ function Nav() {
     activeDeskTopNavIndex,
     setActiveDeskTopNavIndex,
   } = useContext(WebContext);
+
   const { t } = useTranslation(["nav"]);
+  const subMenuRef = useRef();
+
+  // Close submenu when clicking outside
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (subMenuRef.current && !subMenuRef.current.contains(e.target)) {
+        setVisibleSubMenu(false);
+        setActiveDeskTopNavIndex(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, [setVisibleSubMenu, setActiveDeskTopNavIndex]);
+
   const navList = [
-    { title: t("home"), path: "/", method: () => scrollToView("home") },
-    { title: t("about"), path: "/about", method: () => scrollToView("about") },
     {
-      title: t("products"),
-      path: "/products",
-      list: Array(5).fill({
-        title: "Domain & Hosting",
-        arr: ["test 1", "test 2", "test 3"],
-      }),
+      id: "home",
+      title: t("home"),
+      path: "/",
+      method: () => scrollToView("home"),
     },
     {
+      id: "about",
+      title: t("about"),
+      path: "/about",
+      method: () => scrollToView("about"),
+    },
+    {
+      id: "products",
+      title: t("products"),
+      path: "/products",
+      list: t("prdocutsSubMenu", { returnObjects: true }) || [],
+    },
+    {
+      id: "pricelist",
       title: t("pricelist"),
       path: "/pricelist",
       method: () => scrollToView("priceList"),
     },
-    { title: t("contact"), path: "/", method: () => scrollToView("contact") },
+    {
+      id: "contact",
+      title: t("contact"),
+      path: "/",
+      method: () => scrollToView("contact"),
+    },
   ];
 
   const handleHamburgerMenu = () => {
@@ -77,20 +105,18 @@ function Nav() {
             <img src={deskTopLogo} alt="LogoImg" />
             <p>{t("title")}</p>
           </div>
+
           <ul>
-            {navList.map((item, i) => {
-              if (item.title === t("products")) {
-                return (
-                  <li
-                    key={`main-product-${i}`}
-                    className="hoverEffect"
-                    onClick={() => handleNavClick(i)}
-                  >
-                    {item.title} <MdKeyboardArrowDown />
-                  </li>
-                );
-              }
-              return (
+            {navList.map((item, i) =>
+              item.id === "products" ? (
+                <li
+                  key={`main-product-${i}`}
+                  className="hoverEffect"
+                  onClick={() => handleNavClick(i)}
+                >
+                  {item.title} <MdKeyboardArrowDown />
+                </li>
+              ) : (
                 <Link
                   key={`main-link-${i}`}
                   to={item.path}
@@ -99,8 +125,8 @@ function Nav() {
                 >
                   <li>{item.title}</li>
                 </Link>
-              );
-            })}
+              )
+            )}
           </ul>
 
           <div className="languageDesktopContainer">
@@ -128,7 +154,9 @@ function Nav() {
             </div>
           </div>
 
+          {/* Desktop submenu */}
           <div
+            ref={subMenuRef}
             className={
               visibleSubMenu && activeDeskTopNavIndex !== null
                 ? "subMenuHolder activeDesktopMenu"
@@ -165,6 +193,7 @@ function Nav() {
         </div>
       </nav>
 
+      {/* Mobile Menu */}
       <div>
         <div>
           <div className="hoverEffect">
@@ -206,8 +235,7 @@ function Nav() {
                         />
                       </span>
                     </li>
-                  ) : item.title === t("contact") ||
-                    item.title === t("home") ? (
+                  ) : item.id === "contact" || item.id === "home" ? (
                     <li className="hoverEffect" onClick={item.method}>
                       <span>{item.title}</span>
                     </li>

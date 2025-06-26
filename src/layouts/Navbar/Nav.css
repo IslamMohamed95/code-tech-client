@@ -484,18 +484,25 @@
   #Nav .subMenuHolder ul {
     width: 100%;
     display: flex;
+    align-items: flex-start;
     justify-content: space-evenly;
     list-style: none;
     padding: 1em;
   }
 
   #Nav .subMenuHolder ul hr {
-    height: 70px;
+    margin-top: 3em;
+    height: 150px;
     border: none;
     width: 0.5px;
     background-color: rgb(187, 187, 187);
   }
-
+  #Nav .subMenuHolder ul hr:last-child {
+    display: none;
+  }
+  #Nav .subMenuHolder ul div {
+    padding: 0.5em 1em;
+  }
   #Nav .subMenuHolder ul div h3 {
     font-size: 0.9em;
     color: var(--base-color);
@@ -509,13 +516,14 @@
 
   #Nav .subMenuHolder ul ul li {
     margin: 0.2em 0;
-    font-size: 0.85em;
-    font-weight: 600;
+    font-size: 0.7em;
+    font-weight: lighter;
     color: var(--medium-gray);
   }
 
   .activeDesktopMenu {
-    max-height: 400px !important;
+    max-height: 800px !important;
+    overflow-y: scroll;
     opacity: 1 !important;
     visibility: visible !important;
     transform: translateY(0) !important;
@@ -546,10 +554,42 @@
   #Nav .subMenuHolder ul div h3 {
     font-size: 1em;
   }
+  #Nav .subMenuHolder ul hr {
+    height: 200px;
+  }
+  html[dir="ltr"] .subMenuHolder ul li {
+    padding-left: 10px;
+  }
+  html[dir="rtl"] .subMenuHolder ul li {
+    padding-right: 10px;
+  }
+  #Nav .subMenuHolder ul li {
+    position: relative;
+    font-weight: lighter;
+    font-size: 0.8em;
+    transition: border-left 2s ease-in-out;
+  }
 
-  #Nav .subMenuHolder ul ul li {
-    font-weight: normal;
-    font-size: 0.95em;
+  html[dir="ltr"] #Nav .subMenuHolder ul li::before {
+    left: 0;
+  }
+  html[dir="rtl"] #Nav .subMenuHolder ul li::before {
+    right: 0;
+  }
+  #Nav .subMenuHolder ul li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--base-color);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  #Nav .subMenuHolder ul li:hover::before {
+    transform: scaleY(1);
   }
 }
 
@@ -596,9 +636,11 @@
   #Nav .subMenuHolder ul div h3 {
     font-size: 1.2em;
   }
-
+  #Nav .subMenuHolder ul hr {
+    height: 250px;
+  }
   #Nav .subMenuHolder ul ul li {
-    font-size: 1.2em;
+    font-size: 1em;
   }
   #Nav nav > div > div:nth-child(3) > div hr {
     height: 25px;

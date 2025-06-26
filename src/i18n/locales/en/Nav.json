@@ -8,5 +8,48 @@
   "contact": "Contact",
   "btn": "Try Demo",
   "arTitle": "AR",
-  "enTitle": "EN"
+  "enTitle": "EN",
+  "prdocutsSubMenu": [
+    {
+      "title": "ERP Solutions",
+      "arr": [
+        "Customer Relationships",
+        "General Accounts",
+        "Inventory",
+        "Purchasing",
+        "Sales",
+        "Financial Transactions",
+        "Human Resources",
+        "Production",
+        "Project Management",
+        "Maintenance",
+        "Reports"
+      ]
+    },
+    {
+      "title": "Websites & Applications",
+      "arr": [
+        "Hosting & Domains",
+        "Website Development",
+        "Mobile Application Development"
+      ]
+    },
+    {
+      "title": "E-commerce",
+      "arr": [
+        "Product Management",
+        "Advertisement Management",
+        "Payment Systems",
+        "Shipping and Delivery"
+      ]
+    },
+    {
+      "title": "Digital Marketing",
+      "arr": [
+        "Social Media Platform Management",
+        "Brand Identity and Branding",
+        "Media Buying and Digital Marketing"
+      ]
+    }
+  ]
 }
