@@ -9,7 +9,7 @@ import { WebContext } from "../../context/WebContext";
 function PriceList() {
   const [activeIndex, setActiveIndex] = useState(1),
     { t } = useTranslation(["priceList"]),
-    { registerRef } = useContext(WebContext),
+    { registerRef, lang } = useContext(WebContext),
     priceListRef = useRef(null);
 
   const yearlyTranslations = useMemo(
@@ -344,7 +344,7 @@ function PriceList() {
                           <div>{y.price.value} 元</div>
                           <div>
                             <span>{y.price.time}</span>
-                            <p>time</p>
+                            {lang === "en" ? <p>time</p> : ""}
                           </div>
                         </div>
                       )}
