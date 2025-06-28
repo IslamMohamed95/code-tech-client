@@ -277,10 +277,6 @@
 }
 
 @media (min-width: 768px) {
-  #whyChooseUs .swiper-slide .container .shadow {
-    padding: 0 10px 10px;
-  }
-
   #whyChooseUs .contentContainer h3 {
     font-size: 1.7em;
   }
@@ -297,8 +293,11 @@
     right: 42%;
   }
 
-  #whyChooseUs .swiper-slide .container .shadow {
-    padding: 0 15px 10px 0;
+  html[dir="ltr"] #whyChooseUs .swiper-slide .container .shadow {
+    padding: 0 0 10px 10px;
+  }
+  html[dir="rtl"] #whyChooseUs .swiper-slide .container .shadow {
+    padding: 0 10px 10px 0;
   }
 
   #whyChooseUs .swiper-slide .container .shadow p {
