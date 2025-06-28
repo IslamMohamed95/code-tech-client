@@ -172,7 +172,7 @@ html[dir="rtl"] .floating-input textarea:not(:placeholder-shown) + label {
   transition: background 0.3s;
 }
 .submit-btn:hover {
-  background: #0056b3;
+  background: var(--primary-color);
 }
 
 /* Mobile/Tablet (<769px): remove form shadow */
