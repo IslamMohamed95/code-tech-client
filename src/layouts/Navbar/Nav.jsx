@@ -135,7 +135,7 @@ function Nav() {
                 className={
                   lang === "ar" ? "hoverEffect activeLang" : "hoverEffect"
                 }
-                onClick={handleLang}
+                onClick={() => handleLang(0)}
               >
                 <Flag code="SA" />
               </span>
@@ -144,7 +144,7 @@ function Nav() {
                 className={
                   lang === "en" ? "hoverEffect activeLang" : "hoverEffect"
                 }
-                onClick={handleLang}
+                onClick={() => handleLang(1)}
               >
                 <Flag code="US" />
               </span>
@@ -295,7 +295,7 @@ function Nav() {
                     className={
                       lang === "ar" ? "hoverEffect activeLang" : "hoverEffect"
                     }
-                    onClick={handleLang}
+                    onClick={() => handleLang(0)}
                   >
                     <Flag code="SA" />
                   </span>
@@ -304,7 +304,7 @@ function Nav() {
                     className={
                       lang === "en" ? "hoverEffect activeLang" : "hoverEffect"
                     }
-                    onClick={handleLang}
+                    onClick={() => handleLang(1)}
                   >
                     <Flag code="US" />
                   </span>

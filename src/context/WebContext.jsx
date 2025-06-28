@@ -39,20 +39,23 @@ const WebProvider = ({ children }) => {
     setIsHamburgerOpen(false);
   };
 
-  const handleLang = () => {
-    if (lang === "ar") {
-      i18n.changeLanguage("en");
-      document.documentElement.setAttribute("dir", "ltr");
-      setLang("en");
-      localStorage.setItem("lang", "en");
-      localStorage.setItem("prevLang", "ar");
-    } else {
-      i18n.changeLanguage("ar");
-      document.documentElement.setAttribute("dir", "rtl");
-      setLang("ar");
-      localStorage.setItem("lang", "ar");
-      localStorage.setItem("prevLang", "en");
-    }
+  const handleLang = (index) => {
+    // Define language based on index
+    const selectedLang = index === 0 ? "ar" : "en";
+
+    // If selected language is same as current, do nothing
+    if (lang === selectedLang) return;
+
+    // Otherwise, proceed with language switch
+    i18n.changeLanguage(selectedLang);
+    document.documentElement.setAttribute(
+      "dir",
+      selectedLang === "ar" ? "rtl" : "ltr"
+    );
+    setLang(selectedLang);
+    localStorage.setItem("lang", selectedLang);
+    localStorage.setItem("prevLang", lang); // Store previous
+
     setLoading(true);
     setAnimate(true);
   };
