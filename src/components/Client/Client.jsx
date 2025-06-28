@@ -4,49 +4,28 @@ import "swiper/css/pagination";
 
 import { Pagination, Autoplay } from "swiper/modules";
 import { useTranslation } from "react-i18next";
-import { useCallback, useState, useEffect, useRef } from "react";
+import { useCallback, useState, useEffect } from "react";
 
 import "./Client.css";
 
 function Client() {
   const { t } = useTranslation(["client"]);
   const [images, setImages] = useState([]);
-  const [isVisible, setIsVisible] = useState(false);
-  const containerRef = useRef(null);
 
-  // Trigger image load on scroll
+  // Dynamically load all 37 subMain images once on mount
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "0px 0px 200px 0px" }
-    );
-
-    if (containerRef.current) observer.observe(containerRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  // Dynamically load all 37 subMain images
-  useEffect(() => {
-    if (!isVisible) return;
-
     const loadImages = async () => {
       const imports = await Promise.all(
         Array.from({ length: 37 }, (_, i) =>
           import(`../../assets/clients/subMain/${i + 1}.webp`)
         )
       );
-
       const subImages = imports.map((mod) => mod.default);
       setImages(subImages);
     };
 
     loadImages();
-  }, [isVisible]);
+  }, []);
 
   const handleProgress = useCallback((swiper) => {
     swiper.slides.forEach((slide) => {
@@ -65,11 +44,7 @@ function Client() {
   }, []);
 
   return (
-    <section
-      id="client"
-      aria-label="Client carousel section"
-      ref={containerRef}
-    >
+    <section id="client" aria-label="Client carousel section">
       <div>
         <h2>{t("title")}</h2>
         <span className="one"></span>
@@ -77,7 +52,7 @@ function Client() {
       </div>
 
       <div className="swiperHolder">
-        {isVisible && (
+        {images.length > 0 && (
           <Swiper
             speed={900}
             centeredSlides
