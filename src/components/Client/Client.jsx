@@ -4,27 +4,17 @@ import "swiper/css/pagination";
 
 import { Pagination, Autoplay } from "swiper/modules";
 import { useTranslation } from "react-i18next";
-import { useMemo, useCallback, useState, useEffect, useRef } from "react";
+import { useCallback, useState, useEffect, useRef } from "react";
 
 import "./Client.css";
 
-// Main Clients
-import m1 from "../../assets/clients/Main/main1.webp";
-import m2 from "../../assets/clients/Main/main2.webp";
-import m3 from "../../assets/clients/Main/main3.webp";
-import m4 from "../../assets/clients/Main/main4.webp";
-import m5 from "../../assets/clients/Main/main5.webp";
-import m6 from "../../assets/clients/Main/main6.webp";
-
-const mainImages = [m1, m2, m3, m4, m5, m6];
-
 function Client() {
   const { t } = useTranslation(["client"]);
-  const [images, setImages] = useState(mainImages);
+  const [images, setImages] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
 
-  // Lazy load subImages when component becomes visible
+  // Trigger image load on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -37,15 +27,14 @@ function Client() {
     );
 
     if (containerRef.current) observer.observe(containerRef.current);
-
     return () => observer.disconnect();
   }, []);
 
+  // Dynamically load all 37 subMain images
   useEffect(() => {
     if (!isVisible) return;
 
-    // Dynamically import subImages to reduce bundle size
-    const loadSubImages = async () => {
+    const loadImages = async () => {
       const imports = await Promise.all(
         Array.from({ length: 37 }, (_, i) =>
           import(`../../assets/clients/subMain/${i + 1}.webp`)
@@ -53,10 +42,10 @@ function Client() {
       );
 
       const subImages = imports.map((mod) => mod.default);
-      setImages((prev) => [...prev, ...subImages]);
+      setImages(subImages);
     };
 
-    loadSubImages();
+    loadImages();
   }, [isVisible]);
 
   const handleProgress = useCallback((swiper) => {

@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { useContext, useMemo } from "react";
 import { WebContext } from "../../context/WebContext";
 
-// Import AR Images
+// Arabic Images
 import bannerOneAR from "../../assets/WhyChooseUs/bannerOneAR.webp";
 import bannerTwoAR from "../../assets/WhyChooseUs/bannerTwoAR.webp";
 import bannerThreeAR from "../../assets/WhyChooseUs/bannerThreeAR.webp";
@@ -21,7 +21,7 @@ import bannerEightAR from "../../assets/WhyChooseUs/bannerEightAR.webp";
 import bannerNineAR from "../../assets/WhyChooseUs/bannerNineAR.webp";
 import bannerTenAR from "../../assets/WhyChooseUs/bannerTenAR.webp";
 
-// Import EN Images
+// English Images
 import bannerOneEN from "../../assets/WhyChooseUs/bannerOneEN.webp";
 import bannerTwoEN from "../../assets/WhyChooseUs/bannerTwoEN.webp";
 import bannerThreeEN from "../../assets/WhyChooseUs/bannerThreeEN.webp";
@@ -87,6 +87,8 @@ function WhyChooseUs() {
 
         <div className="swiperContainer">
           <Swiper
+            dir="ltr" // ✅ Force LTR always
+            key={lang} // ✅ Re-render on lang switch
             speed={1200}
             loop
             centeredSlides
@@ -112,8 +114,16 @@ function WhyChooseUs() {
                   <img
                     src={img}
                     alt={title}
+                    loading={i === 0 ? "eager" : "lazy"}
                     decoding="async"
-                    fetchPriority="auto"
+                    fetchPriority={i === 0 ? "high" : "low"}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                      borderRadius: "1rem",
+                    }}
                   />
                   <div className="shadow">
                     <p>{title}</p>

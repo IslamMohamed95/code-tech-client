@@ -31,14 +31,14 @@ const HeroSection = () => {
   return (
     <div id="hero">
       <Swiper
+        dir="ltr" // 🔒 Force LTR always
         speed={1200}
-        key={lang}
+        key={lang} // Forces re-render when language changes
         loop
         navigation
         grabCursor
-        freeMode
         pagination={{ dynamicBullets: true }}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        autoplay={{ delay: 4500, disableOnInteraction: false }}
         modules={[Pagination, Autoplay, Navigation]}
         className="mySwiper"
       >

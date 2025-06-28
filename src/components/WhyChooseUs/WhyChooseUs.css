@@ -1,5 +1,6 @@
 @media (min-width: 320px) {
   #whyChooseUs {
+    direction: ltr;
     position: relative;
     margin: 2em 0;
     width: 100%;

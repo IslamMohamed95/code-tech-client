@@ -1,4 +1,5 @@
 #hero {
+  direction: ltr;
   padding-top: 2.5em;
   display: flex;
   justify-content: center;
@@ -8,7 +9,6 @@
   width: 95%;
   border-radius: 20px;
 }
-
 #hero .mySwiper .swiper-slide {
   width: 100%;
 }
@@ -59,6 +59,12 @@
   #hero {
     margin-bottom: 0;
   }
+  #hero .swiper-button-next {
+    right: 30px;
+  }
+  #hero .swiper-button-prev {
+    left: 30px;
+  }
 
   #hero .swiper-pagination {
     bottom: 20px !important;
@@ -85,21 +91,6 @@
   #hero .mySwiper .swiper-slide img {
     min-height: 78dvh;
     max-height: 78dvh;
-  }
-  html[dir="ltr"] #hero .swiper-button-next {
-    right: 45px;
-  }
-  html[dir="ltr"] #hero .swiper-button-prev {
-    left: 45px;
-  }
-  html[dir="rtl"] #hero .swiper-button-next {
-    left: 45px;
-  }
-  html[dir="rtl"] #hero .swiper-button-prev {
-    right: 45px;
-  }
-  #hero .swiper-pagination {
-    bottom: 35px !important;
   }
 }
 
