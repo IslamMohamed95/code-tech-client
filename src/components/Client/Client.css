@@ -9,7 +9,7 @@
 
 #client .swiperHolder {
   padding: 1em 0;
-  width: 100%;
+  width: 90%;
 }
 
 #client .swiper {
@@ -108,13 +108,25 @@
   font-size: 0.9em;
 }
 
+#client p {
+  width: 90%;
+  text-align: center;
+  color: grey;
+}
+
+@media (min-width: 320px) {
+  #client p {
+    font-size: 0.8em;
+  }
+}
+
 /* Media Queries */
 @media (min-width: 420px) {
   #client h2 {
     font-size: 1.2em;
   }
 
-  #client > div:last-child p {
+  #client p {
     font-size: 1.05em;
   }
 

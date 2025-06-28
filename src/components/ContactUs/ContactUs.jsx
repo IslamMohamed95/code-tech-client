@@ -11,9 +11,9 @@ import { WebContext } from "../../context/WebContext";
 import { useTranslation } from "react-i18next";
 
 function ContactUs() {
-  const { registerRef } = useContext(WebContext),
-    contactRef = useRef(null),
-    { t } = useTranslation("contactUs");
+  const { registerRef } = useContext(WebContext);
+  const contactRef = useRef(null);
+  const { t } = useTranslation("contactUs");
 
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [selectedService, setSelectedService] = useState("");
@@ -56,6 +56,7 @@ function ContactUs() {
   );
 
   const toggleDropdown = () => setDropdownOpen((prev) => !prev);
+
   const handleSelect = (option) => {
     setSelectedService(option);
     setDropdownOpen(false);
@@ -82,7 +83,13 @@ function ContactUs() {
                 className={i === selectedIndex ? "active" : ""}
                 onClick={() => setSelectedIndex(i)}
               >
-                <img src={s.img} alt="Service visual" loading="lazy" />
+                <img
+                  src={s.img}
+                  alt={s.title}
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                />
                 <div className="text">
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
@@ -99,18 +106,30 @@ function ContactUs() {
 
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="floating-input">
-              <input type="text" id="name" placeholder=" " required />
               <label htmlFor="name">{t("form.name")}</label>
+              <input
+                type="text"
+                id="name"
+                placeholder=" "
+                autoComplete="name"
+                required
+              />
             </div>
 
             <div className="floating-input">
-              <input type="email" id="email" placeholder=" " required />
               <label htmlFor="email">{t("form.email")}</label>
+              <input
+                type="email"
+                id="email"
+                placeholder=" "
+                autoComplete="email"
+                required
+              />
             </div>
 
             <div className="floating-input">
-              <input type="tel" id="phone" placeholder=" " />
               <label htmlFor="phone">{t("form.mobile")}</label>
+              <input type="tel" id="phone" placeholder=" " autoComplete="tel" />
             </div>
 
             {/* Service Type Dropdown */}
@@ -119,6 +138,24 @@ function ContactUs() {
                 isDropdownOpen || selectedService ? "active" : ""
               }`}
             >
+              <label htmlFor="service">{t("form.service")}</label>
+
+              {/* Hidden input to link with label */}
+              <input
+                id="service"
+                type="text"
+                value={selectedService}
+                readOnly
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  opacity: 0,
+                  height: 0,
+                  pointerEvents: "none",
+                }}
+                tabIndex={-1}
+              />
+
               <div
                 className="select-trigger"
                 onClick={toggleDropdown}
@@ -137,29 +174,33 @@ function ContactUs() {
                   {serviceOptions.map((option) => (
                     <li
                       key={option}
-                      onMouseDown={() => handleSelect(option)} // prevents blur before click
+                      onMouseDown={() => handleSelect(option)} // avoid losing focus before click
                     >
                       {option}
                     </li>
                   ))}
                 </ul>
               )}
-              <label htmlFor="service">{t("form.service")}</label>
             </div>
 
             <div className="floating-input">
-              <input type="text" id="company" placeholder=" " />
               <label htmlFor="company">{t("form.company")}</label>
+              <input
+                type="text"
+                id="company"
+                placeholder=" "
+                autoComplete="organization"
+              />
             </div>
 
             <div className="floating-input">
-              <input type="text" id="business" placeholder=" " />
               <label htmlFor="business">{t("form.business")}</label>
+              <input type="text" id="business" placeholder=" " />
             </div>
 
             <div className="floating-input">
-              <textarea id="message" placeholder=" " rows="4" required />
               <label htmlFor="message">{t("form.desc")}</label>
+              <textarea id="message" placeholder=" " rows="4" required />
             </div>
 
             <button type="submit" className="submit-btn">

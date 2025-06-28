@@ -220,7 +220,6 @@
   }
 
   #Nav .langContainer > div:first-child {
-    width: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
