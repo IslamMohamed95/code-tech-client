@@ -30,16 +30,6 @@ const HeroSection = () => {
 
   return (
     <div id="hero">
-      {/* Optional preload via React Helmet */}
-      {/* <Helmet>
-        <link
-          rel="preload"
-          as="image"
-          href={lang === "ar" ? oneAR : oneEN}
-          fetchpriority="high"
-        />
-      </Helmet> */}
-
       <Swiper
         speed={1200}
         key={lang}
