@@ -137,6 +137,10 @@
     font-weight: lighter;
     margin: 0 0.45em;
   }
+  #footer .footerContainer > div > div ul a {
+    text-decoration: none;
+    color: white;
+  }
 
   #footer .footerContainer > div > div ul li a {
     font-size: 0.8em;

@@ -50,12 +50,6 @@ const HeroSection = () => {
               loading={index === 0 ? "eager" : "lazy"}
               decoding="async"
               fetchPriority={index === 0 ? "high" : "low"}
-              style={{
-                width: "100%",
-                height: "auto",
-                aspectRatio: "16 / 9",
-                objectFit: "cover",
-              }}
             />
           </SwiperSlide>
         ))}

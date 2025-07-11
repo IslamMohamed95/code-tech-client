@@ -32,18 +32,17 @@ function Nav() {
   const { t } = useTranslation(["nav"]);
   const subMenuRef = useRef();
 
-  // Close submenu when clicking outside
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (subMenuRef.current && !subMenuRef.current.contains(e.target)) {
         setVisibleSubMenu(false);
         setActiveDeskTopNavIndex(null);
+        setAnimate(true);
       }
     };
-
     document.addEventListener("mousedown", handleOutsideClick);
     return () => document.removeEventListener("mousedown", handleOutsideClick);
-  }, [setVisibleSubMenu, setActiveDeskTopNavIndex]);
+  }, []);
 
   const navList = [
     {
@@ -84,15 +83,13 @@ function Nav() {
   };
 
   const handleNavClick = (index) => {
-    if (activeDeskTopNavIndex === index) {
+    setAnimate(true);
+    if (activeDeskTopNavIndex === index && visibleSubMenu) {
       setVisibleSubMenu(false);
-      setTimeout(() => setActiveDeskTopNavIndex(null), 200);
+      setActiveDeskTopNavIndex(null);
     } else {
-      setVisibleSubMenu(false);
-      setTimeout(() => {
-        setActiveDeskTopNavIndex(index);
-        setVisibleSubMenu(true);
-      }, 200);
+      setActiveDeskTopNavIndex(index);
+      setVisibleSubMenu(true);
     }
   };
 
@@ -109,16 +106,53 @@ function Nav() {
           <ul>
             {navList.map((item, i) =>
               item.id === "products" ? (
-                <li
-                  key={`main-product-${i}`}
-                  className="hoverEffect"
-                  onClick={() => handleNavClick(i)}
+                <div
+                  key={`wrapper-${i}`}
+                  className="desktopSubMenuWrapper"
+                  ref={subMenuRef}
                 >
-                  {item.title} <MdKeyboardArrowDown />
-                </li>
+                  <li className="hoverEffect" onClick={() => handleNavClick(i)}>
+                    {item.title} <MdKeyboardArrowDown />
+                  </li>
+
+                  {/* ✅ Animated submenu always rendered */}
+                  <div
+                    className={`subMenuHolder ${
+                      visibleSubMenu && activeDeskTopNavIndex === i
+                        ? "activeDesktopMenu"
+                        : ""
+                    }`}
+                  >
+                    <ul>
+                      {item.list.map((group, j) => (
+                        <React.Fragment key={`submenu-group-${j}`}>
+                          <div>
+                            <h3>{group.title}</h3>
+                            <ul>
+                              {group.arr.map((subItem, k) => (
+                                <Link
+                                  key={`submenu-item-${j}-${k}`}
+                                  to={item.path}
+                                  onClick={() => {
+                                    setAnimate(true);
+                                    setVisibleSubMenu(false);
+                                    setActiveDeskTopNavIndex(null);
+                                    setLoading(true);
+                                  }}
+                                >
+                                  <li>{subItem}</li>
+                                </Link>
+                              ))}
+                            </ul>
+                          </div>
+                          <hr />
+                        </React.Fragment>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               ) : (
                 <Link
-                  key={`main-link-${i}`}
                   to={item.path}
                   className="hoverEffect"
                   onClick={item.method}
@@ -153,47 +187,10 @@ function Nav() {
               <button className="hoverEffect">{t("btn")}</button>
             </div>
           </div>
-
-          {/* Desktop submenu */}
-          <div
-            ref={subMenuRef}
-            className={
-              visibleSubMenu && activeDeskTopNavIndex !== null
-                ? "subMenuHolder activeDesktopMenu"
-                : "subMenuHolder"
-            }
-          >
-            <ul>
-              {activeDeskTopNavIndex !== null &&
-                navList[activeDeskTopNavIndex].list.map((group, i) => (
-                  <React.Fragment key={`submenu-group-${i}`}>
-                    <div>
-                      <h3>{group.title}</h3>
-                      <ul>
-                        {group.arr.map((item, j) => (
-                          <Link
-                            key={`submenu-item-${i}-${j}`}
-                            to={navList[activeDeskTopNavIndex].path}
-                            onClick={() => {
-                              setActiveDeskTopNavIndex(null);
-                              setAnimate(true);
-                              setLoading(true);
-                            }}
-                          >
-                            <li>{item}</li>
-                          </Link>
-                        ))}
-                      </ul>
-                    </div>
-                    <hr />
-                  </React.Fragment>
-                ))}
-            </ul>
-          </div>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* ✅ Mobile Menu */}
       <div>
         <div>
           <div className="hoverEffect">

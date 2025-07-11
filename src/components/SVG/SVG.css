@@ -46,39 +46,51 @@
     align-items: center;
   }
 
-  #svg .svgContainer > div {
-    width: 90%;
-    margin-bottom: 2em;
-  }
-
-  #svg .svgContainer p {
-    width: 90%;
+  #svg .svgContainer p,
+  #svg h2 {
     font-size: 0.9em;
     text-align: center;
   }
 
-  #svg .svgContainer p:last-child {
+  #svg h2 {
+    width: 100%;
+    color: gray;
+    margin-top: 2em;
+  }
+  #svg .svgContainer p {
     color: var(--base-color);
   }
-
-  #svg .svgContainer p:first-child {
-    color: gray;
-  }
-
   #svg .svgContainer img {
-    width: 100%;
+    width: 90%;
     margin-bottom: 2em;
   }
   #svg .btnContainer {
-    text-align: center;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   #svg .btnContainer button {
     border: none;
     background-color: var(--base-color);
     padding: 0.5em 2em;
     color: white;
-
     border-radius: 10px;
+    margin-top: 2em;
+  }
+  #svg .btnContainer > div {
+    display: flex;
+    justify-content: center;
+  }
+  #svg .btnContainer p {
+    font-size: 0.8em;
+    line-height: 1.3;
+  }
+  #svg .btnContainer hr {
+    display: none;
+  }
+  #svg .btnContainer svg {
+    display: none;
   }
 }
 
@@ -91,17 +103,12 @@
     width: 100%;
   }
 
-  #svg .svgContainer > div {
-    width: 90%;
-  }
-
   #svg .svgContainer p {
-    font-size: 0.9em;
     width: 92%;
   }
 
-  #svg .svgContainer img {
-    width: 95%;
+  #svg h2 {
+    font-size: 0.9em;
   }
 }
 @media (min-width: 768px) {
@@ -129,36 +136,143 @@
   }
 
   #svg .svgContainer img {
-    width: 100%;
+    width: 65%;
   }
 
   #svg .svgContainer p {
-    font-size: 1em;
+    font-size: 0.9em;
   }
   #svg .btnContainer button {
-    padding: 0.8em 1.5em;
+    padding: 0.5em 1.5em;
     font-size: 0.95em;
   }
 }
 @media (min-width: 1024px) {
   #svg {
-    margin: 6.5em 0;
+    margin: 0em 0;
   }
-
-  #svg .mainContainer {
-    width: 65%;
-  }
-
   #svg .headerContainer label {
     font-size: 1.5em;
   }
-
-  #svg .svgContainer p {
+  #svg h2 {
     font-size: 1.2em;
+    margin-bottom: 2em;
+  }
+  #svg .mainContainer {
+    width: 85%;
+  }
+  #svg .btnContainer {
+    align-items: flex-start;
+    width: 50%;
+  }
+  #svg .btnContainer > div {
+    position: relative;
+    justify-content: flex-start;
+  }
+  #svg .btnContainer #left,
+  #svg .btnContainer #top {
+    display: block;
+    position: absolute;
+    background-color: var(--base-color);
+    border: none;
+  }
+  #svg .btnContainer #left {
+    top: -20px;
+    left: 0;
+    width: 0.1em;
+    height: 60%;
+  }
+  #svg .btnContainer #top {
+    top: 0;
+    left: -20px;
+    height: 0.1em;
+    width: 30%;
+  }
+  html[dir="ltr"] #svg .btnContainer #top {
+    top: -20px;
+  }
+  html[dir="rtl"] #svg .btnContainer #top {
+    left: -20px;
+  }
+  html[dir="ltr"] #svg .btnContainer #left {
+    left: -20px;
+  }
+  html[dir="rtl"] #svg .btnContainer #left {
+    right: -20px;
+  }
+  html[dir="ltr"] #svg .btnContainer p {
+    text-align: left;
+  }
+  html[dir="rtl"] #svg .btnContainer p {
+    text-align: right;
+  }
+  #svg .btnContainer p {
+    line-height: 1.3;
+    font-size: 1em;
+    color: rgb(63, 63, 63);
+  }
+
+  #svg .svgContainer img {
+    width: 50%;
+  }
+  #svg .svgContainer {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  #svg .btnContainer svg {
+    display: block;
+  }
+  #svg #btnHolder {
+    margin-top: 1.5em;
+    width: 45%;
+    background-color: var(--base-color);
+    border-radius: 35px;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  #svg .btnContainer button {
+    margin: 0;
+    border-radius: 0px;
+    background-color: transparent;
+  }
+  #svg .btnContainer svg {
+    font-size: 1.8em;
+    position: absolute;
+    right: 5px;
+    border-radius: 50%;
+    padding: 8px;
+    color: var(--primary-color);
+    background-color: white;
+    animation: arrowmovemnt 2s infinite alternate ease-in-out;
+  }
+  @keyframes arrowmovemnt {
+    from {
+      transform: scale(0.8);
+    }
+    to {
+      transform: scale(1);
+    }
   }
 }
 @media (min-width: 1440px) {
+  #svg .mainContainer {
+    width: 80%;
+  }
+  #svg h2 {
+    font-size: 1.5em;
+  }
+  #svg .svgContainer img {
+    width: 60%;
+  }
+  #svg .btnContainer p {
+    font-size: 1.2em;
+  }
   #svg .btnContainer button {
     font-size: 1.1em;
+  }
+  #svg #btnHolder {
+    width: 220px;
   }
 }

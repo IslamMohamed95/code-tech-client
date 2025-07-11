@@ -10,6 +10,9 @@ import svgAR from "../../assets/SVG/SVGAR.webp";
 // Import EN Image
 import svgEN from "../../assets/SVG/SVGEN.webp";
 
+//Import Icons
+import { FaArrowRight } from "react-icons/fa";
+
 function SVG() {
   const { t } = useTranslation("svg");
   const { lang, scrollToView } = useContext(WebContext);
@@ -23,22 +26,25 @@ function SVG() {
         <div className="headerContainer">
           <label>{t("title")}</label>
         </div>
-
+        <h2>{t("desc")}</h2>
         <div className="svgContainer">
-          <div>
-            <p>{t("desc")}</p>
-          </div>
           <img className="hoverEffect" src={svg} alt="svgImg" />
-          <p>{t("feature")}</p>
-        </div>
-
-        <div className="btnContainer">
-          <button
-            className="hoverEffect"
-            onClick={() => scrollToView("priceList")}
-          >
-            {t("btn")}
-          </button>
+          <div className="btnContainer">
+            <div>
+              <hr id="left" />
+              <hr id="top" />
+              <p>{t("feature")}</p>
+            </div>
+            <div id="btnHolder">
+              <button
+                className="hoverEffect"
+                onClick={() => scrollToView("priceList")}
+              >
+                {t("btn")}
+              </button>
+              <FaArrowRight />
+            </div>
+          </div>
         </div>
       </div>
     </section>

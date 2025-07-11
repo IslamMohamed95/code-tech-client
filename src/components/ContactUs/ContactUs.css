@@ -123,13 +123,14 @@
   border-color: var(--base-color);
 }
 .floating-input input:focus + label,
-.floating-input input:not(:placeholder-shown) + label,
+.floating-input input:valid + label,
 .floating-input textarea:focus + label,
-.floating-input textarea:not(:placeholder-shown) + label {
-  top: -12px;
-  font-size: 0.8rem;
-  color: var(--base-color);
+.floating-input textarea:valid + label {
+  top: -12px !important;
+  font-size: 0.8rem !important;
+  color: var(--base-color) !important;
 }
+
 html[dir="ltr"] .floating-input label {
   left: 12px;
   right: auto;

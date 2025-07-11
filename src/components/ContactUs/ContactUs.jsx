@@ -66,13 +66,19 @@ function ContactUs() {
     e.preventDefault();
     // TODO: handle form logic
   };
+  const restrictToNumbers = (e) => {
+    const allowed = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"];
+    if (!/[0-9]/.test(e.key) && !allowed.includes(e.key)) {
+      e.preventDefault();
+    }
+  };
 
   useEffect(() => {
     registerRef("contact", contactRef.current);
   }, [registerRef]);
 
   return (
-    <section className="contact-section" ref={contactRef}>
+    <section className="contact-section">
       <div className="mainContainer">
         {/* Services List */}
         <div className="servicesSidebar">
@@ -104,32 +110,44 @@ function ContactUs() {
           <h2>{t("title")}</h2>
           <p>{t("desc")}</p>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form
+            className="contact-form"
+            onSubmit={handleSubmit}
+            ref={contactRef}
+          >
             <div className="floating-input">
-              <label htmlFor="name">{t("form.name")}</label>
               <input
                 type="text"
                 id="name"
-                placeholder=" "
-                autoComplete="name"
+                name="name"
+                placeholder=""
                 required
               />
+              <label htmlFor="name">{t("form.name")}</label>
             </div>
 
             <div className="floating-input">
-              <label htmlFor="email">{t("form.email")}</label>
               <input
                 type="email"
+                name="email"
                 id="email"
                 placeholder=" "
-                autoComplete="email"
                 required
               />
+              <label htmlFor="email">{t("form.email")}</label>
             </div>
 
             <div className="floating-input">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder=" "
+                autoComplete="tel"
+                required
+                onKeyDown={restrictToNumbers}
+              />
               <label htmlFor="phone">{t("form.mobile")}</label>
-              <input type="tel" id="phone" placeholder=" " autoComplete="tel" />
             </div>
 
             {/* Service Type Dropdown */}
@@ -184,23 +202,36 @@ function ContactUs() {
             </div>
 
             <div className="floating-input">
-              <label htmlFor="company">{t("form.company")}</label>
               <input
                 type="text"
                 id="company"
                 placeholder=" "
                 autoComplete="organization"
+                required
               />
+              <label htmlFor="company">{t("form.company")}</label>
             </div>
 
             <div className="floating-input">
+              <input
+                type="text"
+                name="business"
+                id="business"
+                placeholder=" "
+                required
+              />
               <label htmlFor="business">{t("form.business")}</label>
-              <input type="text" id="business" placeholder=" " />
             </div>
 
             <div className="floating-input">
+              <textarea
+                id="message"
+                name="message"
+                placeholder=" "
+                rows="4"
+                required
+              />
               <label htmlFor="message">{t("form.desc")}</label>
-              <textarea id="message" placeholder=" " rows="4" required />
             </div>
 
             <button type="submit" className="submit-btn">

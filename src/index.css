@@ -8,6 +8,9 @@
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
+html {
+  scroll-padding-top: 250px; /* height of your fixed navbar */
+}
 
 p,
 h2,

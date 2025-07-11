@@ -16,9 +16,8 @@
 #hero .mySwiper .swiper-slide img {
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  aspect-ratio: 16 / 9;
+  height: 500px;
+  object-fit: cover;
 }
 .swiper-pagination-bullet-active {
   opacity: var(--swiper-pagination-bullet-opacity, 1);

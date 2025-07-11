@@ -12,14 +12,38 @@ import { MdEmail } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
 import { IoLocation } from "react-icons/io5";
 import { useTranslation } from "react-i18next";
+import { useContext } from "react";
+import { WebContext } from "../../context/WebContext";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const { t } = useTranslation(["footer"]),
+    { scrollToView, handleLoadingStatus } = useContext(WebContext),
     navList = [
-      t("action.nav.home"),
-      t("action.nav.about"),
-      t("action.nav.products"),
-      t("action.nav.contact"),
+      {
+        id: "home",
+        title: t("action.nav.home"),
+        path: "/",
+        method: () => scrollToView("home"),
+      },
+      {
+        id: "about",
+        title: t("action.nav.about"),
+        path: "/about",
+        method: () => scrollToView("about"),
+      },
+      {
+        id: "pricelist",
+        title: t("action.nav.priceList"),
+        path: "/pricelist",
+        method: () => scrollToView("priceList"),
+      },
+      {
+        id: "contact",
+        title: t("action.nav.contact"),
+        path: "/",
+        method: () => scrollToView("contact"),
+      },
     ],
     navIcons = [<FaFacebook />, <FaInstagram />, <FaLinkedin />],
     policy = [
@@ -82,9 +106,14 @@ function Footer() {
             <div>
               <ul>
                 {navList.map((n, i) => (
-                  <li className="hoverEffect" key={i}>
-                    {n}
-                  </li>
+                  <Link
+                    key={`main-link-${i}`}
+                    to={n.path}
+                    onClick={n.method}
+                    className="hoverEffect"
+                  >
+                    <li key={i}>{n.title}</li>
+                  </Link>
                 ))}
               </ul>
               <ul className="tabletView">
