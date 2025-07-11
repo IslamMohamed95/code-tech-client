@@ -180,22 +180,24 @@
     top: -20px;
     left: 0;
     width: 0.1em;
-    height: 60%;
+    height: 80%;
   }
   #svg .btnContainer #top {
     top: 0;
     left: -20px;
     height: 0.1em;
-    width: 30%;
+    width: 35%;
   }
   html[dir="ltr"] #svg .btnContainer #top {
     top: -20px;
-  }
-  html[dir="rtl"] #svg .btnContainer #top {
     left: -20px;
   }
   html[dir="ltr"] #svg .btnContainer #left {
     left: -20px;
+  }
+  html[dir="rtl"] #svg .btnContainer #top {
+    top: -20px;
+    right: -20px;
   }
   html[dir="rtl"] #svg .btnContainer #left {
     right: -20px;
@@ -222,9 +224,15 @@
   #svg .btnContainer svg {
     display: block;
   }
+
+  html[dir="ltr"] #svg #btnHolder {
+    width: 45%;
+  }
+  html[dir="rtl"] #svg #btnHolder {
+    width: 35%;
+  }
   #svg #btnHolder {
     margin-top: 1.5em;
-    width: 45%;
     background-color: var(--base-color);
     border-radius: 35px;
     overflow: hidden;
@@ -240,12 +248,17 @@
   #svg .btnContainer svg {
     font-size: 1.8em;
     position: absolute;
-    right: 5px;
     border-radius: 50%;
     padding: 8px;
     color: var(--primary-color);
     background-color: white;
     animation: arrowmovemnt 2s infinite alternate ease-in-out;
+  }
+  html[dir="ltr"] #svg .btnContainer svg {
+    right: 5px;
+  }
+  html[dir="rtl"] #svg .btnContainer svg {
+    left: 5px;
   }
   @keyframes arrowmovemnt {
     from {

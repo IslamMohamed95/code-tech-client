@@ -12,6 +12,7 @@ import svgEN from "../../assets/SVG/SVGEN.webp";
 
 //Import Icons
 import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 
 function SVG() {
   const { t } = useTranslation("svg");
@@ -35,14 +36,11 @@ function SVG() {
               <hr id="top" />
               <p>{t("feature")}</p>
             </div>
-            <div id="btnHolder">
-              <button
-                className="hoverEffect"
-                onClick={() => scrollToView("priceList")}
-              >
+            <div id="btnHolder" className="hoverEffect">
+              <button onClick={() => scrollToView("priceList")}>
                 {t("btn")}
               </button>
-              <FaArrowRight />
+              {lang === "ar" ? <FaArrowLeft /> : <FaArrowRight />}
             </div>
           </div>
         </div>
