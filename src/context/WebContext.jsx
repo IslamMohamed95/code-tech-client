@@ -166,6 +166,8 @@ const WebProvider = ({ children }) => {
         setLang,
         i18n,
         handleLang,
+        //navigate
+        navigate,
       }}
     >
       {children}

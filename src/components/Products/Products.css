@@ -100,20 +100,26 @@
     border-radius: 12px;
     padding: 24px;
     flex: 3;
-    overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
   }
 
-  .pipeline-card h3 {
+  .pipeline-card h2 {
     font-size: 1em;
     font-weight: 600;
     margin-bottom: 1em;
     color: var(--primary-color);
   }
-
+  .pipeline-card ul {
+    list-style: none;
+  }
+  .pipeline-card ul li {
+    font-size: 0.8em;
+  }
   .pipeline-card p {
-    font-size: 0.95rem;
-    color: #444;
+    font-size: 0.7rem;
+    margin: 0.5em 0;
+    color: #6e6e6e;
   }
 
   .circle-bg {
@@ -170,8 +176,15 @@
     cursor: pointer;
     transition: 0.3s;
     position: relative;
+    border: none;
+    background-color: transparent;
   }
-
+  html[dir="ltr"] .pipeline-tab {
+    text-align: left;
+  }
+  html[dir="rtl"] .pipeline-tab {
+    text-align: right;
+  }
   .pipeline-tab:hover,
   .pipeline-tab.active {
     color: white;
@@ -317,26 +330,35 @@
 @media (min-width: 768px) {
   .pipeline-main {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 3em;
     min-height: auto;
   }
-
+  .pipeline-card-wrapper {
+    width: 60%;
+  }
   .pipeline-card {
-    width: 30%;
-    height: 370px;
-    padding: 3em;
+    width: 100%;
+    padding: 2em;
     justify-content: flex-start;
   }
 
   .pipeline-tabs-container {
-    width: 70%;
+    width: 40%;
   }
 
-  .pipeline-card h3 {
+  .pipeline-card h2 {
     font-size: 1.2em;
+    margin-bottom: 1em;
+    color: var(--primary-color);
   }
 
+  .pipeline-card ul li {
+    font-size: 0.8em;
+  }
+  .pipeline-card ul li p {
+    font-size: 0.7em;
+  }
   #products .implementHolder {
     padding: 2em;
   }
@@ -378,12 +400,12 @@
     font-size: 1.2em;
   }
 
-  .pipeline-card h3 {
-    font-size: 1.3em;
+  .pipeline-card h2 {
+    font-size: 1.2em;
   }
 
   .pipeline-card p {
-    font-size: 1em;
+    font-size: 0.85em;
   }
 
   .pipeline-tab {
@@ -425,8 +447,11 @@
 }
 
 @media (min-width: 1440px) {
+  .pipeline-main {
+    width: 90%;
+  }
   .pipeline-container .mainContainer {
-    width: 60%;
+    width: 70%;
   }
 
   #products .imgHolder {

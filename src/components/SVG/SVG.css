@@ -188,6 +188,9 @@
     height: 0.1em;
     width: 35%;
   }
+  #svg .btnContainer p {
+    width: 80%;
+  }
   html[dir="ltr"] #svg .btnContainer #top {
     top: -20px;
     left: -20px;
@@ -225,12 +228,10 @@
     display: block;
   }
 
-  html[dir="ltr"] #svg #btnHolder {
-    width: 45%;
+  #svg #btnHolder {
+    width: 200px;
   }
-  html[dir="rtl"] #svg #btnHolder {
-    width: 35%;
-  }
+
   #svg #btnHolder {
     margin-top: 1.5em;
     background-color: var(--base-color);

@@ -11,19 +11,210 @@
   "enTitle": "EN",
   "prdocutsSubMenu": [
     {
+      "mainTitle": "The Ultimate Guide to Advanced IT Solutions and ERP Systems",
+      "content": "Core ERP Solutions for Enterprise Resource Planning",
       "title": "ERP Solutions",
       "arr": [
-        "Customer Relationships",
-        "General Accounts",
-        "Inventory",
-        "Purchasing",
-        "Sales",
-        "Financial Transactions",
-        "Human Resources",
-        "Production",
-        "Project Management",
-        "Maintenance",
-        "Reports"
+        {
+          "label": "General Accounts",
+          "questions": [
+            {
+              "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
+              "answer": "The Chart of Accounts serves as your organization’s complete financial map, offering a structured and logical classification of all financial operations. Our system supports a hybrid classification—combining sequential numbering with thematic grouping—enabling accountants and managers to grasp the financial position quickly and clearly. It features multi-level detailing, from main accounts (like assets and liabilities) to detailed sub-accounts, with customizable levels depending on business size and type. Accounts can be restructured or renumbered without losing historical data. Fully compliant with Saudi accounting standards and International Financial Reporting Standards (IFRS), the system allows for industry-specific customization—construction, trade, manufacturing, and financial services."
+            },
+            {
+              "question": "Opening Entries – A Precise Start for Accurate Accounting",
+              "answer": "Our opening entry module ensures a fast and accurate launch of the accounting system. It includes automated validations to ensure entry balance, with import options from legacy systems or standardized Excel formats. The system offers detailed reports for reviewing and auditing before final posting, with built-in verification mechanisms to ensure data consistency with the opening balance sheet."
+            },
+            {
+              "question": "Journal Entries – Accurate Recording of Every Transaction",
+              "answer": "Our advanced journal entry system supports both manual and automated postings via an intuitive interface designed to reduce errors. It includes templates for recurring transactions and the option to save drafts for later review. The full lifecycle of entries—from creation to approval—is tracked with a permission-based control system. Supporting documents can be attached to each entry, with robust search and retrieval capabilities."
+            },
+            {
+              "question": "Posting to Ledger – Flawless Transition from Journals to Ledgers",
+              "answer": "Fully automated posting ensures accuracy with advanced verification tools. Detailed ledger reports provide full account movement visibility, with pre-posting review options. It supports complex transactions and cost allocations, maintaining a complete audit trail and issuing automatic alerts for posting anomalies."
+            },
+            {
+              "question": "Cost Centers – Advanced Financial Analysis for Strategic Decisions",
+              "answer": "The cost center module enables profitability analysis at the department, project, or product level. It supports hierarchical structures and flexible manual or automatic cost allocations. It offers real-time dashboards and variance analysis comparing actual costs to budgets, providing actionable insights for management."
+            },
+            {
+              "question": "Multi-Currency Management – Global-Ready Financial Operations",
+              "answer": "Our multi-currency engine supports over 180 global currencies, with the ability to add custom currencies as needed. It provides advanced handling of exchange rate differences per international accounting standards, with detailed reports on financial impacts. Built-in tools support currency risk management and hedging strategies."
+            },
+            {
+              "question": "Financial Closing – Error-Free Period-End Processing",
+              "answer": "Closings are streamlined and error-free, with comprehensive checklists ensuring all tasks are completed before period-end. Supports daily, monthly, quarterly, and yearly closings, with partial close options for select accounts. Verification mechanisms and exception reports identify and resolve issues, with tools for generating final financial statements and compliance reports."
+            }
+          ]
+        },
+        {
+          "label": "Inventory",
+          "questions": [
+            {
+              "question": "Warehouse Definition and Management – Optimal Storage Organization",
+              "answer": "Our warehouse management system begins with precise definitions of all storage locations—from central warehouses to remote branches. Each location can have designated managers, operating hours, and detailed internal layouts, including racks and bins, to streamline storage and retrieval operations."
+            },
+            {
+              "question": "Item Management – Smart Product Database",
+              "answer": "Our item database is more than a catalog—it’s an intelligent system with advanced classification and quick search capabilities. It supports various numbering schemes and stores detailed data per item: specifications, weight, dimensions, and high-resolution images. You can also link items to suppliers with historical purchase prices. Tools are included to analyze item performance, identify fast/slow-moving items, and monitor stock thresholds."
+            },
+            {
+              "question": "Inventory Movements – Accurate Tracking of Every Unit",
+              "answer": "Track every movement—from supplier receipt to final delivery. The system supports all transaction types: goods receipts, issues to customers, inter-warehouse transfers, adjustments, and write-offs. Each movement logs detailed info: date/time, responsible personnel, reason, and reference document. Customizable reports by item, movement type, or warehouse support forecasting and consumption pattern analysis."
+            },
+            {
+              "question": "Custody Inventory Management – Complete Accountability and Transparency",
+              "answer": "Designed to manage items handed over as custodial assets, the system tracks delivery, current condition, and returns. Each custody record logs: issue date, usage purpose, item condition, and responsible employee. Automatic alerts notify of pending returns. Reports track overdue, missing, or damaged items for improved accountability."
+            },
+            {
+              "question": "Item Request Workflow – Streamlined and Efficient Processes",
+              "answer": "An organized workflow ensures proper approvals before issuing items. Requests can come from individuals, departments, or large projects. Each request includes priority, justification, and required delivery date. The system checks availability and suggests alternatives. Full lifecycle tracking from request to delivery is included, with analytics on request patterns and fulfillment efficiency."
+            },
+            {
+              "question": "Inventory Counting – Precision in Stock Valuation",
+              "answer": "Supports scheduled, ad-hoc, and surprise counts using modern tools to reduce time and errors. Smart count lists are generated based on item value and movement speed. Tasks can be assigned to teams to prevent duplication. Post-count reports detail discrepancies, suggest root causes, and include e-approval options with audit trails."
+            }
+          ]
+        },
+        {
+          "label": "Purchasing",
+          "questions": [
+            {
+              "question": "Supplier Management – Strategic Vendor Relationships",
+              "answer": "Beyond contact info, each supplier profile includes: commercial history, technical capacity, licenses, financial standing, and past performance. Terms of engagement such as payment periods, bulk discounts, delivery requirements, and packaging specs are recorded. Track supplier history by delivery timelines, product quality, and service level."
+            },
+            {
+              "question": "Purchase Requests – Professional Procurement Planning",
+              "answer": "Beyond contact info, each supplier profile includes: commercial history, technical capacity, licenses, financial standing, and past performance. Terms of engagement such as payment periods, bulk discounts, delivery requirements, and packaging specs are recorded. Track supplier history by delivery timelines, product quality, and service levelRequests can be submitted manually by departments or auto-generated when stock levels drop. Each request includes priority and suggested alternate vendors based on past performance. Custom approval flows based on item type, value, or department are supported. Consolidation of similar requests helps leverage volume discounts and better pricing."
+            },
+            {
+              "question": "Purchase Orders – Accurate Execution of Supply Agreements",
+              "answer": "Approved requests are seamlessly converted into purchase orders. The system generates professional POs with all necessary terms and specifications and allows customization per vendor. Track order status from submission to full delivery with automatic delay alerts and delivery progress tools. Supports PO modifications (quantities, specs, delivery dates) with full audit trails."
+            },
+            {
+              "question": "Purchase Invoices – Rigorous Processing and Review",
+              "answer": "Supports three-way matching (invoice – PO – receipt). Auto-validates quantities, prices, and specs. Exception reports are generated for manual review when discrepancies occur. Partial invoice handling for large orders is supported. Approval workflows ensure only authorized personnel approve invoices, with e-signature and audit logs."
+            },
+            {
+              "question": "Purchase Returns – Efficient Handling of Returned Goods",
+              "answer": "Handles all return scenarios—defective, excess, or incorrect items. Users can specify return reasons and compensation type (refund, replacement, credit note). Each return generates a vendor-ready return document, tracks status until resolved, and supports document/image attachments. Reports by supplier help evaluate quality and improve sourcing decisions."
+            }
+          ]
+        },
+        {
+          "label": "Sales",
+          "questions": [
+            {
+              "question": "Customer Management – Strong and Diverse Customer Base",
+              "answer": "Profiles go beyond basic contact info to include purchase history, preferences, and key notes. Customers can be classified by volume, region, business type, and strategic value. Track credit limits, payment terms, discounts, and preferred delivery methods. The system analyzes customer behavior to uncover sales opportunities and supports loyalty programs."
+            },
+            {
+              "question": "Quotations – A Powerful Marketing Tool",
+              "answer": "Generate professional, branded quotes with customizable templates. Add logos and branding colors. Specify quote validity, payment/delivery terms, and discounts. Auto-calculate totals including taxes and fees. Compare current quotes with previous ones for the same customer."
+            },
+            {
+              "question": "Sales Invoices – Speed and Accuracy in Billing",
+              "answer": "Supports multiple invoice types: cash, credit, and advance. Auto-calculates applicable taxes and integrates with ZATCA’s e-Invoicing system. Invoices can be emailed or sent via SMS instantly. Track invoice status (sent, paid, overdue) and analyze payment trends for better cash flow management."
+            },
+            {
+              "question": "Sales Returns – Professional Handling of Returns",
+              "answer": "A key component in Saudi Arabia’s competitive business environment, the ERP system handles sales returns with high efficiency and accuracy. Key Features:Immediate logging of return requests with reasons (defects, mismatches, customer requests), Automatic financial settlements (customer accounts updated, credit notes issued) and Inventory updates upon return receipt, with product condition classification (resellable, repairable, damaged). Advanced Analytics: Reports show common return reasons, highlight product/service weaknesses, and enable corrective actions. Analyze return trends by customer, product, or region to improve customer satisfaction"
+            },
+            {
+              "question": "Waste Sales Management – Maximize Efficiency, Minimize Loss",
+              "answer": "In line with Saudi Vision 2030’s focus on sustainability, this module tracks and analyzes expired or damaged products. Full Tracking of Damaged Stock: Log all types of waste—expired, transport-damaged, or storage issues—with reasons, dates, and responsible personnel, ensuring full accountability. Performance Analysis: Identify patterns—most damage-prone items, seasonal peaks—to optimize procurement and storage strategies. Early Warning Integration: Automatic alerts before product expiry allow for proactive actions—promotions, redistribution—to minimize losses."
+            }
+          ]
+        },
+        {
+          "label": "Financial Transactions",
+          "questions": [
+            {
+              "question": "Cash Disbursements and Receipts – Full Financial Transparency",
+              "answer": "Track all cash flows with detailed logs: amount, purpose, recipient, and responsible staff. This ensures compliance with Saudi accounting standards and ZATCA requirements. Control and Approval Tools: Multi-level approvals based on transaction value. Daily/weekly cash flow reports support executive decision-making. Seamless Accounting Integration: All transactions auto-post to relevant accounts, ensuring financial accuracy and facilitating audits."
+            },
+            {
+              "question": "Bank Management – Advanced Banking Integration",
+              "answer": "Secure, direct integration with local and international bank accounts. Automated Reconciliation: Auto-matches internal records with bank statements. Reports simplify audit processes. Debit/Credit Notification Management: Tracks all banking notices (charges, interest), categorizes them, and posts appropriate accounting entries."
+            },
+            {
+              "question": "Receivables and Payables – Full Financial Obligation Control",
+              "answer": "Handles checks, promissory notes, and bills of exchange with precision. Check Tracking: Logs details: number, bank, due date, amount. Tracks check status with due date alerts. Proactive Collection Management: Daily/weekly reports of due checks support timely deposits and follow-ups. Collection priorities can be set by check value or client importance. Returned Check Handling: Logs reason, adjusts client account, and posts penalties. Analytical reports assess credit risk."
+            },
+            {
+              "question": "Expense Recording – Tight Cost Control",
+              "answer": "Classify expenses by type (operational, admin, marketing), department, or project. This supports in-depth reporting and financial monitoring. Cost Center Allocation: Allocate expenses per cost center for precise product/service cost analysis and pricing decisions. Approval Tools: Set monthly/annual expense limits per category with alerting tools to prevent overages."
+            },
+            {
+              "question": "Petty Cash Management – Secure Control Over Advances",
+              "answer": "Designed for businesses managing remote teams or requiring operational advances. Tracks every transaction: employee, purpose, amount, and due date. Settlement & Recovery: Supports full or partial settlement with expense justification or refund. Long-term advances can follow amortization schedules with optional salary deductions. Monitoring & Analysis: Reports show pending settlements, recovery rates, and most frequent advance users to improve policies and reduce risk. Payroll Integration: Connects with payroll for streamlined deductions or additions, improving accuracy and reducing admin workload."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mainTitle": "Human Resources Sector (HR)",
+      "content": "The Human Resources Management forms the backbone of the success of any organization in the Kingdom of Saudi Arabia. With Vision 2030 and the development of the Saudi work environment, there is an increasing need for advanced systems that support the management of talents and national competencies.",
+      "title": "HR",
+      "arr": [
+        {
+          "label": "Vacations",
+          "questions": [
+            {
+              "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
+              "answer": "The Chart of Accounts serves as your organization’s complete financial map, offering a structured and logical classification of all financial operations. Our system supports a hybrid classification—combining sequential numbering with thematic grouping—enabling accountants and managers to grasp the financial position quickly and clearly. It features multi-level detailing, from main accounts (like assets and liabilities) to detailed sub-accounts, with customizable levels depending on business size and type. Accounts can be restructured or renumbered without losing historical data. Fully compliant with Saudi accounting standards and International Financial Reporting Standards (IFRS), the system allows for industry-specific customization—construction, trade, manufacturing, and financial services."
+            }
+          ]
+        },
+        {
+          "label": "Attendance and Departure",
+          "questions": [
+            {
+              "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
+              "answer": "The Chart of Accounts serves as your organization’s complete financial map, offering a structured and logical classification of all financial operations. Our system supports a hybrid classification—combining sequential numbering with thematic grouping—enabling accountants and managers to grasp the financial position quickly and clearly. It features multi-level detailing, from main accounts (like assets and liabilities) to detailed sub-accounts, with customizable levels depending on business size and type. Accounts can be restructured or renumbered without losing historical data. Fully compliant with Saudi accounting standards and International Financial Reporting Standards (IFRS), the system allows for industry-specific customization—construction, trade, manufacturing, and financial services."
+            }
+          ]
+        },
+        {
+          "label": "Payroll",
+          "questions": [
+            {
+              "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
+              "answer": "The Chart of Accounts serves as your organization’s complete financial map, offering a structured and logical classification of all financial operations. Our system supports a hybrid classification—combining sequential numbering with thematic grouping—enabling accountants and managers to grasp the financial position quickly and clearly. It features multi-level detailing, from main accounts (like assets and liabilities) to detailed sub-accounts, with customizable levels depending on business size and type. Accounts can be restructured or renumbered without losing historical data. Fully compliant with Saudi accounting standards and International Financial Reporting Standards (IFRS), the system allows for industry-specific customization—construction, trade, manufacturing, and financial services."
+            }
+          ]
+        },
+        {
+          "label": "Personnel Affairs",
+          "questions": [
+            {
+              "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
+              "answer": "The Chart of Accounts serves as your organization’s complete financial map, offering a structured and logical classification of all financial operations. Our system supports a hybrid classification—combining sequential numbering with thematic grouping—enabling accountants and managers to grasp the financial position quickly and clearly. It features multi-level detailing, from main accounts (like assets and liabilities) to detailed sub-accounts, with customizable levels depending on business size and type. Accounts can be restructured or renumbered without losing historical data. Fully compliant with Saudi accounting standards and International Financial Reporting Standards (IFRS), the system allows for industry-specific customization—construction, trade, manufacturing, and financial services."
+            }
+          ]
+        },
+        {
+          "label": "Employment Data",
+          "questions": [
+            {
+              "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
+              "answer": "The Chart of Accounts serves as your organization’s complete financial map, offering a structured and logical classification of all financial operations. Our system supports a hybrid classification—combining sequential numbering with thematic grouping—enabling accountants and managers to grasp the financial position quickly and clearly. It features multi-level detailing, from main accounts (like assets and liabilities) to detailed sub-accounts, with customizable levels depending on business size and type. Accounts can be restructured or renumbered without losing historical data. Fully compliant with Saudi accounting standards and International Financial Reporting Standards (IFRS), the system allows for industry-specific customization—construction, trade, manufacturing, and financial services."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "CRM",
+      "arr": [
+        "Comprehensive customer data management",
+        "Improved sales processes",
+        "Targeted and personalized marketing",
+        "Outstanding customer service",
+        "Intelligent analytics and reporting",
+        "Integration with other systems"
       ]
     },
     {

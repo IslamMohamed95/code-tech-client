@@ -10,6 +10,13 @@ import { useTranslation } from "react-i18next";
 import deskTopLogo from "../../assets/Logo/Logo.png";
 import Flag from "react-world-flags";
 
+const slugify = (str) =>
+  str
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-");
+
 function Nav() {
   const {
     isMobile,
@@ -27,6 +34,7 @@ function Nav() {
     setActiveMenuIndex,
     activeDeskTopNavIndex,
     setActiveDeskTopNavIndex,
+    navigate,
   } = useContext(WebContext);
 
   const { t } = useTranslation(["nav"]);
@@ -60,7 +68,6 @@ function Nav() {
     {
       id: "products",
       title: t("products"),
-      path: "/products",
       list: t("prdocutsSubMenu", { returnObjects: true }) || [],
     },
     {
@@ -115,7 +122,6 @@ function Nav() {
                     {item.title} <MdKeyboardArrowDown />
                   </li>
 
-                  {/* ✅ Animated submenu always rendered */}
                   <div
                     className={`subMenuHolder ${
                       visibleSubMenu && activeDeskTopNavIndex === i
@@ -130,18 +136,23 @@ function Nav() {
                             <h3>{group.title}</h3>
                             <ul>
                               {group.arr.map((subItem, k) => (
-                                <Link
+                                <li
+                                  className="hoverEffect"
                                   key={`submenu-item-${j}-${k}`}
-                                  to={item.path}
                                   onClick={() => {
                                     setAnimate(true);
                                     setVisibleSubMenu(false);
                                     setActiveDeskTopNavIndex(null);
                                     setLoading(true);
+                                    navigate(
+                                      `/product/${slugify(
+                                        group.title
+                                      )}/${slugify(subItem.label)}`
+                                    );
                                   }}
                                 >
-                                  <li>{subItem}</li>
-                                </Link>
+                                  {subItem.label}
+                                </li>
                               ))}
                             </ul>
                           </div>
@@ -190,7 +201,6 @@ function Nav() {
         </div>
       </nav>
 
-      {/* ✅ Mobile Menu */}
       <div>
         <div>
           <div className="hoverEffect">
@@ -266,13 +276,23 @@ function Nav() {
                             <hr />
                             <ul>
                               {subItem.arr.map((a, k) => (
-                                <Link
+                                <li
                                   key={`mobile-subitem-${i}-${j}-${k}`}
-                                  to="/products"
-                                  onClick={handleLoadingStatus}
+                                  className="hoverEffect"
+                                  onClick={() => {
+                                    setAnimate(true);
+                                    setVisibleSubMenu(false);
+                                    setLoading(true);
+                                    setActiveMenuIndex(null);
+                                    navigate(
+                                      `/product/${slugify(
+                                        subItem.title
+                                      )}/${slugify(a.label)}`
+                                    );
+                                  }}
                                 >
-                                  <li className="hoverEffect">{a}</li>
-                                </Link>
+                                  {a.label}
+                                </li>
                               ))}
                             </ul>
                           </div>

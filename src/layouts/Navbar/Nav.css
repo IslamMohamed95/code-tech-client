@@ -493,12 +493,12 @@
     align-items: flex-start;
     justify-content: space-evenly;
     list-style: none;
-    padding: 1em;
+    padding: 1em 0.5em;
   }
 
   #Nav .subMenuHolder ul hr {
-    margin-top: 3em;
-    height: 150px;
+    margin-top: 2em;
+    height: 70px;
     border: none;
     width: 0.5px;
     background-color: rgb(187, 187, 187);
@@ -510,7 +510,7 @@
     padding: 0.5em 1em;
   }
   #Nav .subMenuHolder ul div h3 {
-    font-size: 0.9em;
+    font-size: 0.7em;
     color: var(--base-color);
   }
 
@@ -522,7 +522,7 @@
 
   #Nav .subMenuHolder ul ul li {
     margin: 0.2em 0;
-    font-size: 0.7em;
+    font-size: 0.55em;
     font-weight: lighter;
     color: var(--medium-gray);
   }
@@ -556,12 +556,17 @@
   #Nav nav ul li {
     font-size: 1.1em;
   }
-
+  #Nav .subMenuHolder ul {
+    padding: 1em 0.8em;
+  }
   #Nav .subMenuHolder ul div h3 {
     font-size: 1em;
   }
+  #Nav .subMenuHolder ul ul li {
+    font-size: 0.7em;
+  }
   #Nav .subMenuHolder ul hr {
-    height: 200px;
+    height: 100px;
   }
   html[dir="ltr"] .subMenuHolder ul li {
     padding-left: 10px;
@@ -642,11 +647,9 @@
   #Nav .subMenuHolder ul div h3 {
     font-size: 1.2em;
   }
-  #Nav .subMenuHolder ul hr {
-    height: 250px;
-  }
+
   #Nav .subMenuHolder ul ul li {
-    font-size: 1em;
+    font-size: 0.9em;
   }
   #Nav nav > div > div:nth-child(3) > div hr {
     height: 25px;

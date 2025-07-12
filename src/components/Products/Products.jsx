@@ -1,104 +1,77 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import { useParams, useNavigate } from "react-router-dom";
+import first from "../../assets/Products/sales_pipeline_smb.svg";
 import "./Products.css";
 
-// Importing Product Images
-import first from "../../assets/Products/sales_pipeline_smb.svg";
-
-const metrics = [
-  {
-    title: "Number of deals in your pipeline",
-    content: "Description for 'Number of deals in your pipeline'.",
-  },
-  {
-    title: "Number of deals at each stage",
-    content: "Description for 'Number of deals at each stage'.",
-  },
-  {
-    title: "Drop-off rate between each stage",
-    content: "Description for 'Drop-off rate between each stage'.",
-  },
-  {
-    title: "Conversion rate between each stage",
-    content: "Description for 'Conversion rate between each stage'.",
-  },
-  {
-    title: "Average size of your deals",
-    content: "Description for 'Average size of your deals'.",
-  },
-  {
-    title: "Average sales cycle length",
-    content: "Description for 'Average sales cycle length'.",
-  },
-  {
-    title: "Win rate for your deals",
-    content: "Description for 'Win rate for your deals'.",
-  },
-  {
-    title: "Sales pipeline velocity",
-    content:
-      "All the granular metrics we’ve talked about analyzing put together gives you the sales pipeline velocity of your business. It’s the measure of how quickly your sales pipeline drives your revenue...",
-  },
-];
-
 function Products() {
-  const [active, setActive] = useState(0);
+  const { t } = useTranslation(["nav"]);
+  const { category, option } = useParams();
+  const navigate = useNavigate();
+
+  const subMenuData = useMemo(
+    () => t("prdocutsSubMenu", { returnObjects: true }),
+    [t]
+  );
+
+  // Find the group (e.g. CRM, Inventory, etc.)
+  const groupData = useMemo(
+    () =>
+      subMenuData.find(
+        (group) =>
+          group.title.toLowerCase().replace(/[^a-z0-9]/gi, "") ===
+          category?.toLowerCase().replace(/[^a-z0-9]/gi, "")
+      ),
+    [subMenuData, category]
+  );
+
+  // Find the selected sub item (e.g. Inventory)
+  const subItemData = useMemo(() => {
+    return groupData?.arr.find(
+      (subItem) =>
+        subItem.label.toLowerCase().replace(/[^a-z0-9]/gi, "") ===
+        option?.toLowerCase().replace(/[^a-z0-9]/gi, "")
+    );
+  }, [groupData, option]);
+
+  const [activeIndex, setActiveIndex] = useState(0);
   const tabsRef = useRef([]);
-  const intervalRef = useRef(null);
   const [hrOffset, setHrOffset] = useState({ left: 0, width: 0 });
 
-  const startAutoSwiper = () => {
-    intervalRef.current = setInterval(() => {
-      setActive((prev) => (prev + 1) % metrics.length);
-    }, 3500);
-  };
-
-  const resetSwiper = () => {
-    clearInterval(intervalRef.current);
-    startAutoSwiper();
-  };
-
   useEffect(() => {
-    startAutoSwiper();
-    return () => clearInterval(intervalRef.current);
-  }, []);
+    if (!groupData || !subItemData || !subItemData.questions?.length) {
+      navigate("/products", { replace: true });
+    }
+  }, [groupData, subItemData, navigate]);
 
   useEffect(() => {
     const container = tabsRef.current[0]?.parentElement;
-    if (container) {
-      const tabWidth = container.offsetWidth / metrics.length;
-      setHrOffset({
-        left: 0,
-        width: tabWidth * (active + 1),
-      });
+    if (container && subItemData?.questions?.length) {
+      const tabWidth = container.offsetWidth / subItemData.questions.length;
+      setHrOffset({ left: 0, width: tabWidth * (activeIndex + 1) });
     }
-  }, [active]);
+  }, [activeIndex, subItemData]);
 
-  const handleTabClick = (index) => {
-    setActive(index);
-    resetSwiper();
-  };
+  if (!groupData || !subItemData || !subItemData.questions?.length) return null;
+
+  const activeQuestion = subItemData.questions[activeIndex];
 
   return (
     <section id="products" className="pipeline-section">
       <div className="pipeline-container">
         <div className="mainContainer">
-          <h2 className="pipeline-title">
-            Improve your work with our ERP System
-          </h2>
-          <p className="pipeline-description">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum
-            ullam atque sunt possimus suscipit totam quod magnam, facere quis
-            unde. Facilis maiores voluptates porro a animi commodi mod
-          </p>
+          <h1 className="pipeline-title">{groupData.mainTitle}</h1>
+          <p className="pipeline-description">{groupData.content}</p>
+
           <div className="pipeline-main">
-            {/* Left card */}
-            <div className="pipeline-card">
-              <h3>{metrics[active].title}</h3>
-              <p>{metrics[active].content}</p>
-              <div className="circle-bg"></div>
+            <div className="pipeline-card-wrapper">
+              <div className="pipeline-card animated">
+                <h2>{activeQuestion.question}</h2>
+                <p>{activeQuestion.answer}</p>
+                <div className="circle-bg"></div>
+              </div>
             </div>
 
-            {/* Right side */}
             <div className="pipeline-tabs-container">
               <div className="hr-wrapper">
                 <hr className="pipeline-hr" />
@@ -111,23 +84,29 @@ function Products() {
                 />
               </div>
 
-              <div className="pipeline-tabs">
-                {metrics.map((item, index) => (
-                  <div
+              <nav className="pipeline-tabs" aria-label="ERP Questions Tabs">
+                {subItemData.questions.map((q, index) => (
+                  <p
                     key={index}
                     ref={(el) => (tabsRef.current[index] = el)}
                     className={`hoverEffect pipeline-tab ${
-                      active === index ? "active" : ""
+                      index === activeIndex ? "active" : ""
                     }`}
-                    onClick={() => handleTabClick(index)}
+                    onClick={() => setActiveIndex(index)}
+                    aria-selected={index === activeIndex}
+                    role="tab"
                   >
-                    {item.title}
-                  </div>
+                    {q.question}
+                  </p>
                 ))}
-              </div>
+              </nav>
             </div>
           </div>
-          <div className="custom-shape-divider-bottom-1749693086">
+
+          <div
+            className="custom-shape-divider-bottom-1749693086"
+            aria-hidden="true"
+          >
             <svg
               data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
@@ -143,29 +122,27 @@ function Products() {
         </div>
       </div>
 
-      <div className="implementHolder">
+      <section className="implementHolder">
         <div className="contentHolder">
-          <h2>Implement The ERP System And Improve Your Business</h2>
+          <h2>{t("btn")}</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-            tempora consequatur animi minus exercitationem, est accusamus nam,
-            nemo, explicabo cum soluta cumque atque aut officia dicta voluptatem
-            eaque necessitatibus sint.
+            Streamline your operations with our customizable ERP modules built
+            for every department.
           </p>
         </div>
         <div className="imgHolder">
-          <img src={first} alt="test" />
-          <img src={first} alt="test" />
+          <img src={first} alt="ERP Module Illustration 1" />
+          <img src={first} alt="ERP Module Illustration 2" />
         </div>
-      </div>
+      </section>
 
-      <div className="DemoHolder">
+      <section className="DemoHolder">
         <div>
           <h2>Try Your Ideal ERP System</h2>
-          <h4>Start A Free Trial with Our solution with Code Tech</h4>
-          <button className="hoverEffect">Start A demo</button>
+          <h3>Start a Free Trial with Our Solution</h3>
+          <button className="hoverEffect">{t("btn")}</button>
         </div>
-      </div>
+      </section>
     </section>
   );
 }
