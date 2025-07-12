@@ -218,28 +218,302 @@
       ]
     },
     {
+      "mainTitle": "",
+      "content": "",
       "title": "Websites & Applications",
       "arr": [
-        "Hosting & Domains",
-        "Website Development",
-        "Mobile Application Development"
+        {
+          "label": "Hosting and Domain Services",
+          "questions": [
+            {
+              "question": "Cloud Hosting and Domain Registration",
+              "answer": "We provide advanced cloud hosting services that ensure high speed and continuous stability for your website. Our services include domain registration in both Arabic and English, with support for local domains such as .sa and .ae. Our cloud hosting is characterized by flexibility and scalability according to your growing business needs."
+            },
+            {
+              "question": "High-Performance Dedicated and Virtual Servers",
+              "answer": "We offer specialized server solutions (VPS/VDS) that ensure high performance and continuous availability. Our services include automatic backup, 24/7 performance monitoring, and uptime guarantee of up to 99.9%. These solutions are ideal for companies that need dedicated computing resources and high-level security."
+            },
+            {
+              "question": "Email Services",
+              "answer": " Include custom email with domain name, cloud solutions, spam protection, and support for Microsoft Exchange and Google Workspace."
+            },
+            {
+              "question": "License and Software Services",
+              "answer": "Include Windows and Office licenses, databases, security software, and development tools, all original and certified by manufacturers."
+            }
+          ]
+        },
+        {
+          "label": "Website Development",
+          "questions": [
+            {
+              "question": "Professional Website Design",
+              "answer": "We design professional websites that reflect your brand identity and meet your customers' needs. Our designs consider Arabic culture and local taste, while ensuring an excellent user experience that encourages visitors to interact and purchase. We use the latest design technologies to create attractive and user-friendly websites."
+            },
+            {
+              "question": "Search Engine Optimization (SEO)",
+              "answer": "Our SEO services include technical optimization and Arabic-optimized content. We focus on keywords relevant to the local market, website speed optimization, and compliance with modern Google standards. Our goal is to improve your website's ranking in local and global search results, increasing traffic and sales."
+            },
+            {
+              "question": "Custom Solutions",
+              "answer": "We develop custom solutions that suit your unique business needs. Whether you need a customer management system, e-commerce platform, or specialized web application, our team can develop the optimal solution. We ensure seamless integration with your existing systems and future scalability."
+            },
+            {
+              "question": "Responsive Design",
+              "answer": "All our websites are designed with responsive technology to ensure optimal display on all devices. From smartphones to desktop computers, your website will look amazing and work with high efficiency. This ensures a consistent user experience and improves your website's search engine ranking."
+            },
+            {
+              "question": "Content Management Systems",
+              "answer": "Advanced Content Management PlatformsWe offer diverse content management solutions including optimized WordPress, advanced .NET systems, and custom systems. These platforms allow you to manage your website content easily, with Arabic language interfaces and advanced publishing and editing capabilities. We ensure ease of use even for non-technical users."
+            },
+            {
+              "question": "Security and Protection Services",
+              "answer": "Security Certificates and BackupsWe provide certified SSL certificates to protect your website and customer data. Our services include daily automatic backups, malware protection, and continuous security monitoring. We ensure the highest levels of security to protect your website from cyber threats."
+            },
+            {
+              "question": "Integration and Development Services",
+              "answer": "API Development and Integration We develop custom Application Programming Interfaces (APIs) and integrate external systems with your website. Our services include connecting local and global payment gateways, CRM system integration, and connecting local delivery and shipping services."
+            }
+          ]
+        },
+        {
+          "label": "Mobile App Development",
+          "questions": [
+            {
+              "question": "iOS Applications",
+              "answer": "We design and develop high-quality iOS applications for iPhone and iPad. Our services include design according to Apple standards, development using the latest technologies, and publishing in the App Store. We ensure compatibility with all iOS versions and utilization of advanced device features."
+            },
+            {
+              "question": "Android Applications",
+              "answer": "We develop advanced Android applications that work efficiently on all devices. Our services include design compatible with Material Design, development with Google's latest tools, and publishing in Google Play Store. We focus on performance and security to ensure an excellent user experience."
+            },
+            {
+              "question": "Publishing and Support Services",
+              "answer": "Comprehensive Publishing and Support We provide complete publishing services in app stores with continuous support after launch. Our services include app description optimization, review management, and regular updates. We ensure your app reaches the largest number of potential users in the Arab region and globally."
+            }
+          ]
+        }
       ]
     },
     {
+      "mainTitle": "Expert Product Management Services for Online Stores",
+      "content": "We offer comprehensive product management services tailored for eCommerce businesses in Saudi Arabia. Our services include market analysis, product strategy development, and customer experience enhancement. Our specialized team helps you build a professional product catalog that drives your business goals.",
       "title": "E-commerce",
       "arr": [
-        "Product Management",
-        "Advertisement Management",
-        "Payment Systems",
-        "Shipping and Delivery"
+        {
+          "label": "Product Management",
+          "questions": [
+            {
+              "question": "Market Research & Analysis",
+              "answer": "Competitive analysis in the Saudi market, Consumer trends and demand forecasting, Identifying high-potential product opportunities and Keyword research for product SEO"
+            },
+            {
+              "question": "Product Catalog Setup",
+              "answer": "SEO-optimized product descriptions, Smart and professional product categorization, High-quality product images and marketing videos and Conversion-focused product page enhancements"
+            },
+            {
+              "question": "Pricing Strategy",
+              "answer": "Competitor price analysis, Competitive pricing strategies, Promotions and discount management and Profit margin and sales performance analysis"
+            },
+            {
+              "question": "Smart Inventory Management",
+              "answer": "Inventory tracking system development, Demand forecasting based on historical data, Optimizing stock rotation and Managing expiring or obsolete products"
+            }
+          ]
+        },
+        {
+          "label": "Advertisement Management",
+          "questions": [
+            {
+              "question": "Offers and Discounts Management",
+              "answer": "Promotional campaigns for best-selling products, Seasonal and occasion-based deals, Smart discount coupon management and Limited-time offers to create urgency"
+            },
+            {
+              "question": "Cross-Selling Strategies",
+              "answer": "Analyzing customer behavior to recommend complementary products, Smart product suggestions on product pages, Creating bundled product packages and `Frequently Bought Together` product displays"
+            },
+            {
+              "question": "Up-Selling Strategies",
+              "answer": "Encouraging upgrades to premium products, Highlighting enhanced versions of existing products, Smart product comparison tools and Exclusive deals on high-end products"
+            },
+            {
+              "question": "Customer Retargeting",
+              "answer": "Campaigns targeting previous buyers, Personalized email marketing based on purchase history, Exclusive offers for loyal and returning customers and Restock alerts and reminders for favorite products"
+            },
+            {
+              "question": "Performance Tracking and Optimization",
+              "answer": "Campaign performance tracking, Conversion rate analysis per offer, Measuring the impact of cross- and up-selling and ROI reports for in-store advertising campaigns"
+            }
+          ]
+        },
+        {
+          "label": "Payment Systems",
+          "questions": [
+            {
+              "question": "Comprehensive Payment Method Support",
+              "answer": "All locally approved payment options in Saudi Arabia, Global payment gateway integrations, Buy-now-pay-later and installment solutions and Integration with the latest payment technologies"
+            },
+            {
+              "question": "Security and Fraud Protection",
+              "answer": "Advanced SSL encryption, PCI DSS compliance, Fraud and scam protection and Secure transaction processing"
+            },
+            {
+              "question": "Payment Analytics",
+              "answer": "Detailed financial reports, Payment behavior analytics, Monitoring success and failure rates and Return and refund management"
+            }
+          ]
+        },
+        {
+          "label": "Shipping and Delivery",
+          "questions": [
+            {
+              "question": "Flexible Shipping Options",
+              "answer": "Express delivery within 24 hours, Free shipping for large orders, Same-day delivery in major cities and In-store pickup service"
+            },
+            {
+              "question": "Certified Shipping Partners",
+              "answer": "Partnership with Aramex, Collaboration with Saudi Post, FedEx and DHL services and Specialized local courier companies"
+            },
+            {
+              "question": "Shipment Tracking",
+              "answer": "Real-time tracking system, SMS alerts for customers, Email shipment updates and Mobile app for order tracking"
+            },
+            {
+              "question": "Return Management",
+              "answer": "Flexible return policies, Fast return processing, Automatic refund system and Dedicated customer service for returns"
+            }
+          ]
+        }
       ]
     },
     {
+      "mainTitle": "Digital Marketing",
+      "content": "Complete Social Media Management Platform",
       "title": "Digital Marketing",
       "arr": [
-        "Social Media Platform Management",
-        "Brand Identity and Branding",
-        "Media Buying and Digital Marketing"
+        {
+          "label": "Social Media Platform Management",
+          "questions": [
+            {
+              "question": "Market Research & Analysis",
+              "answer": "We create original, bilingual (Arabic & English) content tailored to local culture and global trends. Our expert content writers craft engaging and diverse posts that resonate with your target audience and boost engagement with your brand."
+            },
+            {
+              "question": "24/7 Community Management",
+              "answer": "We offer full community management services, including responding to comments and direct messages around the clock, 7 days a week. Our trained team handles inquiries professionally and respectfully, reflecting your brand values and building strong relationships with your audience."
+            },
+            {
+              "question": "Specialized Graphic Design",
+              "answer": "We design visually appealing content for posts and stories aligned with your brand identity. Our designs combine aesthetics and functionality, using visual elements that capture attention and drive interaction among Arabic-speaking audiences."
+            },
+            {
+              "question": "Video Editing & Production",
+              "answer": "We specialize in producing high-quality reels and promotional videos optimized for social media platforms. Services include filming, editing, and adding visual and sound effects to deliver eye-catching content that enhances your brand visibility."
+            },
+            {
+              "question": "Strategic Hashtag Optimization",
+              "answer": "We conduct in-depth research and analysis of trending hashtags in both local and global markets. Our team identifies the most effective hashtags to maximize your post visibility and improve discoverability across platforms—ensuring your message reaches the right audience."
+            },
+            {
+              "question": "Advanced Analytics & Reporting",
+              "answer": "We provide detailed performance reports, including ROI analysis and key success metrics. These insights help you understand audience behavior, evaluate content performance, and make informed decisions to refine your marketing strategy."
+            },
+            {
+              "question": "Influencer Partnership Management",
+              "answer": "We assist in identifying and managing strategic influencer collaborations that align with your brand. Our services cover influencer research, negotiations, contract management, and campaign monitoring to maximize your return on influencer marketing."
+            },
+            {
+              "question": "Proactive Crisis Management",
+              "answer": "We develop fast-response strategies for handling potential social media crises. Our team is prepared to manage sensitive situations professionally, protecting your brand reputation and turning challenges into growth opportunities."
+            }
+          ]
+        },
+        {
+          "label": "Brand Identity and Branding",
+          "questions": [
+            {
+              "question": "Custom Logo Design",
+              "answer": "We design unique and impactful logos that reflect your brand’s personality and core values. Our logo packages include versatile variations suitable for digital and print use, ensuring clarity and strong visual impact at every size."
+            },
+            {
+              "question": "Integrated Visual Identity Systems",
+              "answer": "We develop complete brand identity systems that include custom color palettes, font sets, and visual patterns. This ensures consistency across all brand materials and strengthens brand recognition in the market."
+            },
+            {
+              "question": "Business Collateral Design",
+              "answer": "We offer professional design services for printed materials, including elegant business cards, official letterheads, envelopes, and office stationery. Every design reflects your corporate identity and leaves a lasting impression on clients and partners."
+            },
+            {
+              "question": "Digital Template Creation",
+              "answer": "We design branded digital templates for social media to ensure a consistent and professional presence across all platforms. These templates simplify content creation and maintain high-quality output."
+            },
+            {
+              "question": "Comprehensive Brand Guidelines",
+              "answer": "We deliver detailed brand guidelines outlining the correct and consistent use of all brand elements, including logo usage, color codes, typography, and imagery—ensuring your brand is applied uniformly across all communication channels."
+            },
+            {
+              "question": "Brand Strategy Development",
+              "answer": "We help define your brand’s market position and craft messaging that differentiates you from competitors. Our strategies focus on your business's unique strengths and translate them into compelling value propositions."
+            },
+            {
+              "question": "Market & Competitor Research",
+              "answer": "We conduct in-depth market and competitor analysis to understand the competitive landscape and identify growth opportunities. This includes target audience profiling, consumer behavior analysis, and competitor evaluation."
+            },
+            {
+              "question": "Strategic Workshops",
+              "answer": "We organize collaborative workshops with your team to co-create your brand identity. These sessions help uncover your business’s vision and values, resulting in an authentic brand identity that truly represents your company."
+            },
+            {
+              "question": "Marketing Material Production",
+              "answer": "We design and produce a full range of marketing materials, including brochures, promotional flyers, and professional presentations—fully aligned with your brand identity to elevate your market presence."
+            },
+            {
+              "question": "Outdoor & Vehicle Branding Design",
+              "answer": "We offer design services for vehicle wraps and outdoor billboards. Our designs ensure clear messaging and strong visual impact while adhering to local advertising regulations."
+            },
+            {
+              "question": "Website Wireframes & UI Mockups",
+              "answer": "We create initial website wireframes that align with your brand identity. These mockups provide a clear visual direction for your digital presence and ensure a cohesive user experience."
+            },
+            {
+              "question": "Brand Training & Consultation",
+              "answer": "We provide training and consulting programs to help your team implement the brand identity effectively. Our support includes hands-on guidance and strategic advice to maximize your branding investment."
+            }
+          ]
+        },
+        {
+          "label": "Media Buying and Digital Marketing",
+          "questions": [
+            {
+              "question": "Strategic Campaign Planning",
+              "answer": "We develop integrated advertising strategies to achieve your marketing goals at the lowest cost and highest ROI. Our plans account for the local market's uniqueness and Saudi consumer behavior to ensure precise audience targeting."
+            },
+            {
+              "question": "Advanced Targeting & Persona Analysis",
+              "answer": "We use sophisticated targeting techniques to analyze your audience and create detailed buyer personas. This ensures your ads reach the most likely customers and generate higher engagement and conversions."
+            },
+            {
+              "question": "High-Impact Ad Content Production",
+              "answer": "Our creative team produces compelling ad content tailored to each platform—from static graphics to interactive videos. We ensure top-tier content that motivates action and meets your campaign objectives."
+            },
+            {
+              "question": "Performance Optimization & A/B Testing",
+              "answer": "We implement A/B testing to continually improve your ad performance. By analyzing results and making data-driven adjustments, we boost conversion rates and reduce customer acquisition costs—ensuring maximum ROI."
+            },
+            {
+              "question": "Smart Retargeting Campaigns",
+              "answer": "We target previous visitors to your website or online store with personalized remarketing campaigns that remind them of your products and encourage them to complete their purchase. This strategy delivers high conversion rates and increases customer lifetime value."
+            },
+            {
+              "question": "Advanced Analytics & ROI Tracking",
+              "answer": "We provide detailed reports covering every aspect of your campaigns and track ROI with precision. Our analytics help you understand campaign performance, identify optimization opportunities, and make informed strategic decisions."
+            },
+            {
+              "question": "Programmatic Advertising & Automated Media Buying",
+              "answer": "We leverage cutting-edge programmatic advertising technologies to automate media buying, securing optimal ad placements at competitive rates. This approach enhances campaign efficiency and saves time and resources."
+            }
+          ]
+        }
       ]
     }
   ]
