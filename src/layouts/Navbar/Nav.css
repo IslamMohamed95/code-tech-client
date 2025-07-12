@@ -493,12 +493,17 @@
     align-items: flex-start;
     justify-content: space-evenly;
     list-style: none;
-    padding: 1em 0.5em;
+    padding: 0.5em 0;
   }
-
+  html[dir="ltr"] .subMenuHolder ul li {
+    padding-left: 10px;
+  }
+  html[dir="rtl"] .subMenuHolder ul li {
+    padding-right: 10px;
+  }
   #Nav .subMenuHolder ul hr {
     margin-top: 2em;
-    height: 70px;
+    height: 80px;
     border: none;
     width: 0.5px;
     background-color: rgb(187, 187, 187);
@@ -507,10 +512,10 @@
     display: none;
   }
   #Nav .subMenuHolder ul div {
-    padding: 0.5em 1em;
+    padding: 0.5em;
   }
   #Nav .subMenuHolder ul div h3 {
-    font-size: 0.7em;
+    font-size: 0.65em;
     color: var(--base-color);
   }
 
@@ -556,24 +561,20 @@
   #Nav nav ul li {
     font-size: 1.1em;
   }
-  #Nav .subMenuHolder ul {
-    padding: 1em 0.8em;
-  }
+
   #Nav .subMenuHolder ul div h3 {
-    font-size: 1em;
+    font-size: 0.9em;
   }
   #Nav .subMenuHolder ul ul li {
-    font-size: 0.7em;
+    font-size: 0.65em;
+  }
+  #Nav .subMenuHolder ul div {
+    padding: 0.5em 1em;
   }
   #Nav .subMenuHolder ul hr {
     height: 100px;
   }
-  html[dir="ltr"] .subMenuHolder ul li {
-    padding-left: 10px;
-  }
-  html[dir="rtl"] .subMenuHolder ul li {
-    padding-right: 10px;
-  }
+
   #Nav .subMenuHolder ul li {
     position: relative;
     font-weight: lighter;

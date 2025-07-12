@@ -14,9 +14,11 @@
       "mainTitle": "The Ultimate Guide to Advanced IT Solutions and ERP Systems",
       "content": "Core ERP Solutions for Enterprise Resource Planning",
       "title": "ERP Solutions",
+      "slug": "ERP Solutions",
       "arr": [
         {
           "label": "General Accounts",
+          "optionSlug": "General Accounts",
           "questions": [
             {
               "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
@@ -50,6 +52,7 @@
         },
         {
           "label": "Inventory",
+          "optionSlug": "Inventory",
           "questions": [
             {
               "question": "Warehouse Definition and Management – Optimal Storage Organization",
@@ -79,6 +82,7 @@
         },
         {
           "label": "Purchasing",
+          "optionSlug": "Purchasing",
           "questions": [
             {
               "question": "Supplier Management – Strategic Vendor Relationships",
@@ -104,6 +108,7 @@
         },
         {
           "label": "Sales",
+          "optionSlug": "Sales",
           "questions": [
             {
               "question": "Customer Management – Strong and Diverse Customer Base",
@@ -129,6 +134,7 @@
         },
         {
           "label": "Financial Transactions",
+          "optionSlug": "Financial Transactions",
           "questions": [
             {
               "question": "Cash Disbursements and Receipts – Full Financial Transparency",
@@ -158,9 +164,11 @@
       "mainTitle": "Human Resources Sector (HR)",
       "content": "The Human Resources Management forms the backbone of the success of any organization in the Kingdom of Saudi Arabia. With Vision 2030 and the development of the Saudi work environment, there is an increasing need for advanced systems that support the management of talents and national competencies.",
       "title": "HR",
+      "slug": "HR",
       "arr": [
         {
           "label": "Vacations",
+          "optionSlug": "Vacations",
           "questions": [
             {
               "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
@@ -170,6 +178,7 @@
         },
         {
           "label": "Attendance and Departure",
+          "optionSlug": "Attendance and Departure",
           "questions": [
             {
               "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
@@ -179,6 +188,7 @@
         },
         {
           "label": "Payroll",
+          "optionSlug": "Payroll",
           "questions": [
             {
               "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
@@ -188,6 +198,7 @@
         },
         {
           "label": "Personnel Affairs",
+          "optionSlug": "Personnel Affairs",
           "questions": [
             {
               "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
@@ -197,6 +208,7 @@
         },
         {
           "label": "Employment Data",
+          "optionSlug": "Employment Data",
           "questions": [
             {
               "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
@@ -207,23 +219,52 @@
       ]
     },
     {
+      "mainTitle": "",
+      "content": "",
       "title": "CRM",
+      "slug": "CRM",
       "arr": [
-        "Comprehensive customer data management",
-        "Improved sales processes",
-        "Targeted and personalized marketing",
-        "Outstanding customer service",
-        "Intelligent analytics and reporting",
-        "Integration with other systems"
+        {
+          "label": "Comprehensive customer data management",
+          "optionSlug": "Comprehensive customer data management",
+          "questions": [{ "question": "", "asnwer": "" }]
+        },
+        {
+          "label": "Improved sales processes",
+          "optionSlug": "Improved sales processes",
+          "questions": [{ "question": "", "asnwer": "" }]
+        },
+        {
+          "label": "Targeted and personalized marketing",
+          "optionSlug": "Targeted and personalized marketing",
+          "questions": [{ "question": "", "asnwer": "" }]
+        },
+        {
+          "label": "Outstanding customer service",
+          "optionSlug": "Outstanding customer service",
+          "questions": [{ "question": "", "asnwer": "" }]
+        },
+        {
+          "label": "Intelligent analytics and reporting",
+          "optionSlug": "Intelligent analytics and reporting",
+          "questions": [{ "question": "", "asnwer": "" }]
+        },
+        {
+          "label": "Integration with other systems",
+          "optionSlug": "Integration with other systems",
+          "questions": [{ "question": "", "asnwer": "" }]
+        }
       ]
     },
     {
       "mainTitle": "",
       "content": "",
       "title": "Websites & Applications",
+      "slug": "Websites & Applications",
       "arr": [
         {
           "label": "Hosting and Domain Services",
+          "optionSlug": "Hosting and Domain Services",
           "questions": [
             {
               "question": "Cloud Hosting and Domain Registration",
@@ -245,6 +286,7 @@
         },
         {
           "label": "Website Development",
+          "optionSlug": "Website Development",
           "questions": [
             {
               "question": "Professional Website Design",
@@ -278,6 +320,7 @@
         },
         {
           "label": "Mobile App Development",
+          "optionSlug": "Mobile App Development",
           "questions": [
             {
               "question": "iOS Applications",
@@ -299,9 +342,11 @@
       "mainTitle": "Expert Product Management Services for Online Stores",
       "content": "We offer comprehensive product management services tailored for eCommerce businesses in Saudi Arabia. Our services include market analysis, product strategy development, and customer experience enhancement. Our specialized team helps you build a professional product catalog that drives your business goals.",
       "title": "E-commerce",
+      "slug": "E-commerce",
       "arr": [
         {
           "label": "Product Management",
+          "optionSlug": "Product Management",
           "questions": [
             {
               "question": "Market Research & Analysis",
@@ -323,6 +368,7 @@
         },
         {
           "label": "Advertisement Management",
+          "optionSlug": "Advertisement Management",
           "questions": [
             {
               "question": "Offers and Discounts Management",
@@ -348,6 +394,7 @@
         },
         {
           "label": "Payment Systems",
+          "optionSlug": "Payment Systems",
           "questions": [
             {
               "question": "Comprehensive Payment Method Support",
@@ -365,6 +412,7 @@
         },
         {
           "label": "Shipping and Delivery",
+          "optionSlug": "Shipping and Delivery",
           "questions": [
             {
               "question": "Flexible Shipping Options",
@@ -390,9 +438,11 @@
       "mainTitle": "Digital Marketing",
       "content": "Complete Social Media Management Platform",
       "title": "Digital Marketing",
+      "slug": "Digital Marketing",
       "arr": [
         {
           "label": "Social Media Platform Management",
+          "optionSlug": "Social Media Platform Management",
           "questions": [
             {
               "question": "Market Research & Analysis",
@@ -430,6 +480,7 @@
         },
         {
           "label": "Brand Identity and Branding",
+          "optionSlug": "Brand Identity and Branding",
           "questions": [
             {
               "question": "Custom Logo Design",
@@ -483,6 +534,7 @@
         },
         {
           "label": "Media Buying and Digital Marketing",
+          "optionSlug": "Media Buying and Digital Marketing",
           "questions": [
             {
               "question": "Strategic Campaign Planning",
@@ -516,5 +568,12 @@
         }
       ]
     }
-  ]
+  ],
+  "productsDetails": {
+    "title": "Try Your Ideal ERP System",
+    "btn": "Try Now",
+    "header": "Try Our Newest ERP System",
+    "paragraph": "Streamline your operations with our customizable ERP modules built for every department.",
+    "subHeader": "Start a Free Trial with Our Solution"
+  }
 }

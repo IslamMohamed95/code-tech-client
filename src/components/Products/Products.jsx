@@ -5,44 +5,48 @@ import first from "../../assets/Products/sales_pipeline_smb.svg";
 import "./Products.css";
 
 function Products() {
-  const { t } = useTranslation(["nav"]);
+  const { t, i18n } = useTranslation(["nav"]);
   const { category, option } = useParams();
   const navigate = useNavigate();
 
+  // 🚀 Get submenu data based on current language
   const subMenuData = useMemo(
     () => t("prdocutsSubMenu", { returnObjects: true }),
-    [t]
+    [t, i18n.language]
   );
 
-  // Find the group (e.g. CRM, Inventory, etc.)
-  const groupData = useMemo(
-    () =>
-      subMenuData.find(
-        (group) =>
-          group.title.toLowerCase().replace(/[^a-z0-9]/gi, "") ===
-          category?.toLowerCase().replace(/[^a-z0-9]/gi, "")
-      ),
-    [subMenuData, category]
-  );
+  // 🎯 Find category/group using `slug`
+  const groupData = useMemo(() => {
+    return subMenuData.find((group) => group.slug === category);
+  }, [subMenuData, category]);
 
-  // Find the selected sub item (e.g. Inventory)
+  // 🎯 Find suboption/item using `optionSlug`
   const subItemData = useMemo(() => {
-    return groupData?.arr.find(
-      (subItem) =>
-        subItem.label.toLowerCase().replace(/[^a-z0-9]/gi, "") ===
-        option?.toLowerCase().replace(/[^a-z0-9]/gi, "")
-    );
+    return groupData?.arr.find((item) => item.optionSlug === option);
   }, [groupData, option]);
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const tabsRef = useRef([]);
-  const [hrOffset, setHrOffset] = useState({ left: 0, width: 0 });
+  // 🔁 Redirect if current URL slug doesn't match what's in translation
+  useEffect(() => {
+    if (groupData && subItemData) {
+      const newCategory = groupData.slug;
+      const newOption = subItemData.optionSlug;
 
+      if (newCategory !== category || newOption !== option) {
+        navigate(`/product/${newCategory}/${newOption}`, { replace: true });
+      }
+    }
+  }, [groupData, subItemData, category, option, navigate]);
+
+  // 🧹 Redirect to main products page if not found
   useEffect(() => {
     if (!groupData || !subItemData || !subItemData.questions?.length) {
       navigate("/products", { replace: true });
     }
   }, [groupData, subItemData, navigate]);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const tabsRef = useRef([]);
+  const [hrOffset, setHrOffset] = useState({ left: 0, width: 0 });
 
   useEffect(() => {
     const container = tabsRef.current[0]?.parentElement;
@@ -124,11 +128,8 @@ function Products() {
 
       <section className="implementHolder">
         <div className="contentHolder">
-          <h2>{t("btn")}</h2>
-          <p>
-            Streamline your operations with our customizable ERP modules built
-            for every department.
-          </p>
+          <h2>{t("productsDetails.header")}</h2>
+          <p>{t("productsDetails.paragraph")}</p>
         </div>
         <div className="imgHolder">
           <img src={first} alt="ERP Module Illustration 1" />
@@ -138,9 +139,9 @@ function Products() {
 
       <section className="DemoHolder">
         <div>
-          <h2>Try Your Ideal ERP System</h2>
-          <h3>Start a Free Trial with Our Solution</h3>
-          <button className="hoverEffect">{t("btn")}</button>
+          <h2>{t("productsDetails.title")}</h2>
+          <h3>{t("productsDetails.subHeader")}</h3>
+          <button className="hoverEffect">{t("productsDetails.btn")}</button>
         </div>
       </section>
     </section>

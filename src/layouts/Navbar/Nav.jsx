@@ -10,13 +10,6 @@ import { useTranslation } from "react-i18next";
 import deskTopLogo from "../../assets/Logo/Logo.png";
 import Flag from "react-world-flags";
 
-const slugify = (str) =>
-  str
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .replace(/\s+/g, "-");
-
 function Nav() {
   const {
     isMobile,
@@ -145,9 +138,7 @@ function Nav() {
                                     setActiveDeskTopNavIndex(null);
                                     setLoading(true);
                                     navigate(
-                                      `/product/${slugify(
-                                        group.title
-                                      )}/${slugify(subItem.label)}`
+                                      `/product/${group.slug}/${subItem.optionSlug}`
                                     );
                                   }}
                                 >
@@ -285,9 +276,7 @@ function Nav() {
                                     setLoading(true);
                                     setActiveMenuIndex(null);
                                     navigate(
-                                      `/product/${slugify(
-                                        subItem.title
-                                      )}/${slugify(a.label)}`
+                                      `/product/${subItem.slug}/${a.optionSlug}`
                                     );
                                   }}
                                 >

@@ -24,10 +24,16 @@
   }
 
   .pipeline-section {
-    color: white;
     width: 100%;
   }
 
+  .pipeline-section h3 {
+    color: rgb(134, 134, 134);
+    margin: 1em 0;
+  }
+  .pipeline-section h1 {
+    color: white;
+  }
   .pipeline-container {
     background: linear-gradient(to bottom, var(--base-color));
     position: relative;
@@ -152,7 +158,12 @@
     background-color: rgba(255, 255, 255, 0.2);
     border: none;
   }
-
+  html[dir="ltr"] .pipeline-hr-highlight {
+    left: 0;
+  }
+  html[dir="rtl"] .pipeline-hr-highlight {
+    right: 0;
+  }
   .pipeline-hr-highlight {
     position: absolute;
     top: 0;
@@ -194,10 +205,16 @@
     font-weight: 500;
   }
 
+  html[dir="ltr"] .pipeline-tab.active::before {
+    left: 0;
+  }
+  html[dir="rtl"] .pipeline-tab.active::before {
+    right: 0;
+  }
   .pipeline-tab.active::before {
     content: "";
     position: absolute;
-    left: 0;
+
     top: 4px;
     bottom: 4px;
     width: 2px;
@@ -292,7 +309,9 @@
     border: none;
     color: white;
     font-weight: bold;
-    padding: 0.8em 1em;
+    padding: 0.8em 0;
+    width: 100px;
+    border-radius: 15px;
   }
 }
 
