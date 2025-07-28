@@ -122,10 +122,10 @@ function Products() {
         setRadius(Math.min(200, baseRadius));
       } else if (width <= 1400) {
         baseRadius = count * 50;
-        setRadius(Math.min(300, baseRadius));
+        setRadius(Math.min(290, baseRadius));
       } else {
         baseRadius = count * 60;
-        setRadius(Math.min(360, baseRadius));
+        setRadius(Math.min(410, baseRadius));
       }
     };
 

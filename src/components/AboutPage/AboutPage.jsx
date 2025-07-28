@@ -1,12 +1,16 @@
 //Import StyleSheet
 import "./AboutPage.css";
 
+import { FaCheckSquare } from "react-icons/fa";
+
 //Import Img
 import introImg from "../../assets/AboutPage/Intro.jpg";
 import missionImg from "../../assets/AboutPage/ourMission.jpg";
-import offer from "../../assets/AboutPage/offer.jpg";
+import offer from "../../assets/AboutPage/offer.svg";
+import { useTranslation } from "react-i18next";
 
 function AboutPage() {
+  const { t } = useTranslation("about");
   return (
     <section id="aboutPage">
       <div className="mainContainer">
@@ -77,52 +81,32 @@ function AboutPage() {
           </div>
           <div className="contentContainer">
             <h2>
-              About
+              {t("title.first")}
               <span className="big">
-                Code <span className="small">Tech</span>
+                {" "}
+                {t("title.second")}
+                <span className="small"> {t("title.third")}</span>
               </span>
             </h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Consequuntur nihil eum, saepe sequi quis, dolorum quae inventore
-              facere eligendi aliquam harum mollitia nesciunt aut quam ratione,
-              repudiandae voluptates quaerat error?
-            </p>
+            <p>{t("desc")}</p>
           </div>
         </div>
 
         <div className="storyHolder">
-          <h2>Founder Story</h2>
+          <h2>{t("methodology.title")}</h2>
           <div className="storyContentHolder">
-            <p>
-              More than two decades ago, Ben Chestnut and Dan Kurzius started a
-              web design agency called the Rocket Science Group. Their focus was
-              on big, corporate clients.
-            </p>
-            <p>
-              Mailchimp was designed as an alternative to the oversized,
-              expensive email software of the early 2000s. Founded in Atlanta in
-              2001, it offered small business owners.
-            </p>
-            <p>
-              In the years that followed, Mailchimp continued to deliver results
-              for budding entrepreneurs. But just as those original customers
-              continued to grow, so did Mailchimp, evolving its product
-              offerings to serve companies.
-            </p>
+            <p>{t("methodology.content.one")}</p>
+            <p>{t("methodology.content.two")}</p>
+            <p>{t("methodology.content.three")}</p>
+            <p>{t("methodology.content.four")}</p>
           </div>
         </div>
         <div className="missionHolder">
-          <h2>Our Mission</h2>
+          <h2>{t("mission.title")}</h2>
           <div>
             <img src={missionImg} alt="missionImg" />
             <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-                in voluptatum eligendi. Perferendis, optio cupiditate sunt vero
-                aperiam totam, placeat similique ullam eaque excepturi explicabo
-                porro vel eligendi reiciendis quasi!
-              </p>
+              <p>{t("mission.desc")}</p>
             </div>
           </div>
         </div>
@@ -194,12 +178,28 @@ function AboutPage() {
             <img src={offer} alt="introImg" className="main-image" />
           </div>
           <div className="contentContainer">
-            <h2>What We offer</h2>
+            <h2>{t("offer.title")}</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Consequuntur nihil eum, saepe sequi quis, dolorum quae inventore
-              facere eligendi aliquam harum mollitia nesciunt aut quam ratione,
-              repudiandae voluptates quaerat error?
+              <span>
+                <FaCheckSquare />
+                <span>{t("offer.desc.one")}</span>
+              </span>
+              <span>
+                <FaCheckSquare />
+                <span>{t("offer.desc.two")}</span>
+              </span>
+              <span>
+                <FaCheckSquare />
+                <span>{t("offer.desc.three")}</span>
+              </span>
+              <span>
+                <FaCheckSquare />
+                <span>{t("offer.desc.four")}</span>
+              </span>
+              <span>
+                <FaCheckSquare />
+                <span>{t("offer.desc.five")}</span>
+              </span>
             </p>
           </div>
         </div>

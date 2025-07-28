@@ -10,6 +10,8 @@
 }
 html {
   scroll-padding-top: 245px; /* height of your fixed navbar */
+  overflow-x: hidden;
+  will-change: auto;
 }
 
 p,

@@ -1,194 +1,232 @@
-#aboutPage .blob-wrapper {
-  position: relative;
-  width: 100%;
-  height: fit-content;
-  margin: 80px auto 0 0;
-}
-
-#aboutPage .blob1 {
-  top: -80px;
-  left: -60px;
-}
-
-#aboutPage .blob2 {
-  bottom: -100px;
-  right: -50px;
-  opacity: 0.8;
-}
-
-#aboutPage .blob {
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  opacity: 0.9;
-  z-index: 0;
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
+@media (min-width: 320px) {
+  #aboutPage .blob-wrapper {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    margin: 80px auto 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  50% {
-    transform: translateY(-10px);
+
+  #aboutPage .blob1 {
+    top: -80px;
+    left: -60px;
   }
-  100% {
-    transform: translateY(0);
+
+  #aboutPage .blob2 {
+    bottom: -100px;
+    right: -50px;
+    opacity: 0.8;
   }
-}
 
-.main-image {
-  position: relative;
-  width: 100%;
-  border-radius: 20px;
-  object-fit: cover;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-  z-index: 1;
-  transition: transform 4s ease, box-shadow 0.3s ease;
-}
+  #aboutPage .blob {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    opacity: 0.9;
+    z-index: 0;
+    animation: float 4s ease-in-out infinite;
+  }
 
-.main-image:hover {
-  transform: scale(1.03);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-}
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .main-image:first-child {
+    height: 200px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  }
+  .main-image:last-child {
+    height: 100%;
+    width: 90%;
+  }
+  .main-image {
+    position: relative;
+    border-radius: 20px;
+    object-fit: cover;
 
-/* ---------- Base Styles ---------- */
-#aboutPage {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
+    z-index: 1;
+    transition: transform 4s ease, box-shadow 0.3s ease;
+  }
 
-#aboutPage .mainContainer {
-  width: 90%;
-}
+  /* ---------- Base Styles ---------- */
+  #aboutPage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
 
-#aboutPage .contentContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 3em;
-  text-align: center;
-}
+  #aboutPage .mainContainer {
+    width: 90%;
+  }
 
-#aboutPage .contentContainer h2 {
-  position: relative;
-  color: var(--primary-color);
-}
+  #aboutPage .contentContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    text-align: center;
+  }
 
-#aboutPage .contentContainer h2 .big {
-  margin-left: 7px;
-  font-size: 1.4em;
-  color: var(--base-color);
-}
+  #aboutPage .contentContainer h2 {
+    position: relative;
+    color: var(--primary-color);
+  }
 
-#aboutPage .contentContainer h2 .small {
-  position: absolute;
-  top: -50%;
-  right: -25px;
-  font-size: 0.5em;
-  z-index: 10;
-  color: var(--primary-color);
-}
+  #aboutPage .contentContainer h2 .big {
+    font-size: 1.4em;
+    color: var(--base-color);
+  }
 
-#aboutPage .contentContainer p,
-#aboutPage .storyHolder p,
-#aboutPage .missionHolder p {
-  color: grey;
-  font-size: 0.95em;
-  margin-top: 1em;
-}
+  html[dir="ltr"] #aboutPage .contentContainer h2 .small {
+    right: -10%;
+  }
+  html[dir="rtl"] #aboutPage .contentContainer h2 .small {
+    left: -5%;
+  }
+  #aboutPage .contentContainer h2 .small {
+    position: absolute;
+    top: -55%;
+    font-size: 0.5em;
+    z-index: 2;
+    color: var(--primary-color);
+  }
+  #aboutPage .contentContainer p {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  html[dir="ltr"] #aboutPage .contentContainer p span {
+    text-align: left;
+  }
+  html[dir="rtl"] #aboutPage .contentContainer p span {
+    text-align: right;
+  }
+  #aboutPage .contentContainer p span {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  #aboutPage .contentContainer p span svg {
+    font-size: 1.2em;
+    color: green;
+  }
+  #aboutPage .contentContainer p,
+  #aboutPage .storyHolder p,
+  #aboutPage .missionHolder p {
+    color: grey;
+    font-size: 0.8em;
+    margin-top: 1.7em;
+  }
 
-#aboutPage .storyHolder,
-#aboutPage .missionHolder,
-#aboutPage .learnMoreHolder {
-  margin-top: 4em;
-}
+  #aboutPage .storyHolder,
+  #aboutPage .missionHolder,
+  #aboutPage .learnMoreHolder {
+    margin-top: 4em;
+  }
 
-#aboutPage .storyHolder h2,
-#aboutPage .missionHolder h2,
-#aboutPage .learnMoreHolder h2 {
-  font-size: 1.5em;
-  text-align: center;
-  color: var(--base-color);
-}
+  #aboutPage .storyHolder h2,
+  #aboutPage .missionHolder h2,
+  #aboutPage .learnMoreHolder h2 {
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--base-color);
+  }
 
-#aboutPage .storyHolder p {
-  padding: 0.8em 1em;
-  margin-top: 2em;
-  border-radius: 5px;
-  border-left: 3px solid var(--base-color);
-}
+  html[dir="ltr"] #aboutPage .storyHolder p {
+    border-left: 3px solid var(--base-color);
+  }
+  html[dir="rtl"] #aboutPage .storyHolder p {
+    border-right: 3px solid var(--base-color);
+  }
+  #aboutPage .storyHolder p {
+    padding: 0.8em 1em;
+    margin-top: 2em;
+    border-radius: 5px;
+  }
 
-#aboutPage .missionHolder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  #aboutPage .missionHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-#aboutPage .missionHolder > div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: -1em;
-}
+  #aboutPage .missionHolder > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -1em;
+  }
 
-#aboutPage .missionHolder img {
-  width: 80%;
-  transform: translateY(50px);
-  border-radius: 25px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-}
+  #aboutPage .missionHolder img {
+    width: 90%;
+    transform: translateY(50px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  }
 
-#aboutPage .missionHolder > div p {
-  padding: 5em 1em 3em;
-  background-color: var(--very-light-gray);
-  color: var(--medium-gray);
-  border-radius: 10px;
-}
+  #aboutPage .missionHolder > div p {
+    padding: 5em 1em 3em;
+    background-color: var(--very-light-gray);
+    color: var(--medium-gray);
+  }
 
-#aboutPage .learnMoreHolder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4em;
-}
+  #aboutPage .learnMoreHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4em;
+  }
 
-#aboutPage .learnMoreHolder h2 {
-  margin-bottom: 2em;
-}
+  #aboutPage .learnMoreHolder h2 {
+    margin-bottom: 2em;
+  }
 
-#aboutPage .learnMoreHolder ul {
-  list-style: none;
-  width: 100%;
-  padding: 0;
-}
+  #aboutPage .learnMoreHolder ul {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+  }
 
-#aboutPage .learnMoreHolder ul li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 5em;
-}
+  #aboutPage .learnMoreHolder ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5em;
+  }
 
-#aboutPage .learnMoreHolder ul li img {
-  width: 50%;
-}
+  #aboutPage .learnMoreHolder ul li img {
+    width: 50%;
+  }
 
-#aboutPage .learnMoreHolder ul li p {
-  margin-top: 1em;
-  font-weight: bold;
-  font-size: 1.1em;
-  color: grey;
-}
+  #aboutPage .learnMoreHolder ul li p {
+    margin-top: 1em;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: grey;
+  }
 
-#aboutPage .blobAndContentHolder:last-child {
-  margin: 8em 0;
+  #aboutPage .blobAndContentHolder:last-child {
+    margin: 8em 0;
+  }
 }
 
 /* ---------- Responsive ---------- */
@@ -203,13 +241,8 @@
     font-size: 1.6em;
   }
 
-  #aboutPage .contentContainer p,
-  #aboutPage .storyHolder p {
-    font-size: 1em;
-  }
-
   #aboutPage .storyHolder {
-    margin-top: 2.5em;
+    margin-top: 5em;
   }
 
   #aboutPage .missionHolder {
@@ -235,15 +268,21 @@
   }
 
   #aboutPage .blobAndContentHolder {
+    direction: ltr;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
+  html[dir="ltr"] #aboutPage .contentContainer {
+    direction: ltr;
+  }
+  html[dir="rtl"] #aboutPage .contentContainer {
+    direction: rtl;
+  }
   #aboutPage .contentContainer {
-    margin-left: 2em;
     align-items: flex-start;
-    text-align: left;
+    text-align: start;
+    margin-top: 4em;
   }
 
   #aboutPage .storyHolder,
@@ -255,17 +294,37 @@
   #aboutPage .storyHolder h2,
   #aboutPage .missionHolder h2,
   #aboutPage .learnMoreHolder h2 {
-    font-size: 1.7em;
+    font-size: 1.5em;
   }
 
   #aboutPage .contentContainer h2 {
-    font-size: 2.5em;
+    font-size: 2em;
   }
-
+  #aboutPage .storyContentHolder {
+    margin-top: 2em;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #aboutPage .contentContainer p,
+  #aboutPage .storyHolder p,
+  #aboutPage .missionHolder p {
+    width: fit-content;
+    font-size: 0.85em;
+    margin-top: 1em;
+    z-index: 5;
+  }
+  #aboutPage .contentContainer p span,
+  #aboutPage .contentContainer p {
+    gap: 5px;
+  }
   #aboutPage .missionHolder > div {
     margin-top: 2em;
+    padding: 2em;
     width: 100%;
     flex-direction: row-reverse;
+    justify-content: space-between;
     background-color: var(--very-light-gray);
   }
 
@@ -275,13 +334,14 @@
   }
 
   #aboutPage .missionHolder > div img {
-    height: 100%;
+    width: 45%;
+    height: 180px;
     transform: translateY(0);
     border-radius: 0;
   }
 
   #aboutPage .missionHolder > div p {
-    padding: 2em;
+    padding: 0;
     background-color: transparent;
   }
 
@@ -310,6 +370,10 @@
 }
 
 @media (min-width: 1024px) {
+  #aboutPage .contentContainer h2 {
+    font-size: 2.7em;
+    margin-bottom: 0.5em;
+  }
   .blob {
     width: 300px;
     height: 300px;
@@ -318,21 +382,13 @@
   #aboutPage .contentContainer {
     margin-left: 4em;
   }
-
-  #aboutPage .storyHolder h2,
-  #aboutPage .missionHolder h2,
-  #aboutPage .learnMoreHolder h2 {
-    font-size: 2em;
+  #aboutPage .storyHolder,
+  #aboutPage .missionHolder,
+  #aboutPage .learnMoreHolder {
+    margin-top: 10em;
   }
-
-  #aboutPage .contentContainer h2 {
-    font-size: 3em;
-  }
-
-  #aboutPage .contentContainer p,
-  #aboutPage .storyHolder p,
-  #aboutPage .missionHolder p {
-    font-size: 1.1em;
+  #aboutPage .missionHolder > div img {
+    height: 250px;
   }
 }
 
@@ -353,5 +409,8 @@
   #aboutPage .missionHolder p {
     font-size: 1.5em;
     font-weight: lighter;
+  }
+  #aboutPage .missionHolder > div img {
+    height: 400px;
   }
 }

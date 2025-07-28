@@ -1,1 +1,27 @@
-{ "": "" }
+{
+  "title": { "first": "About", "second": "Code", "third": "Tech" },
+  "desc": "At Code Tech, digital transformation isn’t a luxury — it’s a must. We’re a Saudi company with over 15 years of expertise in programming and digital marketing, delivering tailored tech and marketing solutions that help startups and growing businesses thrive with confidence. By blending innovation and creativity, we craft services designed to fit the Saudi market and meet every client’s needs — whether you sell products, offer services, or build projects, we’re your partner from start to success and beyond.",
+  "methodology": {
+    "title": "Our Work Methodology",
+    "content": {
+      "one": "Understanding & Analysis We start by gaining a deep understanding of your needs and business goals, analyzing the project requirements in detail.",
+      "two": "Planning & Design We develop a detailed project plan and design tailored technical solutions aligned with your vision.",
+      "three": "Development & Testing We build the solutions using best practices and conduct thorough testing to ensure top quality and performance.",
+      "four": "Delivery & Support We deliver the project on time and provide ongoing support to ensure lasting success."
+    }
+  },
+  "mission": {
+    "title": "Our Mission",
+    "desc": "At Code Tech, our mission is simple and clear: We empower Saudi startups and medium-sized businesses to achieve full digital success by delivering integrated, customizable, and cost-effective tech and marketing solutions — ensuring value from every Riyal invested. We provide everything you need to grow your business under one roof — from in-house developed ERP systems, to hosting, programming, content, and digital advertising — all tailored to the Saudi market and your specific needs. At Code Tech, we believe that successful digital transformation begins with understanding the client, thrives through smart execution, and continues with ongoing support."
+  },
+  "offer": {
+    "title": "What We Offer",
+    "desc": {
+      "one": "All-in-one solutions: ERP, development, hosting, marketing, design, and more",
+      "two": "Saudi team that understands the market: We serve sectors like education, commerce, real estate, and industry",
+      "three": "High flexibility: We tailor solutions based on your budget and business growth",
+      "four": "Continuous support: We're with you after delivery, not just during execution",
+      "five": "We're here to help you keep up with the market, increase your profits, and grow your business"
+    }
+  }
+}
