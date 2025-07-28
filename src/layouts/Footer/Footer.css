@@ -132,21 +132,27 @@
     align-items: center;
     list-style: none;
   }
-
-  #footer .footerContainer > div > div ul li {
+  #footer .footerContainer > div > div ul:first-child {
+    gap: 11px;
+  }
+  #footer .footerContainer > div > div ul:last-child {
+    gap: 4px;
+  }
+  #footer .footerContainer > div > div ul:first-child li {
     font-weight: lighter;
-    margin: 0 0.45em;
   }
   #footer .footerContainer > div > div ul a {
     text-decoration: none;
     color: white;
   }
-
+  #footer .footerContainer > div > div ul:last-child li {
+    display: flex;
+    gap: 2px;
+  }
   #footer .footerContainer > div > div ul li a {
     font-size: 0.8em;
     text-decoration: none;
     color: white;
-    margin: 0 0.3em;
   }
 
   #footer .footerContainer > div > div ul li svg {
@@ -205,6 +211,12 @@
 @media (min-width: 375px) {
   #footer .mainContainer .subscribeContainer {
     padding: 8em 2.5em 1em;
+  }
+  #footer .footerContainer > div > div ul:last-child li {
+    gap: 5px;
+  }
+  #footer .footerContainer > div > div ul:last-child {
+    gap: 20px;
   }
 }
 
@@ -283,10 +295,6 @@
     padding: 3em 0 1em;
   }
 
-  #footer .footerContainer > div > div:last-child ul:first-child {
-    display: none;
-  }
-
   #footer .footerContainer > div:first-child {
     display: flex;
     justify-content: space-evenly;
@@ -298,6 +306,7 @@
   #footer .footerContainer .tabletView {
     display: flex;
     margin-top: 1em;
+    gap: 5px;
   }
 
   #footer .footerContainer > div:first-child > div {
@@ -311,9 +320,10 @@
 
   #footer .footerContainer > div:first-child > div:last-child ul:last-child {
     flex-direction: column;
-    margin-top: 1em;
+    margin-top: 0;
     justify-content: flex-start;
     align-items: flex-start;
+    gap: 5px;
   }
 
   html[dir="ltr"]
@@ -390,7 +400,15 @@
   #footer .footerContainer > div > div ul li svg {
     font-size: 1.4em;
   }
-
+  #footer .footerContainer > div > div ul:last-child {
+    gap: 5px;
+  }
+  #footer .footerContainer > div > div ul:last-child li a {
+    transition: all 0.3s ease-in-out;
+  }
+  #footer .footerContainer > div > div ul:last-child li a:hover {
+    color: var(--primary-color);
+  }
   #footer .footerContainer > div:last-child {
     margin-top: 6em;
     font-size: 0.75em;

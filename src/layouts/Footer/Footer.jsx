@@ -5,12 +5,13 @@ import "./Footer.css";
 import logo from "../../assets/Logo/Logo.png";
 
 //Importing Icons
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { AiFillTikTok } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import { IoIosCall } from "react-icons/io";
 import { IoLocation } from "react-icons/io5";
+
 import { useTranslation } from "react-i18next";
 import { useContext } from "react";
 import { WebContext } from "../../context/WebContext";
@@ -18,7 +19,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   const { t } = useTranslation(["footer"]),
-    { scrollToView, handleLoadingStatus } = useContext(WebContext),
+    { scrollToView } = useContext(WebContext),
     navList = [
       {
         id: "home",
@@ -45,7 +46,28 @@ function Footer() {
         method: () => scrollToView("contact"),
       },
     ],
-    navIcons = [<FaFacebook />, <FaInstagram />, <FaLinkedin />],
+    navIcons = [
+      {
+        icon: <FaLinkedin />,
+        link: "https://www.linkedin.com/company/code-tech-sa/",
+      },
+      {
+        icon: <FaInstagram />,
+        link: "https://www.instagram.com/codetech07?igsh=MWFpenoxcmhlOHE0ZA%3D%3D",
+      },
+      {
+        icon: <FaFacebook />,
+        link: "https://www.facebook.com/profile.php?id=61572450307253&rdid=SpY816iDniyKkbRV&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AoS7RArFF%2F#",
+      },
+      {
+        icon: <FaXTwitter />,
+        link: "https://x.com/CodeTech07?t=6JQCn8xG-PLNBVWocjBQaw&s=09",
+      },
+      {
+        icon: <AiFillTikTok />,
+        link: "https://www.tiktok.com/@code.tech7?_t=ZS-8y1isVeWoTQ&_r=1",
+      },
+    ],
     policy = [
       t("action.policy.copy"),
       t("action.policy.terms"),
@@ -107,7 +129,7 @@ function Footer() {
               <ul>
                 {navList.map((n, i) => (
                   <Link
-                    key={`main-link-${i}`}
+                    key={i}
                     to={n.path}
                     onClick={n.method}
                     className="hoverEffect"
@@ -118,20 +140,15 @@ function Footer() {
               </ul>
               <ul className="tabletView">
                 {navIcons.map((i, ind) => (
-                  <li className="hoverEffect" key={ind}>
-                    {i}
+                  <li key={ind} className="hoverEffect">
+                    <a href={i.link} target="_blank" rel="noopener noreferrer">
+                      {i.icon}
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <ul>
-                {navIcons.map((i, ind) => (
-                  <li className="hoverEffect" key={ind}>
-                    {i}
-                  </li>
-                ))}
-              </ul>
               <ul>
                 {details.map((d, index) => (
                   <li key={index} className="hoverEffect">

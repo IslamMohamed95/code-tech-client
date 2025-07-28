@@ -1,52 +1,100 @@
-import { useEffect, useState, useRef, useMemo } from "react";
+import { useEffect, useState, useRef, useMemo, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams, useNavigate } from "react-router-dom";
-import first from "../../assets/Products/sales_pipeline_smb.svg";
 import "./Products.css";
 
+// Images
+import g1 from "../../assets/Products/GeneralAccounts/img1.webp";
+import g2 from "../../assets/Products/GeneralAccounts/img2.webp";
+import g3 from "../../assets/Products/GeneralAccounts/img3.webp";
+import g4 from "../../assets/Products/GeneralAccounts/img4.webp";
+import g5 from "../../assets/Products/GeneralAccounts/img5.webp";
+import g6 from "../../assets/Products/GeneralAccounts/img6.webp";
+import g7 from "../../assets/Products/GeneralAccounts/img7.webp";
+
+import inv1 from "../../assets/Products/Inventory/img1.webp";
+import inv2 from "../../assets/Products/Inventory/img2.webp";
+import inv3 from "../../assets/Products/Inventory/img3.webp";
+import inv4 from "../../assets/Products/Inventory/img4.webp";
+import inv5 from "../../assets/Products/Inventory/img5.webp";
+import inv6 from "../../assets/Products/Inventory/img6.webp";
+
+import pu1 from "../../assets/Products/Purchase/img1.webp";
+import pu2 from "../../assets/Products/Purchase/img2.webp";
+import pu3 from "../../assets/Products/Purchase/img3.webp";
+import pu4 from "../../assets/Products/Purchase/img4.webp";
+import pu5 from "../../assets/Products/Purchase/img5.webp";
+
+import s1 from "../../assets/Products/Sales/img1.webp";
+import s2 from "../../assets/Products/Sales/img2.webp";
+import s3 from "../../assets/Products/Sales/img3.webp";
+
+import f1 from "../../assets/Products/Financial/img1.webp";
+import f2 from "../../assets/Products/Financial/img2.webp";
+import f3 from "../../assets/Products/Financial/img3.webp";
+import f4 from "../../assets/Products/Financial/img4.webp";
+import f5 from "../../assets/Products/Financial/img5.webp";
+import f6 from "../../assets/Products/Financial/img6.webp";
+import f7 from "../../assets/Products/Financial/img7.webp";
+import f8 from "../../assets/Products/Financial/img8.webp";
+
+const imageMap = {
+  "general-accounts": [g1, g2, g3, g4, g5, g6, g7],
+  inventory: [inv1, inv2, inv3, inv4, inv5, inv6],
+  purchase: [pu1, pu2, pu3, pu4, pu5],
+  sales: [s1, s2, s3],
+  "financial-transactions": [f1, f2, f3, f4, f5, f6, f7, f8],
+};
+
 function Products() {
+  const [radius, setRadius] = useState(200);
+  const carouselRef = useRef();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [hrOffset, setHrOffset] = useState({ left: 0, width: 0 });
+
   const { t, i18n } = useTranslation(["nav"]);
   const { category, option } = useParams();
   const navigate = useNavigate();
+  const tabsRef = useRef([]);
 
-  // 🚀 Get submenu data based on current language
   const subMenuData = useMemo(
     () => t("prdocutsSubMenu", { returnObjects: true }),
     [t, i18n.language]
   );
 
-  // 🎯 Find category/group using `slug`
-  const groupData = useMemo(() => {
-    return subMenuData.find((group) => group.slug === category);
-  }, [subMenuData, category]);
+  const groupData = useMemo(
+    () => subMenuData.find((g) => g.slug === category),
+    [subMenuData, category]
+  );
 
-  // 🎯 Find suboption/item using `optionSlug`
-  const subItemData = useMemo(() => {
-    return groupData?.arr.find((item) => item.optionSlug === option);
-  }, [groupData, option]);
+  const subItemData = useMemo(
+    () => groupData?.arr.find((item) => item.optionSlug === option),
+    [groupData, option]
+  );
 
-  // 🔁 Redirect if current URL slug doesn't match what's in translation
+  const optionImages = useMemo(() => {
+    if (!option) return [];
+    const normalized = option.toLowerCase().replace(/\s+/g, "-");
+    return imageMap[normalized] || [];
+  }, [option]);
+
+  const activeQuestion = subItemData?.questions?.[activeIndex];
+
   useEffect(() => {
     if (groupData && subItemData) {
       const newCategory = groupData.slug;
       const newOption = subItemData.optionSlug;
-
       if (newCategory !== category || newOption !== option) {
         navigate(`/product/${newCategory}/${newOption}`, { replace: true });
       }
     }
   }, [groupData, subItemData, category, option, navigate]);
 
-  // 🧹 Redirect to main products page if not found
   useEffect(() => {
     if (!groupData || !subItemData || !subItemData.questions?.length) {
       navigate("/products", { replace: true });
     }
   }, [groupData, subItemData, navigate]);
-
-  const [activeIndex, setActiveIndex] = useState(0);
-  const tabsRef = useRef([]);
-  const [hrOffset, setHrOffset] = useState({ left: 0, width: 0 });
 
   useEffect(() => {
     const container = tabsRef.current[0]?.parentElement;
@@ -55,10 +103,32 @@ function Products() {
       setHrOffset({ left: 0, width: tabWidth * (activeIndex + 1) });
     }
   }, [activeIndex, subItemData]);
+  useEffect(() => {
+    const calculateRadius = () => {
+      const count = optionImages.length;
+      const width = window.innerWidth;
+      if (!count) return;
 
+      let baseRadius;
+
+      if (width <= 500) {
+        baseRadius = count * 20;
+        setRadius(Math.min(120, baseRadius));
+      } else if (width <= 768) {
+        baseRadius = count * 30;
+        setRadius(Math.min(200, baseRadius));
+      } else {
+        baseRadius = count * 45;
+        setRadius(Math.min(360, baseRadius));
+      }
+    };
+
+    calculateRadius(); // on load
+
+    window.addEventListener("resize", calculateRadius);
+    return () => window.removeEventListener("resize", calculateRadius);
+  }, [optionImages]);
   if (!groupData || !subItemData || !subItemData.questions?.length) return null;
-
-  const activeQuestion = subItemData.questions[activeIndex];
 
   return (
     <section id="products" className="pipeline-section">
@@ -70,8 +140,8 @@ function Products() {
           <div className="pipeline-main">
             <div className="pipeline-card-wrapper">
               <div className="pipeline-card animated">
-                <h2>{activeQuestion.question}</h2>
-                <p>{activeQuestion.answer}</p>
+                <h2>{activeQuestion?.question}</h2>
+                <p>{activeQuestion?.answer}</p>
                 <div className="circle-bg"></div>
               </div>
             </div>
@@ -112,7 +182,6 @@ function Products() {
             aria-hidden="true"
           >
             <svg
-              data-name="Layer 1"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 1200 120"
               preserveAspectRatio="none"
@@ -131,9 +200,24 @@ function Products() {
           <h2>{t("productsDetails.header")}</h2>
           <p>{t("productsDetails.paragraph")}</p>
         </div>
-        <div className="imgHolder">
-          <img src={first} alt="ERP Module Illustration 1" />
-          <img src={first} alt="ERP Module Illustration 2" />
+
+        <div className="carousel" ref={carouselRef}>
+          <figure>
+            {optionImages.map((img, idx) => {
+              const angle = (360 / optionImages.length) * idx;
+              return (
+                <img
+                  key={idx}
+                  src={img}
+                  loading="lazy"
+                  alt={`img-${idx}`}
+                  style={{
+                    transform: `translate(-50%, -50%) rotateY(${angle}deg) translateZ(${radius}px)`,
+                  }}
+                />
+              );
+            })}
+          </figure>
         </div>
       </section>
 

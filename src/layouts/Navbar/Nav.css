@@ -347,11 +347,25 @@
   #DNav > div:first-child > div:first-child ul li {
     margin: 0 5px;
   }
-
+  #DNav > div:first-child > div:first-child ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   #DNav > div:last-child > div > div {
     margin: 0 5px;
   }
-
+  #DNav > div:last-child > div > div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(217, 217, 217);
+    transition: all 0.4s ease-in-out;
+  }
+  #DNav > div:last-child > div > div a:hover {
+    color: white;
+  }
   #DNav > div:last-child > div > div > div {
     margin: 0 9px;
   }

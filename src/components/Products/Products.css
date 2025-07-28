@@ -137,7 +137,7 @@
     background-color: #cbd5e1;
     border-radius: 50%;
     opacity: 0.2;
-    z-index: 0;
+    z-index: 1;
   }
 
   .pipeline-tabs-container {
@@ -224,7 +224,7 @@
 
   #products .implementHolder {
     width: 100%;
-    margin: 6em 0;
+    margin: 6em 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -253,34 +253,55 @@
   #products .contentHolder p {
     font-size: 0.9em;
     color: grey;
-    margin: 1em 0 1em;
+    margin: 1em 0 0 0;
   }
 
-  #products .imgHolder {
-    width: 80%;
-    height: 180px;
-    border-top-left-radius: 45px;
-    border-bottom-right-radius: 45px;
-    margin-top: 5em;
-    background-color: var(--primary-color);
+  /* 3D Carousel Styles */
+  .carousel {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  #products .imgHolder img {
-    width: 90%;
+  .carousel figure {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 50s linear infinite;
   }
 
-  #products .imgHolder img:first-child {
-    transform: translateX(40px);
-    margin-bottom: 1em;
+  .carousel img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+    transition: transform 0.5s ease-in-out;
+    width: clamp(80px, 15vw, 140px);
+    height: clamp(70px, 14vw, 120px);
+    border-radius: 5px;
+    object-fit: fill;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 
-  #products .imgHolder img:last-child {
-    transform: translateX(-40px);
+  /* Optional: spin effect */
+  @keyframes spin {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
   }
 
   #products .DemoHolder {
     width: 100%;
-    margin: 10em 0 5em;
+    margin: 2em 0 5em 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -315,13 +336,15 @@
   }
 }
 
-/* MEDIA QUERIES OVERRIDES */
 @media (min-width: 375px) {
   #products .contentHolder p {
-    margin: 1em 0 4em;
+    margin: 1em 0 0 0;
+  }
+  .carousel img {
+    width: 110px;
+    height: 90px;
   }
 }
-
 @media (min-width: 420px) {
   .pipeline-title {
     font-size: 2em;
@@ -331,21 +354,15 @@
     font-size: 1.5em;
   }
 
-  #products .imgHolder {
-    border-top-left-radius: 70px;
-    border-bottom-right-radius: 70px;
-  }
-
   #products .contentHolder p {
     font-size: 1em;
-    margin: 2em 0 5em;
+    margin: 2em 0 0 0;
   }
-
-  #products .DemoHolder {
-    margin: 12em 0 5em;
+  .carousel img {
+    width: 130px;
+    height: 100px;
   }
 }
-
 @media (min-width: 768px) {
   .pipeline-main {
     flex-direction: row;
@@ -386,14 +403,14 @@
     margin: 1em 0 0;
   }
 
-  #products .imgHolder {
+  .carousel {
+    width: 300px;
     height: 300px;
-    width: 70%;
-    margin: 12em 0 7%;
   }
 
-  #products .imgHolder img {
-    width: 100%;
+  .carousel img {
+    width: 190px;
+    height: 130px;
   }
 
   #products .contentHolder h2,
@@ -405,7 +422,6 @@
     margin-bottom: 5em;
   }
 }
-
 @media (min-width: 1024px) {
   .pipeline-container .mainContainer {
     width: 80%;
@@ -431,13 +447,18 @@
     font-size: 1em;
   }
 
-  #products .imgHolder {
-    height: 300px;
+  .carousel {
+    width: 400px;
+    height: 400px;
+  }
+
+  .carousel img {
+    width: 200px;
+    height: 150px;
   }
 
   #products .contentHolder {
     width: 80%;
-    margin-bottom: 17em;
   }
 
   #products .contentHolder h2 {
@@ -461,10 +482,9 @@
   }
 
   #products .DemoHolder {
-    margin: 20em 0 7em;
+    margin: 0 0 7em;
   }
 }
-
 @media (min-width: 1440px) {
   .pipeline-main {
     width: 90%;
@@ -477,7 +497,13 @@
     width: 40%;
   }
 
-  #products .contentHolder {
-    margin-bottom: 6em;
+  .carousel {
+    width: 500px;
+    height: 400px;
+  }
+
+  .carousel img {
+    width: 280px;
+    height: 180px;
   }
 }
