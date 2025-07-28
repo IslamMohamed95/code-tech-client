@@ -41,7 +41,7 @@ import f8 from "../../assets/Products/Financial/img8.webp";
 const imageMap = {
   "general-accounts": [g1, g2, g3, g4, g5, g6, g7],
   inventory: [inv1, inv2, inv3, inv4, inv5, inv6],
-  purchase: [pu1, pu2, pu3, pu4, pu5],
+  purchasing: [pu1, pu2, pu3, pu4, pu5],
   sales: [s1, s2, s3],
   "financial-transactions": [f1, f2, f3, f4, f5, f6, f7, f8],
 };
