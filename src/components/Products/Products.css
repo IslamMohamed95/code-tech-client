@@ -265,10 +265,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    will-change: transform;
-    contain: layout paint; /* NEW: isolates layout & paint */
     z-index: 1;
   }
 
@@ -290,7 +286,7 @@
     width: clamp(80px, 12vw, 120px);
     height: clamp(70px, 11vw, 100px);
     border-radius: 5px;
-    object-fit: cover;
+    object-fit: fill;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 
