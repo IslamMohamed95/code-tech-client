@@ -171,8 +171,8 @@
           "optionSlug": "Vacations",
           "questions": [
             {
-              "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
-              "answer": "The Chart of Accounts serves as your organization’s complete financial map, offering a structured and logical classification of all financial operations. Our system supports a hybrid classification—combining sequential numbering with thematic grouping—enabling accountants and managers to grasp the financial position quickly and clearly. It features multi-level detailing, from main accounts (like assets and liabilities) to detailed sub-accounts, with customizable levels depending on business size and type. Accounts can be restructured or renumbered without losing historical data. Fully compliant with Saudi accounting standards and International Financial Reporting Standards (IFRS), the system allows for industry-specific customization—construction, trade, manufacturing, and financial services."
+              "question": "Leaves",
+              "answer": "The system provides comprehensive management for all types of leaves in compliance with Saudi labor laws. This includes official state-approved holidays such as Eid and national holidays, as well as personal employee leaves such as annual, sick, maternity, and paternity leave. It also manages employee permissions to leave during working hours, with accurate tracking of such permissions and their impact on salaries."
             }
           ]
         },
@@ -181,8 +181,8 @@
           "optionSlug": "Attendance and Departure",
           "questions": [
             {
-              "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
-              "answer": "The Chart of Accounts serves as your organization’s complete financial map, offering a structured and logical classification of all financial operations. Our system supports a hybrid classification—combining sequential numbering with thematic grouping—enabling accountants and managers to grasp the financial position quickly and clearly. It features multi-level detailing, from main accounts (like assets and liabilities) to detailed sub-accounts, with customizable levels depending on business size and type. Accounts can be restructured or renumbered without losing historical data. Fully compliant with Saudi accounting standards and International Financial Reporting Standards (IFRS), the system allows for industry-specific customization—construction, trade, manufacturing, and financial services."
+              "question": "Attendance & Departure",
+              "answer": "The system supports modern biometric devices to accurately record attendance and departure times, with automatic data extraction from multiple devices. It allows the definition of flexible attendance schedules for each employee or department, and calculates working hours based on predefined rules. Supervisors can review and approve attendance periods to ensure data accuracy and reliability."
             }
           ]
         },
@@ -191,8 +191,8 @@
           "optionSlug": "Payroll",
           "questions": [
             {
-              "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
-              "answer": "The Chart of Accounts serves as your organization’s complete financial map, offering a structured and logical classification of all financial operations. Our system supports a hybrid classification—combining sequential numbering with thematic grouping—enabling accountants and managers to grasp the financial position quickly and clearly. It features multi-level detailing, from main accounts (like assets and liabilities) to detailed sub-accounts, with customizable levels depending on business size and type. Accounts can be restructured or renumbered without losing historical data. Fully compliant with Saudi accounting standards and International Financial Reporting Standards (IFRS), the system allows for industry-specific customization—construction, trade, manufacturing, and financial services."
+              "question": "Payroll",
+              "answer": "The system offers complete payroll management, covering all components of the salary including base salary, allowances, benefits, and deductions. It manages employee loans with accurate tracking of repayments and deductions from salaries. Monthly salary variables such as bonuses and temporary deductions are also handled. Payroll is calculated automatically based on predefined rules, considering attendance, absences, and leaves — ending with generating salary payments ready for bank transfer or cash disbursement."
             }
           ]
         },
@@ -201,8 +201,8 @@
           "optionSlug": "Personnel Affairs",
           "questions": [
             {
-              "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
-              "answer": "The Chart of Accounts serves as your organization’s complete financial map, offering a structured and logical classification of all financial operations. Our system supports a hybrid classification—combining sequential numbering with thematic grouping—enabling accountants and managers to grasp the financial position quickly and clearly. It features multi-level detailing, from main accounts (like assets and liabilities) to detailed sub-accounts, with customizable levels depending on business size and type. Accounts can be restructured or renumbered without losing historical data. Fully compliant with Saudi accounting standards and International Financial Reporting Standards (IFRS), the system allows for industry-specific customization—construction, trade, manufacturing, and financial services."
+              "question": "Personnel Affairs",
+              "answer": "The system provides integrated management of personnel affairs, including the storage and organization of all employee documents and records. It covers contract management, renewals, and terminations, in addition to tracking legal and administrative procedures related to employees. The system also manages complaints, violations, and disciplinary actions in accordance with Saudi labor laws, with all processes and decisions documented in an organized and reviewable manner."
             }
           ]
         },
@@ -211,48 +211,78 @@
           "optionSlug": "Employment Data",
           "questions": [
             {
-              "question": "Chart of Accounts – The Foundation of a Robust Accounting System",
-              "answer": "The Chart of Accounts serves as your organization’s complete financial map, offering a structured and logical classification of all financial operations. Our system supports a hybrid classification—combining sequential numbering with thematic grouping—enabling accountants and managers to grasp the financial position quickly and clearly. It features multi-level detailing, from main accounts (like assets and liabilities) to detailed sub-accounts, with customizable levels depending on business size and type. Accounts can be restructured or renumbered without losing historical data. Fully compliant with Saudi accounting standards and International Financial Reporting Standards (IFRS), the system allows for industry-specific customization—construction, trade, manufacturing, and financial services."
+              "question": "Employment Data",
+              "answer": "The system manages a comprehensive employment database containing detailed information about all current and former employees. This includes personal, professional, and educational data, as well as work experience, certifications, qualifications, and training courses. It allows tracking of an employee's career history from the date of hiring, promotions, and departmental transfers, with the ability to generate detailed reports on organizational structure, turnover rates, and talent retention."
             }
           ]
         }
       ]
     },
     {
-      "mainTitle": "",
-      "content": "",
+      "mainTitle": "Customer Relationship Management (CRM) Sector",
+      "content": "Customer Relationship Management represents the cornerstone of business success in the growing Saudi commercial environment. With digital transformation and evolving customer expectations, the need for advanced CRM systems has become more pressing than ever.",
       "title": "CRM",
       "slug": "CRM",
       "arr": [
         {
           "label": "Comprehensive customer data management",
           "optionSlug": "Comprehensive customer data management",
-          "questions": [{ "question": "", "asnwer": "" }]
+          "questions": [
+            {
+              "question": "Comprehensive Customer Data Management",
+              "asnwer": "CRM systems gather all customer-related information in one place, enabling a deeper understanding of their needs and preferences. This supports delivering exceptional customer service aligned with local expectations."
+            }
+          ]
         },
         {
           "label": "Improved sales processes",
           "optionSlug": "Improved sales processes",
-          "questions": [{ "question": "", "asnwer": "" }]
+          "questions": [
+            {
+              "question": "Sales Process Optimization",
+              "asnwer": "Advanced systems provide effective tools to manage the entire sales cycle — from tracking leads to closing deals. They also help identify new business opportunities and improve conversion rates."
+            }
+          ]
         },
         {
           "label": "Targeted and personalized marketing",
           "optionSlug": "Targeted and personalized marketing",
-          "questions": [{ "question": "", "asnwer": "" }]
+          "questions": [
+            {
+              "question": "Targeted and Personalized Marketing",
+              "asnwer": "CRM systems support targeted and personalized marketing campaigns, enhancing marketing effectiveness and improving ROI. This is especially important in the diverse Saudi market."
+            }
+          ]
         },
         {
           "label": "Outstanding customer service",
           "optionSlug": "Outstanding customer service",
-          "questions": [{ "question": "", "asnwer": "" }]
+          "questions": [
+            {
+              "question": "Exceptional Customer Service",
+              "asnwer": "Modern systems allow for fast and consistent customer service across all communication channels, boosting customer satisfaction and building long-term relationships."
+            }
+          ]
         },
         {
           "label": "Intelligent analytics and reporting",
           "optionSlug": "Intelligent analytics and reporting",
-          "questions": [{ "question": "", "asnwer": "" }]
+          "questions": [
+            {
+              "question": "Smart Analytics and Reporting",
+              "asnwer": "CRM platforms provide deep insights into customer behavior and sales performance, aiding in data-driven decision-making and refining marketing strategies."
+            }
+          ]
         },
         {
           "label": "Integration with other systems",
           "optionSlug": "Integration with other systems",
-          "questions": [{ "question": "", "asnwer": "" }]
+          "questions": [
+            {
+              "question": "Integration with Other Systems",
+              "asnwer": "Advanced CRM systems support integration with content management systems, e-commerce platforms, and social media — creating a smooth, seamless customer experience."
+            }
+          ]
         }
       ]
     },
