@@ -3,32 +3,35 @@ import { useTranslation } from "react-i18next";
 import { useParams, useNavigate } from "react-router-dom";
 import "./Products.css";
 
+//Importing SwiperJs
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCards } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-cards";
+
 // Images
-import g1 from "../../assets/Products/GeneralAccounts/img1.webp";
-import g2 from "../../assets/Products/GeneralAccounts/img2.webp";
+//ERP
+import g1 from "../../assets/Products/GeneralAccounts/img1.png";
+import g2 from "../../assets/Products/GeneralAccounts/img2.png";
 import g3 from "../../assets/Products/GeneralAccounts/img3.webp";
 import g4 from "../../assets/Products/GeneralAccounts/img4.webp";
 import g5 from "../../assets/Products/GeneralAccounts/img5.webp";
 import g6 from "../../assets/Products/GeneralAccounts/img6.webp";
 import g7 from "../../assets/Products/GeneralAccounts/img7.webp";
-
 import inv1 from "../../assets/Products/Inventory/img1.webp";
 import inv2 from "../../assets/Products/Inventory/img2.webp";
 import inv3 from "../../assets/Products/Inventory/img3.webp";
 import inv4 from "../../assets/Products/Inventory/img4.webp";
 import inv5 from "../../assets/Products/Inventory/img5.webp";
 import inv6 from "../../assets/Products/Inventory/img6.webp";
-
 import pu1 from "../../assets/Products/Purchase/img1.webp";
 import pu2 from "../../assets/Products/Purchase/img2.webp";
 import pu3 from "../../assets/Products/Purchase/img3.webp";
 import pu4 from "../../assets/Products/Purchase/img4.webp";
 import pu5 from "../../assets/Products/Purchase/img5.webp";
-
 import s1 from "../../assets/Products/Sales/img1.webp";
 import s2 from "../../assets/Products/Sales/img2.webp";
 import s3 from "../../assets/Products/Sales/img3.webp";
-
 import f1 from "../../assets/Products/Financial/img1.webp";
 import f2 from "../../assets/Products/Financial/img2.webp";
 import f3 from "../../assets/Products/Financial/img3.webp";
@@ -37,18 +40,68 @@ import f5 from "../../assets/Products/Financial/img5.webp";
 import f6 from "../../assets/Products/Financial/img6.webp";
 import f7 from "../../assets/Products/Financial/img7.webp";
 import f8 from "../../assets/Products/Financial/img8.webp";
+//HR
+import hr1 from "../../assets/Products/HR/img1.webp";
+import hr2 from "../../assets/Products/HR/img2.webp";
+import hr3 from "../../assets/Products/HR/img3.webp";
+import hr4 from "../../assets/Products/HR/img4.webp";
+import hr5 from "../../assets/Products/HR/img5.webp";
+import hr6 from "../../assets/Products/HR/img6.webp";
+import hr7 from "../../assets/Products/HR/img7.webp";
+//CM
+import crm1 from "../../assets/Products/CRM/img1.webp";
+import crm2 from "../../assets/Products/CRM/img2.webp";
+import crm3 from "../../assets/Products/CRM/img3.webp";
+import crm4 from "../../assets/Products/CRM/img4.webp";
+//Websites & Applications
+//Hosting & Domains
+import h1 from "../../assets/Products/HostingAndDomains/img1.webp";
+import h2 from "../../assets/Products/HostingAndDomains/img2.webp";
+import h3 from "../../assets/Products/HostingAndDomains/img3.webp";
+//Websites
+import w1 from "../../assets/Products/Websites/img1.webp";
+import w2 from "../../assets/Products/Websites/img2.webp";
+import w3 from "../../assets/Products/Websites/img3.webp";
+import w4 from "../../assets/Products/Websites/img4.webp";
+import a5 from "../../assets/Products/Websites/img5.webp";
+import a6 from "../../assets/Products/Websites/img6.webp";
+//Applications
+import a1 from "../../assets/Products/Applications/img1.webp";
+import a2 from "../../assets/Products/Applications/img2.webp";
+import a3 from "../../assets/Products/Applications/img3.webp";
+import a4 from "../../assets/Products/Applications/img4.webp";
 
 const imageMap = {
-  "general-accounts": [g1, g2, g3, g4, g5, g6, g7],
-  inventory: [inv1, inv2, inv3, inv4, inv5, inv6],
-  purchasing: [pu1, pu2, pu3, pu4, pu5],
-  sales: [s1, s2, s3],
-  "financial-transactions": [f1, f2, f3, f4, f5, f6, f7, f8],
+  "erp-solutions": {
+    "general-accounts": [g1, g2, g3, g4, g5, g6, g7],
+    inventory: [inv1, inv2, inv3, inv4, inv5, inv6],
+    purchasing: [pu1, pu2, pu3, pu4, pu5],
+    sales: [s1, s2, s3],
+    "financial-transactions": [f1, f2, f3, f4, f5, f6, f7, f8],
+  },
+  "websites-applications": {
+    "hosting-and-domain-services": [h1, h2, h3],
+    "website-development": [w1, w2, w3, w4, a5, a6],
+    "mobile-app-development": [a1, a2, a3, a4],
+  },
+  hr: {
+    vacations: [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
+    "attendance-and-departure": [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
+    payroll: [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
+    "personnel-affairs": [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
+    "employment-data": [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
+  },
+  crm: {
+    "comprehensive-customer-data-management": [crm1, crm2, crm3, crm4],
+    "improved-sales-processes": [crm1, crm2, crm3, crm4],
+    "targeted-and-personalized-marketing": [crm1, crm2, crm3, crm4],
+    "outstanding-customer-service": [crm1, crm2, crm3, crm4],
+    "intelligent-analytics-and-reporting": [crm1, crm2, crm3, crm4],
+    "integration-with-other-systems": [crm1, crm2, crm3, crm4],
+  },
 };
-
+const normalizeSlug = (str) => str.toLowerCase().replace(/[\s&]+/g, "-");
 function Products() {
-  const [radius, setRadius] = useState(200);
-  const carouselRef = useRef();
   const [activeIndex, setActiveIndex] = useState(0);
   const [hrOffset, setHrOffset] = useState({ left: 0, width: 0 });
 
@@ -73,10 +126,13 @@ function Products() {
   );
 
   const optionImages = useMemo(() => {
-    if (!option) return [];
-    const normalized = option.toLowerCase().replace(/\s+/g, "-");
-    return imageMap[normalized] || [];
-  }, [option]);
+    if (!category || !option) return [];
+
+    const normalizedCategory = normalizeSlug(category);
+    const normalizedOption = normalizeSlug(option);
+
+    return imageMap[normalizedCategory]?.[normalizedOption] || [];
+  }, [category, option]);
 
   const activeQuestion = subItemData?.questions?.[activeIndex];
 
@@ -104,37 +160,8 @@ function Products() {
     }
   }, [activeIndex, subItemData]);
   useEffect(() => {
-    const calculateRadius = () => {
-      const count = optionImages.length;
-      const width = window.innerWidth;
-      if (!count) return;
-
-      let baseRadius;
-
-      if (width <= 320) {
-        baseRadius = count * 20;
-        setRadius(Math.min(120, baseRadius));
-      } else if (width <= 500) {
-        baseRadius = count * 30;
-        setRadius(Math.min(150, baseRadius));
-      } else if (width <= 768) {
-        baseRadius = count * 40;
-        setRadius(Math.min(200, baseRadius));
-      } else if (width <= 1400) {
-        baseRadius = count * 50;
-        setRadius(Math.min(290, baseRadius));
-      } else {
-        baseRadius = count * 60;
-        setRadius(Math.min(410, baseRadius));
-      }
-    };
-
-    calculateRadius(); // on load
-
-    window.addEventListener("resize", calculateRadius);
-    return () => window.removeEventListener("resize", calculateRadius);
-  }, [optionImages]);
-  if (!groupData || !subItemData || !subItemData.questions?.length) return null;
+    setActiveIndex(0);
+  }, [category]);
 
   return (
     <section id="products" className="pipeline-section">
@@ -207,24 +234,19 @@ function Products() {
           <p>{t("productsDetails.paragraph")}</p>
         </div>
 
-        <div className="carousel" ref={carouselRef}>
-          <figure>
-            {optionImages.map((img, idx) => {
-              const angle = (360 / optionImages.length) * idx;
-              return (
-                <img
-                  key={idx}
-                  src={img}
-                  loading="lazy"
-                  alt={`img-${idx}`}
-                  style={{
-                    transform: `translate(-50%, -50%) rotateY(${angle}deg) translateZ(${radius}px)`,
-                  }}
-                />
-              );
-            })}
-          </figure>
-        </div>
+        <Swiper
+          effect={"cards"}
+          grabCursor={true}
+          modules={[EffectCards]}
+          className="mySwiper"
+        >
+          {optionImages.map((img, idx) => (
+            <SwiperSlide key={idx}>
+              <img src={img} loading="lazy" alt="img" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <p className="notification">Swipe right or left</p>
       </section>
 
       <section className="DemoHolder">

@@ -11,24 +11,18 @@ import { WebContext } from "../../context/WebContext";
 
 // Arabic Images
 import bannerOneAR from "../../assets/WhyChooseUs/bannerOneAR.webp";
-import bannerTwoAR from "../../assets/WhyChooseUs/bannerTwoAR.webp";
-import bannerThreeAR from "../../assets/WhyChooseUs/bannerThreeAR.webp";
 import bannerFourAR from "../../assets/WhyChooseUs/bannerFourAR.webp";
 import bannerFiveAR from "../../assets/WhyChooseUs/bannerFiveAR.webp";
 import bannerSixAR from "../../assets/WhyChooseUs/bannerSixAR.webp";
-import bannerSevenAR from "../../assets/WhyChooseUs/bannerSevenAR.webp";
 import bannerEightAR from "../../assets/WhyChooseUs/bannerEightAR.webp";
 import bannerNineAR from "../../assets/WhyChooseUs/bannerNineAR.webp";
 import bannerTenAR from "../../assets/WhyChooseUs/bannerTenAR.webp";
 
 // English Images
 import bannerOneEN from "../../assets/WhyChooseUs/bannerOneEN.webp";
-import bannerTwoEN from "../../assets/WhyChooseUs/bannerTwoEN.webp";
-import bannerThreeEN from "../../assets/WhyChooseUs/bannerThreeEN.webp";
 import bannerFourEN from "../../assets/WhyChooseUs/bannerFourEN.webp";
 import bannerFiveEN from "../../assets/WhyChooseUs/bannerFiveEN.webp";
 import bannerSixEN from "../../assets/WhyChooseUs/bannerSixEN.webp";
-import bannerSevenEN from "../../assets/WhyChooseUs/bannerSevenEN.webp";
 import bannerEightEN from "../../assets/WhyChooseUs/bannerEightEN.webp";
 import bannerNineEN from "../../assets/WhyChooseUs/bannerNineEN.webp";
 import bannerTenEN from "../../assets/WhyChooseUs/bannerTenEN.webp";
@@ -37,26 +31,20 @@ import bannerTenEN from "../../assets/WhyChooseUs/bannerTenEN.webp";
 const AR_IMAGES = [
   bannerOneAR,
   bannerNineAR,
-  bannerThreeAR,
   bannerFourAR,
   bannerFiveAR,
   bannerSixAR,
-  bannerSevenAR,
   bannerEightAR,
-  bannerTwoAR,
   bannerTenAR,
 ];
 
 const EN_IMAGES = [
   bannerOneEN,
   bannerNineEN,
-  bannerThreeEN,
   bannerFourEN,
   bannerFiveEN,
   bannerSixEN,
-  bannerSevenEN,
   bannerEightEN,
-  bannerTwoEN,
   bannerTenEN,
 ];
 
@@ -114,9 +102,9 @@ function WhyChooseUs() {
                   <img
                     src={img}
                     alt={title}
-                    loading={i === 0 ? "eager" : "lazy"}
+                    loading={"lazy"}
                     decoding="async"
-                    fetchPriority={i === 0 ? "high" : "low"}
+                    fetchPriority={"high"}
                     style={{
                       width: "100%",
                       height: "100%",

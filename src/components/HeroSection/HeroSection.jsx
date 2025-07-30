@@ -8,13 +8,11 @@ import "./HeroSection.css";
 import { WebContext } from "../../context/WebContext";
 
 // English banners
-import oneEN from "../../assets/Hero/oneEN.webp";
 import twoEN from "../../assets/Hero/twoEN.webp";
 import threeEN from "../../assets/Hero/threeEN.webp";
 import fourEN from "../../assets/Hero/fourEN.webp";
 
 // Arabic banners
-import oneAR from "../../assets/Hero/oneAR.webp";
 import twoAR from "../../assets/Hero/twoAR.webp";
 import threeAR from "../../assets/Hero/threeAR.webp";
 import fourAR from "../../assets/Hero/fourAR.webp";
@@ -23,9 +21,7 @@ const HeroSection = () => {
   const { lang } = useContext(WebContext);
 
   const currentBanners = useMemo(() => {
-    return lang === "ar"
-      ? [oneAR, twoAR, threeAR, fourAR]
-      : [oneEN, twoEN, threeEN, fourEN];
+    return lang === "ar" ? [twoAR, threeAR, fourAR] : [twoEN, threeEN, fourEN];
   }, [lang]);
 
   return (

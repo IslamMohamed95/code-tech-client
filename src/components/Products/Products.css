@@ -13,11 +13,9 @@
   width: calc(100% + 1.3px);
   height: 89px;
 }
-
 .custom-shape-divider-bottom-1749693086 .shape-fill {
   fill: white;
 }
-
 @media (min-width: 320px) {
   #products {
     overflow: hidden;
@@ -106,7 +104,7 @@
     border-radius: 12px;
     padding: 24px;
     flex: 3;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
     transition: all 0.2s ease-in-out;
   }
 
@@ -214,7 +212,6 @@
   .pipeline-tab.active::before {
     content: "";
     position: absolute;
-
     top: 4px;
     bottom: 4px;
     width: 2px;
@@ -256,48 +253,39 @@
     margin: 1em 0 0 0;
   }
 
-  /* 3D Carousel Styles */
-  .carousel {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    perspective: 1000px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+  #products .mySwiper {
+    width: 260px;
+    height: fit-content;
+    background-color: transparent !important;
+    margin: 4em 0 0.5em 0;
+  }
+  #products .notification {
+    font-size: 0.8em;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 4em;
   }
 
-  .carousel figure {
-    margin: 0;
+  #products .mySwiper img {
     width: 100%;
     height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    animation: spin 50s linear infinite;
-  }
-
-  .carousel img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-origin: center center;
-    transition: transform 0.5s ease-in-out;
-    width: clamp(80px, 12vw, 120px);
-    height: clamp(70px, 11vw, 100px);
-    border-radius: 5px;
     object-fit: contain;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
 
-  /* Optional: spin effect */
-  @keyframes spin {
-    from {
-      transform: rotateY(0deg);
-    }
-    to {
-      transform: rotateY(360deg);
-    }
+  /* Remove all visual styles added by the cards effect */
+  #products .swiper-slide {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+  }
+  /* Removes stacking effect shadows from cards */
+  .swiper-slide::before,
+  .swiper-slide::after {
+    display: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
   }
 
   #products .DemoHolder {
@@ -336,14 +324,15 @@
     border-radius: 15px;
   }
 }
-
 @media (min-width: 375px) {
   #products .contentHolder p {
     margin: 1em 0 0 0;
   }
-  .carousel img {
-    width: clamp(100px, 20vw, 120px);
-    height: clamp(90px, 15vw, 100px);
+  #products .mySwiper {
+    width: 300px;
+  }
+  #products .notification {
+    font-size: 0.9em;
   }
 }
 @media (min-width: 420px) {
@@ -359,9 +348,8 @@
     font-size: 1em;
     margin: 2em 0 0 0;
   }
-  .carousel img {
-    width: clamp(110px, 20vw, 120px);
-    height: clamp(90px, 15vw, 100px);
+  #products .mySwiper {
+    width: 330px;
   }
 }
 @media (min-width: 768px) {
@@ -399,16 +387,9 @@
   #products .implementHolder {
     padding: 2em;
   }
-
   #products .contentHolder p {
     margin: 1em 0 0;
   }
-
-  .carousel {
-    width: 300px;
-    height: 300px;
-  }
-
   #products .contentHolder h2,
   #products .contentHolder p {
     text-align: center;
@@ -417,9 +398,11 @@
   #products .DemoHolder {
     margin-bottom: 5em;
   }
-  .carousel img {
-    width: clamp(120px, 20vw, 120px);
-    height: clamp(100px, 15vw, 100px);
+  #products .mySwiper {
+    width: 580px;
+  }
+  #products .notification {
+    font-size: 1em;
   }
 }
 @media (min-width: 1024px) {
@@ -447,14 +430,11 @@
     font-size: 1em;
   }
 
-  .carousel {
-    width: 400px;
-    height: 400px;
+  #products .mySwiper {
+    width: 700px;
   }
-
-  .carousel img {
-    width: 200px;
-    height: 150px;
+  #products .notification {
+    font-size: 1em;
   }
 
   #products .contentHolder {
@@ -497,13 +477,10 @@
     width: 40%;
   }
 
-  .carousel {
-    width: 600px;
-    height: 600px;
+  #products .mySwiper {
+    width: 900px;
   }
-
-  .carousel img {
-    width: 320px;
-    height: 220px;
+  #products .notification {
+    font-size: 1.2em;
   }
 }

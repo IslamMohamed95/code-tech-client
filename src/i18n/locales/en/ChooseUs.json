@@ -8,13 +8,10 @@
   "data": [
     "General Accounts Management",
     "Inventory Management",
-    "Asset Management",
     "Financial Transactions Management",
     "Customer Relationship Management (CRM)",
     "Human Resources Management",
-    "Production Management",
     "Sales Management",
-    "Project Management",
-    "Procurement Management"
+    "Purchasing Management"
   ]
 }

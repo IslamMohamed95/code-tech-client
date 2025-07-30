@@ -578,6 +578,7 @@ html[dir="rtl"] .switch-bg.right {
   }
   #priceList .marketContainer .subContainer {
     display: flex;
+    flex-direction: row-reverse;
     gap: 10px;
   }
   #priceList .yearlyContainer .cardsHolder .card > div,
