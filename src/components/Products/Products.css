@@ -286,8 +286,8 @@
     width: clamp(80px, 12vw, 120px);
     height: clamp(70px, 11vw, 100px);
     border-radius: 5px;
-    object-fit: fill;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   }
 
   /* Optional: spin effect */
