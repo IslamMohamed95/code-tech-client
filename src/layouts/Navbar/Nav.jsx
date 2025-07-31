@@ -282,6 +282,10 @@ function Nav() {
                                     navigate(
                                       `/product/${subItem.slug}/${a.optionSlug}`
                                     );
+                                    window.scrollTo({
+                                      top: 0,
+                                      behavior: "smooth",
+                                    });
                                   }}
                                 >
                                   {a.label}
