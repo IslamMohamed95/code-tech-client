@@ -286,6 +286,7 @@ function Nav() {
                                       top: 0,
                                       behavior: "smooth",
                                     });
+                                    setIsHamburgerOpen(false);
                                   }}
                                 >
                                   {a.label}

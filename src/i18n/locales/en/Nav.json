@@ -220,67 +220,67 @@
     },
     {
       "mainTitle": "Customer Relationship Management (CRM) Sector",
-      "content": "Customer Relationship Management represents the cornerstone of business success in the growing Saudi commercial environment. With digital transformation and evolving customer expectations, the need for advanced CRM systems has become more pressing than ever.",
+      "content": "Customer Relationship Management forms the cornerstone of business success in the growing Saudi commercial environment. With digital transformation and evolving customer expectations, the need for advanced CRM systems is more urgent than ever.",
       "title": "CRM",
       "slug": "CRM",
       "arr": [
         {
-          "label": "Comprehensive customer data management",
+          "label": "Comprehensive Customer Data Management",
           "optionSlug": "Comprehensive customer data management",
           "questions": [
             {
               "question": "Comprehensive Customer Data Management",
-              "asnwer": "CRM systems gather all customer-related information in one place, enabling a deeper understanding of their needs and preferences. This supports delivering exceptional customer service aligned with local expectations."
+              "answer": "CRM systems gather all customer-related information in one place, enabling a deeper understanding of their needs and preferences. This supports delivering exceptional service aligned with local expectations."
             }
           ]
         },
         {
-          "label": "Improved sales processes",
+          "label": "Improved Sales Processes",
           "optionSlug": "Improved sales processes",
           "questions": [
             {
-              "question": "Sales Process Optimization",
-              "asnwer": "Advanced systems provide effective tools to manage the entire sales cycle — from tracking leads to closing deals. They also help identify new business opportunities and improve conversion rates."
+              "question": "Improved Sales Processes",
+              "answer": "Advanced systems provide effective tools for managing the entire sales cycle — from lead tracking to deal closing. They also help identify new business opportunities and improve conversion rates."
             }
           ]
         },
         {
-          "label": "Targeted and personalized marketing",
+          "label": "Targeted and Personalized Marketing",
           "optionSlug": "Targeted and personalized marketing",
           "questions": [
             {
               "question": "Targeted and Personalized Marketing",
-              "asnwer": "CRM systems support targeted and personalized marketing campaigns, enhancing marketing effectiveness and improving ROI. This is especially important in the diverse Saudi market."
+              "answer": "CRM systems support targeted and customized marketing campaigns, enhancing marketing effectiveness and improving return on investment. This is especially important in the diverse Saudi market."
             }
           ]
         },
         {
-          "label": "Outstanding customer service",
+          "label": "Outstanding Customer Service",
           "optionSlug": "Outstanding customer service",
           "questions": [
             {
-              "question": "Exceptional Customer Service",
-              "asnwer": "Modern systems allow for fast and consistent customer service across all communication channels, boosting customer satisfaction and building long-term relationships."
+              "question": "Outstanding Customer Service",
+              "answer": "Modern systems enable fast and consistent customer service across all communication channels, enhancing customer satisfaction and building long-term relationships."
             }
           ]
         },
         {
-          "label": "Intelligent analytics and reporting",
+          "label": "Intelligent Analytics and Reporting",
           "optionSlug": "Intelligent analytics and reporting",
           "questions": [
             {
-              "question": "Smart Analytics and Reporting",
-              "asnwer": "CRM platforms provide deep insights into customer behavior and sales performance, aiding in data-driven decision-making and refining marketing strategies."
+              "question": "Intelligent Analytics and Reporting",
+              "answer": "CRM platforms provide deep insights into customer behavior and sales performance, helping to make data-driven decisions and improve marketing strategies."
             }
           ]
         },
         {
-          "label": "Integration with other systems",
+          "label": "Integration with Other Systems",
           "optionSlug": "Integration with other systems",
           "questions": [
             {
               "question": "Integration with Other Systems",
-              "asnwer": "Advanced CRM systems support integration with content management systems, e-commerce platforms, and social media — creating a smooth, seamless customer experience."
+              "answer": "Advanced CRM systems support integration with content management systems, e-commerce platforms, and social media — creating a seamless and integrated customer experience."
             }
           ]
         }

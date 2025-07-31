@@ -48,7 +48,7 @@ import hr4 from "../../assets/Products/HR/img4.webp";
 import hr5 from "../../assets/Products/HR/img5.webp";
 import hr6 from "../../assets/Products/HR/img6.webp";
 import hr7 from "../../assets/Products/HR/img7.webp";
-//CM
+//CRM
 import crm1 from "../../assets/Products/CRM/img1.webp";
 import crm2 from "../../assets/Products/CRM/img2.webp";
 import crm3 from "../../assets/Products/CRM/img3.webp";
