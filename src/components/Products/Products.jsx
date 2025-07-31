@@ -84,54 +84,65 @@ import m3 from "../../assets/Products/Media/img3.webp";
 import m4 from "../../assets/Products/Media/img4.webp";
 import m5 from "../../assets/Products/Media/img5.webp";
 import m6 from "../../assets/Products/Media/img6.webp";
+import { WebContext } from "../../context/WebContext";
 
-const imageMap = {
-  "erp-solutions": {
-    "general-accounts": [g1, g2, g3, g4, g5, g6, g7],
-    inventory: [inv1, inv2, inv3, inv4, inv5, inv6],
-    purchasing: [pu1, pu2, pu3, pu4, pu5],
-    sales: [s1, s2, s3],
-    "financial-transactions": [f1, f2, f3, f4, f5, f6, f7, f8],
-  },
-  hr: {
-    vacations: [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
-    "attendance-and-departure": [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
-    payroll: [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
-    "personnel-affairs": [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
-    "employment-data": [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
-  },
-  crm: {
-    "comprehensive-customer-data-management": [crm1, crm2, crm3, crm4],
-    "improved-sales-processes": [crm1, crm2, crm3, crm4],
-    "targeted-and-personalized-marketing": [crm1, crm2, crm3, crm4],
-    "outstanding-customer-service": [crm1, crm2, crm3, crm4],
-    "intelligent-analytics-and-reporting": [crm1, crm2, crm3, crm4],
-    "integration-with-other-systems": [crm1, crm2, crm3, crm4],
-  },
-  "websites-applications": {
-    "hosting-and-domain-services": [h1, h2, h3],
-    "website-development": [w1, w2, w3, w4, a5, a6],
-    "mobile-app-development": [a1, a2, a3, a4],
-  },
-  "digital-marketing": {
-    "social-media-platform-managemen": [],
-    "brand-identity-and-branding": [dg1, dg2, dg3, dg4, dg5, dg6],
-    "media-buying-and-digital-marketing": [m1, m2, m3, m4, m5, m6],
-  },
-};
-const normalizeSlug = (str) => str.toLowerCase().replace(/[\s&]+/g, "-");
 function Products() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hrOffset, setHrOffset] = useState({ left: 0, width: 0 });
-
-  const { t, i18n } = useTranslation(["nav"]);
+  const { t } = useTranslation(["nav"]);
+  const { lang } = useContext(WebContext);
   const { category, option } = useParams();
   const navigate = useNavigate();
   const tabsRef = useRef([]);
 
+  const imageMap = useMemo(
+    () => ({
+      "erp-solutions": {
+        "general-accounts": [g1, g2, g3, g4, g5, g6, g7],
+        inventory: [inv1, inv2, inv3, inv4, inv5, inv6],
+        purchasing: [pu1, pu2, pu3, pu4, pu5],
+        sales: [s1, s2, s3],
+        "financial-transactions": [f1, f2, f3, f4, f5, f6, f7, f8],
+      },
+      hr: {
+        vacations: [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
+        "attendance-and-departure": [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
+        payroll: [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
+        "personnel-affairs": [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
+        "employment-data": [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
+      },
+      crm: {
+        "comprehensive-customer-data-management": [crm1, crm2, crm3, crm4],
+        "improved-sales-processes": [crm1, crm2, crm3, crm4],
+        "targeted-and-personalized-marketing": [crm1, crm2, crm3, crm4],
+        "outstanding-customer-service": [crm1, crm2, crm3, crm4],
+        "intelligent-analytics-and-reporting": [crm1, crm2, crm3, crm4],
+        "integration-with-other-systems": [crm1, crm2, crm3, crm4],
+      },
+      "websites-applications": {
+        "hosting-and-domain-services": [h1, h2, h3],
+        "website-development": [w1, w2, w3, w4, a5, a6],
+        "mobile-app-development": [a1, a2, a3, a4],
+      },
+      "digital-marketing": {
+        "social-media-platform-managemen": [],
+        "brand-identity-and-branding": [dg1, dg2, dg3, dg4, dg5, dg6],
+        "media-buying-and-digital-marketing": [m1, m2, m3, m4, m5, m6],
+      },
+    }),
+    []
+  );
+  const normalizeSlug = (str) => {
+    return str
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^\w\s-]/g, "") // remove special characters
+      .replace(/\s+/g, "-") // replace spaces with dashes
+      .trim();
+  };
   const subMenuData = useMemo(
     () => t("prdocutsSubMenu", { returnObjects: true }),
-    [t, i18n.language]
+    [t]
   );
 
   const groupData = useMemo(
@@ -146,12 +157,12 @@ function Products() {
 
   const optionImages = useMemo(() => {
     if (!category || !option) return [];
-
+    console.log(category, option);
     const normalizedCategory = normalizeSlug(category);
     const normalizedOption = normalizeSlug(option);
 
     return imageMap[normalizedCategory]?.[normalizedOption] || [];
-  }, [category, option]);
+  }, []);
 
   const activeQuestion = subItemData?.questions?.[activeIndex];
 
@@ -256,30 +267,34 @@ function Products() {
         )}
 
         <Swiper
+          key={lang}
           effect={"cards"}
           grabCursor={true}
           modules={[EffectCards]}
           className="mySwiper"
         >
-          {optionImages.map((img, idx) => (
-            <SwiperSlide key={idx}>
-              <img src={img} loading="lazy" alt="img" />
-            </SwiperSlide>
-          ))}
+          {optionImages.map((img, idx) => {
+            return (
+              <SwiperSlide>
+                <img src={img} loading="lazy" alt="img" />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
 
         {optionImages.length > 0 && (
           <p className="notification">Swipe right or left</p>
         )}
       </section>
-
-      <section className="DemoHolder">
-        <div>
-          <h2>{t("productsDetails.title")}</h2>
-          <h3>{t("productsDetails.subHeader")}</h3>
-          <button className="hoverEffect">{t("productsDetails.btn")}</button>
-        </div>
-      </section>
+      {category === "ERP Solutions" && (
+        <section className="DemoHolder">
+          <div>
+            <h2>{t("productsDetails.title")}</h2>
+            <h3>{t("productsDetails.subHeader")}</h3>
+            <button className="hoverEffect">{t("productsDetails.btn")}</button>
+          </div>
+        </section>
+      )}
     </section>
   );
 }
