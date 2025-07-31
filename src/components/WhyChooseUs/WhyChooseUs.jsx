@@ -8,6 +8,7 @@ import "./WhyChooseUs.css";
 import { useTranslation } from "react-i18next";
 import { useContext, useMemo } from "react";
 import { WebContext } from "../../context/WebContext";
+import { useNavigate } from "react-router-dom";
 
 // Arabic Images
 import bannerOneAR from "../../assets/WhyChooseUs/bannerOneAR.webp";
@@ -27,18 +28,7 @@ import bannerEightEN from "../../assets/WhyChooseUs/bannerEightEN.webp";
 import bannerNineEN from "../../assets/WhyChooseUs/bannerNineEN.webp";
 import bannerTenEN from "../../assets/WhyChooseUs/bannerTenEN.webp";
 
-// Image arrays
-const AR_IMAGES = [
-  bannerOneAR,
-  bannerNineAR,
-  bannerFourAR,
-  bannerFiveAR,
-  bannerSixAR,
-  bannerEightAR,
-  bannerTenAR,
-];
-
-const EN_IMAGES = [
+const imageMapEN = [
   bannerOneEN,
   bannerNineEN,
   bannerFourEN,
@@ -48,22 +38,57 @@ const EN_IMAGES = [
   bannerTenEN,
 ];
 
-function WhyChooseUs() {
-  const { t } = useTranslation("chooseUs");
-  const { lang } = useContext(WebContext);
+const imageMapAR = [
+  bannerOneAR,
+  bannerNineAR,
+  bannerFourAR,
+  bannerFiveAR,
+  bannerSixAR,
+  bannerEightAR,
+  bannerTenAR,
+];
 
-  const currentImages = useMemo(
-    () => (lang === "ar" ? AR_IMAGES : EN_IMAGES),
-    [lang]
+function WhyChooseUs() {
+  const { t, i18n } = useTranslation(["chooseUs", "nav"]);
+  const { lang, setLoading, setAnimate } = useContext(WebContext);
+  const navigate = useNavigate();
+
+  const subMenu = useMemo(
+    () => t("prdocutsSubMenu", { ns: "nav", returnObjects: true }) || [],
+    [t, i18n.language]
   );
 
-  const services = useMemo(() => {
-    const titles = t("data", { returnObjects: true });
-    return titles.map((title, index) => ({
-      title,
-      img: currentImages[index],
-    }));
-  }, [t, currentImages]);
+  const chooseUsTitles = useMemo(
+    () => t("cards", { returnObjects: true }) || [],
+    [t, i18n.language]
+  );
+
+  const data = useMemo(
+    () => t("data", { returnObjects: true }) || [],
+    [t, i18n.language]
+  );
+
+  const images = lang === "ar" ? imageMapAR : imageMapEN;
+
+  const slideData = useMemo(() => {
+    const slides = [];
+    let index = 0;
+    subMenu.forEach((group) => {
+      group.arr.forEach((item) => {
+        if (images[index]) {
+          slides.push({
+            img: images[index],
+            mainSlug: group.slug,
+            optionSlug: item.optionSlug,
+            title: chooseUsTitles[index]?.title || "",
+            contentKey: `data.${index}`,
+          });
+          index++;
+        }
+      });
+    });
+    return slides;
+  }, [subMenu, chooseUsTitles, images]);
 
   return (
     <section id="whyChooseUs">
@@ -75,17 +100,16 @@ function WhyChooseUs() {
 
         <div className="swiperContainer">
           <Swiper
-            dir="ltr" // ✅ Force LTR always
-            key={lang} // ✅ Re-render on lang switch
-            speed={1200}
+            dir="ltr"
+            key={lang}
+            speed={1500}
             loop
-            centeredSlides
             grabCursor
-            slidesPerView={"auto"}
-            spaceBetween={30}
+            spaceBetween={15}
             autoplay={{
               delay: 2500,
               disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
             pagination={{ clickable: true }}
             navigation
@@ -96,36 +120,39 @@ function WhyChooseUs() {
             modules={[Pagination, Autoplay, Navigation]}
             className="mySwiper"
           >
-            {services.map(({ title, img }, i) => (
-              <SwiperSlide key={i} className="hoverEffect">
-                <div className="container">
-                  <img
-                    src={img}
-                    alt={title}
-                    loading={"lazy"}
-                    decoding="async"
-                    fetchPriority={"high"}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: "block",
-                      borderRadius: "1rem",
-                    }}
-                  />
-                  <div className="shadow">
-                    <p>{title}</p>
+            {slideData.map(
+              ({ img, mainSlug, optionSlug, contentKey }, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="hoverEffect"
+                  onClick={() => {
+                    navigate(`/product/${mainSlug}/${optionSlug}`);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                    setLoading(true);
+                    setAnimate(true);
+                  }}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="container">
+                    <img
+                      src={img}
+                      alt={`Slide ${index}`}
+                      fetchPriority="high"
+                    />
+                    <div className="shadow">
+                      <p>{t(contentKey)}</p>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              )
+            )}
           </Swiper>
         </div>
       </div>
 
       <div className="splitter">
         <p>
-          {t("splitter.one")}{" "}
+          {t("splitter.one")}
           <span className="hoverEffect">{t("splitter.two")}</span>
         </p>
       </div>

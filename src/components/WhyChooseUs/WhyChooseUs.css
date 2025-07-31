@@ -14,16 +14,15 @@
     width: 90%;
     align-self: center;
   }
-  #whyChooseUs .swiperContainer {
-    width: 100%;
-    overflow: hidden;
-  }
 
   #whyChooseUs .swiperContainer,
   #whyChooseUs .swiper {
     position: relative;
   }
-
+  #whyChooseUs .swiperContainer {
+    width: 100%;
+    overflow: hidden !important;
+  }
   #whyChooseUs .swiper {
     direction: ltr;
     height: 100%;
@@ -32,13 +31,15 @@
     justify-content: center;
     align-items: center;
   }
-
+  #whyChooseUs .swiper,
+  #whyChooseUs .swiper-wrapper {
+    overflow: visible !important;
+  }
   #whyChooseUs .swiper-wrapper {
     padding: 3.5em 2em;
   }
 
   #whyChooseUs .swiper-slide {
-    width: auto;
     margin-top: 2em;
     display: flex;
     justify-content: center;

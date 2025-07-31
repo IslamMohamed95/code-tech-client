@@ -140,6 +140,10 @@ function Nav() {
                                     navigate(
                                       `/product/${group.slug}/${subItem.optionSlug}`
                                     );
+                                    window.scrollTo({
+                                      top: 0,
+                                      behavior: "smooth",
+                                    });
                                   }}
                                 >
                                   {subItem.label}

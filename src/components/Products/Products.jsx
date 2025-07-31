@@ -70,6 +70,20 @@ import a1 from "../../assets/Products/Applications/img1.webp";
 import a2 from "../../assets/Products/Applications/img2.webp";
 import a3 from "../../assets/Products/Applications/img3.webp";
 import a4 from "../../assets/Products/Applications/img4.webp";
+//Digital Marketing
+import dg1 from "../../assets/Products/Branding/img1.webp";
+import dg2 from "../../assets/Products/Branding/img2.webp";
+import dg3 from "../../assets/Products/Branding/img3.webp";
+import dg4 from "../../assets/Products/Branding/img4.webp";
+import dg5 from "../../assets/Products/Branding/img5.webp";
+import dg6 from "../../assets/Products/Branding/img6.webp";
+//Media Buying
+import m1 from "../../assets/Products/Media/img1.webp";
+import m2 from "../../assets/Products/Media/img2.webp";
+import m3 from "../../assets/Products/Media/img3.webp";
+import m4 from "../../assets/Products/Media/img4.webp";
+import m5 from "../../assets/Products/Media/img5.webp";
+import m6 from "../../assets/Products/Media/img6.webp";
 
 const imageMap = {
   "erp-solutions": {
@@ -78,11 +92,6 @@ const imageMap = {
     purchasing: [pu1, pu2, pu3, pu4, pu5],
     sales: [s1, s2, s3],
     "financial-transactions": [f1, f2, f3, f4, f5, f6, f7, f8],
-  },
-  "websites-applications": {
-    "hosting-and-domain-services": [h1, h2, h3],
-    "website-development": [w1, w2, w3, w4, a5, a6],
-    "mobile-app-development": [a1, a2, a3, a4],
   },
   hr: {
     vacations: [hr1, hr2, hr3, hr4, hr5, hr6, hr7],
@@ -98,6 +107,16 @@ const imageMap = {
     "outstanding-customer-service": [crm1, crm2, crm3, crm4],
     "intelligent-analytics-and-reporting": [crm1, crm2, crm3, crm4],
     "integration-with-other-systems": [crm1, crm2, crm3, crm4],
+  },
+  "websites-applications": {
+    "hosting-and-domain-services": [h1, h2, h3],
+    "website-development": [w1, w2, w3, w4, a5, a6],
+    "mobile-app-development": [a1, a2, a3, a4],
+  },
+  "digital-marketing": {
+    "social-media-platform-managemen": [],
+    "brand-identity-and-branding": [dg1, dg2, dg3, dg4, dg5, dg6],
+    "media-buying-and-digital-marketing": [m1, m2, m3, m4, m5, m6],
   },
 };
 const normalizeSlug = (str) => str.toLowerCase().replace(/[\s&]+/g, "-");
@@ -229,10 +248,12 @@ function Products() {
       </div>
 
       <section className="implementHolder">
-        <div className="contentHolder">
-          <h2>{t("productsDetails.header")}</h2>
-          <p>{t("productsDetails.paragraph")}</p>
-        </div>
+        {optionImages.length > 0 && (
+          <div className="contentHolder">
+            <h2>{t("productsDetails.header")}</h2>
+            <p>{t("productsDetails.paragraph")}</p>
+          </div>
+        )}
 
         <Swiper
           effect={"cards"}
@@ -246,7 +267,10 @@ function Products() {
             </SwiperSlide>
           ))}
         </Swiper>
-        <p className="notification">Swipe right or left</p>
+
+        {optionImages.length > 0 && (
+          <p className="notification">Swipe right or left</p>
+        )}
       </section>
 
       <section className="DemoHolder">
