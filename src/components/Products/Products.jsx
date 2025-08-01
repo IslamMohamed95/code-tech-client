@@ -162,7 +162,7 @@ function Products() {
     const normalizedOption = normalizeSlug(option);
 
     return imageMap[normalizedCategory]?.[normalizedOption] || [];
-  }, []);
+  }, [option, category, imageMap]);
 
   const activeQuestion = subItemData?.questions?.[activeIndex];
 
