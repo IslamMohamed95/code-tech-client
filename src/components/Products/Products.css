@@ -468,6 +468,12 @@
   .pipeline-container .mainContainer {
     width: 70%;
   }
+  .pipeline-card h2 {
+    font-size: 1.5em;
+  }
+  .pipeline-card p {
+    font-size: 1em;
+  }
 
   #products .imgHolder {
     width: 40%;
