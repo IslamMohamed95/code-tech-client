@@ -577,10 +577,10 @@
   }
 
   #Nav .subMenuHolder ul div h3 {
-    font-size: 0.9em;
+    font-size: 0.95em;
   }
   #Nav .subMenuHolder ul ul li {
-    font-size: 0.65em;
+    font-size: 0.8em;
   }
   #Nav .subMenuHolder ul div {
     padding: 0.5em 1em;
@@ -664,7 +664,7 @@
   }
 
   #Nav .subMenuHolder ul ul li {
-    font-size: 0.9em;
+    font-size: 1em;
   }
   #Nav nav > div > div:nth-child(3) > div hr {
     height: 25px;

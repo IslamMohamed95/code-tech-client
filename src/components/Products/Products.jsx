@@ -63,8 +63,8 @@ import w1 from "../../assets/Products/Websites/img1.webp";
 import w2 from "../../assets/Products/Websites/img2.webp";
 import w3 from "../../assets/Products/Websites/img3.webp";
 import w4 from "../../assets/Products/Websites/img4.webp";
-import a5 from "../../assets/Products/Websites/img5.webp";
-import a6 from "../../assets/Products/Websites/img6.webp";
+import w5 from "../../assets/Products/Websites/img5.webp";
+import w6 from "../../assets/Products/Websites/img6.webp";
 //Applications
 import a1 from "../../assets/Products/Applications/img1.webp";
 import a2 from "../../assets/Products/Applications/img2.webp";
@@ -119,13 +119,13 @@ function Products() {
         "intelligent-analytics-and-reporting": [crm1, crm2, crm3, crm4],
         "integration-with-other-systems": [crm1, crm2, crm3, crm4],
       },
-      "websites-applications": {
+      "websites-and-applications": {
         "hosting-and-domain-services": [h1, h2, h3],
-        "website-development": [w1, w2, w3, w4, a5, a6],
+        "website-development": [w1, w2, w3, w4, w5, w6],
         "mobile-app-development": [a1, a2, a3, a4],
       },
       "digital-marketing": {
-        "social-media-platform-managemen": [],
+        "social-media-platform-management": [],
         "brand-identity-and-branding": [dg1, dg2, dg3, dg4, dg5, dg6],
         "media-buying-and-digital-marketing": [m1, m2, m3, m4, m5, m6],
       },
@@ -136,8 +136,8 @@ function Products() {
     return str
       .toLowerCase()
       .replace(/&/g, "and")
-      .replace(/[^\w\s-]/g, "") // remove special characters
-      .replace(/\s+/g, "-") // replace spaces with dashes
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
       .trim();
   };
   const subMenuData = useMemo(
@@ -157,10 +157,8 @@ function Products() {
 
   const optionImages = useMemo(() => {
     if (!category || !option) return [];
-    console.log(category, option);
     const normalizedCategory = normalizeSlug(category);
     const normalizedOption = normalizeSlug(option);
-
     return imageMap[normalizedCategory]?.[normalizedOption] || [];
   }, [option, category, imageMap]);
 
@@ -283,7 +281,7 @@ function Products() {
         </Swiper>
 
         {optionImages.length > 0 && (
-          <p className="notification">Swipe right or left</p>
+          <p className="notification">{t("productNotification")}</p>
         )}
       </section>
       {category === "ERP Solutions" && (

@@ -111,7 +111,11 @@ function Nav() {
                   className="desktopSubMenuWrapper"
                   ref={subMenuRef}
                 >
-                  <li className="hoverEffect" onClick={() => handleNavClick(i)}>
+                  <li
+                    key={i}
+                    className="hoverEffect"
+                    onClick={() => handleNavClick(i)}
+                  >
                     {item.title} <MdKeyboardArrowDown />
                   </li>
 
