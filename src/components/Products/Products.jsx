@@ -284,7 +284,9 @@ function Products() {
           <p className="notification">{t("productNotification")}</p>
         )}
       </section>
-      {category === "ERP Solutions" && (
+      {(category === "ERP Solutions" ||
+        category === "HR" ||
+        category === "CRM") && (
         <section className="DemoHolder">
           <div>
             <h2>{t("productsDetails.title")}</h2>
