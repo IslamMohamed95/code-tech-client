@@ -21,7 +21,7 @@ import fourAR from "../../assets/Hero/fourAR.webp";
 const encodeSlug = (str) => encodeURIComponent(str?.trim());
 
 const HeroSection = () => {
-  const { lang } = useContext(WebContext);
+  const { lang, setLoading, setAnimate } = useContext(WebContext);
   const navigate = useNavigate();
 
   const currentBanners = useMemo(() => {
@@ -47,6 +47,8 @@ const HeroSection = () => {
 
   const handleBannerClick = (mainSlug, optionSlug) => {
     if (!mainSlug || !optionSlug) return;
+    setLoading(true);
+    setAnimate(true);
     navigate(`/product/${encodeSlug(mainSlug)}/${encodeSlug(optionSlug)}`);
   };
 

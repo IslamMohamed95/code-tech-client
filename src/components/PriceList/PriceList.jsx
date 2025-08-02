@@ -5,6 +5,7 @@ import { FaCheck } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
 import { WebContext } from "../../context/WebContext";
+import { SaudiRiyal } from "lucide-react";
 
 function PriceList() {
   const [activeIndex, setActiveIndex] = useState(1),
@@ -191,7 +192,9 @@ function PriceList() {
                           <h4>{y.plan}</h4>
                           {y?.price?.value && (
                             <div className="pricePart">
-                              <div>{y.price.value} 元</div>
+                              <div>
+                                {y.price.value} <SaudiRiyal className="RS" />
+                              </div>
                               <div>
                                 <span>{t("payment")}</span>
                                 <p>{y.price.time}</p>
@@ -247,7 +250,9 @@ function PriceList() {
                           <h4>{y.plan}</h4>
                           {y?.price?.value && (
                             <div className="pricePart">
-                              <div>{y.price.value} 元</div>
+                              <div>
+                                {y.price.value} <SaudiRiyal className="RS" />
+                              </div>
                               <div>
                                 <span>{t("payment")}</span>
                                 <p>{y.price.time}</p>
@@ -284,7 +289,8 @@ function PriceList() {
                       {monthlyTable?.header?.[i]}
                     </div>
                     <div className="cell advanced">
-                      {getValueDisplay(monthlyTable?.price?.[i])} 元
+                      {getValueDisplay(monthlyTable?.price?.[i])}{" "}
+                      <SaudiRiyal className="RS" />
                     </div>
                   </div>
                 ))}
@@ -305,7 +311,9 @@ function PriceList() {
                       <h4>{y.plan}</h4>
                       {y?.price?.value && (
                         <div className="pricePart">
-                          <div>{y.price.value} 元</div>
+                          <div>
+                            {y.price.value} <SaudiRiyal className="RS" />
+                          </div>
                           <div>
                             <span>{t("payment")}</span>
                             <p>{y.price.time}</p>
@@ -341,7 +349,9 @@ function PriceList() {
                       <h4>{y.plan}</h4>
                       {y?.price?.value && (
                         <div className="pricePart">
-                          <div>{y.price.value} 元</div>
+                          <div>
+                            {y.price.value} <SaudiRiyal className="RS" />
+                          </div>
                           <div>
                             <span>{y.price.time}</span>
                             {lang === "en" ? <p>time</p> : ""}
@@ -377,7 +387,9 @@ function PriceList() {
                       <h4>{y.plan}</h4>
                       {y?.price?.value && (
                         <div className="pricePart">
-                          <div>{y.price.value} 元</div>
+                          <div>
+                            {y.price.value} <SaudiRiyal className="RS" />
+                          </div>
                           <div>
                             <span>{t("payment")}</span>
                             <p>{y.price.time}</p>
@@ -413,7 +425,9 @@ function PriceList() {
                       <h4>{y.plan}</h4>
                       {y?.price?.value && (
                         <div className="pricePart">
-                          <div>{y.price.value} 元</div>
+                          <div>
+                            {y.price.value} <SaudiRiyal className="RS" />
+                          </div>
                           <div>
                             <span>{t("payment")}</span>
                             <p>{y.price.time}</p>

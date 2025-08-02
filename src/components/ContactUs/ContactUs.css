@@ -217,9 +217,15 @@ html[dir="rtl"] .floating-input textarea:not(:placeholder-shown) + label {
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
+  html[dir="ltr"] .servicesList li .text {
+    text-align: left;
+  }
+  html[dir="rtl"] .servicesList li .text {
+    text-align: right;
+  }
   .servicesList li {
     width: 100%;
-    flex-direction: row; /* image + text in a row */
+    flex-direction: row;
     align-items: center; /* align items at top */
     text-align: left;
     padding: 0.3em 0.7em;
@@ -235,7 +241,7 @@ html[dir="rtl"] .floating-input textarea:not(:placeholder-shown) + label {
     flex: 1;
   }
   .servicesList li .text h3 {
-    align-self: left;
+    align-self: auto;
     width: 100%;
     font-size: 1em;
   }

@@ -8,7 +8,9 @@ import { GrSystem } from "react-icons/gr";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import deskTopLogo from "../../assets/Logo/Logo.png";
-import Flag from "react-world-flags";
+//Importing Flags
+import SA from "../../assets/Flags/SA.webp";
+import USA from "../../assets/Flags/USA.webp";
 
 function Nav() {
   const {
@@ -181,7 +183,8 @@ function Nav() {
                 }
                 onClick={() => handleLang(0)}
               >
-                <Flag code="SA" />
+                <img src={SA} alt="SAImg" />
+                {lang === "ar" ? <hr className="border" /> : ""}
               </span>
               <hr />
               <span
@@ -190,11 +193,17 @@ function Nav() {
                 }
                 onClick={() => handleLang(1)}
               >
-                <Flag code="US" />
+                <img src={USA} alt="USaImg" />
+                {lang === "en" ? <hr className="border" /> : ""}
               </span>
             </div>
             <div>
-              <button className="hoverEffect">{t("btn")}</button>
+              <button
+                className="hoverEffect"
+                onClick={() => scrollToView("contact")}
+              >
+                {t("btn")}
+              </button>
             </div>
           </div>
         </div>
@@ -316,7 +325,8 @@ function Nav() {
                     }
                     onClick={() => handleLang(0)}
                   >
-                    <Flag code="SA" />
+                    <img src={SA} alt="SAImg" />
+                    {lang === "ar" ? <hr className="border" /> : ""}
                   </span>
                   <hr />
                   <span
@@ -325,11 +335,17 @@ function Nav() {
                     }
                     onClick={() => handleLang(1)}
                   >
-                    <Flag code="US" />
+                    <img src={USA} alt="USAImg" />
+                    {lang === "en" ? <hr className="border" /> : ""}
                   </span>
                 </div>
                 <div>
-                  <button className="hoverEffect">{t("btn")}</button>
+                  <button
+                    className="hoverEffect"
+                    onClick={() => scrollToView("contact")}
+                  >
+                    {t("btn")}
+                  </button>
                 </div>
               </div>
             )}

@@ -84,13 +84,20 @@ import m3 from "../../assets/Products/Media/img3.webp";
 import m4 from "../../assets/Products/Media/img4.webp";
 import m5 from "../../assets/Products/Media/img5.webp";
 import m6 from "../../assets/Products/Media/img6.webp";
+//Social Media Plateform
+import sm1 from "../../assets/Products/SocialMedia/img1.webp";
+import sm2 from "../../assets/Products/SocialMedia/img2.webp";
+import sm3 from "../../assets/Products/SocialMedia/img3.webp";
+import sm4 from "../../assets/Products/SocialMedia/img4.webp";
+import sm5 from "../../assets/Products/SocialMedia/img5.webp";
+import sm6 from "../../assets/Products/SocialMedia/img6.webp";
 import { WebContext } from "../../context/WebContext";
 
 function Products() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hrOffset, setHrOffset] = useState({ left: 0, width: 0 });
   const { t } = useTranslation(["nav"]);
-  const { lang } = useContext(WebContext);
+  const { lang, scrollToView } = useContext(WebContext);
   const { category, option } = useParams();
   const navigate = useNavigate();
   const tabsRef = useRef([]);
@@ -125,7 +132,7 @@ function Products() {
         "mobile-app-development": [a1, a2, a3, a4],
       },
       "digital-marketing": {
-        "social-media-platform-management": [],
+        "social-media-platform-management": [sm1, sm2, sm3, sm4, sm5, sm6],
         "brand-identity-and-branding": [dg1, dg2, dg3, dg4, dg5, dg6],
         "media-buying-and-digital-marketing": [m1, m2, m3, m4, m5, m6],
       },
@@ -291,7 +298,12 @@ function Products() {
           <div>
             <h2>{t("productsDetails.title")}</h2>
             <h3>{t("productsDetails.subHeader")}</h3>
-            <button className="hoverEffect">{t("productsDetails.btn")}</button>
+            <button
+              className="hoverEffect"
+              onClick={() => scrollToView("contact")}
+            >
+              {t("productsDetails.btn")}
+            </button>
           </div>
         </section>
       )}

@@ -29,23 +29,47 @@ import bannerNineEN from "../../assets/WhyChooseUs/bannerNineEN.webp";
 import bannerTenEN from "../../assets/WhyChooseUs/bannerTenEN.webp";
 
 const imageMapEN = [
-  bannerOneEN,
-  bannerNineEN,
-  bannerFourEN,
-  bannerFiveEN,
-  bannerSixEN,
-  bannerEightEN,
-  bannerTenEN,
+  {
+    img: bannerOneEN,
+    mainSlug: "erp-solutions",
+    optionSlug: "general-accounts",
+  },
+  { img: bannerNineEN, mainSlug: "erp-solutions", optionSlug: "inventory" },
+  {
+    img: bannerFourEN,
+    mainSlug: "erp-solutions",
+    optionSlug: "financial-transactions",
+  },
+  {
+    img: bannerFiveEN,
+    mainSlug: "CRM",
+    optionSlug: "comprehensive-customer-data-management",
+  },
+  { img: bannerSixEN, mainSlug: "HR", optionSlug: "vacations" },
+  { img: bannerEightEN, mainSlug: "erp-solutions", optionSlug: "sales" },
+  { img: bannerTenEN, mainSlug: "erp-solutions", optionSlug: "purchasing" },
 ];
 
 const imageMapAR = [
-  bannerOneAR,
-  bannerNineAR,
-  bannerFourAR,
-  bannerFiveAR,
-  bannerSixAR,
-  bannerEightAR,
-  bannerTenAR,
+  {
+    img: bannerOneAR,
+    mainSlug: "erp-solutions",
+    optionSlug: "general-accounts",
+  },
+  { img: bannerNineAR, mainSlug: "erp-solutions", optionSlug: "inventory" },
+  {
+    img: bannerFourAR,
+    mainSlug: "erp-solutions",
+    optionSlug: "financial-transactions",
+  },
+  {
+    img: bannerFiveAR,
+    mainSlug: "crm",
+    optionSlug: "comprehensive-customer-data-management",
+  },
+  { img: bannerSixAR, mainSlug: "hr", optionSlug: "vacations" },
+  { img: bannerEightAR, mainSlug: "erp-solutions", optionSlug: "sales" },
+  { img: bannerTenAR, mainSlug: "erp-solutions", optionSlug: "purchasing" },
 ];
 
 function WhyChooseUs() {
@@ -62,31 +86,50 @@ function WhyChooseUs() {
     () => t("cards", { returnObjects: true }) || [],
     [t, i18n.language]
   );
-
-  const data = useMemo(
-    () => t("data", { returnObjects: true }) || [],
-    [t, i18n.language]
-  );
+  const normalizeSlug = (str) => {
+    return str
+      ?.toString()
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, "-") // replace spaces with dashes
+      .replace(/[^a-z0-9\-]/g, ""); // remove non-alphanumeric (except dashes)
+  };
 
   const images = lang === "ar" ? imageMapAR : imageMapEN;
 
   const slideData = useMemo(() => {
     const slides = [];
-    let index = 0;
+
     subMenu.forEach((group) => {
+      const normalizedMainSlug = normalizeSlug(group.slug);
+
       group.arr.forEach((item) => {
-        if (images[index]) {
+        const normalizedOptionSlug = normalizeSlug(item.optionSlug);
+
+        const matchedImage = images.find(
+          (img) =>
+            normalizeSlug(img.mainSlug) === normalizedMainSlug &&
+            normalizeSlug(img.optionSlug) === normalizedOptionSlug
+        );
+
+        if (matchedImage) {
+          const index = images.findIndex(
+            (img) =>
+              normalizeSlug(img.mainSlug) === normalizedMainSlug &&
+              normalizeSlug(img.optionSlug) === normalizedOptionSlug
+          );
+
           slides.push({
-            img: images[index],
+            img: matchedImage.img,
             mainSlug: group.slug,
             optionSlug: item.optionSlug,
             title: chooseUsTitles[index]?.title || "",
             contentKey: `data.${index}`,
           });
-          index++;
         }
       });
     });
+
     return slides;
   }, [subMenu, chooseUsTitles, images]);
 
