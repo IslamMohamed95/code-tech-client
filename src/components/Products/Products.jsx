@@ -280,8 +280,13 @@ function Products() {
         >
           {optionImages.map((img, idx) => {
             return (
-              <SwiperSlide>
-                <img src={img} loading="lazy" alt="img" />
+              <SwiperSlide key={idx}>
+                <img
+                  src={img}
+                  fetchPriority={"high"}
+                  loading="lazy"
+                  alt="img"
+                />
               </SwiperSlide>
             );
           })}

@@ -435,7 +435,9 @@
     font-weight: bold;
     color: var(--base-color);
   }
-
+  #Nav .border {
+    border: 1.7px solid var(--base-color) !important;
+  }
   #Nav nav > div > div:nth-child(3) button {
     padding: 0.6em 1em;
     font-size: 0.8em;
