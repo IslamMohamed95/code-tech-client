@@ -46,6 +46,10 @@ html[dir="rtl"] .switch-bg.right {
   right: 50%;
 }
 
+#priceList .RS {
+  margin: 0 5px;
+}
+
 @media (min-width: 320px) {
   #priceList {
     width: 100%;
@@ -145,6 +149,7 @@ html[dir="rtl"] .switch-bg.right {
     justify-content: center;
     align-items: center;
     margin: 1em 0;
+    width: 100%;
   }
   #priceList .yearlyContainer .cardsHolder .card > div,
   #priceList .monthlyContainer .cardsHolder .card,
@@ -277,6 +282,9 @@ html[dir="rtl"] .switch-bg.right {
   #priceList .monthlyContainer .cardsHolder .pricePart > div:first-child,
   #priceList .marketContainer .cardsHolder .pricePart > div:first-child {
     font-size: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   #priceList .yearlyContainer .cardsHolder .pricePart span,
   #priceList .yearlyContainer .cardsHolder .pricePart p,
@@ -388,6 +396,9 @@ html[dir="rtl"] .switch-bg.right {
   }
 
   .tableView .tableRow:first-child .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     font-size: 0.9em;
     color: black;
@@ -401,7 +412,7 @@ html[dir="rtl"] .switch-bg.right {
   .cell {
     flex: 1;
     text-align: center;
-    font-size: 0.75em;
+    font-size: 0.9em;
     padding: 10px 12px;
     font-weight: 500;
   }
@@ -414,6 +425,9 @@ html[dir="rtl"] .switch-bg.right {
 
   .cell.advanced {
     color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .cell.basic {

@@ -193,7 +193,8 @@ function PriceList() {
                           {y?.price?.value && (
                             <div className="pricePart">
                               <div>
-                                {y.price.value} <SaudiRiyal className="RS" />
+                                {y.price.value}{" "}
+                                <SaudiRiyal size={32} className="RS" />
                               </div>
                               <div>
                                 <span>{t("payment")}</span>
@@ -251,7 +252,8 @@ function PriceList() {
                           {y?.price?.value && (
                             <div className="pricePart">
                               <div>
-                                {y.price.value} <SaudiRiyal className="RS" />
+                                {y.price.value}{" "}
+                                <SaudiRiyal size={32} className="RS" />
                               </div>
                               <div>
                                 <span>{t("payment")}</span>
@@ -290,7 +292,7 @@ function PriceList() {
                     </div>
                     <div className="cell advanced">
                       {getValueDisplay(monthlyTable?.price?.[i])}{" "}
-                      <SaudiRiyal className="RS" />
+                      <SaudiRiyal size={32} className="RS" />
                     </div>
                   </div>
                 ))}
@@ -312,7 +314,8 @@ function PriceList() {
                       {y?.price?.value && (
                         <div className="pricePart">
                           <div>
-                            {y.price.value} <SaudiRiyal className="RS" />
+                            {y.price.value}{" "}
+                            <SaudiRiyal size={32} className="RS" />
                           </div>
                           <div>
                             <span>{t("payment")}</span>
@@ -350,7 +353,8 @@ function PriceList() {
                       {y?.price?.value && (
                         <div className="pricePart">
                           <div>
-                            {y.price.value} <SaudiRiyal className="RS" />
+                            {y.price.value}{" "}
+                            <SaudiRiyal size={32} className="RS" />
                           </div>
                           <div>
                             <span>{y.price.time}</span>
@@ -388,7 +392,8 @@ function PriceList() {
                       {y?.price?.value && (
                         <div className="pricePart">
                           <div>
-                            {y.price.value} <SaudiRiyal className="RS" />
+                            {y.price.value}{" "}
+                            <SaudiRiyal size={32} className="RS" />
                           </div>
                           <div>
                             <span>{t("payment")}</span>
@@ -426,7 +431,8 @@ function PriceList() {
                       {y?.price?.value && (
                         <div className="pricePart">
                           <div>
-                            {y.price.value} <SaudiRiyal className="RS" />
+                            {y.price.value}{" "}
+                            <SaudiRiyal size={32} className="RS" />
                           </div>
                           <div>
                             <span>{t("payment")}</span>
