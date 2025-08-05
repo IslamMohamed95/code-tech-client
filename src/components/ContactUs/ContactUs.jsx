@@ -62,10 +62,6 @@ function ContactUs() {
     setDropdownOpen(false);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: handle form logic
-  };
   const restrictToNumbers = (e) => {
     const allowed = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"];
     if (!/[0-9]/.test(e.key) && !allowed.includes(e.key)) {
@@ -112,7 +108,9 @@ function ContactUs() {
 
           <form
             className="contact-form"
-            onSubmit={handleSubmit}
+            action="https://formsubmit.co/info@codetech.sa"
+            method="POST"
+            target="_blank"
             ref={contactRef}
           >
             <div className="floating-input">
@@ -158,7 +156,6 @@ function ContactUs() {
             >
               <label htmlFor="service">{t("form.service")}</label>
 
-              {/* Hidden input to link with label */}
               <input
                 id="service"
                 type="text"
@@ -190,10 +187,7 @@ function ContactUs() {
               {isDropdownOpen && (
                 <ul className="select-dropdown">
                   {serviceOptions.map((option) => (
-                    <li
-                      key={option}
-                      onMouseDown={() => handleSelect(option)} // avoid losing focus before click
-                    >
+                    <li key={option} onMouseDown={() => handleSelect(option)}>
                       {option}
                     </li>
                   ))}
@@ -205,6 +199,7 @@ function ContactUs() {
               <input
                 type="text"
                 id="company"
+                name="company"
                 placeholder=" "
                 autoComplete="organization"
                 required
@@ -233,6 +228,12 @@ function ContactUs() {
               />
               <label htmlFor="message">{t("form.desc")}</label>
             </div>
+
+            {/* Hidden Inputs for Formsubmit */}
+            <input type="hidden" name="service" value={selectedService} />
+            <input type="hidden" name="_captcha" value="false" />
+            {/* Optional: Add your own redirect page */}
+            {/* <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" /> */}
 
             <button type="submit" className="submit-btn">
               {t("form.btn")}

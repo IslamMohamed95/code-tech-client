@@ -280,7 +280,7 @@ function Products() {
         >
           {optionImages.map((img, idx) => {
             return (
-              <SwiperSlide key={idx}>
+              <SwiperSlide>
                 <img
                   src={img}
                   fetchPriority={"high"}

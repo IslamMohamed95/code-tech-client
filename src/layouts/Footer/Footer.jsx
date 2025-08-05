@@ -155,13 +155,15 @@ function Footer() {
                     {d.icon}
                     <a
                       href={
-                        d.title === "Get In Touch"
+                        d.title === t("action.details.touch")
                           ? "mailto:info@example.com"
                           : d.title === "920007401"
                           ? "tel:+920007401"
                           : "https://www.google.com/maps/place/%D8%B4%D8%B1%D9%83%D8%A9+%D9%83%D9%88%D8%AF+%D8%AA%D9%83+%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9+%D9%84%D9%84%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%D8%A7%D8%AA+%D9%88%D8%AA%D9%82%D9%86%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA%E2%80%AD/@24.674481,46.6916129,17z/data=!3m1!4b1!4m6!3m5!1s0x3e2f03007da6a8e3:0xb59a55650a909931!8m2!3d24.674481!4d46.6916129!16s%2Fg%2F11lw3dqttv?entry=ttu&g_ep=EgoyMDI1MDcyMy4wIKXMDSoASAFQAw%3D%3D"
                       }
-                      target={d.title === "Get Location" ? "_blank" : ""}
+                      target={
+                        d.title === t("action.details.location") ? "_blank" : ""
+                      }
                       rel="noopener noreferrer"
                     >
                       {d.title}
